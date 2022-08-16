@@ -1,0 +1,8 @@
+# Configurations
+/.git
+/.obsidian
+/.idea
+/.vscode
+
+# Chores
+/.deprecated
