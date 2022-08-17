@@ -16,10 +16,8 @@ def get_last_day(year: int, month: int, *_) -> date:
     :return: 当年当月的最后一天。
     :raise IndexError: 提供了错误的月份。
     """
-    day = [
-        31, 28, 31, 30, 31, 30,
-        31, 31, 30, 31, 30, 31,
-    ][month - 1]
+    # 月份  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12
+    day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
 
     if month == 2 and (
             # 四年一闰；百年不闰，四百年再闰
@@ -30,8 +28,8 @@ def get_last_day(year: int, month: int, *_) -> date:
     return date(year, month, day)
 
 
-class DateRange:
-    """可以存储日期范围闭区间的类。"""
+class DateInterval:
+    """日期范围（闭区间）。"""
 
     __slots__ = '_start', '_stop', '_days'
     _ONE_DAY = timedelta(days=1)
@@ -75,7 +73,7 @@ class DateRange:
 
     def after(self, other) -> bool:
         """日期范围整体在 other 之前？"""
-        if isinstance(other, DateRange):
+        if isinstance(other, DateInterval):
             return self._start < other.start and self._stop < other.start
         if isinstance(other, date):
             return self._start < other and self._stop < other
@@ -85,7 +83,7 @@ class DateRange:
 
     def before(self, other) -> bool:
         """日期范围整体在 other 之后？"""
-        if isinstance(other, DateRange):
+        if isinstance(other, DateInterval):
             return self._start > other.start and self._start > other.stop
         if isinstance(other, date):
             return self._start > other and self._stop > other
@@ -138,7 +136,7 @@ class DateRange:
     # ---------------- 集合运算 ----------------
 
     def __and__(self, other):
-        if not isinstance(other, DateRange):
+        if not isinstance(other, DateInterval):
             raise TypeError(
                 '不支持与 %s 对象进行交集运算。' % type(other).__name__
             )
@@ -165,7 +163,7 @@ class DateRange:
         return None  # 没有交集（one 整体早于 another）
 
     def __or__(self, other):
-        if not isinstance(other, DateRange):
+        if not isinstance(other, DateInterval):
             raise TypeError(
                 '不支持与 %s 对象进行并集运算。' % type(other).__name__
             )
@@ -207,7 +205,7 @@ if __name__ == '__main__':
 
     yesterday = today - timedelta(days=1)
     tomorrow = today + timedelta(days=1)
-    days = DateRange(yesterday, tomorrow)
+    days = DateInterval(yesterday, tomorrow)
     assert today in days
     assert days[1] == today
     assert days[::] == [yesterday, today, tomorrow]
@@ -217,11 +215,11 @@ if __name__ == '__main__':
 
     begin = today - timedelta(days=15)
     end = today + timedelta(days=15)
-    holiday = DateRange(begin, end)
-    assert type(holiday & days) is DateRange
+    holiday = DateInterval(begin, end)
+    assert type(holiday & days) is DateInterval
     end = today - timedelta(days=7)
-    assert type(holiday & days) is DateRange
+    assert type(holiday & days) is DateInterval
 
-    holiday = DateRange(begin, yesterday)
+    holiday = DateInterval(begin, yesterday)
     assert holiday & days == yesterday
-    assert holiday | days == DateRange(begin, tomorrow)
+    assert holiday | days == DateInterval(begin, tomorrow)
