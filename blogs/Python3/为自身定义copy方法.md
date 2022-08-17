@@ -1,5 +1,7 @@
 # 为自身定义copy方法
 
+![作者：砹小翼](https://img.shields.io/badge/Author-砹小翼-blue.svg) ![最后编辑：2022-08-17](https://img.shields.io/badge/Revision-2022.08.17-purple.svg)
+
 　　一些类自带了`copy()`或者作用类似于浅拷贝的方法，比如内置的`list`、`dict`、decimal的`Decimal`等等。
 
 　　对对象而言，其本质是复制一个数据相同但地址不同的对象，类似于用相同数据调用构造方法。因此在定制类的时候，如果不借助Python自带的copy库，可以在**类体内**调用自身的**构造方法**达到相同目的。
