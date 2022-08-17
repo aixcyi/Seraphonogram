@@ -14,6 +14,7 @@
 
 - [为自身定义copy方法](blogs/Python3/为自身定义copy方法.md)
 - [实现任意进制转十进制](./blogs/Python3/实现任意进制转十进制.md)
+- [十进制转任意进制与yield](./blogs/Python3/十进制转任意进制与yield.md)
 
 ## Demos
 
