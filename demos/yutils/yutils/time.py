@@ -208,9 +208,9 @@ if __name__ == '__main__':
     days = DateInterval(yesterday, tomorrow)
     assert today in days
     assert days[1] == today
-    assert days[::] == [yesterday, today, tomorrow]
-    assert days[1:] == [today, tomorrow]
-    assert days[:2] == [yesterday, today]
+    assert tuple(days[::]) == (yesterday, today, tomorrow)
+    assert tuple(days[1:]) == (today, tomorrow)
+    assert tuple(days[:2]) == (yesterday, today)
     assert tuple(days) == (yesterday, today, tomorrow)
 
     begin = today - timedelta(days=15)
