@@ -4,7 +4,8 @@
 Author: aixcyi
 Version: 2022.8
 """
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from functools import wraps
 
 
 def get_last_day(year: int, month: int, *_) -> date:
@@ -198,8 +199,65 @@ class DateInterval:
         return cls(start, stop)
 
 
+class BearTimer:
+    """
+    简单粗暴的代码计时器。
+    """
+
+    def __init__(self):
+        self._now = None
+
+    def start(self):
+        if self._now is not None:
+            raise RuntimeError('计时还未结束。')
+        self._now = datetime.now()
+
+    def stop(self, note: str):
+        if self._now is None:
+            raise RuntimeError('计时尚未开始。')
+        self.output(datetime.now() - self._now, note)
+        self._now = None
+
+    @classmethod
+    def calc(cls, note: str = '', line_seperator: str = ''):
+        """
+        从函数运行前开始计时，并在返回后结束计时。
+
+        :param note: 计时结果的备注。
+        :param line_seperator: 每一行的分割线。
+        :return:
+        """
+
+        def decorator(func):
+            @wraps(func)
+            def inner(*args, **kwargs):
+                if line_seperator:
+                    print(line_seperator)
+                now = datetime.now()
+                returns = func(*args, **kwargs)
+                cls.output(datetime.now() - now, note if note else func.__name__)
+                return returns
+
+            return inner
+
+        return decorator
+
+    @classmethod
+    def fmt(cls, delta: timedelta):
+        h = delta.seconds // 3600
+        m = delta.seconds % 3600 // 60
+        s = delta.seconds % 60 + delta.microseconds / 1000000
+        return f'{h:2d}:{m:2d}:{s:9f}'
+
+    @classmethod
+    def output(cls, duration: timedelta, note):
+        print(f'{cls.fmt(duration)} | {note}')
+
+
 if __name__ == '__main__':
     from datetime import date, timedelta
+    from time import sleep
+    from random import random
 
     today = date.today()
 
@@ -223,3 +281,15 @@ if __name__ == '__main__':
     holiday = DateInterval(begin, yesterday)
     assert holiday & days == yesterday
     assert holiday | days == DateInterval(begin, tomorrow)
+
+
+    @BearTimer.calc()
+    def testing():
+        for i in range(3):
+            duration = random()
+            print(f'No.{i} - i will sleep {duration:.4f} seconds now.')
+            sleep(duration)
+        print('Total duration:')
+
+
+    testing()
