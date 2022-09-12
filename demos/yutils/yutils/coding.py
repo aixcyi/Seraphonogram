@@ -21,8 +21,7 @@ def n2dec(x: int | str, charset: str) -> int:
 
     :param x: N进制整数。
     :param charset: 字符集。其长度决定了整数x是多少进制。
-                    比如八进制对应 "01234567" ，
-                    十六进制对应 "0123456789ABCDEF" 。
+                    比如八进制对应 "01234567" ，十六进制对应 "0123456789ABCDEF" 。
     :return: 十进制整数。
     :raise TypeError:
     :raise ValueError:
@@ -51,8 +50,8 @@ def n2dec(x: int | str, charset: str) -> int:
     # -> summary(...)
     # -> 3500266221
 
-    digits = [charset.index(char) for char in __x][::-1]
-    pairs = zip(digits, range(len(__x)))
+    __x = __x[::-1]
+    pairs = zip((charset.index(char) for char in __x), range(len(__x)))
     i = sum(map(lambda pair: pair[0] * base ** pair[1], pairs))
     return -i if negative else i
 
@@ -63,8 +62,7 @@ def dec2n(x: int, charset: str) -> str:
 
     :param x: 十进制正整数。
     :param charset: 字符集。其长度决定了整数x是多少进制。
-                    比如八进制对应 "01234567" ，
-                    十六进制对应 "0123456789ABCDEF" 。
+                    比如八进制对应 "01234567" ，十六进制对应 "0123456789ABCDEF" 。
     :return: N进制正整数。
     """
 
