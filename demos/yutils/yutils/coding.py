@@ -82,6 +82,93 @@ def dec2n(x: int, charset: str) -> str:
     return ''.join(dec2seq(int(x), len(charset)))[::-1]
 
 
+class IPv4(object):
+    __slots__ = '_ip', '_int', '_class'
+
+    def __init__(self, address: tuple[int]):
+        if address.__class__ is not tuple:
+            raise TypeError
+        if len(address) != 4 or not all(0 <= octet <= 255 for octet in address):
+            raise ValueError
+        self._ip = address
+        self._int = self.to_int()
+        self._class = self._get_network_class()
+
+    @classmethod
+    def from_str(cls, string: str):
+        parts = tuple(int(part) for part in string.split('.'))
+        return cls(parts)
+
+    @classmethod
+    def from_bytes(cls, data: bytes):
+        return cls(tuple(data[:4]))
+
+    @classmethod
+    def from_int(cls, integer: int, signed: bool = False):
+        bs = integer.to_bytes(4, byteorder='big', signed=signed)
+        return cls(tuple(bs[:4]))
+
+    @property
+    def network_class(self) -> str:
+        return self._class
+
+    def __eq__(self, o) -> bool:
+        if isinstance(o, IPv4):
+            return self._ip == o._ip
+        raise False
+
+    def __lt__(self, o) -> bool:
+        if isinstance(o, IPv4):
+            return self._ip < o._ip
+        raise False
+
+    def __le__(self, o) -> bool:
+        if isinstance(o, IPv4):
+            return self._ip <= o._ip
+        raise False
+
+    def __gt__(self, o) -> bool:
+        if isinstance(o, IPv4):
+            return self._ip > o._ip
+        raise False
+
+    def __ge__(self, o) -> bool:
+        if isinstance(o, IPv4):
+            return self._ip >= o._ip
+        raise False
+
+    def _get_network_class(self) -> str:
+        match head := self._ip[0]:
+            case 0b00000000 if head & 0b10000000:
+                return 'A'
+            case 0b10000000 if head & 0b11000000:
+                return 'B'
+            case 0b11000000 if head & 0b11100000:
+                return 'C'
+            case 0b11100000 if head & 0b11110000:
+                return 'D'
+            case 0b11110000 if head & 0b11110000:
+                return 'E'
+            case _:
+                raise ValueError
+
+    def to_str(self) -> str:
+        return '.'.join(str(octet) for octet in self._ip)
+
+    __str__ = to_str
+
+    def to_bytes(self) -> bytes:
+        return bytes(self._ip)
+
+    __bytes__ = to_bytes
+
+    def to_int(self, signed: bool = False) -> int:
+        return int.from_bytes(bytes(self._ip), byteorder='big', signed=signed)
+
+    def to_tuple(self) -> tuple:
+        return self._ip
+
+
 if __name__ == '__main__':
     assert n2dec("D0A1D2ED", BASE16) == 3500266221
     assert dec2n(3500266221, BASE16) == "D0A1D2ED"
