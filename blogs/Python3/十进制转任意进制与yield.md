@@ -76,7 +76,7 @@ def dec2n(x, charset):
     # i=3500266221, base=16, charset="0123456789ABCDEF"
     # -> [13, 14, 2, 13, 1, 10, 0, 13]
     # -> ['D', 'E', '2', 'D', '1', 'A', '0', 'D']
-    def dec2seq(i: int, base: int):
+    def dec2seq(i, base):
         while i >= base:
             yield charset[i % base]
             i //= base
