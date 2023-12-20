@@ -26,6 +26,12 @@
     <li>
         <a href="./blogs/python/define-copy-method-for-object-self.md">为自身定义 copy 方法</a><br><span>一些类自带了能够复制自身的 <code>copy()</code> 方法，例如 <code>list</code> 、<code>dict</code> 、<code>Decimal</code> 等。文章列出了三种为类自身（不借助内置的 copy 库）实现这个方法的办法，以及之间的联系和优缺。</span>
     </li>
+    <li>
+        <a href="./blogs/python/any-radix-convert-to-decimal.md">任意进制转十进制</a><br><span>使用内置函数及列表推导式完成任意进制（文本）转到十进制（整数）的思路。</span>
+    </li>
+    <li>
+        <a href="./blogs/python/convert-decimal-to-any-radix-with-yield.md">十进制转任意进制</a><br><span>使用关键字 <code>yield</code> 将普通的除N求余法函数转换为生成器函数。</span>
+    </li>
 </ol>
 
 ### Django & DRF
@@ -33,6 +39,14 @@
 <ol>
     <li>
         <a href="./blogs/python/briefing-of-django-view-and-viewset.md">浅析基于 Django 衍生的类视图</a><br><span>顺着 Django 的 <code>View</code> 、DRF 的 <code>APIView</code> 和 <code>GenericAPIView</code> 三个基类的脉络梳理了各种类视图的派生关系，以及与各种 Mixin 的交联。</span>
+    </li>
+</ol>
+
+### IntelliJ IDE Plugin
+
+<ol>
+    <li>
+        <a href="./blogs/java/use-bundle-in-intellij-plugin-developing.md">在 IntelliJ 插件开发中使用 bundle</a><br><span>展示以语言包的语言为主、系统语言为辅的 bundle 语音查找以及相应的 i18n 工具类代码。</span>
     </li>
 </ol>
 
