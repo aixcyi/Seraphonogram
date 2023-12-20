@@ -1,6 +1,6 @@
 # 十进制转任意进制与yield
 
-![作者：砹小翼](https://img.shields.io/badge/Author-砹小翼-blue.svg) ![最后编辑：2022-08-17](https://img.shields.io/badge/Revision-2022.08.17-purple.svg)
+![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2022年8月17日](https://img.shields.io/badge/Release-2022.08.17-purple.svg)
 
 十进制转任意进制用的是除N求余法，一般可以用循环和迭代的方式组织代码，但在Python中，还可以写成一个生成器函数，并且执行效率远高于迭代和直接循环。
 

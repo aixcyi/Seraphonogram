@@ -1,6 +1,6 @@
 # 为自身定义copy方法
 
-![作者：砹小翼](https://img.shields.io/badge/Author-砹小翼-blue.svg) ![最后编辑：2022-08-17](https://img.shields.io/badge/Revision-2022.08.17-purple.svg)
+![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2022年8月17日](https://img.shields.io/badge/Release-2022.08.17-purple.svg)
 
 　　一些类自带了`copy()`或者作用类似于浅拷贝的方法，比如内置的`list`、`dict`、decimal的`Decimal`等等。
 
