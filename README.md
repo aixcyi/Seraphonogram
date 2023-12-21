@@ -47,6 +47,16 @@
         <br>
         <span>使用关键字 <code>yield</code> 将普通的除N求余法函数改写为生成器函数，加快转换速度。</span>
     </li>
+    <li>
+        <a href="./blogs/python/comprehension.md">推导式</a>
+        <br>
+        <span>用简单的 ascii 拆分标注推导式语句的语法结构。</span>
+    </li>
+    <li>
+        <a href="./blogs/python/file-open-mode.md">文件打开模式</a>
+        <br>
+        <span>以表格形式展示文件打开模式 <code>r</code> 、<code>w</code> 、<code>a</code> 、<code>x</code> 与 <code>+</code> 、<code>t</code> 、<code>b</code> 搭配的行为与含义。</span>
+    </li>
 </ol>
 
 ### Django & DRF
@@ -64,7 +74,7 @@
     </li>
 </ol>
 
-### IntelliJ IDE Plugin
+### IntelliJ IDE 插件开发
 
 <ol>
     <li>
@@ -74,7 +84,7 @@
     </li>
 </ol>
 
-### 工具
+### 杂项
 
 <ol>
     <li>

@@ -1,6 +1,6 @@
 # 浅析基于 Django 衍生的类视图
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年8月10日](https://img.shields.io/badge/Release-2022.08.10-purple.svg)
+![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年8月10日](https://img.shields.io/badge/Release-2023.08.10-purple.svg)
 
 ## 类的继承脉络
 
