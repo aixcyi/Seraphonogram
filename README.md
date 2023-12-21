@@ -18,6 +18,9 @@
 
 <ol>
     <li>
+        <a href="./blogs/python/dict-key-ordering.md">字典中键的顺序</a><br><span>简单记录 <code>dict</code> 和 <code>OrderedDict</code> 的特性以及一般使用中值得注意的点。</span>
+    </li>
+    <li>
         <a href="./blogs/python/datetime-formatting.md">日期时间的格式化</a><br><span>Python 3.7 (Windows) 中，<code>date</code> 和 <code>datetime</code> 实例的 <code>strftime</code> 方法不支持中文，本文列出了想到和查到的四种解决方法，前三种需要依赖 Django REST Framework。</span>
     </li>
     <li>
@@ -30,7 +33,7 @@
         <a href="./blogs/python/any-radix-convert-to-decimal.md">任意进制转十进制</a><br><span>使用内置函数及列表推导式完成任意进制（文本）转到十进制（整数）的思路。</span>
     </li>
     <li>
-        <a href="./blogs/python/convert-decimal-to-any-radix-with-yield.md">十进制转任意进制</a><br><span>使用关键字 <code>yield</code> 将普通的除N求余法函数转换为生成器函数。</span>
+        <a href="./blogs/python/convert-decimal-to-any-radix-with-yield.md">十进制转任意进制</a><br><span>使用关键字 <code>yield</code> 将普通的除N求余法函数改写为生成器函数，加快转换速度。</span>
     </li>
 </ol>
 
@@ -47,6 +50,14 @@
 <ol>
     <li>
         <a href="./blogs/java/use-bundle-in-intellij-plugin-developing.md">在 IntelliJ 插件开发中使用 bundle</a><br><span>展示以语言包的语言为主、系统语言为辅的 bundle 语音查找以及相应的 i18n 工具类代码。</span>
+    </li>
+</ol>
+
+### 工具
+
+<ol>
+    <li>
+        <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a><br><span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
     </li>
 </ol>
 
