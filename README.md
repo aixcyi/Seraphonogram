@@ -18,6 +18,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/python/class-and-type.md">类与类型</a>
+        <br>
+        <span>通过内置函数 <code>isinstance</code> 、<code>issubclass</code> 、<code>type</code> 分析类型（type）、类（class）、对象（object）的关系。</span>
+    </li>
+    <li>
         <a href="./blogs/python/dict-key-ordering.md">字典中键的顺序</a>
         <br>
         <span>记录 <code>dict</code> 和 <code>OrderedDict</code> 的特性以及一般使用中值得注意的点。</span>
