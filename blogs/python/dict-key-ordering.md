@@ -6,6 +6,8 @@
 
 从 3.7 版本开始，字典的键是按插入顺序排列的，从 [`dict.popitem()`](https://docs.python.org/zh-cn/3/library/stdtypes.html#dict.popitem) 的注释可以看到是后进先出（LIFO）。另外，`update()` 不会影响键的顺序。
 
+3.6 版本开始，函数签名中的 `**kwargs` 现在将保证是一个保留插入顺序的映射对象。提案参见 [**PEP 468**](https://peps.python.org/pep-0468/) 。
+
 注意：[`set`](https://docs.python.org/zh-cn/3/library/stdtypes.html#set-types-set-frozenset) 从始自终（截止 3.12 版本）都是无序的。
 
 ## OrderedDict
