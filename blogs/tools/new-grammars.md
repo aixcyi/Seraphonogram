@@ -1,0 +1,345 @@
+# 语法更新摘要
+
+![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
+
+挺细碎的，开个帖子备忘。通篇仅限于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
+
+## 3.12 版本
+
+### 泛型标注
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax  [**PEP 484**](https://peps.python.org/pep-0484/) 下的泛型类和函数是使用详细语法声明的，这使得类型参数的范围不明确，并且需要显式声明变化。[**PEP 695**](https://peps.python.org/pep-0695/) 引入了一种新的、更紧凑、更明确的方式来创建 [泛型类](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-classes) 和 [函数](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-functions)。
+
+```python
+def max[T](args: Iterable[T]) -> T:
+    ...
+
+class list[T]:
+    def __getitem__(self, index: int, /) -> T:
+        ...
+
+    def append(self, element: T) -> None:
+        ...
+```
+
+### 新增 type 语句
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax  
+> 该 PEP 引入了一种新的方法来使用 [`type`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#type) 语句声明 [类型别名](https://docs.python.org/zh-cn/3/library/typing.html#type-aliases)，该语句会创建 [`TypeAliasType`](https://docs.python.org/zh-cn/3/library/typing.html#typing.TypeAliasType) 的实例：
+
+```python
+type Point = tuple[float, float]
+```
+
+> 类型别名也可以是 [generic](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-type-aliases) ：
+
+```python
+type Point[T] = tuple[T, T]
+```
+
+### f-字符串
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-701-syntactic-formalization-of-f-strings  
+> f-字符串内部的表达式部分现在可以是任何有效的 Python 表达式，包括重用了与标记 f-字符串本身相同的引号的字符串、多行表达式、注释、反斜杠以及 unicode 转义序列。更多细节请参见 [**PEP 701**](https://peps.python.org/pep-0701/)。
+
+1、允许重复使用引号
+
+```python
+print(f"{f"{f"{f"{f"{f"{1+1}"}"}"}"}"}")  # 打印 '2'
+```
+
+2、允许嵌入多行表达式和注释
+
+```python
+print(f"This is the playlist: {", ".join([
+    'Take me back to Eden',  # My, my, those eyes like fire
+    'Alkaline',              # Not acid nor alkaline
+    'Ascensionism'           # Take to the broken skies at last
+])}")
+# 打印 'This is the playlist: Take me back to Eden, Alkaline, Ascensionism'
+```
+
+3、允许使用反斜框和 unicode 字符
+
+```python
+songs = ['Take me back to Eden', 'Alkaline', 'Ascensionism']
+
+print(f"This is the playlist: {"\n".join(songs)}")
+# 打印：
+# This is the playlist: Take me back to Eden
+# Alkaline
+# Ascensionism
+
+print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
+# 打印：
+# This is the playlist: Take me back to Eden♥Alkaline♥Ascensionism
+```
+
+## 3.11 版本
+
+### 异常组与 `except*`
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except  
+> 程序能够同时引发和处理多个不相关的异常。内置类型 [`ExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#ExceptionGroup) 和 [`BaseExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#BaseExceptionGroup) 使得将异常划分成组并一起引发成为可能，新添加的 [`except*`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except-star) 是对 [`except`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except) 的泛化语法，这一语法能够匹配异常组的子组。
+
+## 3.10 版本
+
+### 新增 match-case 语句
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-634-structural-pattern-matching   
+> 增加了采用模式加上相应动作的 *match 语句* 和 *case 语句* 的形式的结构化模式匹配。 模式由序列、映射、基本数据类型以及类实例构成。 模式匹配使得程序能够从复杂的数据类型中提取信息、根据数据结构实现分支，并基于不同的数据形式应用特定的动作。
+
+语法非常多坑，墙裂建议通过上面的链接阅读全部文档。
+
+```python
+match subject:
+    case <pattern_1>:
+        <action_1>
+    case <pattern_2>:
+        <action_2>
+    case <pattern_3>:
+        <action_3>
+    case _:
+        <action_wildcard>
+```
+
+### 类型联合
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-604-new-type-union-operator  
+> 引入了启用 `X | Y` 语法的类型联合运算符。 这提供了一种表示 '类型 X 或类型 Y' 的相比使用 [`typing.Union`](https://docs.python.org/zh-cn/3/library/typing.html#typing.Union) 更清晰的方式，特别是在类型提示中。
+
+```python
+def square(number: int | float) -> int | float:
+    return number ** 2
+```
+
+旧版本需要这样：
+
+```python
+from typing import Union
+
+def square(number: Union[int, float]) -> Union[int, float]:
+    return number ** 2
+```
+
+### 带圆括号的上下文管理器
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.10.html#parenthesized-context-managers  
+> 支持使用外层圆括号来使多个上下文管理器可以连续多行地书写。 这允许将过长的上下文管理器集能够以与之前 import 语句类似的方式格式化为多行的形式。
+
+```python
+with (
+    CtxManager1() as example1,
+    CtxManager2() as example2,
+    CtxManager3() as example3,
+):
+    ...
+
+with (CtxManager() as example):
+    ...
+
+with (
+    CtxManager1(),
+    CtxManager2()
+):
+    ...
+
+with (CtxManager1() as example,
+      CtxManager2()):
+    ...
+
+with (CtxManager1(),
+      CtxManager2() as example):
+    ...
+
+with (
+    CtxManager1() as example1,
+    CtxManager2() as example2
+):
+    ...
+```
+
+## 3.9 版本
+
+### 多项集泛型
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections  
+> 在类型标注中现在你可以使用内置多项集类型例如 `list` 和 `dict` 作为通用类型而不必从 `typing` 导入对应的大写形式类型名 (例如 `List` 和 `Dict`)。 标准库中的其他一些类型现在同样也是通用的，例如 `queue.Queue`。
+
+```python
+def greet_all(names: list[str]):
+    for name in names:
+        print("Hello", name)
+```
+
+旧版本可以：
+
+```python
+from __future__ import annotations
+
+def greet_all(names: list[str]):
+    for name in names:
+        print("Hello", name)
+```
+
+平替写法是：
+
+```python
+from typing import List
+
+def greet_all(names: List[str]):
+    for name in names:
+        print("Hello", name)
+```
+
+## 3.8 版本
+
+### 赋值表达式
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.8.html#assignment-expressions  
+> 新增了赋值表达式符号 `:=` ，又叫海象运算符。
+
+```python
+string = '20120520'
+if (length := len(string)) not in (8, 6):
+    raise ValueError
+
+if length == 8:
+    year, month, day = string[:4], string[4:6], string[6:8]
+else:
+    year, month, day = string[:2], string[2:4], string[4:6]
+    year = f'19{year}' if year > '50' else f'20{year}'
+```
+
+### 仅限位置形参
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.8.html#positional-only-parameters
+
+新增了一个函数形参 `/` 用来分隔只允许按位置传参的形参，避免后续修改形参名时影响到外部。
+
+```python
+def enumerate(_depth, /, verify=False, raise_exception=False, **kvs):
+    pass
+```
+
+### f-字符串因变量
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging
+
+允许用 `f'{expr=}'` 形式的 [f-string](https://docs.python.org/zh-cn/3/glossary.html#term-f-string) 为表达式的求值结果添加说明。
+
+```python
+from datetime import date, timedelta
+
+a = 355
+b = 113
+y = a / b
+print(f'{y=}')  # 打印 y=3.1415929203539825
+
+today = date(2023, 12, 22)
+tomorrow = today + timedelta(days=1)
+print(f'{tomorrow=:%Y-%m-%d}')  # 打印 tomorrow=2023-12-23
+# 相当于
+print(f'tomorrow={tomorrow:%Y-%m-%d}')
+```
+
+### 允许在 finally 中使用 continue
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes  
+> 在之前版本中 [`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue) 语句不允许在 [`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally) 子句中使用，这是因为具体实现存在一个问题。 在 Python 3.8 中此限制已被取消。
+
+## 3.7 版本
+
+### 类型标注延迟求值
+
+> 3.7 提出支持：  
+> https://docs.python.org/zh-cn/3/whatsnew/3.7.html#pep-563-postponed-evaluation-of-annotations
+>
+> 3.11 表示可能不再实现：  
+> https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-563-may-not-be-the-future
+
+意思是可以标注前面的、“未定义” 的符号。
+
+在 3.7 ~ 3.9 需要导入 `__future__` ，3.10 开始才可以正常使用。但实际上可能不会再实现了，所以（截止 3.12）仍然需要导入 `__future__` 。这里还要列出来就是防止知道新增了、但是不知道在高版本还没生效。
+
+不过，导入 `__future__` 后实际上就是将标注的类型 **整体** 作为字符串存储，所以
+
+```python
+from __future__ import annotations
+
+class Meow:
+    def copy(self) -> Meow:
+        pass
+```
+
+就等同于：
+
+```python
+class Meow:
+    def copy(self) -> "Meow":
+        pass
+```
+
+### 允许过量参数
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.7.html#other-language-changes  
+> 现在可以将超过 255 个参数传递给一个函数，而现在一个函数也可以拥有超过 255 个形参。
+
+### 新增 async 和 await 关键字
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights  
+> 向后不兼容的语法更改：[`async`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async) 和 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await) 现在是保留的关键字。
+
+## 3.6 版本
+
+### f-string
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-498-formatted-string-literals  
+> [**PEP 498**](https://peps.python.org/pep-0498/) 引入了一种新型的字符串字面值: *f-字符串*，或称 [格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)。
+>
+> 格式化字符串字面值带有 `f` 前缀并且类似于 [`str.format()`](https://docs.python.org/zh-cn/3/library/stdtypes.html#str.format) 所接受的格式字符串。 其中包含由花括号包围的替换字段。 替换字段属于表达式，它们会在运行时被求值，然后使用 [`format()`](https://docs.python.org/zh-cn/3/library/functions.html#format) 协议进行格式化
+
+添加前缀 `f` 的字符串字面值可以内嵌表达式，来对值进行格式化和无感拼接。
+
+- `f'{obj!s}` 相当于 `str(obj)` ；
+- `f'{obj!r}` 相当于 `repr(obj)` ；
+- `f'{qty:x}`  相当于 `'{x}'.format(qty)` ，参见[格式规格迷你语言](https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language)；
+- `f'{now:%H:%M:%S}'` 相当于 `now.strftime('%H:%M:%S')` 。
+
+```python
+from datetime import date
+
+today = date(2023, 12, 24)
+level = 'DEBUG'
+message = '喵' * 9
+print(f'[{level}] [{today:%Y-%m-%d}]: {message}')
+# 打印
+# [DEBUG] [2023-12-24]: 喵喵喵喵喵喵喵喵喵
+```
+
+### 变量标注
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-526-syntax-for-variable-annotations  
+> [**PEP 484**](https://peps.python.org/pep-0484/) 引入了函数形参类型标注（即类型提示）的标准，而现在这个 [**PEP 526**](https://peps.python.org/pep-0526/) 添加了标注变量类型的语法，包括类变量和实例变量。
+
+```python
+from typing import List, Dict
+
+primes: List[int] = []
+
+captain: str  # Note: no initial value!
+
+class Starship:
+    stats: Dict[str, int] = {}
+```
+
+### 数字下划线
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-515-underscores-in-numeric-literals  
+> [**PEP 515**](https://peps.python.org/pep-0515/) 增加了在数字字面值中使用下划线的能力以改善可读性。
+
+```python
+assert 21_0000_0000 == 2100000000
+assert 0x03_14_15_92 == 0x03141592
+```
+

@@ -93,6 +93,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/tools/new-grammars.md">Python 语法更新摘要</a>
+        <br>
+        <span>列出与语法有关的更新，并摘取部分栗子罗列出来，版本在 3.17 到 3.12 之间，3.10 以前版本的还会有一点备注，3.7 以前的还在探索（因为实在没用过）。</span>
+    </li>
+    <li>
         <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a>
         <br>
         <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
