@@ -2,7 +2,7 @@
 
 ![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
 
-挺细碎的，开个帖子备忘。通篇仅限于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
+挺细碎的，开个帖子备忘。此篇着眼于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
 
 ## 3.12 版本
 
@@ -320,7 +320,9 @@ print(f'[{level}] [{today:%Y-%m-%d}]: {message}')
 ### 变量标注
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-526-syntax-for-variable-annotations  
-> [**PEP 484**](https://peps.python.org/pep-0484/) 引入了函数形参类型标注（即类型提示）的标准，而现在这个 [**PEP 526**](https://peps.python.org/pep-0526/) 添加了标注变量类型的语法，包括类变量和实例变量。
+> [**PEP 484**](https://peps.python.org/pep-0484/) 引入了函数形参类型标注（即类型提示）的标准。而现在，[**PEP 526**](https://peps.python.org/pep-0526/) 添加了标注变量类型的语法，包括类变量和实例变量。
+
+可能需要参见 3.6 版本的 [typing](https://docs.python.org/zh-cn/3.6/library/typing.html) 模块。
 
 ```python
 from typing import List, Dict
@@ -342,4 +344,206 @@ class Starship:
 assert 21_0000_0000 == 2100000000
 assert 0x03_14_15_92 == 0x03141592
 ```
+
+## 3.5 版本
+
+### 协程 async 和 await 语句
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-492-coroutines-with-async-and-await-syntax  
+> [**PEP 492**](https://peps.python.org/pep-0492/) 通过添加 [可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable), [协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function), [异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable) 和 [异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager) 极大地改善了 Python 对异步编程的支持。
+>
+> 协程函数是使用新的 [`async def`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async-def) 语法来声明的
+
+```python
+async def coro():
+    return 'spam'
+```
+
+> 在协程函数内部，新的 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await) 表达式可用于挂起协程的执行直到其结果可用。 任何对象都可以被 *等待*，只要它通过定义 `__await__()` 方法实现了 [awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable) 协议。
+
+注意：async 和 await 到 3.7 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
+
+### 更多解包
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-448-additional-unpacking-generalizations
+
+可以在函数调用中使用任意多个 `*` 和 `**` 解包：
+
+```python
+print(*[1], *[2], 3, *[4, 5])
+# 打印
+# 1 2 3 4 5
+```
+
+列表、元组、集合和字典的字面值表达式也分别可以使用任意多个 `*` 和 `**` 解包：
+
+```python
+*range(4), 4
+# 打印 (0, 1, 2, 3, 4)
+
+[*range(4), 4]
+# 打印 [0, 1, 2, 3, 4]
+
+{*range(4), 4, *(5, 6, 7)}
+# 打印 {0, 1, 2, 3, 4, 5, 6, 7}
+
+{'x': 1, **{'y': 2}}
+# 打印 {'x': 1, 'y': 2}
+```
+
+### 矩阵运算符
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-465-a-dedicated-infix-operator-for-matrix-multiplication
+
+矩阵乘法专用的运算符。目前只为第三方库而设计，Python 内置的类型并没有实现这个运算符对应的魔术方法 `__matmul__()` 、`__rmatmul__()` 、`__imatmul__()` 。
+
+### 类型标注
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-484-type-hints  
+> 该版本通过 [**PEP 484**](https://peps.python.org/pep-0484/) 引入了一个暂定的 [typing](https://docs.python.org/zh-cn/3.5/library/typing.html) 模块提供类型标注的标准定义和工具以及一些对于注释不可用的情况的约定。
+
+详情请参阅[对象注解属性的最佳实践](https://docs.python.org/zh-cn/3/howto/annotations.html)。类型标注从始自终都是一个被动的、人工的类型检查系统，就算标注了错误的类型，代码不会受到任何影响且仍然可以正确运行，它的作用是为类型检查器提供分析。
+
+```python
+def greeting(name: str) -> str:
+    return 'Hello ' + name
+```
+
+类型标注存储在 [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__) 属性中，但是不建议用来作强类型校验，因为强类型本身就不符合 Python 的发展理念，并且有时候非常反人类。
+
+## 3.4 版本
+
+无。
+
+## 3.3 版本
+
+### 委托子生成器
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.3.html#pep-380-syntax-for-delegating-to-a-subgenerator  
+> 对于简单的迭代器，`yield from iterable` 本质上只是 `for item in iterable: yield item` 的简写。
+
+就是将自己的 `yield` 操作委托给自己内部的子生成器进行。
+
+```python
+def generate(x):
+    yield from range(x, 0, -1)
+    yield from range(x)
+
+list(generate(5))
+# 打印
+# [5, 4, 3, 2, 1, 0, 1, 2, 3, 4]
+```
+
+## 3.2 版本
+
+无。
+
+## 3.1 版本
+
+无。
+
+## 3.0 版本
+
+Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，最好参阅 [What's New in Python 3.0](https://docs.python.org/zh-cn/3/whatsnew/3.0.html) 。也欢迎提 issue 告知，或者提 pull-request 协助增补。
+
+### print 语句改为 print 函数调用
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#print-is-a-function
+
+### 简化比较
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#ordering-comparisons
+
+删除内置函数 `cmp()` 及对魔术方法 `__cmp__()` 的支持。可以通过 `(a > b) - (a < b)` 得到原来 `cmp(a, b)` 的结果。
+
+### 类型标注非标语法
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#changed-syntax
+
+借助 [**PEP 3107**](https://peps.python.org/pep-3107/) 可以对参数和返回值进行标注，不过该语法还没有标准语义。
+
+对参数的标注：
+
+```python
+def foo(a: expression, b: expression = 5):
+    ...
+
+def foo(*args: expression, **kwargs: expression):
+    ...
+```
+
+对返回值的标注：
+
+```python
+def sum() -> expression:
+    ...
+```
+
+类型标注存储在 [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__) 属性中，但是不建议用来作强类型校验，因为强类型本身就不符合 Python 的发展理念，并且有时候非常反人类。
+
+### 元类
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#changed-syntax
+
+现在元类的用法是：
+
+```python
+class C(metaclass=M):
+    ...
+```
+
+之前的 `__metaclass__` 将不再受支持。
+
+```python
+class C:
+    __metaclass__ = M
+    ...
+```
+
+### 列表推导式
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#changed-syntax
+
+调整了推导式的解析，像
+
+```python
+[... for var in item1, item2, ...]
+```
+
+不再等效于
+
+```python
+[... for var in (item1, item2, ...)]
+```
+
+### 不再允许元组参数解包
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#removed-syntax
+
+旧版本的
+
+```python
+def foo(a, (b, c)):
+    ...
+```
+
+现在需要写成
+
+```python
+def foo(a, b_and_c):
+    b, c = b_and_c
+```
+
+### 新的不等号
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#removed-syntax
+
+删除了 `<>` ，改为使用 `!=` 。
+
+### 字面值前缀和后缀
+
+> https://docs.python.org/zh-cn/3/whatsnew/3.0.html#removed-syntax
+
+- 整数文字不再支持尾随 `l`或者 `L` 。
+- 字符串文字不再支持前导 `u`或者 `U` 。
 

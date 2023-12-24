@@ -95,7 +95,7 @@
     <li>
         <a href="./blogs/tools/new-grammars.md">Python 语法更新摘要</a>
         <br>
-        <span>列出与语法有关的更新，并摘取部分栗子罗列出来，版本在 3.17 到 3.12 之间，3.10 以前版本的还会有一点备注，3.7 以前的还在探索（因为实在没用过）。</span>
+        <span>Python 发展比较快，语法更新多而细碎。本文列出与语法有关的更新，并摘取部分示例代码罗列出来，有些会附加一些经验备注，权当备忘。版本在 3.0 到 3.12 之间。</span>
     </li>
     <li>
         <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a>
