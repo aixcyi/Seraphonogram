@@ -12,14 +12,16 @@
 - `APIView` 提供了标头定制、权限检查、限流、请求内容解析定制、响应内容序列化定制、异常处理、接口版本管理等功能。
 - `GenericAPIView` 提供了查询集、对象、序列化器的获取接口，以及分页接口。
 
-以上，所有HTTP请求都会按照HTTP方法转发给 **同名类方法** 来处理。
+以上，所有HTTP请求都会按照HTTP方法转发给 **同名类方法** 来处理。梳理基类的脉络可以看[dispatch线](#dispatch线)。
 
 ### 视图集
 
-通过混入 `ViewSetMixin` 允许一个视图类处理多个同种HTTP请求，比如列表的GET和详情的GET分别转发到自定义的 `.list()` 和 `retrieve()` ，继而衍生出以下视图集类：
+混入了 `ViewSetMixin` 通过其中的 `as_view` 方法允许一个视图类处理多个同种HTTP请求，比如列表的GET和详情的GET分别转发到自定义的 `.list()` 和 `retrieve()` ，继而衍生出以下视图集类：
 
 - `ViewSet` = `ViewSetMixin` + `APIView`
 - `GenericViewSet` = `ViewSetMixin` + `GenericAPIView`
+
+写路由时必须要使用 `as_view` 并且指定HTTP请求与类方法的映射。梳理视图集的脉络可以看[as_view线](#as_view线)。
 
 ### 视图集 Pro Max Plus
 
