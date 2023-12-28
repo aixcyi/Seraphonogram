@@ -89,7 +89,7 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 ## 3.10 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2021.10.04-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2026.10-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2021.10.04-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2026.10-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.10.11-FFD343)
 
 ### 新增 match-case 语句
 
@@ -168,7 +168,7 @@ with (
 
 ## 3.9 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2020.10.05-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2025.10-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2020.10.05-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2025.10-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.9.13-FFD343)
 
 ### 多项集泛型
 
@@ -203,7 +203,7 @@ def greet_all(names: List[str]):
 
 ## 3.8 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2019.10.14-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2024.10-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2019.10.14-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2024.10-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.8.10-FFD343)
 
 ### 赋值表达式
 
@@ -261,7 +261,7 @@ print(f'tomorrow={tomorrow:%Y-%m-%d}')
 
 ## 3.7 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2018.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2023.06.27-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2018.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2023.06.27-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.7.9-FFD343)
 
 ### 类型标注延迟求值
 
@@ -305,7 +305,7 @@ class Meow:
 
 ## 3.6 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2016.12.23-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2021.12.23-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2016.12.23-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2021.12.23-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.6.8-FFD343)
 
 ### f-string
 
@@ -362,7 +362,7 @@ assert 0x03_14_15_92 == 0x03141592
 
 ## 3.5 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2015.09.13-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2020.09.30-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2015.09.13-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2020.09.30-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.5.4-FFD343)
 
 ### 协程 async 和 await 语句
 
@@ -430,13 +430,13 @@ def greeting(name: str) -> str:
 
 ## 3.4 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2014.03.16-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2019.03.18-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2014.03.16-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2019.03.18-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.4.4-FFD343)
 
 无。
 
 ## 3.3 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2012.09.29-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2017.09.29-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2012.09.29-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2017.09.29-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.3.5-FFD343)
 
 ### 委托子生成器
 
@@ -457,19 +457,19 @@ list(generate(5))
 
 ## 3.2 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2011.02.20-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2016.02.20-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2011.02.20-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2016.02.20-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.2.5-FFD343)
 
 无。
 
 ## 3.1 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2009.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2012.04.09-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2009.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2012.04.09-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.1.4-FFD343)
 
 无。
 
 ## 3.0 版本
 
-![Static Badge](https://img.shields.io/badge/First%20Release-2008.12.03-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2009.06.27-darkred)
+![Static Badge](https://img.shields.io/badge/First%20Release-2008.12.03-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2009.06.27-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.0.1-FFD343)
 
 Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，最好参阅 [What's New in Python 3.0](https://docs.python.org/zh-cn/3/whatsnew/3.0.html) 。也欢迎提 issue 告知，或者提 pull-request 协助增补。
 
