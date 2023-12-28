@@ -2,13 +2,16 @@
 
 ![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
 
-挺细碎的，开个帖子备忘。此篇着眼于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
+挺细碎的，开个帖子备忘。此篇着眼于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)，另可参阅[Status of Python versions](https://devguide.python.org/versions/)。
 
 ## 3.12 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2023.10.02-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2028.10-darkred)
+
 ### 泛型标注
 
-> https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax  [**PEP 484**](https://peps.python.org/pep-0484/) 下的泛型类和函数是使用详细语法声明的，这使得类型参数的范围不明确，并且需要显式声明变化。[**PEP 695**](https://peps.python.org/pep-0695/) 引入了一种新的、更紧凑、更明确的方式来创建 [泛型类](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-classes) 和 [函数](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-functions)。
+> https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax  
+> [**PEP 484**](https://peps.python.org/pep-0484/) 下的泛型类和函数是使用详细语法声明的，这使得类型参数的范围不明确，并且需要显式声明变化。[**PEP 695**](https://peps.python.org/pep-0695/) 引入了一种新的、更紧凑、更明确的方式来创建 [泛型类](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-classes) 和 [函数](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-functions)。
 
 ```python
 def max[T](args: Iterable[T]) -> T:
@@ -40,7 +43,7 @@ type Point[T] = tuple[T, T]
 ### f-字符串
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-701-syntactic-formalization-of-f-strings  
-> f-字符串内部的表达式部分现在可以是任何有效的 Python 表达式，包括重用了与标记 f-字符串本身相同的引号的字符串、多行表达式、注释、反斜杠以及 unicode 转义序列。更多细节请参见 [**PEP 701**](https://peps.python.org/pep-0701/)。
+> f-字符串内部的表达式部分现在可以是任何有效的 Python 表达式，包括重用了与标记 f-字符串本身相同的引号的字符串、多行表达式、注释、反斜杠以及 unicode 转义序列。更多细节请参见 [**PEP 701**](https://peps.python.org/pep-0701/) 。
 
 1、允许重复使用引号
 
@@ -77,12 +80,16 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 ## 3.11 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2022.10.24-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2027.10-darkred)
+
 ### 异常组与 `except*`
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except  
 > 程序能够同时引发和处理多个不相关的异常。内置类型 [`ExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#ExceptionGroup) 和 [`BaseExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#BaseExceptionGroup) 使得将异常划分成组并一起引发成为可能，新添加的 [`except*`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except-star) 是对 [`except`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except) 的泛化语法，这一语法能够匹配异常组的子组。
 
 ## 3.10 版本
+
+![Static Badge](https://img.shields.io/badge/First%20Release-2021.10.04-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2026.10-darkred)
 
 ### 新增 match-case 语句
 
@@ -106,7 +113,7 @@ match subject:
 ### 类型联合
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-604-new-type-union-operator  
-> 引入了启用 `X | Y` 语法的类型联合运算符。 这提供了一种表示 '类型 X 或类型 Y' 的相比使用 [`typing.Union`](https://docs.python.org/zh-cn/3/library/typing.html#typing.Union) 更清晰的方式，特别是在类型提示中。
+> 引入了一种用来表示 “类型 X 或类型 Y” 的语法 `X | Y` 的类型联合运算符，比起 [`typing.Union`](https://docs.python.org/zh-cn/3/library/typing.html#typing.Union) 这种声明更清晰，特别是在类型提示中。
 
 ```python
 def square(number: int | float) -> int | float:
@@ -125,7 +132,7 @@ def square(number: Union[int, float]) -> Union[int, float]:
 ### 带圆括号的上下文管理器
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.10.html#parenthesized-context-managers  
-> 支持使用外层圆括号来使多个上下文管理器可以连续多行地书写。 这允许将过长的上下文管理器集能够以与之前 import 语句类似的方式格式化为多行的形式。
+> 支持使用外层圆括号来使多个上下文管理器可以连续多行地书写。这允许将过长的上下文管理器集能够以与之前 import 语句类似的方式格式化为多行的形式。
 
 ```python
 with (
@@ -161,10 +168,12 @@ with (
 
 ## 3.9 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2020.10.05-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2025.10-darkred)
+
 ### 多项集泛型
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections  
-> 在类型标注中现在你可以使用内置多项集类型例如 `list` 和 `dict` 作为通用类型而不必从 `typing` 导入对应的大写形式类型名 (例如 `List` 和 `Dict`)。 标准库中的其他一些类型现在同样也是通用的，例如 `queue.Queue`。
+> 在类型标注中现在你可以使用内置多项集类型例如 `list` 和 `dict` 作为通用类型而不必从 `typing` 导入对应的大写形式类型名（例如 `List` 和 `Dict`）。 标准库中的其他一些类型现在同样也是通用的，例如 `queue.Queue` 。
 
 ```python
 def greet_all(names: list[str]):
@@ -193,6 +202,8 @@ def greet_all(names: List[str]):
 ```
 
 ## 3.8 版本
+
+![Static Badge](https://img.shields.io/badge/First%20Release-2019.10.14-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2024.10-darkred)
 
 ### 赋值表达式
 
@@ -246,9 +257,11 @@ print(f'tomorrow={tomorrow:%Y-%m-%d}')
 ### 允许在 finally 中使用 continue
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes  
-> 在之前版本中 [`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue) 语句不允许在 [`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally) 子句中使用，这是因为具体实现存在一个问题。 在 Python 3.8 中此限制已被取消。
+> 在之前版本中 [`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue) 语句不允许在 [`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally) 子句中使用，这是因为具体实现存在一个问题。在 Python 3.8 中此限制已被取消。
 
 ## 3.7 版本
+
+![Static Badge](https://img.shields.io/badge/First%20Release-2018.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2023.06.27-darkred)
 
 ### 类型标注延迟求值
 
@@ -260,7 +273,7 @@ print(f'tomorrow={tomorrow:%Y-%m-%d}')
 
 意思是可以标注前面的、“未定义” 的符号。
 
-在 3.7 ~ 3.9 需要导入 `__future__` ，3.10 开始才可以正常使用。但实际上可能不会再实现了，所以（截止 3.12）仍然需要导入 `__future__` 。这里还要列出来就是防止知道新增了、但是不知道在高版本还没生效。
+在 3.7 ~ 3.9 需要导入 `__future__` ，3.10 开始才可以正常使用。但实际上可能不会再实现了，所以（截止 3.12）仍然需要导入 `__future__` 。*这里还要列出来就是防止知道新增了、但是不知道在高版本还没生效。*
 
 不过，导入 `__future__` 后实际上就是将标注的类型 **整体** 作为字符串存储，所以
 
@@ -292,12 +305,14 @@ class Meow:
 
 ## 3.6 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2016.12.23-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2021.12.23-darkred)
+
 ### f-string
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-498-formatted-string-literals  
-> [**PEP 498**](https://peps.python.org/pep-0498/) 引入了一种新型的字符串字面值: *f-字符串*，或称 [格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)。
+> [**PEP 498**](https://peps.python.org/pep-0498/) 引入了一种新型的字符串字面值：*f-字符串*，或称[格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)。
 >
-> 格式化字符串字面值带有 `f` 前缀并且类似于 [`str.format()`](https://docs.python.org/zh-cn/3/library/stdtypes.html#str.format) 所接受的格式字符串。 其中包含由花括号包围的替换字段。 替换字段属于表达式，它们会在运行时被求值，然后使用 [`format()`](https://docs.python.org/zh-cn/3/library/functions.html#format) 协议进行格式化
+> 格式化字符串字面值带有 `f` 前缀并且类似于 [`str.format()`](https://docs.python.org/zh-cn/3/library/stdtypes.html#str.format) 所接受的格式字符串。其中包含由花括号包围的替换字段。替换字段属于表达式，它们会在运行时被求值，然后使用 [`format()`](https://docs.python.org/zh-cn/3/library/functions.html#format) 协议进行格式化
 
 添加前缀 `f` 的字符串字面值可以内嵌表达式，来对值进行格式化和无感拼接。
 
@@ -347,10 +362,12 @@ assert 0x03_14_15_92 == 0x03141592
 
 ## 3.5 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2015.09.13-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2020.09.30-darkred)
+
 ### 协程 async 和 await 语句
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-492-coroutines-with-async-and-await-syntax  
-> [**PEP 492**](https://peps.python.org/pep-0492/) 通过添加 [可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable), [协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function), [异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable) 和 [异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager) 极大地改善了 Python 对异步编程的支持。
+> [**PEP 492**](https://peps.python.org/pep-0492/) 通过添加 [可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)、[协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function)、[异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable) 和 [异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager) 极大地改善了 Python 对异步编程的支持。
 >
 > 协程函数是使用新的 [`async def`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async-def) 语法来声明的
 
@@ -359,7 +376,7 @@ async def coro():
     return 'spam'
 ```
 
-> 在协程函数内部，新的 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await) 表达式可用于挂起协程的执行直到其结果可用。 任何对象都可以被 *等待*，只要它通过定义 `__await__()` 方法实现了 [awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable) 协议。
+> 在协程函数内部，新的 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await) 表达式可用于挂起协程的执行直到其结果可用。任何对象都可以被 *等待*，只要它通过定义 `__await__()` 方法实现了 [awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable) 协议。
 
 注意：async 和 await 到 3.7 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
 
@@ -413,9 +430,13 @@ def greeting(name: str) -> str:
 
 ## 3.4 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2014.03.16-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2019.03.18-darkred)
+
 无。
 
 ## 3.3 版本
+
+![Static Badge](https://img.shields.io/badge/First%20Release-2012.09.29-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2017.09.29-darkred)
 
 ### 委托子生成器
 
@@ -436,13 +457,19 @@ list(generate(5))
 
 ## 3.2 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2011.02.20-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2016.02.20-darkred)
+
 无。
 
 ## 3.1 版本
 
+![Static Badge](https://img.shields.io/badge/First%20Release-2009.06.27-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2012.04.09-darkred)
+
 无。
 
 ## 3.0 版本
+
+![Static Badge](https://img.shields.io/badge/First%20Release-2008.12.03-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2009.06.27-darkred)
 
 Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，最好参阅 [What's New in Python 3.0](https://docs.python.org/zh-cn/3/whatsnew/3.0.html) 。也欢迎提 issue 告知，或者提 pull-request 协助增补。
 
