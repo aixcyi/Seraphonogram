@@ -1,8 +1,10 @@
 # 管理 Django Settings
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg)
+![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg) ![Static Badge](https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django)
 
 Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 **修改** 配置。本文仅围绕导入配置初值展开。
+
+以下约定：项目所在目录为 `./` ，Django Settings 所在目录为 `./{service}/` ，项目名称为 service 。
 
 ## 原生方法
 
@@ -87,4 +89,24 @@ DEFAULT_DATABASE=postgresql://meow:meowpassword@127.0.0.1:5432/db_name
 在多环境下，包的做法是只将 ./.env 载入环境变量并由 `Env` 读取，换句话说，相当于一个环境只能拥有一份配置。这一点可以参阅它的[Quick Start](https://django-environ.readthedocs.io/en/latest/quickstart.html#quick-start)。
 
 在这种情况下，不应该将 ./.env 纳入版本控制，而应该编写不同环境的模板，命名为 ./.env.prod 、./env.dev 之类，然后纳入版本管理；而后在新的环境中，开发人员（或运维人员）根据模板重新编写 ./.env ，最后再启动。
+
+## 附注
+
+> 对比 [3.0](https://docs.djangoproject.com/zh-hans/3.0/howto/overriding-templates/) 和 [3.1](https://docs.djangoproject.com/zh-hans/3.1/howto/overriding-templates/) 的《模板覆写指南》。
+
+从 3.1 版本开始，Django 默认 settings 模板的 `BASE_DIR` 的值改为
+
+```python
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+```
+
+旧版本是
+
+```python
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+```
 
