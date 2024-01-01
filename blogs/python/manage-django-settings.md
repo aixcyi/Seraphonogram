@@ -90,7 +90,7 @@ DEFAULT_DATABASE=postgresql://meow:meowpassword@127.0.0.1:5432/db_name
 
 在这种情况下，不应该将 ./.env 纳入版本控制，而应该编写不同环境的模板，命名为 ./.env.prod 、./env.dev 之类，然后纳入版本管理；而后在新的环境中，开发人员（或运维人员）根据模板重新编写 ./.env ，最后再启动。
 
-## 附注
+## 附注1 - BASE_DIR
 
 > 对比 [3.0](https://docs.djangoproject.com/zh-hans/3.0/howto/overriding-templates/) 和 [3.1](https://docs.djangoproject.com/zh-hans/3.1/howto/overriding-templates/) 的《模板覆写指南》。
 
@@ -108,5 +108,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+```
+
+## 附注2 - SECRET_KEY
+
+以下代码可以生成十个不定长的随机 `SECRET_KEY` 用作备选（适用于 Python 3.4+）。
+
+```python
+from base64 import b85encode
+from random import getrandbits
+
+for _ in range(10):
+    soup = getrandbits(64 * 8).to_bytes(64, 'big')
+    key = b85encode(soup).decode('ASCII')
+    print(key)
+```
+
+以下代码可以生成十个定长的随机 `SECRET_KEY` 用作备选（适用于 Python 3.0+）。
+
+```python
+import string
+import random
+
+charset = string.digits + string.ascii_letters + string.punctuation
+for _ in range(10):
+    key = ''.join(random.choice(charset) for _ in range(64))
+    print(key)
 ```
 
