@@ -1,10 +1,9 @@
-<h1 align="center">「羽音」</h1>
+<h1 align="center"><sup>『&nbsp;</sup>羽音<sub>&nbsp;』</sub></h1>
 
 <div align="center">
     <img src="https://img.shields.io/badge/Copyright-砹小翼-blue.svg" alt="版权：砹小翼"/>
     <img src="https://img.shields.io/badge/Departure-2021.03-purple.svg" alt="起航日期：2021年3月"/>
-    <img src="https://img.shields.io/badge/简体中文_|_正體中文_|_English-gray" alt="语言：中文|English"/>
-    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png" alt="遵守知识共享协议" height=20 />
+    <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-darkgreen" alt="许可：CC 署名-非商业性使用-禁止演绎 4.0 国际">
 </div>
 <div align="center">
     <i>风起而翼鸣，且听绝云间那不绝如缕的羽音</i>
@@ -101,5 +100,5 @@
 
 ## 许可／Licenses
 
-- [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans)
+仓库内容默认允许在 [CC 署名-非商业性使用-禁止演绎 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 协议下传播，包括诸如文件、修改历史、[issue](https://github.com/aixcyi/Seraphonogram/issues) 和 [Pull Request](https://github.com/aixcyi/Seraphonogram/pulls) 中的文字、图片、代码等，对于不遵循或不再遵循该协议的内容会在内容中或其它醒目位置另行约定。
 
