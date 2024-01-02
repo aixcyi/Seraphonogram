@@ -4,8 +4,7 @@
 /.idea
 /.vscode
 
-# Chores
-/.deprecated
-
 # Deprecated Directory
+/.deprecated
+/deprecated
 /demos
