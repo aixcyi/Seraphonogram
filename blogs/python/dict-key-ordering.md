@@ -1,6 +1,6 @@
 # 字典中键的顺序
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg)
 
 ## dict
 

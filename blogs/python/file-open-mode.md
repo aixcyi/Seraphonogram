@@ -1,6 +1,6 @@
 # 文件打开模式
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2021年10月21日](https://img.shields.io/badge/Release-2021.10.21-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2021年10月21日](https://img.shields.io/badge/Release-2021.10.21-purple.svg)
 
 参见内置函数 [`open`](https://docs.python.org/zh-cn/3/library/functions.html#open) 。下表改编自 [Stack Overflow](https://stackoverflow.com/a/30931305) 和 [Stack Overflow](https://stackoverflow.com/a/67558256) 两个回答。
 

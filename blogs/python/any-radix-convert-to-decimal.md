@@ -1,6 +1,6 @@
 # 实现任意进制转十进制
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2022年8月17日](https://img.shields.io/badge/Release-2022.08.17-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2022年8月17日](https://img.shields.io/badge/Release-2022.08.17-purple.svg)
 
 仅用[内置函数](https://docs.python.org/zh-cn/3/library/functions.html)及列表推导式完成任意进制（文本）转到十进制（整数）。这里先分析“从十六进制到十进制”，然后推广到“任意进制到十进制”。
 

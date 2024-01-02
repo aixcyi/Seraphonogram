@@ -1,9 +1,9 @@
 <h1 align="center"><sup>『&nbsp;</sup>羽音<sub>&nbsp;』</sub></h1>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/Copyright-砹小翼-blue.svg" alt="版权：砹小翼"/>
-    <img src="https://img.shields.io/badge/Departure-2021.03-purple.svg" alt="起航日期：2021年3月"/>
-    <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-darkgreen" alt="许可：CC 署名-非商业性使用-禁止演绎 4.0 国际">
+    <img src="https://img.shields.io/badge/Copyright-砹小翼-blue.svg" alt="著作权归砹小翼所有"/>
+    <img src="https://img.shields.io/badge/Departure-2021.03-purple.svg" alt="起航于2021年3月"/>
+    <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-darkgreen" alt="在 CC 署名-非商业性使用-禁止演绎 4.0 协议下许可">
 </div>
 <div align="center">
     <i>风起而翼鸣，且听绝云间那不绝如缕的羽音</i>
@@ -98,7 +98,11 @@
     </li>
 </ol>
 
+## 贡献／Contributing
+
+见[贡献指南](./CONTRIBUTING.md)。
+
 ## 许可／Licenses
 
-仓库内容默认允许在 [CC 署名-非商业性使用-禁止演绎 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 协议下传播，包括诸如文件、修改历史、[issue](https://github.com/aixcyi/Seraphonogram/issues) 和 [Pull Request](https://github.com/aixcyi/Seraphonogram/pulls) 中的文字、图片、代码等，对于不遵循或不再遵循该协议的内容会在内容中或其它醒目位置另行约定。
+仓库中的内容默认允许在 [CC 署名-非商业性使用-禁止演绎 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 协议下传播，包括文字、图片、代码等，对于不遵循或不再遵循该协议的内容会在内容里或仓库中的其它位置另行约定。
 

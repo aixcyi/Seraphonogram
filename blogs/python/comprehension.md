@@ -1,6 +1,6 @@
 # 推导式
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2021年11月5日](https://img.shields.io/badge/Release-2021.11.05-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2021年11月5日](https://img.shields.io/badge/Release-2021.11.05-purple.svg)
 
 推导式又叫生成式，是一种用于生成序列、集合、映射的语句。
 

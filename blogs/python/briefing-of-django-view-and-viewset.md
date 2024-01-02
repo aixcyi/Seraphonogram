@@ -1,6 +1,6 @@
 # 浅析基于 Django 衍生的类视图
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年8月10日](https://img.shields.io/badge/Release-2023.08.10-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年8月10日](https://img.shields.io/badge/Release-2023.08.10-purple.svg)
 
 类视图是一个很重要的构件，在 Django 中占比远大于函数视图，而像 DRF 这些衍生框架则完全基于类视图，没有任何对函数视图的衍生。
 

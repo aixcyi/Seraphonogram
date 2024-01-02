@@ -1,6 +1,6 @@
 # 直接运行 Python 脚本
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年9月5日](https://img.shields.io/badge/Release-2023.09.05-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月5日](https://img.shields.io/badge/Release-2023.09.05-purple.svg)
 
 3.3 版本开始的 Python Windows 安装包中附带了一个文件名为 py.exe 的程序，它可以将调用转发到本地安装的最新版本的 Python，也可以手动指定使用特定版本进行调用。
 

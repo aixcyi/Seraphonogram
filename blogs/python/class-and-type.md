@@ -1,6 +1,6 @@
 # 类与类型
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月22日](https://img.shields.io/badge/Release-2023.12.22-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月22日](https://img.shields.io/badge/Release-2023.12.22-purple.svg)
 
 在万物皆对象的理念下，Python 的类实际上也是一个对象，或者叫实例，它是类型特殊实例化产生的东西，听起来就是类型 -> 类 -> 对象（type -> class -> object）。
 

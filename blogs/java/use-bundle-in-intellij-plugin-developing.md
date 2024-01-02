@@ -1,6 +1,6 @@
 # 适配 bundle
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年9月6日](https://img.shields.io/badge/Release-2023.09.06-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月6日](https://img.shields.io/badge/Release-2023.09.06-purple.svg)
 
 bundle 是 Java 自带的提供本地化翻译的功能，因为出现时间比 intellij 早得多得多，所以如果需要让插件语言跟随用户安装的语言包插件来切换，就要进行一定的适配。另见[《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)。
 

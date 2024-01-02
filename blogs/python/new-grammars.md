@@ -1,6 +1,6 @@
 # 语法更新摘要
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
 
 挺细碎的，开个帖子备忘。此篇着眼于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)，另可参阅[Status of Python versions](https://devguide.python.org/versions/)。
 

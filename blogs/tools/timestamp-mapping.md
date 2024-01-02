@@ -1,6 +1,6 @@
 # 时间戳对照表
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年9月7日](https://img.shields.io/badge/Release-2023.09.07-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月7日](https://img.shields.io/badge/Release-2023.09.07-purple.svg)
 
 时间戳，是一类以 **1970年1月1日** 为起点（epoch）的，按秒、毫秒或天为单位计数的整数或小数，本质上是时间差值。
 

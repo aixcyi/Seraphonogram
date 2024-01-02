@@ -1,6 +1,6 @@
 # 管理 Django Settings
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg) ![Static Badge](https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg) ![Static Badge](https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django)
 
 Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 **修改** 配置。本文仅围绕导入配置初值展开。
 

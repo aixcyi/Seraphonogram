@@ -1,6 +1,6 @@
 # 日期格式化
 
-![作者：砹小翼](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![发布时间：2023年11月14日](https://img.shields.io/badge/Release-2023.11.14-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年11月14日](https://img.shields.io/badge/Release-2023.11.14-purple.svg)
 
 ## 复现
 
