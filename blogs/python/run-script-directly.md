@@ -1,123 +1,87 @@
 # 直接运行 Python 脚本
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月5日](https://img.shields.io/badge/Release-2023.09.05-purple.svg)
+![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月5日](https://img.shields.io/badge/Release-2023.09.05-purple.svg) ![修订于2024年1月3日](https://img.shields.io/badge/Revision-2024.01.03-orange.svg)
 
-3.3 版本开始的 Python Windows 安装包中附带了一个文件名为 py.exe 的程序，它可以将调用转发到本地安装的最新版本的 Python，也可以手动指定使用特定版本进行调用。
+## 在 Ubuntu 下
 
-更重要的是，这个 Python 启动器可以识别 Shebang 行并将调用转向指定的解释器。
+### 1、准备
 
-更多玩法见[适用于 Windows 的 Python 启动器](https://docs.python.org/zh-cn/3/using/windows.html#python-launcher-for-windows)。
+假设 Python 3 安装在 `/usr/bin/python` ，用户名、当前所在目录、要操作的脚本名称如下：
 
-## 命令行执行
-
-### 执行
-
-对于需要用全局解释器运行的脚本，可以在首行添加
-
-```python
-#!python3.x
+```shell
+[kitten@localhost ~] touch meow.py
+[kitten@localhost ~] whereis python
+python: /usr/bin/python
 ```
 
-即可调用具体版本的Python执行，比如 test.py 内容如下：
+然后通过 `/usr/bin/python -V` 确认版本号是不是你需要调用的。
 
-```python
-#!python3.7
-import sys
+### 2、修改脚本文件
 
-print(sys.executable)
-```
+在首行添加 `#!/usr/bin/python` 表示通过绝对路径查找 Python，  
+添加 `#!/usr/bin/env python3` 表示从环境变量查找。
 
-在命令行中执行
+### 3、添加执行权限
 
-```cmd
-py test.py
-```
+用 `chmod u+x meow.py` 添加当前用户的执行权限；  
+用 `chmod u+x *.py` 为当前目录下所有脚本加权限。
 
-或者
+### 4、尾声
 
-```cmd
-py.exe test.py
-```
+（此时已经可以输入 `./meow.py` 直接运行）
 
-会输出
+如果只是临时使用，可以通过 `alias meow=/home/kitten/meow.py` 设置别名；  
+如果只是永久使用，可以通过 `ln -s meow.py /usr/local/bin/meow` 创建符号链接。
 
-```
-C:\Program Files\Python37\python.exe
-```
+（此时已经可以输入 `meow` 直接运行）
 
-另外，对于需要用虚拟环境中的解释器运行的脚本，可以在首行添加指向具体解释器的地址，比如
+## 在 Windows 下
 
-```python
-#!./venv/Scripts/python
-import sys
+Python 3.3+ Windows 安装包附带了一个叫 py.exe 的程序，可以 **自动** 将调用转发到本地安装的最新版本的 Python，也可以在 **命令行** 手动指定使用特定版本进行调用，还可以识别 **Shebang** 行并将调用转向指定的解释器。详见[适用于 Windows 的 Python 启动器](https://docs.python.org/zh-cn/3/using/windows.html#python-launcher-for-windows)。
 
-print(sys.executable)
-```
+### 1、准备
 
-那么即使不激活虚拟环境、直接执行
+看下 py.exe 在哪个地方，如果都没有，那么可能需要重新安装 Python 。
 
-```cmd
-py test.py
-```
+- `C:\Windows\py.exe`
+- `C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe`
 
-也可以转向虚拟环境中的解释器：
+再检查一下系统环境变量 `PATH` 里看看有没有二者其一，都没有就按需添加一个。
 
-```
-C:\Code\Mine\zeraora-pypi\venv\Scripts\python.exe
-```
+### 2、修改脚本文件
 
-如果需要省略 py.exe 而直接调用 test.py ，那么配置方法与[双击执行](#双击执行)一节相同。
+在文件首行添加具体的版本号（本地要先有），比如 `#!python3.7` ；  
+也可以直接指向绝对路径，比如 `#!C:\Program Files\Python37\python.exe` ；  
+虚拟环境中可以指向相对当前文件的路径，比如 `#!./venv/Scripts/python.exe` 可以不激活虚拟环境；  
+如果要跟 Linux 兼容，那么需要 `#!/usr/bin/env python3` 。
 
-### 配置
+### 3、配置全局调用
 
-正确安装 3.3 版本或更新的 Python 之后，py.exe 应该会在
+首先需要确保可以全局调用 `py` 或 `py.exe` ，  
+然后将脚本目录追加到系统环境变量 `PATH` 中，  
+或者将脚本放到 `PATH` 的其中一个目录里，比如 `C:\Windows` 。
 
-```
-C:\Windows\py.exe
-```
+（此时可以在命令行输入 `meow.py` 直接运行）
 
-或者
+在命令行直接输入 `meow` 来调用，跟[双击运行](#4、配置双击运行)的配置方法是一样的。见下方。
 
-```
-C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe
-```
+### 4、配置双击运行
 
-两个地方。如果没有，那么大概需要重新安装 Python；  
-如果有的话，检查一下 **系统环境变量** 看看是否有后者的路径。
-
-## 双击执行
-
-双击执行的实现是需要在[命令行执行](#命令行执行)的基础上配置的，包括在脚本首行添加（虚拟）解释器以及确保 py.exe 可以在命令行中调用。
-
-在 Windows 实现这一点需要修改注册表。使用以下命令可以查看相关注册表条目：
+在命令行查询注册表，看看是不是已经配置好：
 
 ```cmd
 reg query "HKCR\.py" /ve
 reg query "HKCR\py_auto_file\shell\open\command" /ve
 ```
 
-当前者的值是 `py_auto_file` 、后者的值是 py.exe 的命令行调用时即可实现。
-
-若不是，那么可以使用以下命令进行修改（需要管理员权限）（修改前注意备份数据）：
+然后修改注册表：（需要管理员权限）（修改前注意备份数据）
 
 ```cmd
 reg add "HKCR\.py" /ve /d "py_auto_file"
 reg add "HKCR\py_auto_file\shell\open\command" /ve /d "\"C:\Windows\py.exe\" \"%1\" %*"
 ```
 
-若 py.exe 不在
-
-```
-C:\Windows\py.exe
-```
-
-而是在
-
-```
-C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe
-```
-
-那么修改命令是：
+如果 `py.exe` 的全局调用对应的是 `C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe` ，那么上面的修改要换成
 
 ```cmd
 reg add "HKCR\.py" /ve /d "py_auto_file"
