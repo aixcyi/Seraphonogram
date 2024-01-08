@@ -13,6 +13,41 @@
 
 ## 目录／Catalog
 
+### 对照表
+
+<ol>
+    <li>
+        <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
+        <br>
+        <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
+    </li>
+</ol>
+
+### 问题集
+
+<ol>
+    <li>
+        <a href="./blogs/problems/sum-of-consecutive-natural-numbers.md">连续自然数之和</a>&nbsp;<sup>2020.04.06</sup>
+        <br>
+        <span>对一个给定的自然数M，求出所有的连续的自然数段（连续个数大于1），这些连续的自然数段中的全部数之和为M。实际是公差为1的等差数列求和，解法是将数列长度作为遍历变量，动态求出数列的第一个数和最后一个数，再使用数列求和公式求出总和，并与输入进行比较，决定是否输出。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/integer-maximum-splicing.md">多个整数连接为最大整数问题</a>&nbsp;<sup>2020.03.13</sup>
+        <br>
+        <span>有n个正整数（n<=20），将它们对应的字符串连接成一排，组成一个最大的多位整数。文中对在 Java 中的作答作了分析。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/noip-380.md">NOIP 380：校门外的树</a>&nbsp;<sup>2020.03.12</sup>
+        <br>
+        <span>分析了题目中迷惑了我的部分，并描述了“将所有区间抽象为起点和终点，叠加到一条线段上”，从而使运算时间更少的方法。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/noip-380.md">Excel地址转换</a>&nbsp;<sup>2020.01.20</sup>
+        <br>
+        <span>将一个整数转换为Excel的列号，整数范围为 [1, 2147483647]。Excel的列编号规则是用 A~Z 分别表示 1~26，超出后进一位，转换算法属于进制转换的变种。</span>
+    </li>
+</ol>
+
 ### Python
 
 <ol>
@@ -76,6 +111,16 @@
         <br>
         <span>以表格形式展示文件打开模式 <code>r</code> 、<code>w</code> 、<code>a</code> 、<code>x</code> 与 <code>+</code> 、<code>t</code> 、<code>b</code> 搭配的行为与含义。</span>
     </li>
+    <li>
+        <a href="./blogs/python/deepcopy-and-multiplication.md">使用乘号复制变量引起的问题</a>&nbsp;<sup>2020.12.20</sup>
+        <br>
+        <span>有N个月的盈亏数据（每个月要么盈利要么亏损），按月份统计盈亏（分开统计是为了看到亏损了多少），使用字典列表 <code>List[Dict]</code> 存储，列表下标就是月份，发现结果的每个月的数据都相等。</span>
+    </li>
+    <li>
+        <a href="./blogs/python/deepcopy-and-multiplication.md">字典添加二级键值的问题</a>&nbsp;<sup>2020.12.19</sup>
+        <br>
+        <span>Python 的字典允许在 <b>键</b> 不存在的情况下使用下标语法进行插入，但这种情况仅对最后一级生效，换言之就是不能一次性新建多个层级。这里描述了这个问题，并给出了比较省事的解决方法。</span>
+    </li>
 </ol>
 
 ### Java
@@ -86,15 +131,10 @@
         <br>
         <span>展示以语言包的语言为主、系统语言为辅的 bundle 语音查找以及相应的 i18n 工具类代码。</span>
     </li>
-</ol>
-
-### 杂项
-
-<ol>
     <li>
-        <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
+        <a href="./blogs/java/calculation-precision.md">运算精度</a>&nbsp;<sup>2019.11.20</sup>
         <br>
-        <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
+        <span>Java的 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 的最低运算精度是 <code>int</code> ，有些情况可能会导致上溢或下溢进而偏离预期。</span>
     </li>
 </ol>
 
@@ -102,7 +142,7 @@
 
 见[贡献指南](./CONTRIBUTING.md)。
 
-## 许可／Licenses
+## 许可／License
 
 仓库中的内容默认允许在 [CC 署名-非商业性使用-禁止演绎 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 协议下传播，包括文字、图片、代码等，对于不遵循或不再遵循该协议的内容会在内容里或仓库中的其它位置另行约定。
 
