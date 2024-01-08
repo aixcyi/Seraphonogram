@@ -42,7 +42,7 @@
         <span>分析了题目中迷惑了我的部分，并描述了“将所有区间抽象为起点和终点，叠加到一条线段上”，从而使运算时间更少的方法。</span>
     </li>
     <li>
-        <a href="./blogs/problems/noip-380.md">Excel地址转换</a>&nbsp;<sup>2020.01.20</sup>
+        <a href="./blogs/problems/lanqiao-2012-gzgz-java-finals-4.md">Excel地址转换</a>&nbsp;<sup>2020.01.20</sup>
         <br>
         <span>将一个整数转换为Excel的列号，整数范围为 [1, 2147483647]。Excel的列编号规则是用 A~Z 分别表示 1~26，超出后进一位，转换算法属于进制转换的变种。</span>
     </li>
