@@ -27,6 +27,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/problems/leetcode-20-valid-parentheses.md">LeetCode-20：有效的括号</a>&nbsp;<sup>2024.01.10</sup>
+        <br>
+        <span>判断由纯括号组成的表达式是否正确。</span>
+    </li>
+    <li>
         <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode-12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
         <br>
         <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
