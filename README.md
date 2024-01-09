@@ -27,12 +27,12 @@
 
 <ol>
     <li>
-        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
+        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode-12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
         <br>
         <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
     </li>
     <li>
-        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
+        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">LeetCode-13：罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
         <br>
         <span>将诸如 <code>XII</code>、<code>IV</code> 的罗马数字转换为整数。输入的罗马数字的取值范围是 <code>[1, 3999]</code>。</span>
     </li>
