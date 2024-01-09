@@ -27,6 +27,16 @@
 
 <ol>
     <li>
+        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
+        <br>
+        <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
+        <br>
+        <span>将诸如 <code>XII</code>、<code>IV</code> 的罗马数字转换为整数。输入的罗马数字的取值范围是 <code>[1, 3999]</code>。</span>
+    </li>
+    <li>
         <a href="./blogs/problems/sum-of-consecutive-natural-numbers.md">连续自然数之和</a>&nbsp;<sup>2020.04.06</sup>
         <br>
         <span>对一个给定的自然数M，求出所有的连续的自然数段（连续个数大于1），这些连续的自然数段中的全部数之和为M。实际是公差为1的等差数列求和，解法是将数列长度作为遍历变量，动态求出数列的第一个数和最后一个数，再使用数列求和公式求出总和，并与输入进行比较，决定是否输出。</span>
