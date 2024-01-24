@@ -13,15 +13,7 @@
 
 ## 目录／Catalog
 
-### 对照表
-
-<ol>
-    <li>
-        <a href="./blogs/tools/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
-        <br>
-        <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
-    </li>
-</ol>
+[时间戳对照表](./blogs/chores/timestamp-mapping.md)｜[Python 语法更新摘要](./blogs/python/new-grammars.md)
 
 ### 问题集
 
@@ -150,6 +142,16 @@
         <a href="./blogs/java/calculation-precision.md">运算精度</a>&nbsp;<sup>2019.11.20</sup>
         <br>
         <span>Java的 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 的最低运算精度是 <code>int</code> ，有些情况可能会导致上溢或下溢进而偏离预期。</span>
+    </li>
+</ol>
+
+### 杂项
+
+<ol>
+    <li>
+        <a href="./blogs/chores/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
+        <br>
+        <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
     </li>
 </ol>
 
