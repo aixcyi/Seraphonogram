@@ -149,6 +149,11 @@
 
 <ol>
     <li>
+        <a href="blogs/chores/wechat-pay-barcode-response.md">微信扫码支付的响应</a>&nbsp;<sup>2024.01.24</sup>
+        <br>
+        <span>本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。</span>
+    </li>
+    <li>
         <a href="./blogs/chores/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
         <br>
         <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
