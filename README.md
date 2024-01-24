@@ -149,7 +149,12 @@
 
 <ol>
     <li>
-        <a href="blogs/chores/wechat-pay-barcode-response.md">微信扫码支付的响应</a>&nbsp;<sup>2024.01.24</sup>
+        <a href="./blogs/chores/config-django-console-in-pycharm.md">配置 Django 控制台</a>&nbsp;<sup>2024.01.24</sup>
+        <br>
+        <span>在 PyCharm 社区版中将 Python 控制台配置为 Django 控制台。当然，这个配置仅针对当前项目，不会影响其它项目。</span>
+    </li>
+    <li>
+        <a href="./blogs/chores/wechat-pay-barcode-response.md">微信扫码支付的响应</a>&nbsp;<sup>2024.01.24</sup>
         <br>
         <span>本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。</span>
     </li>
