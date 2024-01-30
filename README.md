@@ -19,17 +19,17 @@
 
 <ol>
     <li>
-        <a href="./blogs/problems/leetcode-20-valid-parentheses.md">LeetCode-20：有效的括号</a>&nbsp;<sup>2024.01.10</sup>
+        <a href="./blogs/problems/leetcode-20-valid-parentheses.md">LeetCode 20：有效的括号</a>&nbsp;<sup>2024.01.10</sup>
         <br>
         <span>判断由纯括号组成的表达式是否正确。</span>
     </li>
     <li>
-        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode-12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
+        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode 12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
         <br>
         <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
     </li>
     <li>
-        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">LeetCode-13：罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
+        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">LeetCode 13：罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
         <br>
         <span>将诸如 <code>XII</code>、<code>IV</code> 的罗马数字转换为整数。输入的罗马数字的取值范围是 <code>[1, 3999]</code>。</span>
     </li>
@@ -49,7 +49,7 @@
         <span>分析了题目中迷惑了我的部分，并描述了“将所有区间抽象为起点和终点，叠加到一条线段上”，从而使运算时间更少的方法。</span>
     </li>
     <li>
-        <a href="./blogs/problems/lanqiao-2012-gzgz-java-finals-4.md">Excel地址转换</a>&nbsp;<sup>2020.01.20</sup>
+        <a href="./blogs/problems/lanqiao-2012-gzgz-java-finals-4.md">Excel 地址转换</a>&nbsp;<sup>2020.01.20</sup>
         <br>
         <span>将一个整数转换为Excel的列号，整数范围为 [1, 2147483647]。Excel的列编号规则是用 A~Z 分别表示 1~26，超出后进一位，转换算法属于进制转换的变种。</span>
     </li>
@@ -58,6 +58,11 @@
 ### Python
 
 <ol>
+    <li>
+        <a href="./blogs/python/parameter-default-value.md">默认值导致抽象泄漏</a>&nbsp;<sup>2024.01.30</sup>
+        <br>
+        <span>在一些情况下，函数参数的默认值与抽象的约定不一致，需要调用者参阅源码了解编写场景，导致抽象泄漏。</span>
+    </li>
     <li>
         <a href="./blogs/python/new-grammars.md">Python 语法更新摘要</a>&nbsp;<sup>2023.12.23</sup>
         <br>
