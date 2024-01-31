@@ -59,6 +59,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/python/annotating-set-and-map.md">正确标注集合与映射</a>&nbsp;<sup>2024.01.31</sup>
+        <br>
+        <span>列出列表（list）、元组（tuple）、集合（set）、字典（dict）等常见集合与映射正确的类型标注，并且贴出来源文档和 PEP。</span>
+    </li>
+    <li>
         <a href="./blogs/python/parameter-default-value.md">默认值导致抽象泄漏</a>&nbsp;<sup>2024.01.30</sup>
         <br>
         <span>在一些情况下，函数参数的默认值与抽象的约定不一致，需要调用者参阅源码了解编写场景，导致抽象泄漏。</span>
