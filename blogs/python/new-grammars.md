@@ -2,7 +2,15 @@
 
 ![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
 
-挺细碎的，开个帖子备忘。此篇着眼于语法上的更新，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)，另可参阅[Status of Python versions](https://devguide.python.org/versions/)。
+挺细碎的，开个帖子备忘，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。版本状态可参阅 [Status of Python Versions](https://devguide.python.org/versions/)。
+
+此篇着眼于 3.0 及以后 Python 语法上的更新，大概有：
+
+- 语句和关键字：`match`-`case`、`except*`、`continue`、`with()`，`async` 和 `await`、`type`、`print` 等；
+- 类型标注：泛型、类型联合、多项集、延迟求值、变量标注等；
+- 其它零散的变动。
+
+另外，文中使用徽章记录每个版本的相关情况：绿色的是首发日期，红色的是终止支持的日期，黄色的是指有二进制执行文件的最后一个子版本号。
 
 ## 3.12 版本
 
@@ -12,18 +20,19 @@
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax  
 > [**PEP 484**](https://peps.python.org/pep-0484/) 下的泛型类和函数是使用详细语法声明的，这使得类型参数的范围不明确，并且需要显式声明变化。[**PEP 695**](https://peps.python.org/pep-0695/) 引入了一种新的、更紧凑、更明确的方式来创建 [泛型类](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-classes) 和 [函数](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#generic-functions)。
-
-```python
-def max[T](args: Iterable[T]) -> T:
-    ...
-
-class list[T]:
-    def __getitem__(self, index: int, /) -> T:
-        ...
-
-    def append(self, element: T) -> None:
-        ...
-```
+> 
+> ```python
+> def max[T](args: Iterable[T]) -> T:
+>        ...
+> 
+> class list[T]:
+> 
+>        def __getitem__(self, index: int, /) -> T:
+>            ...
+> 
+>        def append(self, element: T) -> None:
+>            ...
+> ```
 
 ### 新增 type 语句
 
@@ -461,7 +470,7 @@ print(*[1], *[2], 3, *[4, 5])
 ### 类型标注
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-484-type-hints  
-> 该版本通过 [**PEP 484**](https://peps.python.org/pep-0484/) 引入了一个暂定的 [typing](https://docs.python.org/zh-cn/3.5/library/typing.html) 模块提供类型标注的标准定义和工具以及一些对于注释不可用的情况的约定。
+> 该版本通过 [**PEP 484**](https://peps.python.org/pep-0484/) 引入了一个暂定的 [typing](https://docs.python.org/zh-cn/3.5/library/typing.html) 模块提供类型标注的 **标准定义** 和工具以及一些对于注释不可用的情况的约定。
 
 详情请参阅[对象注解属性的最佳实践](https://docs.python.org/zh-cn/3/howto/annotations.html)。类型标注从始自终都是一个被动的、人工的类型检查系统，就算标注了错误的类型，代码不会受到任何影响且仍然可以正确运行，它的作用是为类型检查器提供分析。
 
@@ -536,7 +545,9 @@ Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我
 对参数的标注：
 
 ```python
-def foo(a: expression, b: expression = 5):
+def foo(a: expression, b: expression = 5, c=None):
+    # 仅有默认值的话，等号两边建议不写空格；
+    # 带标注的参数的默认值，等号两边建议各留一个空格。
     ...
 
 def foo(*args: expression, **kwargs: expression):
@@ -559,15 +570,16 @@ def sum() -> expression:
 现在元类的用法是：
 
 ```python
-class C(metaclass=M):
+class MyClass(Parent, metaclass=MyMetaClass):
+    # 如果有父类，需要写在前面，跟函数传参一样
     ...
 ```
 
-之前的 `__metaclass__` 将不再受支持。
+之前的写法不再支持：
 
 ```python
-class C:
-    __metaclass__ = M
+class MyClass:
+    __metaclass__ = MyMetaClass
     ...
 ```
 
@@ -575,7 +587,7 @@ class C:
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.0.html#changed-syntax
 
-调整了推导式的解析，像
+调整了推导式的解析，像下面这个示例
 
 ```python
 [... for var in item1, item2, ...]
@@ -615,6 +627,6 @@ def foo(a, b_and_c):
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.0.html#removed-syntax
 
-- 整数文字不再支持尾随 `l`或者 `L` 。
-- 字符串文字不再支持前导 `u`或者 `U` 。
+- 整数文字不再支持尾随 `l` 或者 `L` 。
+- 字符串文字不再支持前导 `u` 或者 `U` 。
 
