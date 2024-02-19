@@ -23,15 +23,15 @@
 > 
 > ```python
 > def max[T](args: Iterable[T]) -> T:
->        ...
+>     ...
 > 
 > class list[T]:
 > 
->        def __getitem__(self, index: int, /) -> T:
->            ...
+>     def __getitem__(self, index: int, /) -> T:
+>         ...
 > 
->        def append(self, element: T) -> None:
->            ...
+>     def append(self, element: T) -> None:
+>         ...
 > ```
 
 ### 新增 type 语句
