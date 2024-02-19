@@ -237,7 +237,7 @@ def enumerate(_depth, /, verify=False, raise_exception=False, **kvs):
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging
 
-允许用 `f'{expr=}'` 形式的 [f-string](https://docs.python.org/zh-cn/3/glossary.html#term-f-string) 为表达式的求值结果添加说明。
+允许用 `f'{expr=}'` 形式的 [f-string](https://docs.python.org/zh-cn/3/glossary.html#term-f-string) 为表达式的求值结果添加因变量名称。
 
 ```python
 from datetime import date, timedelta
@@ -271,9 +271,17 @@ print(f'tomorrow={tomorrow:%Y-%m-%d}')
 > 3.11 表示可能不再实现：  
 > https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-563-may-not-be-the-future
 
-意思是可以标注前面的、“未定义” 的符号。
+意思是可以标注前面的、未定义的符号。
 
-在 3.7 ~ 3.9 需要导入 `__future__` ，3.10 开始才可以正常使用。但实际上可能不会再实现了，所以（截止 3.12）仍然需要导入 `__future__` 。*这里还要列出来就是防止知道新增了、但是不知道在高版本还没生效。*
+下面的例子中，类 `Meow` 在 `-> Meow` 这里还没完成全部定义，属于未定义符号，正常来说是不能引用的，而这个 feature 就是允许这样子引用、不必加引号。
+
+```python
+class Meow:
+    def copy(self) -> Meow:
+        pass
+```
+
+这个 feature 还未实现，在 3.7 ~ 3.9 需要导入 `__future__` ，3.10 开始才可以使用。然而可能不会再实现了，所以（截止 3.12）仍然需要导入 `__future__` 。*这里还要列出来就是防止知道新增了、但是不知道在高版本还没生效。*
 
 不过，导入 `__future__` 后实际上就是将标注的类型 **整体** 作为字符串存储，所以
 
@@ -285,7 +293,7 @@ class Meow:
         pass
 ```
 
-就等同于：
+其实就等价于：
 
 ```python
 class Meow:
@@ -316,10 +324,10 @@ class Meow:
 
 添加前缀 `f` 的字符串字面值可以内嵌表达式，来对值进行格式化和无感拼接。
 
-- `f'{obj!s}` 相当于 `str(obj)` ；
-- `f'{obj!r}` 相当于 `repr(obj)` ；
-- `f'{qty:x}`  相当于 `'{x}'.format(qty)` ，参见[格式规格迷你语言](https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language)；
-- `f'{now:%H:%M:%S}'` 相当于 `now.strftime('%H:%M:%S')` 。
+- `f"{obj!s}"` 相当于 `str(obj)` ；
+- `f"{obj!r}"` 相当于 `repr(obj)` ；
+- `f"{qty:x}"`  相当于 `"{x}".format(qty)` ，参见[格式规格迷你语言](https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language)；
+- `f"{now:%H:%M:%S}"` 相当于 `now.strftime("%H:%M:%S")` 。
 
 ```python
 from datetime import date
@@ -332,22 +340,58 @@ print(f'[{level}] [{today:%Y-%m-%d}]: {message}')
 # [DEBUG] [2023-12-24]: 喵喵喵喵喵喵喵喵喵
 ```
 
+注意：嵌套的表达式内，字符串使用的引号不能与表达式外面的字符串相同。3.12 开始没有这个限制。
+
 ### 变量标注
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-526-syntax-for-variable-annotations  
 > [**PEP 484**](https://peps.python.org/pep-0484/) 引入了函数形参类型标注（即类型提示）的标准。而现在，[**PEP 526**](https://peps.python.org/pep-0526/) 添加了标注变量类型的语法，包括类变量和实例变量。
 
-可能需要参见 3.6 版本的 [typing](https://docs.python.org/zh-cn/3.6/library/typing.html) 模块。
+也就是可以对 **当前** 作用域的变量进行类型标注。标注后，只要还没有赋值，就无法使用这个变量，不过可以在全局或类作用域的 `__annotations__` 变量中检测到，而函数内的变量可以通过 [`Signature`](https://docs.python.org/zh-cn/3/library/inspect.html#introspecting-callables-with-the-signature-object) 检测。详见 Python 3.6 的 [typing](https://docs.python.org/zh-cn/3.6/library/typing.html) 模块。
+
+全局作用域：
 
 ```python
-from typing import List, Dict
+from typing import List
 
 primes: List[int] = []
+factories: Set[int]     # 允许标注但不赋值
+print(__annotations__)  # {'primes': typing.List[int], 'factories': typing.Set[int]}
+print(factories)
+# NameError: name 'factories' is not defined
+```
 
-captain: str  # Note: no initial value!
+函数作用域：
 
-class Starship:
-    stats: Dict[str, int] = {}
+```python
+def calc(a: int, b: int):
+    result: int = a + b
+    summary: float
+    print(calc.__annotations__)  # {'a': <class 'int'>, 'b': <class 'int'>}
+    print(summary)
+    return result
+
+meow(1, 2)
+# UnboundLocalError: cannot access local variable 'summary' where it is not associated with a value
+```
+
+类作用域：
+
+```python
+from datetime import date, timedelta
+
+class Cat:
+    dead: bool
+    birth: date = date(1935, 11, 1)
+
+    def __init__(self, today: date):
+        self.age: int = (today - self.birth) // timedelta(days=365)
+        self.height: float
+        print(self.__annotations__)  # {'dead': <class 'bool'>, 'birth': <class 'datetime.date'>}
+        print(self.dead)
+
+Cat(date.today())
+# AttributeError: 'Cat' object has no attribute 'dead'
 ```
 
 ### 数字下划线
