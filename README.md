@@ -59,6 +59,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/python/dot-token-generation.md">DOT 令牌相关机制</a>&nbsp;<sup>2024.02.20</sup>
+        <br>
+        <span>正常来说应该继承 <code>OAuthLibMixin</code> 写一个类视图，调用 <code>create_token_response()</code> 来生成和刷新令牌、调用 <code>create_revocation_response()</code> 来撤销令牌，但如果要手动实现某些过程，可以参考此篇帖子的伪代码。</span>
+    </li>
+    <li>
         <a href="./blogs/python/annotating-set-and-map.md">正确标注集合与映射</a>&nbsp;<sup>2024.01.31</sup>
         <br>
         <span>列出列表（list）、元组（tuple）、集合（set）、字典（dict）等常见集合与映射正确的类型标注，并且贴出来源文档和 PEP。</span>
