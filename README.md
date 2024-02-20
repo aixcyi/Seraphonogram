@@ -15,46 +15,6 @@
 
 [时间戳对照表](./blogs/chores/timestamp-mapping.md)｜[Python 语法更新摘要](./blogs/python/new-grammars.md)
 
-### 问题集
-
-<ol>
-    <li>
-        <a href="./blogs/problems/leetcode-20-valid-parentheses.md">LeetCode 20：有效的括号</a>&nbsp;<sup>2024.01.10</sup>
-        <br>
-        <span>判断由纯括号组成的表达式是否正确。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode 12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
-        <br>
-        <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">LeetCode 13：罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
-        <br>
-        <span>将诸如 <code>XII</code>、<code>IV</code> 的罗马数字转换为整数。输入的罗马数字的取值范围是 <code>[1, 3999]</code>。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/sum-of-consecutive-natural-numbers.md">连续自然数之和</a>&nbsp;<sup>2020.04.06</sup>
-        <br>
-        <span>对一个给定的自然数M，求出所有的连续的自然数段（连续个数大于1），这些连续的自然数段中的全部数之和为M。实际是公差为1的等差数列求和，解法是将数列长度作为遍历变量，动态求出数列的第一个数和最后一个数，再使用数列求和公式求出总和，并与输入进行比较，决定是否输出。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/integer-maximum-splicing.md">多个整数连接为最大整数问题</a>&nbsp;<sup>2020.03.13</sup>
-        <br>
-        <span>有n个正整数（n<=20），将它们对应的字符串连接成一排，组成一个最大的多位整数。文中对在 Java 中的作答作了分析。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/noip-380.md">NOIP 380：校门外的树</a>&nbsp;<sup>2020.03.12</sup>
-        <br>
-        <span>分析了题目中迷惑了我的部分，并描述了“将所有区间抽象为起点和终点，叠加到一条线段上”，从而使运算时间更少的方法。</span>
-    </li>
-    <li>
-        <a href="./blogs/problems/lanqiao-2012-gzgz-java-finals-4.md">Excel 地址转换</a>&nbsp;<sup>2020.01.20</sup>
-        <br>
-        <span>将一个整数转换为Excel的列号，整数范围为 [1, 2147483647]。Excel的列编号规则是用 A~Z 分别表示 1~26，超出后进一位，转换算法属于进制转换的变种。</span>
-    </li>
-</ol>
-
 ### Python
 
 <ol>
@@ -157,6 +117,46 @@
         <a href="./blogs/java/calculation-precision.md">运算精度</a>&nbsp;<sup>2019.11.20</sup>
         <br>
         <span>Java的 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 的最低运算精度是 <code>int</code> ，有些情况可能会导致上溢或下溢进而偏离预期。</span>
+    </li>
+</ol>
+
+### 问题集
+
+<ol>
+    <li>
+        <a href="./blogs/problems/leetcode-20-valid-parentheses.md">LeetCode 20：有效的括号</a>&nbsp;<sup>2024.01.10</sup>
+        <br>
+        <span>判断由纯括号组成的表达式是否正确。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/leetcode-12-integer-to-roman.md">LeetCode 12：整数转罗马数字</a>&nbsp;<sup>2024.01.09</sup>
+        <br>
+        <span>将整数转换为诸如 <code>XII</code>、<code>IV</code> 的罗马数字。整数的取值范围是 <code>[1, 3999]</code>。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/leetcode-13-roman-to-integer.md">LeetCode 13：罗马数字转整数</a>&nbsp;<sup>2024.01.08</sup>
+        <br>
+        <span>将诸如 <code>XII</code>、<code>IV</code> 的罗马数字转换为整数。输入的罗马数字的取值范围是 <code>[1, 3999]</code>。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/sum-of-consecutive-natural-numbers.md">连续自然数之和</a>&nbsp;<sup>2020.04.06</sup>
+        <br>
+        <span>对一个给定的自然数M，求出所有的连续的自然数段（连续个数大于1），这些连续的自然数段中的全部数之和为M。实际是公差为1的等差数列求和，解法是将数列长度作为遍历变量，动态求出数列的第一个数和最后一个数，再使用数列求和公式求出总和，并与输入进行比较，决定是否输出。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/integer-maximum-splicing.md">多个整数连接为最大整数问题</a>&nbsp;<sup>2020.03.13</sup>
+        <br>
+        <span>有n个正整数（n<=20），将它们对应的字符串连接成一排，组成一个最大的多位整数。文中对在 Java 中的作答作了分析。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/noip-380.md">NOIP 380：校门外的树</a>&nbsp;<sup>2020.03.12</sup>
+        <br>
+        <span>分析了题目中迷惑了我的部分，并描述了“将所有区间抽象为起点和终点，叠加到一条线段上”，从而使运算时间更少的方法。</span>
+    </li>
+    <li>
+        <a href="./blogs/problems/lanqiao-2012-gzgz-java-finals-4.md">Excel 地址转换</a>&nbsp;<sup>2020.01.20</sup>
+        <br>
+        <span>将一个整数转换为Excel的列号，整数范围为 [1, 2147483647]。Excel的列编号规则是用 A~Z 分别表示 1~26，超出后进一位，转换算法属于进制转换的变种。</span>
     </li>
 </ol>
 
