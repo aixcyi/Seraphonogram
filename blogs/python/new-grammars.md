@@ -246,7 +246,7 @@ def enumerate(_depth, /, verify=False, raise_exception=False, **kvs):
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging
 
-允许用 `f'{expr=}'` 形式的 [f-string](https://docs.python.org/zh-cn/3/glossary.html#term-f-string) 为表达式的求值结果添加因变量名称。
+允许用 `f'{expr=}'` 形式的 [f-字符串](https://docs.python.org/zh-cn/3/glossary.html#term-f-string) 为表达式的求值结果添加因变量名称。
 
 ```python
 from datetime import date, timedelta
@@ -324,7 +324,7 @@ class Meow:
 
 ![Static Badge](https://img.shields.io/badge/First%20Release-2016.12.23-darkgreen) ![Static Badge](https://img.shields.io/badge/End%20of%20Line-2021.12.23-darkred) ![Static Badge](https://img.shields.io/badge/Last%20Binary-3.6.8-FFD343)
 
-### f-string
+### f-字符串
 
 > https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-498-formatted-string-literals  
 > [**PEP 498**](https://peps.python.org/pep-0498/) 引入了一种新型的字符串字面值：*f-字符串*，或称[格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)。
