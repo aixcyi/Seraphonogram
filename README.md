@@ -11,9 +11,11 @@
 
 (。・∀・)ノ
 
-## 目录／Catalog
+## 备忘／Cheat Sheets
 
-[时间戳对照表](./blogs/chores/timestamp-mapping.md)｜[Python 语法更新摘要](./blogs/python/new-grammars.md)
+[时间戳对照表](./cheatsheets/timestamp-mapping.md)｜[Python 语法更新摘要](./cheatsheets/python/new-grammars.md)
+
+## 博客／Weblogs
 
 ### Python
 
@@ -32,11 +34,6 @@
         <a href="./blogs/python/parameter-default-value.md">默认值导致抽象泄漏</a>&nbsp;<sup>2024.01.30</sup>
         <br>
         <span>在一些情况下，函数参数的默认值与抽象的约定不一致，需要调用者参阅源码了解编写场景，导致抽象泄漏。</span>
-    </li>
-    <li>
-        <a href="./blogs/python/new-grammars.md">Python 语法更新摘要</a>&nbsp;<sup>2023.12.23</sup>
-        <br>
-        <span>Python 发展比较快，语法更新多而细碎。本文列出与语法有关的更新，并摘取部分示例代码罗列出来，有些会附加一些经验备注，权当备忘。版本在 3.0 到 3.12 之间。</span>
     </li>
     <li>
         <a href="./blogs/python/class-and-type.md">类与类型</a>&nbsp;<sup>2023.12.22</sup>
@@ -172,11 +169,6 @@
         <a href="./blogs/chores/wechat-pay-barcode-response.md">微信扫码支付的响应</a>&nbsp;<sup>2024.01.24</sup>
         <br>
         <span>本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。</span>
-    </li>
-    <li>
-        <a href="./blogs/chores/timestamp-mapping.md">时间戳对照表</a>&nbsp;<sup>2023.09.07</sup>
-        <br>
-        <span>不同底数的指数按从大到小的顺序所对应的秒戳、毫秒戳、日戳的表格，用于快速确定时间戳的存储空间、特定大小的空间的时间戳存储上限等。</span>
     </li>
 </ol>
 

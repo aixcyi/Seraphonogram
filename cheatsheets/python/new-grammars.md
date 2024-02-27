@@ -2,13 +2,11 @@
 
 ![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月23日](https://img.shields.io/badge/Release-2023.12.23-purple.svg)
 
-挺细碎的，开个帖子备忘，更多请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
-
 此篇着眼于 3.0 及以后正式版 Python 语法上的更新，大概有：
 
 - 类型标注：泛型、类型联合、多项集、延迟求值、变量标注等；
 - 语句和关键字：`match`-`case`、`except*`、`continue`、`with()`，`async` 和 `await`、`type`、`print` 等；
-- 其它零散的变动。
+- 其它零散的变动，请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)。
 
 另外，文中使用徽章记录每个版本的相关情况，详情请参阅 [Status of Python Versions](https://devguide.python.org/versions/)。
 
