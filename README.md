@@ -21,6 +21,11 @@
 
 <ol>
     <li>
+        <a href="./blogs/python/virtualenv-encoding-in-win.md">virtualenv 在 Windows 中无法激活</a>&nbsp;<sup>2024.02.28</sup>
+        <br>
+        <span>PyCharm 新建项目时选择了带上虚拟环境，但发现虚拟环境无法激活。一开始以为是多版本共存的问题，但排查后发现是 <code>activate.bat</code> 文件编码的问题。</span>
+    </li>
+    <li>
         <a href="./blogs/python/dot-token-generation.md">DOT 令牌相关机制</a>&nbsp;<sup>2024.02.20</sup>
         <br>
         <span>正常来说应该继承 <code>OAuthLibMixin</code> 写一个类视图，调用 <code>create_token_response()</code> 来生成和刷新令牌、调用 <code>create_revocation_response()</code> 来撤销令牌，但如果要手动实现某些过程，可以参考此篇帖子的伪代码。</span>
