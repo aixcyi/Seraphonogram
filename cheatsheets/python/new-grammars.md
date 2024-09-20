@@ -92,7 +92,7 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 ## 3.11 版本
 
-![正式版首次发布日期](https://img.shields.io/badge/正式首发-2022.10.24-darkgreen) ![结束支持的日期](https://img.shields.io/badge/结束支持-2027.10-darkred) ![最后一版的版本号](https://img.shields.io/badge/终版-仍在支持-E87423) ![最后一版二进制的版本号](https://img.shields.io/badge/终版二进制-仍在更新-FFD343)
+![正式版首次发布日期](https://img.shields.io/badge/正式首发-2022.10.24-darkgreen) ![结束支持的日期](https://img.shields.io/badge/结束支持-2027.10-darkred) ![最后一版的版本号](https://img.shields.io/badge/终版-仍在支持-E87423) ![最后一版二进制的版本号](https://img.shields.io/badge/终版二进制-3.11.9-FFD343)
 
 ### 异常组与 `except*`
 
