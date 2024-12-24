@@ -12,6 +12,8 @@
         "docs:preview": "vitepress preview"
     },
     "dependencies": {
+        "@date-fns/utc": "^2.1.0",
+        "date-fns": "^4.1.0",
         "element-plus": "^2.9.1",
         "vite-plugin-style-import": "^2.0.0",
         "vitepress": "^1.5.0",

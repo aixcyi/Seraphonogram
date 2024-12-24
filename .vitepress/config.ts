@@ -53,6 +53,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                     { text: '镜像源', link: '/cheatsheet/mirror' },
+                    { text: '时间戳对照表', link: '/cheatsheet/timestamp' },
                 ]
             },
         ],
