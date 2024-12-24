@@ -1,6 +1,7 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, loadEnv } from 'vitepress'
 
-import { copyright, message } from "../customizations";
+const env = loadEnv('', process.cwd())
+const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,6 +17,9 @@ export default defineConfig({
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
+        outline: {
+            label: '页面目录',
+        },
         nav: [
             { text: '博客', link: '/' },
             {
@@ -56,8 +60,11 @@ export default defineConfig({
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
         ],
         footer: {
-            message: message,
-            copyright: copyright,
+            message: `${env.VITE_ICP}`,
+            copyright:
+                `Copyright © 2019-${now} <a href="https://github.com/aixcyi">砹小翼</a>` +
+                '<span class="divider">|</span>' +
+                '使用 <a href="https://vitepress.dev/zh/">VitePress</a> 构建',
         },
     },
 })

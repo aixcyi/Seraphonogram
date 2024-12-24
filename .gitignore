@@ -24,4 +24,5 @@ cache
 *.sln
 *.sw?
 
+.env
 .env.*

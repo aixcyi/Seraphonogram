@@ -131,6 +131,11 @@ code {
     }
 }
 
+.divider {
+    padding: 0 12px;
+    color: var(--vp-c-divider);
+}
+
 /**
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
