@@ -1,8 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
-import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
-import './style.css'
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import ElementPlus from "element-plus";
+import type { Theme } from "vitepress";
+import DefaultTheme from "vitepress/theme";
+import { h } from "vue";
+import "./style.css";
+import "element-plus/dist/index.css";
+import "element-plus/theme-chalk/dark/css-vars.css";
 
 export default {
     extends: DefaultTheme,
@@ -12,6 +16,9 @@ export default {
         })
     },
     enhanceApp({ app, router, siteData }) {
-        // ...
+        for (const [ key, component ] of Object.entries(ElementPlusIconsVue)) {
+            app.component(key, component)
+        }
+        app.use(ElementPlus)
     }
 } satisfies Theme
