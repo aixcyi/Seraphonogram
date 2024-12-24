@@ -49,23 +49,30 @@ const table = [
 </script>
 
 <template>
-    <el-table :data="table" stripe>
-        <el-table-column v-for="base in bases" :width="56" align="center">
-            <template #default="scope">
-                <template v-if="scope.row.powers.get(base) != null">
-                    <el-text>
-                        {{ base }}<sup>{{ scope.row.powers.get(base) }}</sup>
-                    </el-text>
-                </template>
-            </template>
-        </el-table-column>
-        <el-table-column :min-width="props.widths[1]" align="right" label="时间差" prop="delta"/>
-        <el-table-column :min-width="props.widths[0]" align="right" label="GMT+0 时刻" prop="datetime"/>
-    </el-table>
+    <table>
+        <thead>
+        <tr>
+            <th v-for="_ in bases" style="text-align:center;"></th>
+            <th style="text-align:right;">时间差</th>
+            <th style="text-align:right;">GMT+0 时刻</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="row in table">
+            <td v-for="base in bases" style="text-align:center;">
+                <span v-if="row.powers.get(base) != null">
+                    {{ base }}<sup>{{ row.powers.get(base) }}</sup>
+                </span>
+            </td>
+            <td style="text-align:right;">{{ row.delta }}</td>
+            <td style="text-align:right;">{{ row.datetime }}</td>
+        </tr>
+        </tbody>
+    </table>
 </template>
 
 <style scoped>
-.el-table :deep(.el-table__cell) {
-    padding: 4px 0;
+table {
+    font-family: "HarmonyOS Sans SC", "JetBrains Mono", var(--vp-font-family-mono);
 }
 </style>

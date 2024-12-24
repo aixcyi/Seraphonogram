@@ -11,10 +11,10 @@ const configs = {
         minimum: 1n,
         maximum: 1n << 54n,
         duration: (stamp: bigint) => Duration.fromMilliseconds(stamp),
-        dateFormat: "yyyy 年 MM 月 dd 日 HH:mm:ss. SSS",
+        dateFormat: "yyyy-MM-dd　HH:mm:ss. SSS",
         deltaFormat: (d: Duration) => [
             `${d.year} 年 `,
-            `${d.day} 天 ${zz(d.hour)}`,
+            `${d.day} 天　${zz(d.hour)}`,
             `${d.hour}:${zz(d.minute)}`,
             `${d.minute}:${zz(d.second)}`,
             `${d.second}. ${zzz(d.millisecond)}`,
@@ -31,10 +31,10 @@ const configs = {
         minimum: 1n,
         maximum: 1n << 42n,
         duration: (stamp: bigint) => Duration.fromSeconds(stamp),
-        dateFormat: "yyyy 年 MM 月 dd 日 HH:mm:ss",
+        dateFormat: "yyyy-MM-dd　HH:mm:ss",
         deltaFormat: (d: Duration) => [
             `${d.year} 年 `,
-            `${d.day} 天 ${zz(d.hour)}`,
+            `${d.day} 天　${zz(d.hour)}`,
             `${d.hour}:${zz(d.minute)}`,
             `${d.minute}:${zz(d.second)}`,
             `${d.second}`,
@@ -50,7 +50,7 @@ const configs = {
         minimum: 1n,
         maximum: 36n ** 5n,
         duration: (stamp: bigint) => Duration.fromDays(stamp),
-        dateFormat: "yyyy 年 MM 月 dd 日",
+        dateFormat: "yyyy-MM-dd",
         deltaFormat: (d: Duration) => d.year > 0 ? `${d.year} 年 ${d.day} 天` : `${d.day} 天`,
         widths: [ 160, 140 ],
     },
@@ -60,15 +60,15 @@ const configs = {
 <template>
     <el-tabs style="margin-top: 20px; width: 100%" type="card">
         <el-tab-pane label="毫秒戳" lazy>
-            <el-text type="info">以毫秒为单位的时间戳，一般是整数。</el-text>
+            <span>以毫秒为单位的时间戳，一般是整数。1 秒＝1000 毫秒，1 毫秒＝0.001 秒。</span>
             <TimestampTable v-bind="configs.millisecond"/>
         </el-tab-pane>
         <el-tab-pane label="秒戳" lazy>
-            <el-text type="info">以秒为单位的时间戳，一般是整数或小数。</el-text>
+            <span>以秒为单位的时间戳，一般是整数或小数。1 天＝86400 秒。</span>
             <TimestampTable v-bind="configs.second"/>
         </el-tab-pane>
         <el-tab-pane label="日戳" lazy>
-            <el-text type="info">以天为单位的时间戳，一般是整数。</el-text>
+            <span>以天为单位的时间戳，一般是整数。</span>
             <TimestampTable v-bind="configs.day"/>
         </el-tab-pane>
     </el-tabs>
@@ -77,5 +77,17 @@ const configs = {
 <style scoped>
 ul {
     margin-top: 0;
+}
+
+.el-tabs--card :deep(.el-tabs__nav) {
+    margin: 0 16px;
+}
+
+.el-tabs--card :deep(.el-tabs__content) {
+    margin: 0 16px;
+}
+
+.el-tabs--card :deep(.el-tabs__item.is-active), :deep(.el-tabs__item:hover) {
+    color: var(--vp-c-brand-1);
 }
 </style>
