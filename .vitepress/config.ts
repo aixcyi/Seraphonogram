@@ -30,22 +30,22 @@ export default defineConfig({
         sidebar: [
             {
                 text: 'Python',
-                collapsed: false,
+                collapsed: true,
                 items: []
             },
             {
                 text: 'Java',
-                collapsed: false,
+                collapsed: true,
                 items: []
             },
             {
                 text: '问题集',
-                collapsed: false,
+                collapsed: true,
                 items: []
             },
             {
                 text: '杂项',
-                collapsed: false,
+                collapsed: true,
                 items: []
             },
         ],
