@@ -70,6 +70,19 @@
     --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+b {
+    margin: 0 3px;
+}
+
+code {
+    margin: 0 3px;
+}
+
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
@@ -135,9 +148,4 @@
 
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
-}
-
-a,
-a:hover {
-    text-decoration: none !important;
 }

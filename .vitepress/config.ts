@@ -44,9 +44,11 @@ export default defineConfig({
                 items: []
             },
             {
-                text: '杂项',
+                text: '软件杂项',
                 collapsed: true,
-                items: []
+                items: [
+                    { text: '镜像源', link: '/cheatsheet/mirror' },
+                ]
             },
         ],
         socialLinks: [
