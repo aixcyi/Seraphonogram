@@ -53,10 +53,6 @@ function isLastMirror(_index: integer): boolean {
     </div>
 
     <h2 id="pypi">PyPI 镜像源</h2>
-    <p>
-        单行的是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>requests</code>；<br/>
-        双行的是全局设置的命令，设置之后全局生效。<br/>
-    </p>
     <div class="tip custom-block">
         <p class="custom-block-title">查看全局设置</p>
         <p>
@@ -75,6 +71,12 @@ function isLastMirror(_index: integer): boolean {
             </CopyTextField>
         </p>
     </div>
+    <p>
+        以下所有命令，<br/>
+        单行的是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>requests</code>；<br/>
+        双行的是全局设置的命令，设置之后全局生效；<br/>
+        两者选一个复制使用即可。<br/>
+    </p>
     <template v-for="src in pypiSources">
         <h3 :id="`pypi.${src.host}`">{{ src.name }}</h3>
         <p>
@@ -92,10 +94,6 @@ function isLastMirror(_index: integer): boolean {
     </template>
 
     <h2 id="npm">npm 镜像源</h2>
-    <p>
-        第一行是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>requests</code>；<br/>
-        第二行是全局设置的命令，设置之后全局生效。<br/>
-    </p>
     <div class="tip custom-block">
         <p class="custom-block-title">查看设置</p>
         <p>
@@ -115,6 +113,12 @@ function isLastMirror(_index: integer): boolean {
             </CopyTextField>
         </p>
     </div>
+    <p>
+        以下所有命令，<br/>
+        第一行是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>vue</code>；<br/>
+        第二行是全局设置的命令，设置之后全局生效；<br/>
+        两者选一个复制使用即可。<br/>
+    </p>
     <template v-for="src in npmSources">
         <h3 :id="`npm.${src.host}`">{{ src.name }}</h3>
         <p>
