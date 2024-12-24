@@ -5,7 +5,7 @@ outline: deep
 ---
 
 <script setup lang="ts">
-import Mirrors from "./Mirrors.vue";
+import Mirrors from "@/cheatsheet/Mirrors.vue";
 </script>
 
 <Mirrors />

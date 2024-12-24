@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import CopyTextField from "../components/CodeCopyField.vue";
+import CopyTextField from "@/components/CodeCopyField.vue";
+import type { integer } from "@vue/language-server";
 
 const mirrors = [
     { site: 'https://mirrors.ustc.edu.cn/', name: '中国科技大学' },
@@ -36,7 +37,7 @@ const npmSources = [
     item => ({ ...item, host: new URL(item.registry).hostname })
 )
 
-function isLastMirror(_index: number): boolean {
+function isLastMirror(_index: integer): boolean {
     return _index < mirrors.length - 1
 }
 </script>

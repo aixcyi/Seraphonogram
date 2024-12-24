@@ -1,4 +1,5 @@
-import { defineConfig, loadEnv } from 'vitepress'
+import { resolve } from "path";
+import { defineConfig, loadEnv } from "vitepress";
 
 const env = loadEnv('', process.cwd())
 const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
@@ -65,6 +66,13 @@ export default defineConfig({
                 `Copyright © 2019-${now} <a href="https://github.com/aixcyi">砹小翼</a>` +
                 '<span class="divider">|</span>' +
                 '使用 <a href="https://vitepress.dev/zh/">VitePress</a> 构建',
+        },
+    },
+    vite: {
+        resolve: {
+            alias: {
+                '@': resolve(__dirname, '../src'),
+            },
         },
     },
 })
