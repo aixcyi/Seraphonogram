@@ -11,11 +11,11 @@ export default defineConfig({
     outDir: './dist',
     cacheDir: './cache',
     head: [
-        [ 'link', { rel: 'icon', href: '/favicon.png', type: 'image/png' } ],
+        [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],
     ],
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
-        logo: '/favicon.png',
+        logo: '/favicon.ico',
         nav: [
             { text: '博客', link: '/' },
             {
