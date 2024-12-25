@@ -54,6 +54,7 @@ export default defineConfig({
                 items: [
                     { text: '镜像源', link: '/cheatsheet/mirror' },
                     { text: '时间戳对照表', link: '/cheatsheet/timestamp' },
+                    { text: 'Python 语法更新摘要', link: '/cheatsheet/grammar' },
                 ]
             },
         ],
