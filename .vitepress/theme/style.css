@@ -72,19 +72,7 @@
 
 a,
 a:hover {
-    text-decoration: none !important;
-}
-
-b, strong {
-    margin: 0 3px;
-}
-
-code {
-    margin: 0 3px;
-}
-
-img {
-    display: inline;
+    text-underline-offset: 4px !important;
 }
 
 /**

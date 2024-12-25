@@ -73,7 +73,7 @@ function isLastMirror(_index: integer): boolean {
     </div>
     <p>
         以下所有命令，<br/>
-        单行的是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>requests</code>；<br/>
+        单行的是安装时的命令，复制后直接接上需要安装的包名即可，比如 <code>requests</code> ；<br/>
         双行的是全局设置的命令，设置之后全局生效；<br/>
         两者选一个复制使用即可。<br/>
     </p>
@@ -115,7 +115,7 @@ function isLastMirror(_index: integer): boolean {
     </div>
     <p>
         以下所有命令，<br/>
-        第一行是安装时的命令，复制后直接接上需要安装的包名即可，比如<code>vue</code>；<br/>
+        第一行是安装时的命令，复制后直接接上需要安装的包名即可，比如 <code>vue</code> ；<br/>
         第二行是全局设置的命令，设置之后全局生效；<br/>
         两者选一个复制使用即可。<br/>
     </p>
