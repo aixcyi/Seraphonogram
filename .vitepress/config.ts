@@ -8,7 +8,7 @@ const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
 export default defineConfig({
     lang: "zh-CN",
     title: "Seraphonogram",
-    description: "不绝如缕的羽音",
+    description: "砹小翼的博客",
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
@@ -22,7 +22,7 @@ export default defineConfig({
             label: '页面目录',
         },
         nav: [
-            { text: '关于', link: 'https://www.aixcyi.cn/' },
+            { text: '关于', link: 'https://aixcyi.cn/' },
             {
                 text: '快速参考',
                 items: [
@@ -96,9 +96,13 @@ export default defineConfig({
         footer: {
             message: `${env.VITE_ICP}`,
             copyright:
-                `Copyright © 2019-${now} <a href="https://github.com/aixcyi">砹小翼</a>` +
+                `Copyright © 2019-${now} <a href="https://aixcyi.cn/">砹小翼</a>` +
                 '<span class="divider">|</span>' +
                 '使用 <a href="https://vitepress.dev/zh/">VitePress</a> 构建',
+        },
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
         },
     },
     markdown: {
