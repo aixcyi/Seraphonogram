@@ -21,9 +21,21 @@ export function getLogarithm(i: bigint, base: integer): number {
     return getNaturalLogarithm(i) / Math.log(base);
 }
 
-export function isInteger(n: number, accuracy: number) {
+export function isInteger(n: number, accuracy: number): boolean {
     const decimal = n % 1;
     if (decimal < 0.5)
         return decimal < accuracy
     return 1 - decimal < accuracy
+}
+
+export function limit(floor: number, n: number, ceiling: number): number {
+    if (floor > n)
+        return floor
+    if (n > ceiling)
+        return ceiling
+    return n
+}
+
+export function percentageRound(n: number): number {
+    return limit(0, n, 100)
 }

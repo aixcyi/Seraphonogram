@@ -6,10 +6,13 @@ outline: false
 ---
 
 <script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
 import TimestampTables from "@/cheatsheet/TimestampTables.vue";
 </script>
 
 # 时间戳对照表
+
+<RevisionInfo created="2023-12-21 10:02" expired="永远新鲜~" />
 
 > [!NOTE]
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**，而 **底数** 表示整数的 **进位制**。

@@ -43,7 +43,6 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <h1>镜像 Mirror</h1>
     <h2 id="mirrors">镜像站点</h2>
     <div>
         常见的有 <span v-for="(mirror, index) in mirrors">

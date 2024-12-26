@@ -5,10 +5,13 @@ outline: deep
 ---
 
 <script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
 # Python 语法更新摘要
+
+<RevisionInfo created="2023-12-23 23:59" updated="2024-12-26 15:06" :expired="365" />
 
 > [!NOTE] 说明
 > 本篇包含 Python 3.0 以来语法上的更新，大概有：
