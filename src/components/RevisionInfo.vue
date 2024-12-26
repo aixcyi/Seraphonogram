@@ -11,8 +11,8 @@ const expireAt =
     typeof props.expired === 'string'
         ? props.expired
         : updateAt !== null
-            ? format(add(updateAt, { days: props.expired }), "yyyy-MM-dd")
-            : format(add(createAt, { days: props.expired }), "yyyy-MM-dd")
+            ? format(add(updateAt, { days: props.expired }), "yyyy-MM")
+            : format(add(createAt, { days: props.expired }), "yyyy-MM")
 
 const freshness =
     typeof props.expired === 'string'
@@ -22,7 +22,7 @@ const freshness =
             : 100 - percentageRound(Math.round(differenceInDays(current, createAt) / props.expired * 100))
 
 function getFreshnessColor(percentage: number) {
-    if (percentage >= 50)
+    if (percentage >= 25)
         return '#67c23a'
     if (percentage >= 10)
         return '#e6a23c'
@@ -31,30 +31,43 @@ function getFreshnessColor(percentage: number) {
 </script>
 
 <template>
-    <table style="display: inline-flex; width: 100%; justify-content: end">
-        <tbody>
+    <table style="margin-top: 8px">
+        <tbody style="width: 100%">
         <tr>
-            <td>
+            <td rowspan="4" style="width: 100%">
+                <el-text type="info">
+                    <slot/>
+                </el-text>
+            </td>
+            <td rowspan="4" style="border-left: 1px solid var(--vp-c-divider)"></td>
+            <td style="text-wrap: nowrap">
                 <el-text type="info">首次发布</el-text>
             </td>
-            <td>
+            <td style="text-wrap: nowrap">
                 <el-text type="info">{{ props.created }}</el-text>
             </td>
         </tr>
         <tr v-if="props.updated">
-            <td>
+            <td style="text-wrap: nowrap">
                 <el-text type="info">最后编辑</el-text>
             </td>
-            <td>
+            <td style="text-wrap: nowrap">
                 <el-text type="info">{{ props.updated }}</el-text>
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="text-wrap: nowrap">
+                <el-text type="info">保质期约</el-text>
+            </td>
+            <td style="text-wrap: nowrap">
+                <el-text type="info">{{ expireAt }}</el-text>
+            </td>
+        </tr>
+        <tr v-if="typeof props.expired !== 'string'">
+            <td style="text-wrap: nowrap">
                 <el-text type="info">新鲜程度</el-text>
             </td>
-            <td>
-                <el-text type="info">{{ expireAt }}</el-text>
+            <td style="text-wrap: nowrap">
                 <el-progress v-if="freshness !== null"
                              :color="getFreshnessColor"
                              :percentage="freshness"
