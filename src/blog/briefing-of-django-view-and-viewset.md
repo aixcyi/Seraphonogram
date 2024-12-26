@@ -1,10 +1,22 @@
+---
+lang: zh-CN
+outline: deep
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 浅析基于 Django 衍生的类视图
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年8月10日](https://img.shields.io/badge/Release-2023.08.10-purple.svg)
+<RevisionInfo created="2022-10-11 11:52" :expired="365*3">
+浅析 <a href="https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/">Django</a>
+与 <a href="https://www.django-rest-framework.org/api-guide/views/">Django REST Framework</a> 两个框架视图类的脉络。
+</RevisionInfo>
 
 ## 类的继承脉络
 
-### 基类
+### 视图（基类）
 
 主要逻辑通过在这几个类扩写，它们通过单继承来扩展：
 
@@ -33,11 +45,11 @@
 - **UpdateModelMixin** 通过 `.update()` 全量更新和 `.partial_update()` 部分更新一个模型实例，最终是通过 `.perform_update()` 用序列化器更新。
 - **DestroyModelMixin** 通过 `.destroy()` 删除一个模型实例并返回无内容的204，最终是通过 `.perform_destroy()` 直接删除模型实例。
 
-![各个类视图的关系](../../images/drf-views.png)
+![各个类视图的关系](/images/drf-views.png)
 
 下面通过两条主线来浅析视图(集)。
 
-## dispatch线
+## `dispatch()` 线
 
 Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
 
@@ -115,7 +127,7 @@ def dispatch(self, request, *args, **kwargs):
     return self.response
 ```
 
-## as_view线
+## `as_view()` 线
 
 `.as_view()` 是将视图类的初始化、执行等操作存储在一个函数中（有点装饰器那味儿），供路由调用，也就是处理请求和响应的主入口（Main entry point for a request-response process.）。
 

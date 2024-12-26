@@ -1,9 +1,20 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 类与类型
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月22日](https://img.shields.io/badge/Release-2023.12.22-purple.svg)
+<RevisionInfo created="2023-12-22 11:03" :expired="365*3">
+一次关于 Python 类型（type）、类（class）、对象（object）的思考。<br/>
+</RevisionInfo>
 
 在万物皆对象的理念下，Python 的类实际上也是一个对象，或者叫实例，它是类型特殊实例化产生的东西，听起来就是类型 -> 类 -> 对象（type -> class -> object）。
 
+> [!NOTE] 事先声明
 > 自定义的类型以类的格式编写，这种特殊的类被称为[元类](https://docs.python.org/zh-cn/3/glossary.html#term-metaclass)（metaclass），但在下文与内置类型合并为一个概念 —— “类型” 。
 
 意识到这一点的时候，我感觉 **类型** 与 **对象** 的关系剪不断、理还乱，于是下意识地寻找与类型系统有关的内置函数，有 [`isinstance`](https://docs.python.org/zh-cn/3/library/functions.html#isinstance) 、[`issubclass`](https://docs.python.org/zh-cn/3/library/functions.html#issubclass) 和 [`type`](https://docs.python.org/zh-cn/3/library/functions.html#type) ，前二者是用得比较多的。

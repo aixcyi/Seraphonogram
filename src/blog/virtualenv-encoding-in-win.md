@@ -1,10 +1,18 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # virtualenv 在 Windows 中无法激活
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年2月28日](https://img.shields.io/badge/Release-2024.02.28-purple.svg)
+<RevisionInfo created="2024-02-28 16:29" :expired="365*3">
+　　使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀 <code>(venv)</code> 字样，但 <code>pip -V</code> 显示当前 pip 并没有指向父环境。
+</RevisionInfo>
 
-## 症状
-
-使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在终端（cmd）中无法激活虚拟环境，虽然前缀 `(venv)` 字样，但 `pip -V` 显示当前 pip 并没有指向父环境。
+## 环境（参考）
 
 - 系统：Windows 11 x64
 - 软件：PyCharm 2023.3
@@ -26,7 +34,8 @@ activate
 echo %PATH%
 ```
 
-注意，我的 PyCharm 不知道为什么始终会有乱码。如果你需要在 PyCharm 中甄别，可以事先往 `PATH` 中插入一个含有中文的路径，并观察手动插入的路径是否在 PyCharm 中正确显示；如果不能正确显示，则观察乱码内容是否在更改 `activate.bat` 编码后发生变化。
+> [!WARNING] 注意
+> 我的 PyCharm 不知道为什么始终会有乱码。如果你需要在 PyCharm 中甄别，可以事先往 `PATH` 中插入一个含有中文的路径，并观察手动插入的路径是否在 PyCharm 中正确显示；如果不能正确显示，则观察乱码内容是否在更改 `activate.bat` 编码后发生变化。
 
 #### 检测多版本共存
 

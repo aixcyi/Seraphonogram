@@ -1,6 +1,16 @@
-# 标注集合与映射
+---
+lang: zh-CN
+---
 
-`typing` 模块的文档在[标注元组](https://docs.python.org/zh-cn/3/library/typing.html#annotating-tuples)一节中已经指明列表、元组和字典的正确标注，但对于集合、不可变集合等的标注，需要参见 [**PEP 484**](https://peps.python.org/pep-0484/#the-typing-module) 关于 `typing` 模块一节的概述。
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
+# 标准多项集的标注方式
+
+<RevisionInfo created="2024-01-31 17:13" :expired="365*20">
+列表、元组、集合、字典的正确类型标注方式，细节可参阅 <a href="https://peps.python.org/pep-0484/#the-typing-module"><b>PEP 484</b></a>。
+</RevisionInfo>
 
 > [!NOTE] 备注
 > Python 3.9 之前，内置数据类型不支持下标操作，像 `list[]` 要用 `typing.List[]` 代替，其余类型同理。但如果需要跨版本，可以用 `from __future__ import annotations` 实现向前兼容。

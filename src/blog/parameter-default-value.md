@@ -1,6 +1,17 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
+</script>
+
 # 默认值导致抽象泄漏
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年1月30日](https://img.shields.io/badge/Release-2024.01.30-purple.svg)
+<RevisionInfo created="2024-01-30 23:42" :expired="365">
+　　使用默认值有可能导致抽象泄漏（Leaky Abstraction），指本应对用户隐藏实现细节的抽象行为会不可避免地暴露出底层细节与局限性。
+</RevisionInfo>
 
 对于已事先声明的参数——即不通过 `args` 或 `kwargs` 传递的参数，Python 无法检测到是否被省略，因为无法分辨入参来源于调用还是默认值。
 

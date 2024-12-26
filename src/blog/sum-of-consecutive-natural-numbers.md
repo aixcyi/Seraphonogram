@@ -1,6 +1,16 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 连续自然数之和
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2020年4月6日](https://img.shields.io/badge/Release-2020.04.06-purple.svg)
+<RevisionInfo created="2020-04-06 12:53" />
+
+## 题干
 
 对一个给定的自然数M，求出所有的连续的自然数段（连续个数大于1），这些连续的自然数段中的全部数之和为M。
 

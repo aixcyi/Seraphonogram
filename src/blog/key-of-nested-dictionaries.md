@@ -1,6 +1,15 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 字典添加二级键值的问题
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2020年12月19日](https://img.shields.io/badge/Release-2020.12.19-purple.svg)
+<RevisionInfo created="2020-12-19 17:19" :expired="365*3">
+</RevisionInfo>
 
 ## 问题来源
 

@@ -1,6 +1,17 @@
-# 校门外的树
+---
+titleTemplate: NOIP
+lang: zh-CN
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2020年3月12日](https://img.shields.io/badge/Release-2020.03.12-purple.svg)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
+# 380. 校门外的树
+
+<RevisionInfo created="2020-03-12 17:24" />
+
+## 题干
 
 某校大门外长度为L的马路上有一排树，每两棵相邻的树之间的间隔都是1米。我们可以把马路看成一个数轴，马路的一端在数轴0的位置，另一端在L的位置；数轴上的每个整数点，即0，1，2，……，L，都种有一棵树。
 

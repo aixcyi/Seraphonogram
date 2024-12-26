@@ -1,20 +1,32 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 字典中键的顺序
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年12月21日](https://img.shields.io/badge/Release-2023.12.21-purple.svg)
+<RevisionInfo created="2023-12-21 10:02" :expired="365*20">
+<code>dict</code> 里的键原本是无序排列的，后来改成有序的了。
+</RevisionInfo>
 
-## dict
+## `dict`
 
 从 3.7 版本开始，字典的键是按插入顺序排列的，从 [`dict.popitem()`](https://docs.python.org/zh-cn/3/library/stdtypes.html#dict.popitem) 的注释可以看到是后进先出（LIFO）。另外，`update()` 不会影响键的顺序。
 
 [3.6 版本](https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-520-preserving-class-attribute-definition-order)开始，函数签名中的 `**kwargs` 现在将保证是一个保留插入顺序的映射对象（[**PEP 468**](https://peps.python.org/pep-0468/)）；另外 [`__dict__`](https://docs.python.org/zh-cn/3/library/stdtypes.html#object.__dict__) 属性中关于当前类的属性的key会按照代码定义顺序来排序。
 
-注意：[`set`](https://docs.python.org/zh-cn/3/library/stdtypes.html#set-types-set-frozenset) 从始自终（截止 3.12 版本）都是无序的。
+> [!IMPORTANT] 注意！
+> [`set`](https://docs.python.org/zh-cn/3/library/stdtypes.html#set-types-set-frozenset) 的元素从始自终都是无序的。
 
-## OrderedDict
+## `OrderedDict`
 
 像 Django 这样在 3.7 版本之前就已经发行的 Web 框架一般使用标准库 collections 的 [`OrderedDict`](https://docs.python.org/zh-cn/3/library/collections.html#ordereddict-objects) 来封装 JSON 等，来确保返回时的数据顺序与前端收到的一致。
 
-注意：这个得 3.1+ 版本才有。
+> [!NOTE] 备注
+> 这个得 3.1+ 版本才有。
 
 `OrderedDict` 与 `dict` 在使用上几乎没有区别，除了在 `==` 比较时，前者会比较键的顺序，比如 `OrderedDict(z=1,a=2) == OrderedDict(a=2,z=1)` 求值为 `False` ，而用 `dict` 构造的字典则不会出现这种情况。
 

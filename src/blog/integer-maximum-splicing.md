@@ -1,6 +1,16 @@
+---
+lang: zh-CN
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 多个整数连接为最大整数问题
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2020年3月13日](https://img.shields.io/badge/Release-2020.03.13-purple.svg)
+<RevisionInfo created="2020-03-13 15:08" />
+
+## 题干
 
 有n个正整数（n<=20），将它们对应的字符串连接成一排，组成一个最大的多位整数。
 

@@ -1,9 +1,26 @@
-# 罗马数字转整数
+---
+titleTemplate: LeetCode
+lang: zh-CN
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年1月8日](https://img.shields.io/badge/Release-2024.01.08-purple.svg) ![题目来自力扣](https://img.shields.io/badge/LeetCode-13-FFA116?logo=leetcode&logoColor=FFA116)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
 
-- 力扣：https://leetcode.cn/problems/roman-to-integer/
-- LeetCode：https://leetcode.com/problems/roman-to-integer/
+# 13. 罗马数字转整数
+
+<RevisionInfo created="2024-01-09 17:37" :badge="2">
+<template #badge1>
+    <a href="https://leetcode.cn/problems/roman-to-integer/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-13. 罗马数字转整数-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+<template #badge2>
+    <a href="https://leetcode.com/problems/roman-to-integer/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-13. Roman to Integer-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+</RevisionInfo>
 
 ## 题目
 

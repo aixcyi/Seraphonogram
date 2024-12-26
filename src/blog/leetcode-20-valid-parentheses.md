@@ -1,9 +1,26 @@
-# 有效的括号
+---
+titleTemplate: LeetCode
+lang: zh-CN
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年1月10日](https://img.shields.io/badge/Release-2024.01.10-purple.svg) ![题目来自力扣](https://img.shields.io/badge/LeetCode-20-FFA116?logo=leetcode&logoColor=FFA116)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
 
-- 力扣：https://leetcode.cn/problems/valid-parentheses/
-- LeetCode：https://leetcode.com/problems/valid-parentheses/
+# 20. 有效的括号
+
+<RevisionInfo created="2024-01-10 00:04" :badge="2">
+<template #badge1>
+    <a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-20. 有效的括号-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+<template #badge2>
+    <a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-20. Valid Parentheses-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+</RevisionInfo>
 
 ## 题目
 
@@ -17,11 +34,11 @@
 
 ## 样例
 
-| 输入           | 输出    | 备注 |
-| -------------- | ------- | ---- |
-| `s = "()"`     | `true`  |      |
-| `s = "()[]{}"` | `true`  |      |
-| `s = "(]"`     | `false` |      |
+| 输入             | 输出      | 备注 |
+|----------------|---------|----|
+| `s = "()"`     | `true`  |    |
+| `s = "()[]{}"` | `true`  |    |
+| `s = "(]"`     | `false` |    |
 
 ## 约束
 

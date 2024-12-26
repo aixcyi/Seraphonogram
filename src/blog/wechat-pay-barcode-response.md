@@ -1,8 +1,17 @@
+---
+lang: zh-CN
+outline: deep
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 微信扫码支付的响应
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年1月24日](https://img.shields.io/badge/Release-2024.01.24-purple.svg)
-
-本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。
+<RevisionInfo created="2024-01-24 15:41" :expired="365*3">
+　　本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。<br/>
+</RevisionInfo>
 
 目前[微信扫码支付](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1)还属于v2接口，所以 wechatpayv3 没有。
 
@@ -40,7 +49,7 @@ except WeChatPayException as e:
 
 ## 响应内容示例
 
-### 双SUCCESS示例（return_code和result_code）
+### 双SUCCESS示例（`return_code` 和 `result_code`）
 
 #### 支付成功
 
@@ -109,7 +118,7 @@ except WeChatPayException as e:
 </xml>
 ```
 
-### 单SUCCESS（仅return_code）
+### 单SUCCESS（仅 `return_code`）
 
 #### 付款码已被使用
 

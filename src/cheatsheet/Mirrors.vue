@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import CopyTextField from "@/components/CodeCopyField.vue";
+import RevisionInfo from "@/components/RevisionInfo.vue";
 import type { integer } from "@vue/language-server";
 
 const mirrors = [
@@ -43,13 +44,13 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <h2 id="mirrors">镜像站点</h2>
-    <div>
-        常见的有 <span v-for="(mirror, index) in mirrors">
+    <RevisionInfo :expired="3650" created="2024-11-13 00:08" updated="2024-12-26 00:11">
+        <span>　　常见镜像站点有 </span>
+        <span v-for="(mirror, index) in mirrors">
             <a :href="mirror.site">{{ mirror.name }}</a>
             <span v-if="isLastMirror(index)">、</span>
-        </span>，排名不分先后，站点各有侧重，选择适合即可。<br/>
-    </div>
+        </span>，排名不分先后，站点各有侧重，选择适合即可。以下是不同包管理的镜像源设置：<br/>
+    </RevisionInfo>
 
     <h2 id="pypi">PyPI 镜像源</h2>
     <div class="tip custom-block">

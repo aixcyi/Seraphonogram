@@ -1,8 +1,17 @@
+---
+lang: zh-CN
+outline: deep
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 推导式
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2021年11月5日](https://img.shields.io/badge/Release-2021.11.05-purple.svg)
-
-推导式又叫生成式，是一种用于生成序列、集合、映射的语句。
+<RevisionInfo created="2021-11-05 00:00" :expired="365*20">
+　　推导式又叫生成式，是一种用于生成序列、集合、映射的语句。本文用直观的方式向读者解释其语法。
+</RevisionInfo>
 
 ## 列表推导式
 

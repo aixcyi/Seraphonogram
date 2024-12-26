@@ -1,5 +1,4 @@
 ---
-title: Python 语法更新摘要
 lang: zh-CN
 outline: deep
 ---
@@ -9,15 +8,11 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# Python 语法更新摘要
+# 语法更新摘要
 
-<RevisionInfo created="2023-12-23 23:59" updated="2024-12-26 15:06" :expired="365" />
-
-> [!NOTE] 说明
-> 本篇包含 Python 3.0 以来语法上的更新，大概有：
-> - 标注：变量、泛型、多项集标注，类型联合、延迟求值等；
-> - 语法：`match`-`case`、`except*`、`continue`、`with()`，`async` 与 `await`、`type`、`print` 等；
-> - 其它细枝末节。
+<RevisionInfo created="2023-12-23 23:59" updated="2024-12-26 15:06" :expired="365">
+　　本文包含 Python 3.0 以来语法上的更新，主要包括类型标注系统以及一些语句语法的变动。
+</RevisionInfo>
 
 > [!WARNING] 仅供粗略参考
 > 这篇文章仅仅只是摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。

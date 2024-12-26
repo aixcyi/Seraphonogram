@@ -1,9 +1,26 @@
-# 整数转罗马数字
+---
+titleTemplate: LeetCode
+lang: zh-CN
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年1月9日](https://img.shields.io/badge/Release-2024.01.09-purple.svg) ![题目来自力扣](https://img.shields.io/badge/LeetCode-12-FFA116?logo=leetcode&logoColor=FFA116)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
 
-- 力扣：https://leetcode.cn/problems/integer-to-roman/
-- LeetCode：https://leetcode.com/problems/integer-to-roman/
+# 12. 整数转罗马数字
+
+<RevisionInfo created="2024-01-09 17:37" :badge="2">
+<template #badge1>
+    <a href="https://leetcode.cn/problems/integer-to-roman/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-12. 整数转罗马数字-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+<template #badge2>
+    <a href="https://leetcode.com/problems/integer-to-roman/" target="_blank">
+        <img src="https://img.shields.io/badge/LeetCode-12. Integer to Roman-895200?logo=leetcode&logoColor=FFA116"/>
+    </a>
+</template>
+</RevisionInfo>
 
 ## 题目
 
@@ -46,7 +63,7 @@ M             1000
 
 ## 思路
 
-从罗马数字的拼写规则（见[《整数转罗马数字》](./leetcode-13-roman-to-integer.md#思路)）以及上面的样例可以看出，十进制每位数都可以单独转换过去，拼接之后就是最终的罗马数字。
+从罗马数字的拼写规则（见[《整数转罗马数字》](/leetcode-13-roman-to-integer.md#思路)）以及上面的样例可以看出，十进制每位数都可以单独转换过去，拼接之后就是最终的罗马数字。
 
 从样例可以看出，`1` 到 `4` 对应 10<sup>x</sup> 的情况，`5` 到 `9` 对应 10<sup>x</sup>+5 的情况，`0` 是一个特殊值，因为不需要任何罗马数字相加即可得到，所以应当返回空字符串。
 

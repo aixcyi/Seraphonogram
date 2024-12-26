@@ -1,6 +1,17 @@
+---
+lang: zh-CN
+outline: deep
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 使用乘号复制变量引起的问题
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2020年12月20日](https://img.shields.io/badge/Release-2020.12.20-purple.svg)
+<RevisionInfo created="2020-12-20 23:29" :expired="365*3">
+<code>[...] * n</code> 是浅拷贝，所以尽量避免用来复制对象。
+</RevisionInfo>
 
 ## 问题复现
 
@@ -39,7 +50,7 @@ counter = [{"income": 0.0, "paid": 0.0}.copy() for _ in range(12)]
 
 ### 2、初步解决
 
-头疼半天，最后发现是 `[代码略] * 12` 的问题。原来 `somthing * n` 重复是浅复制，所以导致最后修改的是同一个对象，因此整个列表自然相同。解决方法是将
+头疼半天，最后发现是 `[...] * 12` 的问题。原来 `somthing * n` 重复是浅复制，所以导致最后修改的是同一个对象，因此整个列表自然相同。解决方法是将
 
 ```python
 counter = [{"income": 0.0, "paid": 0.0}] * 12

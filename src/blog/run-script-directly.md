@@ -1,6 +1,17 @@
+---
+lang: zh-CN
+outline: deep
+---
+
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
 # 直接运行 Python 脚本
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年9月5日](https://img.shields.io/badge/Release-2023.09.05-purple.svg) ![修订于2024年1月3日](https://img.shields.io/badge/Revision-2024.01.03-orange.svg)
+<RevisionInfo created="2023-09-05 23:32" updated="2024-01-03 09:44" :expired="365">
+本文介绍了在 Ubuntu 和 Windows 下直接运行 Python 脚本所需的配置。
+</RevisionInfo>
 
 ## 在 Ubuntu 下
 

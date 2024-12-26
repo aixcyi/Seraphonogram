@@ -1,6 +1,17 @@
-# 日期格式化
+---
+lang: zh-CN
+outline: deep
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2023年11月14日](https://img.shields.io/badge/Release-2023.11.14-purple.svg)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
+
+# `date` 格式化失败
+
+<RevisionInfo created="2023-11-14 23:32" :expired="365*3">
+Windows 下 Python 3.7 中 <code>date().strftime(fmt)</code> 参数 <code>fmt</code> 不能含有中文。
+</RevisionInfo>
 
 ## 复现
 
@@ -10,7 +21,7 @@ from datetime import date
 print(date(2023, 11, 3).strftime('%Y年%m月%d日'))
 ```
 
-以上代码在 Python 3.7 (Windows) 中可以复现，在其它操作系统或者更高版本就没有。
+以上代码在 Windows 下 Python 3.7 中可以复现，在其它操作系统或者更高版本就没有。
 
 错误如下：
 
@@ -22,7 +33,7 @@ Traceback (most recent call last):
 UnicodeEncodeError: 'locale' codec can't encode character '\u5e74' in position 2: encoding error
 ```
 
-这个问题是写业务时指定了DRF序列化器日期字段格式之后发现的：
+这个问题是写业务时指定了 Django REST Framework 序列化器日期字段格式之后发现的：
 
 ```python
 from rest_framework import serializers
@@ -37,7 +48,7 @@ class MemberInfoSerializer(serializers.ModelSerializer):
 
 ## 解决
 
-### 0x1 指定全局设置
+### 1、指定全局设置
 
 在 `./[project]/settings.py` 中指定DRF的 **默认** 日期时间格式，并去掉序列化器字段中的 `format` 参数，这是最佳方案。
 
@@ -49,7 +60,7 @@ REST_FRAMEWORK = {
 }
 ```
 
-### 0x2 手动格式化
+### 2、手动格式化
 
 如果必须自定义格式，但字段只读，只需要改用类方法进行序列化：
 
@@ -65,7 +76,7 @@ class MemberInfoSerializer(serializers.ModelSerializer):
 
 这个方案摘自[Stack Overflow](https://stackoverflow.com/a/16035152)。注意：[`SerializerMethodField`](https://www.django-rest-framework.org/api-guide/fields/#serializermethodfield) 会将 `read_only` 参数的值覆写为 `True` 。
 
-### 0x3 自定义字段
+### 3、自定义字段
 
 如果必须自定义格式，并且字段需要允许读和写，那么只能[自定义字段](https://www.django-rest-framework.org/api-guide/fields/#a-basic-custom-field)：
 
@@ -82,7 +93,7 @@ class MeowDateField(serializers.Field):
         return datetime.strptime(value, '%Y年%m月%d日')
 ```
 
-### 0x4 设置语言环境
+### 4、设置语言环境
 
 如果不是用DRF的话，可以用 [`setlocale()`](https://docs.python.org/zh-cn/3.7/library/locale.html#locale.setlocale) 方法：
 

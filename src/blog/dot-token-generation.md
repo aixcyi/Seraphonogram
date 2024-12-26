@@ -1,8 +1,21 @@
-# DOT[^1] 令牌相关机制
+---
+lang: zh-CN
+outline: deep
+---
 
-![著作权归砹小翼所有](https://img.shields.io/badge/Copyright-砹小翼-blue.svg) ![首版于2024年2月20日](https://img.shields.io/badge/Release-2024.02.20-purple.svg)
+<script setup lang="ts">
+import RevisionInfo from "@/components/RevisionInfo.vue";
+</script>
 
-正常来说应该继承 `OAuthLibMixin` 写一个类视图，调用 `create_token_response()` 来生成和刷新令牌，调用 `create_revocation_response()` 来撤销令牌，但如果要手动实现某些过程，可以参考以下伪代码[^2]。
+# Django OAuth Toolkit 令牌机制
+
+<RevisionInfo created="2024-02-20 11:55" :expired="365*3">
+　　简述 <a href="https://django-oauth-toolkit.readthedocs.io/en/latest/">Django OAuth Toolkit</a>
+中的令牌 <code>Token</code> 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。
+</RevisionInfo>
+
+> [!TIP] 提示
+> 正常来说应该继承 `OAuthLibMixin` 写一个类视图，调用 `create_token_response()` 来生成和刷新令牌，调用 `create_revocation_response()` 来撤销令牌，但如果要手动实现某些过程，可以参考本文的伪代码。
 
 ## 生成（grant）
 
@@ -56,8 +69,7 @@ refresh = RefreshToken.objects.get(token='<刷新令牌>')
 refresh.revoke()
 ```
 
-> [!WARNING]
->
+> [!WARNING] 注意
 > 虽然 AccessToken 对象也有 `revoke()` 方法，但这仅用于解耦，直接调用没有任何实际意义。
 
 ## 获取
@@ -75,7 +87,7 @@ access = refresh.access_token
 
 #### 通过 AccessToken 获取 RefreshToken
 
-RefreshToken 的字段 `access_token` 一对一关联并反射[^3]到 AccessToken 对象上，反射的名称是 `refresh_token`。注意，没有对应的 RefreshToken 实际上表现为 AccessToken 对象上没有这个属性。
+RefreshToken 的字段 `access_token` 一对一关联并反射到 AccessToken 对象上，反射的名称是 `refresh_token`。注意，没有对应的 RefreshToken 实际上表现为 AccessToken 对象上没有这个属性。
 
 ```python
 from oauth2_provider.models import AccessToken
@@ -84,6 +96,5 @@ access = AccessToken.objects.get(token='<访问令牌>')
 refresh = access.refresh_token if hasattr(access, 'refresh_token') else None
 ```
 
-[^1]: 指的是 [Django OAuth Toolkit](https://django-oauth-toolkit.readthedocs.io/en/latest/) 。
-[^2]: 另外用 Python 编写的效果相同的代码，并非 DOT 内的实现。
-[^3]: 见 ForeignKey 的 [related_name](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#django.db.models.ForeignKey.related_name)，在 [OneToOneField](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#onetoonefield) 中将反射为单个对象，而非一个查询集。
+> [!NOTE] 关于“反射”
+> 见 ForeignKey 的 [related_name](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#django.db.models.ForeignKey.related_name)，在 [OneToOneField](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#onetoonefield) 中将反射为单个对象，而非一个查询集。
