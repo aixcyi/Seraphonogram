@@ -8,7 +8,7 @@ const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
 export default defineConfig({
     lang: "zh-CN",
     title: "Seraphonogram",
-    description: "砹小翼的博客",
+    description: "不绝如缕的羽音",
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
@@ -69,6 +69,9 @@ export default defineConfig({
                 '<span class="divider">|</span>' +
                 '使用 <a href="https://vitepress.dev/zh/">VitePress</a> 构建',
         },
+    },
+    markdown: {
+        lineNumbers: true,
     },
     vite: {
         resolve: {

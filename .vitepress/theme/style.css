@@ -68,6 +68,8 @@
     --vp-c-danger-2: var(--vp-c-red-2);
     --vp-c-danger-3: var(--vp-c-red-3);
     --vp-c-danger-soft: var(--vp-c-red-soft);
+
+    --vp-c-text-1: rgba(209, 209, 197, 0.8);
 }
 
 a,
@@ -126,6 +128,10 @@ a:hover {
 .divider {
     padding: 0 12px;
     color: var(--vp-c-divider);
+}
+
+.copyright > a {
+    text-decoration: none !important;
 }
 
 /**
