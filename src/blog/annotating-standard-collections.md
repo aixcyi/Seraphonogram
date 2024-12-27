@@ -8,7 +8,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 标准多项集的标注方式
 
-<RevisionInfo created="2024-01-31 17:13" :expired="365*20">
+<RevisionInfo created="2024-01-31 17:13" :expired="365*10">
 列表、元组、集合、字典的正确类型标注方式，细节可参阅 <a href="https://peps.python.org/pep-0484/#the-typing-module"><b>PEP 484</b></a>。
 </RevisionInfo>
 

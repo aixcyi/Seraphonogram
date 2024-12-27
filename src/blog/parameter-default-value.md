@@ -9,7 +9,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # 默认值导致抽象泄漏
 
-<RevisionInfo created="2024-01-30 23:42" :expired="365">
+<RevisionInfo created="2024-01-30 23:42" :expired="365*3">
 　　使用默认值有可能导致抽象泄漏（Leaky Abstraction），指本应对用户隐藏实现细节的抽象行为会不可避免地暴露出底层细节与局限性。
 </RevisionInfo>
 

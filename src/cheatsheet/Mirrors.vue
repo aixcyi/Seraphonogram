@@ -44,7 +44,7 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <RevisionInfo :expired="3650" created="2024-11-13 00:08" updated="2024-12-26 00:11">
+    <RevisionInfo :expired="365*10" created="2024-11-13 00:08" updated="2024-12-26 00:11">
         <span>　　常见镜像站点有 </span>
         <span v-for="(mirror, index) in mirrors">
             <a :href="mirror.site">{{ mirror.name }}</a>

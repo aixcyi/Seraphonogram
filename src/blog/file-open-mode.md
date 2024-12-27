@@ -8,7 +8,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 文件打开模式
 
-<RevisionInfo created="2021-10-21 00:00" :expired="365*20">
+<RevisionInfo created="2021-10-21 00:00" :expired="365*10">
 内置函数 <a href="https://docs.python.org/zh-cn/3/library/functions.html#open"><code>open()</code></a> 打开模式这个参数的归纳。
 </RevisionInfo>
 

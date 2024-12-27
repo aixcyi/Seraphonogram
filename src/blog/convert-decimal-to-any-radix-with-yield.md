@@ -10,7 +10,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # 十进制转任意进制与 `yield`
 
-<RevisionInfo created="2022-08-18 00:10" :expired="365">
+<RevisionInfo created="2022-08-18 00:10" :expired="365*3">
 　　十进制转任意进制用的是除N求余法，一般可以用循环和迭代的方式组织代码，但在 Python 中，还可以写成一个生成器函数，并且执行效率远高于迭代和直接循环。
 </RevisionInfo>
 

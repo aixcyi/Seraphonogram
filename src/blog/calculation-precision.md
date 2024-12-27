@@ -9,7 +9,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # Java 运算精度
 
-<RevisionInfo created="2019-11-20 21:26" :expired="365" />
+<RevisionInfo created="2019-11-20 21:26" :expired="365*3" />
 
 Java的 `+` `-` `*` `/` 的最低运算精度是 `int` ，所以以下代码会报错：
 

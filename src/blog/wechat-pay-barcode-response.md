@@ -9,7 +9,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 微信扫码支付的响应
 
-<RevisionInfo created="2024-01-24 15:41" :expired="365*3">
+<RevisionInfo created="2024-01-24 15:41" :expired="365">
 　　本地调试返回的一些响应，不代表全部。不过之前的解析做得比较混乱，这里记个备忘。<br/>
 </RevisionInfo>
 
