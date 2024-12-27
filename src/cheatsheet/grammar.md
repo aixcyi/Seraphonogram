@@ -10,14 +10,20 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # 语法更新摘要
 
-<RevisionInfo created="2023-12-23 23:59" updated="2024-12-26 15:06" :expired="365">
+<RevisionInfo created="2023-12-23 23:59" updated="2024-12-27 17:54" :expired="365">
 　　本文包含 Python 3.0 以来语法上的更新，主要包括类型标注系统以及一些语句语法的变动。
 </RevisionInfo>
 
 > [!WARNING] 仅供粗略参考
-> 这篇文章仅仅只是摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。
+> 本文仅仅只是粗略摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。
 
 <SeeAlsoLink href="https://devguide.python.org/versions/">Status of Python Versions</SeeAlsoLink>
+
+## 3.13 版本
+
+无语法层面变动。
+
+<SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.13.html">所有新变化</SeeAlsoLink>
 
 ## 3.12 版本
 
