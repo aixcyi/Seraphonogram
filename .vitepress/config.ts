@@ -22,7 +22,16 @@ export default defineConfig({
             label: '页面目录',
         },
         nav: [
-            { text: '关于', link: 'https://aixcyi.cn/' },
+            {
+                text: '博客导览',
+                items: [
+                    { text: '总结／摘要／备忘', link: '/dot-token-generation' },
+                    { text: '实践／踩坑', link: '/config-django-console-in-pycharm' },
+                    { text: '题集', link: '/leetcode-20-valid-parentheses' },
+                    { text: '思考／碎碎念', link: '/class-and-type' },
+                    { text: '关于', link: '/about' },
+                ]
+            },
             {
                 text: '快速参考',
                 items: [
@@ -31,6 +40,7 @@ export default defineConfig({
                     { text: 'Python 语法更新摘要', link: '/cheatsheet/grammar' },
                 ]
             },
+            { text: '主站', link: 'https://aixcyi.cn/' },
         ],
         sidebar: [
             {

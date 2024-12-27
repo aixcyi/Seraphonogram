@@ -95,13 +95,13 @@ function getFreshnessColor(percentage: number) {
 
 <style scoped>
 table {
-    margin: 0;
-    overflow-x: visible;
-    border-collapse: collapse;
+    margin: 0 !important;
+    overflow-x: visible !important;
+    border-collapse: collapse !important;
 }
 
 th, tr, td {
-    border: none;
+    border: none !important;
 }
 
 tr {
@@ -109,6 +109,6 @@ tr {
 }
 
 td {
-    padding: 0 4px;
+    padding: 0 4px !important;
 }
 </style>
