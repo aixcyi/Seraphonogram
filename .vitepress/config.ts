@@ -82,6 +82,7 @@ export default defineConfig({
                             { text: '字典添加二级键值的问题', link: '/key-of-nested-dictionaries' },
                         ]
                     },
+                    { text: '设置 JetBrains IDE 的语言', link: '/jetbrains-ide-language' },
                     { text: 'PyCharm 配置 Django 控制台', link: '/config-django-console-in-pycharm' },
                     { text: 'IntelliJ 插件中使用 Bundle', link: '/use-bundle-in-intellij-plugin-developing' },
                     { text: '十进制转任意进制与 yield', link: '/convert-decimal-to-any-radix-with-yield' },
