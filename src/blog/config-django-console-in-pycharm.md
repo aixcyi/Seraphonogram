@@ -14,11 +14,11 @@ PyCharm 社区版并没有 Django 控制台，<br/>
 </RevisionInfo>
 
 > [!NOTE] 备注
-> Django 控制台与 Python 控制台不同的是，前者还可以以命令行交互形式执行诸如 `User.objects.filter(is_active=True).get(id=1)` 等语句。
+> Django 控制台比 Python 控制台更方便执行诸如 `User.objects.filter(is_active=True).get(id=1)` 等数据库相关的代码。
 
 > [!IMPORTANT] 重要
 > 1. 这个配置仅针对当前项目，不会影响、也无法影响其它项目。
-> 2. 如果 Django 无法启动，会导致控制台无法使用。
+> 2. Django 不能正常运行（因为报错而直接退出）会导致控制台无法使用。
 
 ## 1、打开设置页
 
