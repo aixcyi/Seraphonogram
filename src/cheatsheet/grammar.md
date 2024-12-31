@@ -824,25 +824,21 @@ class Husky(Dog, metaclass=Animal):
 
 ### 不再允许元组参数解包
 
-旧版本的
+普通函数也受到影响，但对于匿名函数影响更大，比如这种方式不再可用：
 
 ```python
-def record(key, (year, month)):
-    ...
-
-record("出生年月", (1970, 1))
+births = [(1997, 7), (1999, 12)]
+birthday = map(lambda (y, m): str(y) + '.' + str(m), births)
 ```
 
-现在需要写成
+而要写成
 
 ```python
-def record(key, date):
-    year, month = date
-
-record("出生年月", (1970, 1))
+births = [(1997, 7), (1999, 12)]
+birthday = map(lambda d: str(d[0]) + '.' + str(d[1]), births)
 ```
 
 ### 字面值前缀与后缀
 
-- 整数文字不再支持尾随 `l` 或者 `L`，现在 `int` 支持无限长度，直至内存溢出。
-- 字符串文字不再需要前导 `u` 或者 `U`，但仍可以保留该前缀。
+- 整数文字 *不再支持* 尾随 `l` 或者 `L`，现在 `int` 支持无限长度，直至内存溢出。
+- 字符串文字 *不再需要* 前缀 `u` 或者 `U`，但仍可以保留该前缀。
