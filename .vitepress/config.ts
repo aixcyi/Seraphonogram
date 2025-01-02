@@ -135,11 +135,8 @@ export default defineConfig({
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
         ],
         footer: {
-            message: `${env.VITE_ICP}`,
-            copyright:
-                `Copyright © 2019-${now} <a href="https://aixcyi.cn/">砹小翼</a>` +
-                '<span class="divider">|</span>' +
-                '使用 <a href="https://vitepress.dev/zh/">VitePress</a> 构建',
+            message: `${env.VITE_FOOTER_MSG}`,
+            copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
         },
         docFooter: {
             prev: '上一页',
