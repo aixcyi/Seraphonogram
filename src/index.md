@@ -14,7 +14,7 @@ hero:
       text: Python 语法更新摘要
       link: /cheatsheet/grammar
     - theme: alt
-      text: 镜像站、镜像源
+      text: 镜像源
       link: /cheatsheet/mirror
     - theme: alt
       text: 时间戳对照表

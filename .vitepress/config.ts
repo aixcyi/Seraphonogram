@@ -35,7 +35,7 @@ export default defineConfig({
             {
                 text: '快速参考',
                 items: [
-                    { text: '镜像站、镜像源', link: '/cheatsheet/mirror' },
+                    { text: '镜像源', link: '/cheatsheet/mirror' },
                     { text: '时间戳对照表', link: '/cheatsheet/timestamp' },
                     { text: 'Python 语法更新摘要', link: '/cheatsheet/grammar' },
                 ]
@@ -60,7 +60,7 @@ export default defineConfig({
                             { text: '文件打开模式', link: '/file-open-mode' },
                         ]
                     },
-                    { text: '镜像站、镜像源', link: '/cheatsheet/mirror' },
+                    { text: '镜像源', link: '/cheatsheet/mirror' },
                     { text: '微信扫码支付的响应', link: '/wechat-pay-barcode-response' },
                     { text: '时间戳对照表', link: '/cheatsheet/timestamp' },
                 ]

@@ -7,6 +7,6 @@ outline: deep
 import Mirrors from "@/cheatsheet/Mirrors.vue";
 </script>
 
-# 镜像站、镜像源
+# 镜像源
 
 <Mirrors />
