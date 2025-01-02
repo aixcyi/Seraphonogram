@@ -7,12 +7,11 @@ const zz = (n: integer) => n > 9 ? '' : '0'
 const zzz = (n: integer) => n > 99 ? '' : n > 9 ? '0' : '00'
 const configs = {
     millisecond: {
-        exponents: [ 53, 17, 16, 13, 10, 9, 8 ],
-        minimum: 1n,
-        maximum: 1n << 54n,
-        duration: (stamp: bigint) => Duration.fromMilliseconds(stamp),
-        dateFormat: "yyyy-MM-dd　HH:mm:ss. SSS",
-        deltaFormat: (d: Duration) => [
+        lowerLmt: 1n,
+        upperLmt: 1n << 54n,
+        duration: (stamp: bigint) => Duration.fromMilliseconds(stamp - 1n),
+        dateFmt: "yyyy-MM-dd　HH:mm:ss. SSS",
+        dateLmt: (d: Duration) => [
             `${d.year} 年 `,
             `${d.day} 天　${zz(d.hour)}`,
             `${d.hour}:${zz(d.minute)}`,
@@ -24,15 +23,13 @@ const configs = {
         ).join(
             ''
         ),
-        widths: [ 270, 240 ],
     },
     second: {
-        exponents: [ 42, 14, 12, 10, 8, 7, 7 ],
-        minimum: 1n,
-        maximum: 1n << 42n,
-        duration: (stamp: bigint) => Duration.fromSeconds(stamp),
-        dateFormat: "yyyy-MM-dd　HH:mm:ss",
-        deltaFormat: (d: Duration) => [
+        lowerLmt: 1n,
+        upperLmt: 1n << 45n,
+        duration: (stamp: bigint) => Duration.fromSeconds(stamp - 1n),
+        dateFmt: "yyyy-MM-dd　HH:mm:ss",
+        dateLmt: (d: Duration) => [
             `${d.year} 年 `,
             `${d.day} 天　${zz(d.hour)}`,
             `${d.hour}:${zz(d.minute)}`,
@@ -43,16 +40,13 @@ const configs = {
         ).join(
             ''
         ),
-        widths: [ 220, 200 ],
     },
     day: {
-        exponents: [ 25, 8, 7, 6, 5, 4, 4 ],
-        minimum: 1n,
-        maximum: 36n ** 5n,
-        duration: (stamp: bigint) => Duration.fromDays(stamp),
-        dateFormat: "yyyy-MM-dd",
-        deltaFormat: (d: Duration) => d.year > 0 ? `${d.year} 年 ${d.day} 天` : `${d.day} 天`,
-        widths: [ 160, 140 ],
+        lowerLmt: 1n,
+        upperLmt: 36n ** 5n,
+        duration: (stamp: bigint) => Duration.fromDays(stamp - 1n),
+        dateFmt: "yyyy-MM-dd",
+        dateLmt: (d: Duration) => d.year > 0 ? `${d.year} 年 ${d.day} 天` : `${d.day} 天`,
     },
 }
 </script>

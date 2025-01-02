@@ -1,50 +1,43 @@
 <script lang="ts" setup>
 import { Duration } from "@/utils/duration.ts";
-import { getLogarithm, isInteger } from "@/utils/math.ts";
-import type { integer } from "@vue/language-server";
 
-const bases = [ 2, 8, 10, 16, 36, 62, 64 ]
 const props = defineProps<{
-    exponents: integer[],
-    minimum: bigint,
-    maximum: bigint,
+    lowerLmt: bigint,
+    upperLmt: bigint,
     duration: (stamp: bigint) => Duration,
-    dateFormat: string,
-    deltaFormat: (delta: Duration) => string,
-    widths: integer[],
+    dateFmt: string,
+    dateLmt: (delta: Duration) => string,
 }>()
 
-if (props.exponents.length !== bases.length) {
-    throw new Error("exponents must be an array of length 7")
-}
+type Data = { stamp: bigint, powers: Map<bigint, bigint>, delta: string, datetime: string }
 
-const range = (end: integer) => Array.from({ length: end + 1 }, (_, i) => BigInt(i))
-const picks = (n: number) => (isInteger(n, 0.0000001)) ? Math.round(n) : null
-const table = [
-    ...new Set([
-        ...bases.map((base, index, _) => [
-            ...range(props.exponents[index]).map(power => BigInt(base) ** power)
-        ])
-    ].reduce(
-        (prev, curr) => prev.concat(curr)
-    ))
-].sort(
-    (a, b) => (a < b) ? 1 : ((a > b) ? -1 : 0)
-).filter(
-    stamp => props.minimum <= stamp && stamp <= props.maximum
-).map(
-    stamp => {
-        const duration = props.duration(stamp)
-        return {
-            powers: new Map<integer, number | null>(
-                bases.map(
-                    base => [ base, picks(getLogarithm(stamp, base)) ]
-                )
-            ),
-            datetime: duration.toUTCDateString(props.dateFormat, '-'),
-            delta: props.deltaFormat(duration),
+const bases = [ 2n, 8n, 10n, 16n, 32n, 36n, 62n, 64n, 85n ]
+const table = new Map<bigint, Data>()
+let power = 0n
+for (const base of bases) {
+    let stamp = base ** power
+    let duration = props.duration(stamp)
+    while (stamp <= props.upperLmt) {
+        if (stamp < props.lowerLmt) {
+            continue
         }
+        if (table.has(stamp)) {
+            table.get(stamp)!.powers.set(base, power)
+        } else {
+            table.set(stamp, {
+                stamp: stamp,
+                powers: new Map([ [ base, power ] ]),
+                delta: props.dateLmt(duration),
+                datetime: duration.toUTCDateString(props.dateFmt, '-'),
+            })
+        }
+        stamp = base ** ++power
+        duration = props.duration(stamp)
     }
+    power = 0n
+}
+const data = [ ...table.values() ].sort(
+    (a, b) => a.stamp < b.stamp ? 1 : a.stamp == b.stamp ? 0 : -1
 )
 </script>
 
@@ -53,14 +46,14 @@ const table = [
         <thead>
         <tr>
             <th v-for="_ in bases" style="text-align:center;"></th>
-            <th style="text-align:right;">时间差</th>
-            <th style="text-align:right;">GMT+0 时刻</th>
+            <th style="text-align:right;">存储上限</th>
+            <th style="text-align:right;">时间上限</th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="row in table">
+        <tr v-for="row in data">
             <td v-for="base in bases" style="text-align:center;">
-                <span v-if="row.powers.get(base) != null">
+                <span v-if="row.powers.get(base) != undefined">
                     {{ base }}<sup>{{ row.powers.get(base) }}</sup>
                 </span>
             </td>
