@@ -42,6 +42,7 @@ export default defineConfig({
             },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
+        sidebarMenuLabel: '菜单',
         sidebar: [
             {
                 text: '总结／摘要／备忘',
@@ -130,17 +131,21 @@ export default defineConfig({
                 ]
             },
         ],
+        darkModeSwitchLabel: '外观主题',
+        darkModeSwitchTitle: '切换到夜间主题',
+        lightModeSwitchTitle: '切换到日间主题',
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
         ],
+        returnToTopLabel: '回到顶部',
+        docFooter: {
+            prev: '上一页',
+            next: '下一页',
+        },
         footer: {
             message: `${env.VITE_FOOTER_MSG}`,
             copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
-        },
-        docFooter: {
-            prev: '上一页',
-            next: '下一页'
         },
     },
     rewrites: {
