@@ -36,9 +36,9 @@ export default defineConfig({
         darkModeSwitchTitle: '切换到深色模式',
         lightModeSwitchTitle: '切换到浅色模式',
         returnToTopLabel: '回到顶部',
-        outline: { label: '页面目录' },
+        outline: { label: '目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
-        lastUpdated: { text: '最后更新于' },
+        // lastUpdated: { text: '最后更新于' },
         // editLink: { text: '源代码', pattern: 'https://github.com/username/repository-name/blame/main/docs/:path' },
         footer: {
             message: `${env.VITE_FOOTER_MSG}`,
