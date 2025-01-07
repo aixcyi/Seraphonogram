@@ -41,7 +41,7 @@ const indexes: Index[] = [
         versions: [],
     },
     {
-        link: '/cheatsheet/grammar',
+        link: '/grammar',
         path: [ Style.Summary, 'Python' ],
         title: '语法更新摘要',
         created: new Date('2023-12-23T23:59:00.000+08:00'),
@@ -86,7 +86,7 @@ const indexes: Index[] = [
         versions: [],
     },
     {
-        link: '/cheatsheet/mirror',
+        link: '/mirror',
         path: [ Style.Summary, ],
         title: '镜像源',
         created: new Date('2024-11-13T00:08:00.000+08:00'),
@@ -104,7 +104,7 @@ const indexes: Index[] = [
         versions: [],
     },
     {
-        link: '/cheatsheet/timestamp',
+        link: '/timestamp',
         path: [ Style.Summary, ],
         title: '时间戳对照表',
         created: new Date('2023-12-21T10:02:00.000+08:00'),
@@ -330,9 +330,9 @@ export const vitepressNavGuideline = Object.values(Style).map(style => {
 
 // 全局菜单『快速参考』
 export const vitepressNavQuickRef = [
-    { text: '镜像源', link: '/cheatsheet/mirror' },
-    { text: '时间戳对照表', link: '/cheatsheet/timestamp' },
-    { text: 'Python 语法更新摘要', link: '/cheatsheet/grammar' },
+    { text: '镜像源', link: '/mirror' },
+    { text: '时间戳对照表', link: '/timestamp' },
+    { text: 'Python 语法更新摘要', link: '/grammar' },
 ]
 
 // 侧边栏

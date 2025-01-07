@@ -51,8 +51,10 @@ export default defineConfig({
             copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
         },
     },
+    cleanUrls: true,
     rewrites: {
         'blog/:file': ':file',
+        'cheatsheet/:file': ':file',
     },
     markdown: {
         lineNumbers: true,
