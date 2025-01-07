@@ -1,15 +1,15 @@
 import { resolve } from "path";
 import { defineConfig, loadEnv } from "vitepress";
-import { vitepressNavGuideline, vitepressNavQuickRef, vitepressSidebar } from "../src/data";
+import { Vitepress } from "../src/data";
 
 const env = loadEnv('', process.cwd())
 const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    lang: "zh-CN",
-    title: "Seraphonogram",
-    description: "砹小翼的博客",
+    lang: 'zh-CN',
+    title: 'Seraphonogram',
+    description: '砹小翼的博客',
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
@@ -20,18 +20,12 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
         nav: [
-            {
-                text: '导览',
-                items: vitepressNavGuideline,
-            },
-            {
-                text: '快速参考',
-                items: vitepressNavQuickRef,
-            },
+            { text: '导览', items: Vitepress.navGuideline() },
+            { text: '快速参考', items: Vitepress.navQuickRef() },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
-        sidebar: vitepressSidebar,
+        sidebar: Vitepress.sidebar(),
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },

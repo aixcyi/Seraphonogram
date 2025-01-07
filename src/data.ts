@@ -315,35 +315,51 @@ indexes.sort(
     (a, b) => (b.updated ?? b.created).getTime() - (a.updated ?? a.created).getTime()
 )
 
-// 全局菜单『导览』
-// 提取每个分类（Style）下最新的一篇文章
-let navItems = new Map<Style, string>()
-for (const index of indexes) {
-    const indexStyle = index.path[0] as Style
-    if (navItems.has(indexStyle))
-        continue
-    navItems.set(indexStyle, index.link)
-}
-export const vitepressNavGuideline = Object.values(Style).map(style => {
-    return { text: style.toString(), link: navItems.get(style)! }
-})
 
-// 全局菜单『快速参考』
-export const vitepressNavQuickRef = [
-    { text: '镜像源', link: '/mirror' },
-    { text: '时间戳对照表', link: '/timestamp' },
-    { text: 'Python 语法更新摘要', link: '/grammar' },
-]
+export class Vitepress {
 
-// 侧边栏
-// 聚合每个分类（Style）下每个二级路径的所有文章
-// TODO: 映射任意层级（vitepress最多支持6层）
-export const vitepressSidebar = Object.values(Style).map(style => {
-    return {
-        text: style.toString(),
-        collapsed: true,
-        items: indexes.filter(v => v.path[0] == style).map(index => {
-            return { text: index.title, link: index.link }
+    /**
+     * 全局菜单『导览』
+     */
+    static navGuideline() {
+        // 提取每个分类（Style）下最新的一篇文章
+        let navItems = new Map<Style, string>()
+        for (const index of indexes) {
+            const indexStyle = index.path[0] as Style
+            if (navItems.has(indexStyle))
+                continue
+            navItems.set(indexStyle, index.link)
+        }
+        return Object.values(Style).map(style => {
+            return { text: style.toString(), link: navItems.get(style)! }
         })
     }
-})
+
+    /**
+     * 全局菜单『快速参考』
+     */
+    static navQuickRef() {
+        return [
+            { text: '镜像源', link: '/mirror' },
+            { text: '时间戳对照表', link: '/timestamp' },
+            { text: 'Python 语法更新摘要', link: '/grammar' },
+        ]
+    }
+
+    /**
+     * 侧边栏
+     */
+    static sidebar() {
+        // 聚合每个分类（Style）下每个二级路径的所有文章
+        // TODO: 映射任意层级（vitepress最多支持6层）
+        return Object.values(Style).map(style => {
+            return {
+                text: style.toString(),
+                collapsed: true,
+                items: indexes.filter(v => v.path[0] == style).map(index => {
+                    return { text: index.title, link: index.link }
+                })
+            }
+        })
+    }
+}
