@@ -19,7 +19,6 @@ export default defineConfig({
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
-        outline: { label: '页面目录' },
         nav: [
             {
                 text: '导览',
@@ -33,19 +32,20 @@ export default defineConfig({
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
         sidebar: vitepressSidebar,
-        sidebarMenuLabel: '菜单',
-        darkModeSwitchLabel: '外观主题',
-        darkModeSwitchTitle: '切换到夜间主题',
-        lightModeSwitchTitle: '切换到日间主题',
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
         ],
+        langMenuLabel: '切换语言',
+        sidebarMenuLabel: '菜单',
+        darkModeSwitchLabel: '颜色主题',
+        darkModeSwitchTitle: '切换到深色模式',
+        lightModeSwitchTitle: '切换到浅色模式',
         returnToTopLabel: '回到顶部',
-        docFooter: {
-            prev: '上一页',
-            next: '下一页',
-        },
+        outline: { label: '页面目录' },
+        docFooter: { prev: '上一篇', next: '下一篇' },
+        lastUpdated: { text: '最后更新于' },
+        // editLink: { text: '源代码', pattern: 'https://github.com/username/repository-name/blame/main/docs/:path' },
         footer: {
             message: `${env.VITE_FOOTER_MSG}`,
             copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
