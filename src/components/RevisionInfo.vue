@@ -48,7 +48,7 @@ const slotsName =
 </script>
 
 <template>
-    <table style="margin-top: 8px">
+    <table>
         <tbody style="width: 100%">
         <tr>
             <td rowspan="4" style="width: 100%">
@@ -107,7 +107,6 @@ const slotsName =
 
 <style scoped>
 table {
-    margin: 0 !important;
     overflow-x: visible !important;
     border-collapse: collapse !important;
 }
