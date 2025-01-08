@@ -2,47 +2,60 @@
 import { limit } from "@/utils/math.ts";
 import type { integer } from "@vue/language-server";
 import { add, differenceInDays, format, parse } from "date-fns";
+import { useData } from "vitepress";
 
-const props = defineProps<{
-    created: string,
-    updated?: string,
-    revised?: string,
-    expired?: integer | string,
-    badge?: integer,
-}>()
+const $frontmatter = useData().frontmatter.value
+const props = defineProps<{ badge?: integer }>()
 
-function latest(...days: (Date | null)[]): Date {
-    return days.filter(v => v !== null).sort((a, b) => b!.getTime() - a!.getTime())[0]
+/**
+ * 解析前端传入的日期。
+ */
+function resolve(dateString: string | undefined) {
+    if (typeof dateString === 'string')
+        return parse(dateString, "yyyy-MM-dd HH:mm", new Date())
+    else
+        return dateString
 }
 
-function percentageRound(n: number): number {
-    return limit(0, n, 100)
-}
-
+/**
+ * 新鲜度（进度条）颜色。
+ */
 function getFreshnessColor(percentage: number) {
-    if (percentage >= 25)
-        return '#67c23a'
-    if (percentage >= 10)
-        return '#e6a23c'
+    if (percentage >= 25) return '#67c23a'
+    if (percentage >= 10) return '#e6a23c'
     return '#f56c6c'
 }
 
 const current = Date.now()
-const createAt = parse(props.created, "yyyy-MM-dd HH:mm", new Date())
-const updateAt = props.updated ? parse(props.updated, "yyyy-MM-dd HH:mm", new Date()) : null
-const reviseAt = props.revised ? parse(props.revised, "yyyy-MM-dd HH:mm", new Date()) : null
-const expireAt = latest(updateAt, reviseAt, createAt)
-const expires =
-    typeof props.expired !== 'number'
-        ? props.expired ?? null
-        : format(add(expireAt, { days: props.expired }), "yyyy-MM")
-const freshness =
-    typeof props.expired !== 'number'
-        ? null
-        : 100 - percentageRound(Math.round(differenceInDays(current, expireAt) / props.expired * 100))
+const createAt = resolve($frontmatter.created)!
+const updateAt = resolve($frontmatter.updated)
+const reviseAt = resolve($frontmatter.revised)
+const latestAt = [ reviseAt, updateAt, createAt ]
+    .filter(v => v !== undefined)
+    .sort((a, b) => b!.getTime() - a!.getTime())
+    [0]
 
+let expires: Date | string | undefined;
+let freshness: number | undefined;
+switch (typeof $frontmatter.expires) {
+    case "number":
+        expires = format(add(latestAt, { days: $frontmatter.expires }), "yyyy-MM")
+        freshness = 100 - limit(0, Math.round(differenceInDays(current, latestAt) / $frontmatter.expires * 100), 100)
+        break
+    case "string":
+        expires = $frontmatter.expires
+        freshness = undefined
+        break
+    default:
+        expires = undefined
+        freshness = undefined
+}
+
+/**
+ * 徽章插槽名。指定了几个 `badge` 就会遍历几个插槽。
+ */
 const slotsName =
-    props.badge == undefined
+    props.badge === undefined
         ? Array.of<string>()
         : Array.from({ length: props.badge }, (_, index) => index + 1).map(v => `badge${v}`)
 </script>
@@ -52,7 +65,7 @@ const slotsName =
         <tbody style="width: 100%">
         <tr>
             <td rowspan="4" style="width: 100%">
-                <template v-if="props.badge">
+                <template v-if="slotsName.length">
                     <table>
                         <tbody>
                         <tr>
@@ -63,6 +76,9 @@ const slotsName =
                         </tbody>
                     </table>
                 </template>
+                <template v-else-if="$frontmatter.intro !== undefined">
+                    <el-text type="info" v-html="$frontmatter.intro"></el-text>
+                </template>
                 <template v-else>
                     <el-text type="info">
                         <slot/>
@@ -71,21 +87,21 @@ const slotsName =
             </td>
             <td rowspan="4" style="border-left: 1px solid var(--vp-c-divider)"></td>
             <td style="text-wrap: nowrap">
-                <el-text type="info">{{ props.revised == undefined ? '发布于' : '修订于' }}</el-text>
+                <el-text type="info">{{ $frontmatter.revised ? '修订于' : '发布于' }}</el-text>
             </td>
             <td style="text-wrap: nowrap">
-                <el-text type="info">{{ props.revised == undefined ? props.created : props.revised }}</el-text>
+                <el-text type="info">{{ $frontmatter.revised ?? $frontmatter.created }}</el-text>
             </td>
         </tr>
-        <tr v-if="props.updated != undefined">
+        <tr v-if="$frontmatter.updated !== undefined">
             <td style="text-wrap: nowrap">
                 <el-text type="info">更新于</el-text>
             </td>
             <td style="text-wrap: nowrap">
-                <el-text type="info">{{ props.updated }}</el-text>
+                <el-text type="info">{{ $frontmatter.updated }}</el-text>
             </td>
         </tr>
-        <tr v-if="expires != null">
+        <tr v-if="expires !== undefined">
             <td style="text-wrap: nowrap">
                 <el-text type="info">保质期</el-text>
             </td>
@@ -93,12 +109,12 @@ const slotsName =
                 <el-text type="info">{{ expires }}</el-text>
             </td>
         </tr>
-        <tr v-if="freshness != null">
+        <tr v-if="freshness !== undefined">
             <td style="text-wrap: nowrap">
                 <el-text type="info">新鲜度</el-text>
             </td>
             <td style="text-wrap: nowrap">
-                <el-progress :color="getFreshnessColor" :percentage="freshness" style="min-width: 100px"/>
+                <el-progress :color="getFreshnessColor" :percentage="freshness!" style="min-width: 100px"/>
             </td>
         </tr>
         </tbody>

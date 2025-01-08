@@ -20,7 +20,7 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
         nav: [
-            { text: '导览', items: Vitepress.navGuideline() },
+            { text: '博客', items: Vitepress.navGuideline() },
             { text: '快速参考', items: Vitepress.navQuickRef() },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
@@ -47,7 +47,7 @@ export default defineConfig({
     },
     cleanUrls: true,
     rewrites: {
-        'blog/:file': ':file',
+        'article/:pkg/:file': 'article/:file',
         'cheatsheet/:file': ':file',
     },
     markdown: {

@@ -14,6 +14,7 @@ const mirrors = [
     { site: 'https://mirrors.163.com/', name: '网易' },
     { site: 'https://msdn.itellyou.cn/', name: 'MSDN, I Tell You' },
 ]
+
 const pypiSources = [
     { index: `https://mirrors.ustc.edu.cn/pypi/simple`, name: '中科大' },
     { index: 'https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple', name: '清华大学' },
@@ -26,6 +27,7 @@ const pypiSources = [
 ].map(
     item => ({ ...item, host: new URL(item.index).hostname })
 )
+
 const npmSources = [
     { registry: 'https://registry.npmjs.org/', name: 'npm 官方' },
     { registry: 'https://npmreg.proxy.ustclug.org/', name: '中科大（只是反向代理）' },
@@ -44,7 +46,7 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <RevisionInfo :expired="365*10" created="2024-11-13 00:08" updated="2024-12-26 00:11">
+    <RevisionInfo>
         <span>　　常见镜像站点有 </span>
         <span v-for="(mirror, index) in mirrors">
             <a :href="mirror.site">{{ mirror.name }}</a>

@@ -1,7 +1,13 @@
 ---
+title: 时间戳对照表
 lang: zh-CN
 aside: false
 outline: false
+created: 2023-12-21 10:02
+updated: 2025-01-02 10:24
+expires: 永远新鲜~
+tags:
+    - 时间戳
 ---
 
 <script setup lang="ts">
@@ -11,7 +17,7 @@ import TimestampTables from "@/cheatsheet/TimestampTables.vue";
 
 # 时间戳对照表
 
-<RevisionInfo created="2023-12-21 10:02" updated="2025-01-02 10:24" expired="永远新鲜~" />
+<RevisionInfo />
 
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。
