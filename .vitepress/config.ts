@@ -1,12 +1,15 @@
 import { resolve } from "path";
-import { defineConfig, loadEnv } from "vitepress";
-import { Vitepress } from "../src/data";
+import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
+import { withSidebar } from 'vitepress-sidebar';
+import { VitePressSidebarOptions } from "vitepress-sidebar/dist/types";
+import { rewriteSidebar } from "../src/utils/vpt";
+
 
 const env = loadEnv('', process.cwd())
-const now = Math.max(new Date().getFullYear(), Number(env.VITE_THIS_YEAR))
+const now = new Date().getFullYear()
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const configsVitePress: UserConfig<DefaultTheme.Config> = {
     lang: 'zh-CN',
     title: 'Seraphonogram',
     description: '砹小翼的博客',
@@ -20,12 +23,27 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
         nav: [
-            { text: '博客', items: Vitepress.navGuideline() },
-            { text: '快速参考', items: Vitepress.navQuickRef() },
+            {
+                text: '博客',
+                items: [
+                    { text: '总结／摘要', link: '/summary/python/dot-token-generation' },
+                    { text: '经验／备忘', link: '/record/jetbrains-ide-language' },
+                    { text: '思考／碎碎念', link: '/thinking/parameter-default-value' },
+                    { text: '题集', link: '/problem/leetcode-20-valid-parentheses' }
+                ]
+            },
+            {
+                text: '快速参考',
+                items: [
+                    { text: '镜像源', link: '/mirror' },
+                    { text: '时间戳对照表', link: '/timestamp' },
+                    { text: 'Python 语法更新摘要', link: '/grammar' },
+                ]
+            },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
-        sidebar: Vitepress.sidebar(),
+        sidebar: [],
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
@@ -47,8 +65,9 @@ export default defineConfig({
     },
     cleanUrls: true,
     rewrites: {
-        'article/:pkg/:file': 'article/:file',
-        'cheatsheet/:file': ':file',
+        'summary/mirror.md': 'mirror.md',
+        'summary/timestamp.md': 'timestamp.md',
+        'summary/python/grammar.md': 'grammar.md',
     },
     markdown: {
         lineNumbers: true,
@@ -61,4 +80,36 @@ export default defineConfig({
             },
         },
     },
-})
+}
+
+// https://vitepress-sidebar.cdget.com/zhHans/guide/options
+const configsVitePressSidebar: VitePressSidebarOptions = {
+    // 路由、包含、排除
+    documentRootPath: '/',
+    scanStartPath: 'src/',
+    excludePattern: [
+        'about.md',
+    ],
+    // 分组、菜单标题
+    // TODO: 浏览文章时不能自动展开对应侧边栏
+    collapsed: true,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    // 排序
+    // TODO: 第二级子项不能按时间倒序，第三级倒是可以……
+    sortFolderTo: 'top',
+    sortMenusByFrontmatterDate: true,
+    sortMenusOrderByDescending: true,
+    manualSortFileNameByPriority: [
+        'summary',
+        'record',
+        'thinking',
+        'problem',
+    ].reverse(),  // 要跟着 sortMenusOrderByDescending 倒序
+};
+
+export default defineConfig(
+    rewriteSidebar(
+        withSidebar(configsVitePress, configsVitePressSidebar)
+    )
+);
