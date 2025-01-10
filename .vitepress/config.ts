@@ -91,7 +91,6 @@ const configsVitePressSidebar: VitePressSidebarOptions = {
         'about.md',
     ],
     // 分组、菜单标题
-    // TODO: 浏览文章时不能自动展开对应侧边栏
     collapsed: true,
     useTitleFromFrontmatter: true,
     useFolderTitleFromIndexFile: true,

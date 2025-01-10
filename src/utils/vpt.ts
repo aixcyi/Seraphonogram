@@ -6,25 +6,32 @@ import { compile, match } from "path-to-regexp";
 import type { DefaultTheme, UserConfig } from "vitepress";
 
 
+/**
+ * 去除字符串 s 末尾的 sub 部分（如果有的话）。
+ */
+function trimEnd(s: string, sub: string) {
+    return s.endsWith(sub) ? s.slice(0, s.length - sub.length) : s
+}
+
+/**
+ * 编译 `UserConfig.rewrites` 并返回重写函数。
+ */
 function compileRewrites(rewrites: UserConfig['rewrites']) {
-    const trimMd = (s: string) => {
-        if (s.endsWith('.md'))
-            return s.substring(0, s.length - 3)
-        return s
-    }
     switch (typeof rewrites) {
         case "object":
             const rewriteRules = Object.entries(rewrites || {}).map(
-                ([ from, to ]) => ({
-                    toPath: compile(`/${trimMd(to)}`),
-                    matchUrl: match(from.startsWith('^') ? new RegExp(from) : from)
-                })
+                ([ from, to ]) => {
+                    return {
+                        toPath: compile(trimEnd(to, '.md')),
+                        matchUrl: match(trimEnd(from, '.md')),
+                    }
+                }
             )
             return (page: string) => {
                 for (const { matchUrl, toPath } of rewriteRules) {
                     const res = matchUrl(page)
                     if (res) {
-                        return toPath(res.params).slice(1)
+                        return toPath(res.params)
                     }
                 }
                 return page
@@ -36,13 +43,15 @@ function compileRewrites(rewrites: UserConfig['rewrites']) {
     }
 }
 
-
+/**
+ * 按照 `UserConfig.rewrites` 递归重写 `DefaultTheme.SidebarItem[]`。
+ */
 function rewriteSidebarItems(items: DefaultTheme.SidebarItem[], handle: ((link: string) => string)): DefaultTheme.SidebarItem[] {
     items.forEach(item => {
         if (item.items && item.items.length) {
             item.items = rewriteSidebarItems(item.items, handle)
         } else if (item.link) {
-            item.link = handle(item.link)
+            item.link = `/${handle(item.link)}`
         }
         return item
     })
@@ -51,7 +60,9 @@ function rewriteSidebarItems(items: DefaultTheme.SidebarItem[], handle: ((link: 
 
 
 /**
- * 对 `UserConfig.themeConfig.sidebar` 执行路由重写。
+ * 按照 `UserConfig.rewrites` 对 `UserConfig.themeConfig.sidebar` 执行路由重写。
+ *
+ * > 用以解决 VitePress Sidebar 无法执行重写的问题。
  */
 export function rewriteSidebar(configs: UserConfig<DefaultTheme.Config>): UserConfig<DefaultTheme.Config> {
     if (!configs.themeConfig)
