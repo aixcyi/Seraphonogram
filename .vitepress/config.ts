@@ -25,15 +25,18 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
         nav: [
             {
                 text: '博客',
+                activeMatch: '^(/summary|/record|/thinking|/problem)',
                 items: [
-                    { text: '总结／摘要', link: '/summary/python/dot-token-generation' },
-                    { text: '经验／备忘', link: '/record/jetbrains-ide-language' },
-                    { text: '思考／碎碎念', link: '/thinking/parameter-default-value' },
-                    { text: '题集', link: '/problem/leetcode-20-valid-parentheses' }
+                    // TODO: 每个分类都加一个索引，并替换这里的链接
+                    { text: '总结／摘要', activeMatch: '/summary', link: '/summary/python/dot-token-generation' },
+                    { text: '经验／踩坑／备忘', activeMatch: '/record', link: '/record/jetbrains-ide-language' },
+                    { text: '思考／碎碎念', activeMatch: '/thinking', link: '/thinking/parameter-default-value' },
+                    { text: '题集', activeMatch: '/problem', link: '/problem/leetcode-20-valid-parentheses' }
                 ]
             },
             {
                 text: '快速参考',
+                activeMatch: '^(/mirror|/timestamp|/grammar)',
                 items: [
                     { text: '镜像源', link: '/mirror' },
                     { text: '时间戳对照表', link: '/timestamp' },
