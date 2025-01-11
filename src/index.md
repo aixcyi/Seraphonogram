@@ -4,9 +4,12 @@ layout: home
 
 hero:
   name: "Seraphonogram"
-  text: "不绝如缕的羽音"
-  tagline: "毛茸茸爱好者／Python 开发／Django Web 后端开发／IDEA 插件开发／Minecraft 模组开发"
+  text: "静谧星夜下\n不绝如缕的羽音"
+  tagline: "干净、整洁、纯粹、静谧、保鲜的技术日志树洞。"
   actions:
+    - theme: brand
+      text: 关于
+      link: /about
     - theme: alt
       text: 时间戳对照表
       link: /timestamp
