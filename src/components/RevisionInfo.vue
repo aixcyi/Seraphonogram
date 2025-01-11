@@ -64,7 +64,7 @@ const slotsName =
     <table>
         <tbody style="width: 100%">
         <tr>
-            <td rowspan="4" style="width: 100%">
+            <td class="col-intro" rowspan="4">
                 <template v-if="slotsName.length">
                     <table>
                         <tbody>
@@ -85,35 +85,35 @@ const slotsName =
                     </el-text>
                 </template>
             </td>
-            <td rowspan="4" style="border-left: 1px solid var(--vp-c-divider)"></td>
-            <td style="text-wrap: nowrap">
+            <td class="col-divider" rowspan="4"></td>
+            <td class="col-key">
                 <el-text type="info">{{ $frontmatter.revised ? '修订于' : '发布于' }}</el-text>
             </td>
-            <td style="text-wrap: nowrap">
+            <td class="col-value">
                 <el-text type="info">{{ $frontmatter.revised ?? $frontmatter.created }}</el-text>
             </td>
         </tr>
         <tr v-if="$frontmatter.updated !== undefined">
-            <td style="text-wrap: nowrap">
+            <td class="col-key">
                 <el-text type="info">更新于</el-text>
             </td>
-            <td style="text-wrap: nowrap">
+            <td class="col-value">
                 <el-text type="info">{{ $frontmatter.updated }}</el-text>
             </td>
         </tr>
         <tr v-if="expires !== undefined">
-            <td style="text-wrap: nowrap">
+            <td class="col-key">
                 <el-text type="info">保质期</el-text>
             </td>
-            <td style="text-wrap: nowrap">
+            <td class="col-value">
                 <el-text type="info">{{ expires }}</el-text>
             </td>
         </tr>
         <tr v-if="freshness !== undefined">
-            <td style="text-wrap: nowrap">
+            <td class="col-key">
                 <el-text type="info">新鲜度</el-text>
             </td>
-            <td style="text-wrap: nowrap">
+            <td class="col-value">
                 <el-progress :color="getFreshnessColor" :percentage="freshness!" style="min-width: 100px"/>
             </td>
         </tr>
@@ -137,5 +137,23 @@ tr {
 
 td {
     padding: 0 4px !important;
+}
+
+.col-intro {
+    width: 100%;
+}
+
+.col-divider {
+    border-left: 1px solid var(--vp-c-divider);
+}
+
+.col-key {
+    min-width: 50px;
+    text-wrap: nowrap;
+}
+
+.col-value {
+    min-width: 130px;
+    text-wrap: nowrap;
 }
 </style>
