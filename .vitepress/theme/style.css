@@ -75,6 +75,10 @@ a:hover {
     text-underline-offset: 4px !important;
 }
 
+.VPDoc.has-aside .content-container {
+    max-width: unset !important;
+}
+
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
