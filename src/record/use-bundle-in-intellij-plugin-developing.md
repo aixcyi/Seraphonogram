@@ -95,7 +95,7 @@ public class MainTest {
 
 将会输出
 
-```
+```text
 优化 __all__ (&O)
 ```
 

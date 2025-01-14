@@ -31,7 +31,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 罗马数字包含以下七种字符： `I`， `V`， `X`， `L`，`C`，`D` 和 `M`。
 
-```
+```text
 字符          数值
 I             1
 V             5

@@ -36,7 +36,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 在除了 PyCharm 以外的地方激活虚拟环境，并观察 `PATH` 的值是否有乱码。
 
-```cmd
+```bat
 cd %PROJECT%/venv/Scripts  # 你的项目目录下的虚拟环境
 activate
 echo %PATH%

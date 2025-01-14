@@ -28,9 +28,9 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 假设 Python 3 安装在 `/usr/bin/python` ，用户名、当前所在目录、要操作的脚本名称如下：
 
-```shell
-[kitten@localhost ~] touch meow.py
-[kitten@localhost ~] whereis python
+```console
+$ touch meow.py
+$ whereis python
 python: /usr/bin/python
 ```
 
@@ -89,21 +89,21 @@ Python 3.3+ Windows 安装包附带了一个叫 py.exe 的程序，可以 **自�
 
 在命令行查询注册表，看看是不是已经配置好：
 
-```cmd
+```bat
 reg query "HKCR\.py" /ve
 reg query "HKCR\py_auto_file\shell\open\command" /ve
 ```
 
 然后修改注册表：（需要管理员权限）（修改前注意备份数据）
 
-```cmd
+```bat
 reg add "HKCR\.py" /ve /d "py_auto_file"
 reg add "HKCR\py_auto_file\shell\open\command" /ve /d "\"C:\Windows\py.exe\" \"%1\" %*"
 ```
 
 如果 `py.exe` 的全局调用对应的是 `C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe` ，那么上面的修改要换成
 
-```cmd
+```bat
 reg add "HKCR\.py" /ve /d "py_auto_file"
 reg add "HKCR\py_auto_file\shell\open\command" /ve /d "\"C:\Users\{YourName}\AppData\Local\Programs\Python\Launcher\py.exe\" \"%1\" %*"
 ```
