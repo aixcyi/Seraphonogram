@@ -17,7 +17,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 推导式
 
-<RevisionInfo />
+<RevisionInfo indent />
 
 ## 列表推导式
 

@@ -5,6 +5,7 @@ date: 2023-12-21
 created: 2023-12-21 11:48
 expires: 1000
 excerpt: '<img src="https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django"/>
+          <span>　　</span>
           Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 <b>修改</b> 配置。本文仅围绕导入配置初值展开。'
 tags:
     - Django

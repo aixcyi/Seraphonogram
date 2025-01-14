@@ -19,9 +19,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # 十进制转任意进制与 `yield`
 
-<RevisionInfo created="2022-08-18 00:10" :expired="365*3">
-　　
-</RevisionInfo>
+<RevisionInfo indent />
 
 ## 过程描述
 

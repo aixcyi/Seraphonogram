@@ -5,7 +5,7 @@ import { add, differenceInDays, format, parse } from "date-fns";
 import { useData } from "vitepress";
 
 const $frontmatter = useData().frontmatter.value
-const props = defineProps<{ badge?: integer }>()
+const props = defineProps<{ badge?: integer, indent?: boolean }>()
 
 /**
  * 解析前端传入的日期。
@@ -76,8 +76,9 @@ const slotsName =
                         </tbody>
                     </table>
                 </template>
-                <template v-else-if="$frontmatter.intro !== undefined">
-                    <el-text type="info" v-html="$frontmatter.intro"></el-text>
+                <template v-else-if="$frontmatter.excerpt !== undefined">
+                    <span v-if="props.indent">　　</span>
+                    <el-text type="info" v-html="$frontmatter.excerpt"></el-text>
                 </template>
                 <template v-else>
                     <el-text type="info">

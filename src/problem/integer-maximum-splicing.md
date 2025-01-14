@@ -13,7 +13,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 多个整数连接为最大整数问题
 
-<RevisionInf />
+<RevisionInfo />
 
 ## 题干
 

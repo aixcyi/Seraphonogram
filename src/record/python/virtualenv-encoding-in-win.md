@@ -18,7 +18,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # virtualenv 在 Windows 中无法激活
 
-<RevisionInfo />
+<RevisionInfo indent />
 
 ## 环境（参考）
 

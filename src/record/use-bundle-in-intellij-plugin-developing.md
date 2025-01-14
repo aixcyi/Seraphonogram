@@ -19,10 +19,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # IntelliJ 插件中使用 Bundle
 
-<RevisionInfo created="2023-09-06 23:32" :expired="365">
-　　Bundle 是 Java 自带的提供本地化翻译的功能，因为出现时间比 IntelliJ
-早得多得多，所以如果需要让插件语言跟随用户安装的语言包插件来切换，就要进行一定的适配。
-</RevisionInfo>
+<RevisionInfo indent/>
 
 > [!TIP] 另见
 > [《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)

@@ -19,11 +19,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 为自身定义 `copy` 方法
 
-<RevisionInfo created="2022-08-17 00:04" :expired="365*3">
-　　一些类自带了 <code>copy()</code> 或者用于浅拷贝的方法，比如内置的
-<code>list</code>、<code>dict</code>、decimal 的 <code>Decimal</code>
-等等。如果不借助标准库 copy，可以在 <b>类体内</b> 调用自身的 <b>构造方法</b> 达到相同目的。
-</RevisionInfo>
+<RevisionInfo indent/>
 
 ## 直接调用
 

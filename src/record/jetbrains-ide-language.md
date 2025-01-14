@@ -18,7 +18,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # 设置 JetBrains IDE 的语言
 
-<RevisionInfo />
+<RevisionInfo indent />
 
 ## 2024.2+ 版本
 

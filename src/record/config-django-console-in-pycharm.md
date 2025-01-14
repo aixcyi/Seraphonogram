@@ -17,10 +17,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
 
 # PyCharm 配置 Django 控制台
 
-<RevisionInfo created="2024-01-24 16:28" :expired="365*3">
-PyCharm 社区版并没有 Django 控制台，<br/>
-本文提供了将 Python 控制台配置为 Django 控制台的方法。<br/>
-</RevisionInfo>
+<RevisionInfo indent />
 
 > [!NOTE] 备注
 > Django 控制台比 Python 控制台更方便执行诸如 `User.objects.pass(is_active=True).get(id=1)` 等数据库相关的代码。
