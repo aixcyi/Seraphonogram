@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Bottom } from '@element-plus/icons-vue'
+import { Bottom } from "@element-plus/icons-vue";
 import { Icon } from "@iconify/vue";
 </script>
 

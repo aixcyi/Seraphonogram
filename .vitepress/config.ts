@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
-import { withSidebar } from 'vitepress-sidebar';
+import { withSidebar } from "vitepress-sidebar";
 import { VitePressSidebarOptions } from "vitepress-sidebar/dist/types";
 import { rewriteSidebar } from "../src/utils/vpt";
 
