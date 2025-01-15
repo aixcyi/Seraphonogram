@@ -2,7 +2,7 @@
 title: Python 语法更新摘要
 lang: zh-CN
 outline: deep
-order: 20231223
+order: 20241227
 created: 2023-12-23 23:59
 updated: 2024-12-27 17:54
 expires: 365
