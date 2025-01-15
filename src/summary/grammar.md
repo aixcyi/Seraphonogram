@@ -24,9 +24,7 @@ tags:
 ---
 
 <script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
-import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 语法更新摘要

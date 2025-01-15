@@ -12,11 +12,6 @@ tags:
     - Python
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 十进制转任意进制与 `yield`
 
 <RevisionInfo indent />

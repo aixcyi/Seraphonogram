@@ -13,10 +13,6 @@ tags:
     - 语法
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
 
 # Python 推导式
 

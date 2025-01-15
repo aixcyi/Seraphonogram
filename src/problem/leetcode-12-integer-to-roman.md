@@ -8,11 +8,6 @@ tags:
     - LeetCode
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # LeetCode 12. 整数转罗马数字
 
 <RevisionInfo :badge="2">

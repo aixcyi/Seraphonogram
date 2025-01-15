@@ -11,11 +11,6 @@ tags:
     - 微信支付
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 微信扫码支付的响应
 
 <RevisionInfo />

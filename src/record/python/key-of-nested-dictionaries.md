@@ -9,11 +9,6 @@ tags:
     - 标准多项集
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 字典添加二级键值的问题
 
 <RevisionInfo />

@@ -15,10 +15,6 @@ tags:
     - ORM
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
 
 # Django OAuth Toolkit 令牌机制
 

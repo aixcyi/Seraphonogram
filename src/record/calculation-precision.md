@@ -10,11 +10,6 @@ tags:
     - 精度
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # Java 运算精度
 
 <RevisionInfo />

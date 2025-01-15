@@ -16,11 +16,6 @@ tags:
     - 批处理脚本
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 直接运行 Python 脚本
 
 <RevisionInfo />

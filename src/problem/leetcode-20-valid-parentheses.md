@@ -8,11 +8,6 @@ tags:
     - LeetCode
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # LeetCode 20. 有效的括号
 
 <RevisionInfo :badge="2">

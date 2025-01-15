@@ -12,11 +12,6 @@ tags:
     - 控制台
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # PyCharm 配置 Django 控制台
 
 <RevisionInfo indent />

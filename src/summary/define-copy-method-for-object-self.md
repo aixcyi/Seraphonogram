@@ -12,11 +12,6 @@ tags:
     - 浅拷贝
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 为自身定义 `copy` 方法
 
 <RevisionInfo indent/>

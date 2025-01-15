@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import CopyTextField from "@/components/CodeCopyField.vue";
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
 import type { integer } from "@vue/language-server";
 
 const mirrors = [

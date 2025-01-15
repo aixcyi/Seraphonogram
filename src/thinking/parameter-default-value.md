@@ -12,11 +12,6 @@ tags:
     - 默认值
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 默认值导致抽象泄漏
 
 <RevisionInfo indent />

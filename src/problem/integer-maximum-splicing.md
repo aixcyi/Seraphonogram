@@ -7,11 +7,6 @@ tags:
     - 刷题
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 多个整数连接为最大整数问题
 
 <RevisionInfo />

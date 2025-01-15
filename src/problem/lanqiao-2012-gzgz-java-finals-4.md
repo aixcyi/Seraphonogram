@@ -10,11 +10,6 @@ tags:
     - 蓝桥杯
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # Excel 地址转换
 
 <RevisionInfo />

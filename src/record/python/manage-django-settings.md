@@ -12,11 +12,6 @@ tags:
     - 配置
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 管理 Django Settings
 
 <RevisionInfo />

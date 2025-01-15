@@ -7,11 +7,6 @@ tags:
     - 刷题
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 连续自然数之和
 
 <RevisionInfo />

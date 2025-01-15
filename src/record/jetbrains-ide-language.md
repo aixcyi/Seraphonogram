@@ -13,11 +13,6 @@ tags:
     - IntelliJ
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 设置 JetBrains IDE 的语言
 
 <RevisionInfo indent />

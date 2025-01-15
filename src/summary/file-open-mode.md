@@ -10,11 +10,6 @@ tags:
     - 文件IO
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # Python 文件打开模式
 
 <RevisionInfo />

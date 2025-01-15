@@ -15,11 +15,6 @@ tags:
     - 对象
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 类与类型
 
 <RevisionInfo />

@@ -10,11 +10,6 @@ tags:
     - 标准多项集
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # Python 字典中，键的顺序
 
 <RevisionInfo />

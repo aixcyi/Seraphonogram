@@ -12,11 +12,6 @@ tags:
     - datetime
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # `date` 格式化失败
 
 <RevisionInfo />

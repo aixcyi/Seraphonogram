@@ -12,11 +12,6 @@ tags:
     - 运算符
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 使用乘号复制变量引起的问题
 
 <RevisionInfo />

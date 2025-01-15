@@ -12,11 +12,6 @@ tags:
     - 虚拟环境
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # virtualenv 在 Windows 中无法激活
 
 <RevisionInfo indent />

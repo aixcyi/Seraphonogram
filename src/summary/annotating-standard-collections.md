@@ -12,11 +12,6 @@ tags:
     - 标准多项集
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 标准多项集的标注方式
 
 <RevisionInfo />

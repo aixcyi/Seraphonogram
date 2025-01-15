@@ -12,11 +12,6 @@ tags:
     - 国际化
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # IntelliJ 插件中使用 Bundle
 
 <RevisionInfo indent/>

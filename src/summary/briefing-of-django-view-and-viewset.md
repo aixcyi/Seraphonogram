@@ -13,11 +13,6 @@ tags:
     - 视图
 ---
 
-<script setup lang="ts">
-import RevisionInfo from "@/components/RevisionInfo.vue";
-import TagsBar from "@/components/TagsBar.vue";
-</script>
-
 # 浅析 Django 及衍生的类视图
 
 <RevisionInfo />
