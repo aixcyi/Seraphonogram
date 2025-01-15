@@ -1,5 +1,5 @@
 ---
-title: 浅析基于 Django 衍生的类视图
+title: Django 及衍生的类视图
 lang: zh-CN
 outline: deep
 date: 2022-10-11
@@ -17,7 +17,7 @@ tags:
 import RevisionInfo from "@/components/RevisionInfo.vue";
 </script>
 
-# 浅析基于 Django 衍生的类视图
+# 浅析 Django 及衍生的类视图
 
 <RevisionInfo />
 

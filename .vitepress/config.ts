@@ -70,7 +70,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
     rewrites: {
         'summary/mirror.md': 'mirror.md',
         'summary/timestamp.md': 'timestamp.md',
-        'summary/python/grammar.md': 'grammar.md',
+        'summary/grammar.md': 'grammar.md',
     },
     markdown: {
         lineNumbers: true,

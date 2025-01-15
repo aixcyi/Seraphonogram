@@ -1,5 +1,5 @@
 ---
-title: 文件打开模式
+title: Python 文件打开模式
 lang: zh-CN
 date: 2021-10-21
 created: 2021-10-21 00:00
@@ -14,7 +14,7 @@ tags:
 import RevisionInfo from "@/components/RevisionInfo.vue";
 </script>
 
-# 文件打开模式
+# Python 文件打开模式
 
 <RevisionInfo />
 

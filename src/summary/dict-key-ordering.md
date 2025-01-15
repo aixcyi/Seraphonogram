@@ -1,5 +1,5 @@
 ---
-title: 字典中键的顺序
+title: Python 字典中，键的顺序
 lang: zh-CN
 date: 2023-12-21
 created: 2023-12-21 10:02
@@ -13,7 +13,7 @@ tags:
 import RevisionInfo from "@/components/RevisionInfo.vue";
 </script>
 
-# 字典中键的顺序
+# Python 字典中，键的顺序
 
 <RevisionInfo />
 

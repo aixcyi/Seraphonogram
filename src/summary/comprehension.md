@@ -1,5 +1,5 @@
 ---
-title: 推导式
+title: Python 推导式
 lang: zh-CN
 outline: deep
 date: 2021-11-05
@@ -15,7 +15,7 @@ tags:
 import RevisionInfo from "@/components/RevisionInfo.vue";
 </script>
 
-# 推导式
+# Python 推导式
 
 <RevisionInfo indent />
 
