@@ -12,15 +12,19 @@ tags:
     - 配置
     - Windows
     - Ubuntu
+    - 命令行
+    - 批处理脚本
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 直接运行 Python 脚本
 
 <RevisionInfo />
+<TagsBar />
 
 ## 在 Ubuntu 下
 

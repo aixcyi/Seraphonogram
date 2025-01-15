@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import CopyTextField from "@/components/CodeCopyField.vue";
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 import type { integer } from "@vue/language-server";
 
 const mirrors = [
@@ -53,6 +54,7 @@ function isLastMirror(_index: integer): boolean {
             <span v-if="isLastMirror(index)">、</span>
         </span>，排名不分先后，站点各有侧重，选择适合即可。以下是不同包管理的镜像源设置：<br/>
     </RevisionInfo>
+    <TagsBar/>
 
     <h2 id="pypi">PyPI 镜像源</h2>
     <div class="tip custom-block">

@@ -13,11 +13,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 微信扫码支付的响应
 
 <RevisionInfo />
+<TagsBar />
 
 目前[微信扫码支付](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1)还属于v2接口，所以 wechatpayv3 没有。
 

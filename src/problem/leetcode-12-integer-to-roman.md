@@ -10,6 +10,7 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # LeetCode 12. 整数转罗马数字
@@ -26,6 +27,7 @@ import RevisionInfo from "@/components/RevisionInfo.vue";
     </a>
 </template>
 </RevisionInfo>
+<TagsBar />
 
 ## 题目
 

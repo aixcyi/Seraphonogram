@@ -6,6 +6,7 @@ created: 2024-12-30 00:55
 expires: 1000
 excerpt: 本篇主要帮助新手入门，介绍了如何修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
 tags:
+    - 配置
     - IDE
     - PyCharm
     - IDEA
@@ -14,11 +15,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 设置 JetBrains IDE 的语言
 
 <RevisionInfo indent />
+<TagsBar />
 
 ## 2024.2+ 版本
 

@@ -14,12 +14,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
-import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # IntelliJ 插件中使用 Bundle
 
 <RevisionInfo indent/>
+<TagsBar />
 
 > [!TIP] 另见
 > [《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)

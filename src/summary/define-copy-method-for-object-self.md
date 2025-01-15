@@ -9,17 +9,18 @@ excerpt: '一些类自带了 <code>copy()</code> 或者用于浅拷贝的方法�
           等等。如果不借助标准库 copy，可以在 <b>类体内</b> 调用自身的 <b>构造方法</b> 达到相同目的。'
 tags:
     - Python
-    - 类
     - 浅拷贝
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 为自身定义 `copy` 方法
 
 <RevisionInfo indent/>
+<TagsBar />
 
 ## 直接调用
 

@@ -10,11 +10,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # NOIP 380. 校门外的树
 
 <RevisionInfo />
+<TagsBar />
 
 ## 题干
 

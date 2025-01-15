@@ -14,12 +14,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
-import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 实现任意进制转十进制
 
 <RevisionInfo indent />
+<TagsBar />
 
 ## 十六进制转十进制
 

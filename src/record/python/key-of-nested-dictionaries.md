@@ -5,17 +5,19 @@ order: 20201219
 created: 2020-12-19 17:19
 expires: 1000
 tags:
-    - 踩坑
     - Python
+    - 标准多项集
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 字典添加二级键值的问题
 
 <RevisionInfo />
+<TagsBar />
 
 ## 问题来源
 

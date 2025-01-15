@@ -14,12 +14,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
-import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 默认值导致抽象泄漏
 
 <RevisionInfo indent />
+<TagsBar />
 
 对于已事先声明的参数——即不通过 `args` 或 `kwargs` 传递的参数，Python 无法检测到是否被省略，因为无法分辨入参来源于调用还是默认值。
 

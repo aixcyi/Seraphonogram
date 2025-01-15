@@ -12,11 +12,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # Excel 地址转换
 
 <RevisionInfo />
+<TagsBar />
 
 ## 题干
 

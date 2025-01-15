@@ -9,17 +9,18 @@ excerpt: Windows 下 Python 3.7 中 <code>date().strftime(fmt)</code> 参数 <co
 tags:
     - Python
     - Windows
-    - 踩坑
     - datetime
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # `date` 格式化失败
 
 <RevisionInfo />
+<TagsBar />
 
 ## 复现
 

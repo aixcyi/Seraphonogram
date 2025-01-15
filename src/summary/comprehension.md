@@ -8,16 +8,20 @@ expires: 3650
 excerpt: 推导式又叫生成式，是一种用于生成序列、集合、映射的语句。本文用直观的方式向读者解释其语法。
 tags:
     - Python
+    - 标准多项集
+    - 推导式
     - 语法
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # Python 推导式
 
 <RevisionInfo indent />
+<TagsBar />
 
 ## 列表推导式
 

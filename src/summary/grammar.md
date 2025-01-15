@@ -11,16 +11,28 @@ tags:
     - Python
     - 语法
     - 类型标注
+    - 异常
+    - 上下文管理器
+    - f-字符串
+    - 协程
+    - 生成器
+    - 运算符
+    - 推导式
+    - 元类
+    - 解包
+    - 字面值
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 语法更新摘要
 
 <RevisionInfo indent />
+<TagsBar />
 
 > [!WARNING] 仅供粗略参考
 > 本文仅仅只是粗略摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。

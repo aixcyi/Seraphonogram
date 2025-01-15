@@ -7,15 +7,18 @@ expires: 3650
 excerpt: <code>dict</code> 里的键原本是无序排列的，后来改成有序的了。
 tags:
     - Python
+    - 标准多项集
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # Python 字典中，键的顺序
 
 <RevisionInfo />
+<TagsBar />
 
 ## `dict`
 

@@ -12,11 +12,13 @@ tags:
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # Python 文件打开模式
 
 <RevisionInfo />
+<TagsBar />
 
 ## 打开模式
 

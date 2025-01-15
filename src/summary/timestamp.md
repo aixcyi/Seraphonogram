@@ -8,17 +8,21 @@ created: 2023-12-21 10:02
 updated: 2025-01-02 10:24
 expires: 永远新鲜~
 tags:
+    - 对照表
     - 时间戳
+    - 进制转换
 ---
 
 <script setup lang="ts">
 import RevisionInfo from "@/components/RevisionInfo.vue";
 import TimestampTables from "@/summary/TimestampTables.vue";
+import TagsBar from "@/components/TagsBar.vue";
 </script>
 
 # 时间戳对照表
 
 <RevisionInfo />
+<TagsBar />
 
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。
