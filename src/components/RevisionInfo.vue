@@ -145,7 +145,7 @@ td {
 }
 
 .col-divider {
-    border-left: 1px solid var(--vp-c-divider);
+    border-left: 1px solid var(--vp-c-divider) !important;
 }
 
 .col-key {
