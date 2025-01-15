@@ -98,16 +98,9 @@ const configsVitePressSidebar: VitePressSidebarOptions = {
     useTitleFromFrontmatter: true,
     useFolderTitleFromIndexFile: true,
     // 排序
-    // TODO: 第二级子项不能按时间倒序，第三级倒是可以……
     sortFolderTo: 'top',
-    sortMenusByFrontmatterDate: true,
+    sortMenusByFrontmatterOrder: true,
     sortMenusOrderByDescending: true,
-    manualSortFileNameByPriority: [
-        'summary',
-        'record',
-        'thinking',
-        'problem',
-    ].reverse(),  // 要跟着 sortMenusOrderByDescending 倒序
 };
 
 export default defineConfig(

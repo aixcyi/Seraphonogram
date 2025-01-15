@@ -1,7 +1,7 @@
 ---
 title: NOIP 380. 校门外的树
 lang: zh-CN
-date: 2020-03-12
+order: 20200312
 created: 2020-03-12 17:24
 tags:
     - 刷题

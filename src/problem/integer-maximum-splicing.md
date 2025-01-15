@@ -1,7 +1,7 @@
 ---
 title: 多个整数连接为最大整数问题
 lang: zh-CN
-date: 2020-03-13
+order: 20200313
 created: 2020-03-13 15:08
 tags:
     - 刷题

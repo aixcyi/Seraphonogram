@@ -1,7 +1,7 @@
 ---
 title: Python 为自身定义 copy 方法
 lang: zh-CN
-date: 2022-08-17
+order: 20220817
 created: 2022-08-17 00:04
 expires: 1000
 excerpt: '一些类自带了 <code>copy()</code> 或者用于浅拷贝的方法，比如内置的

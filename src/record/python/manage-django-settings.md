@@ -1,7 +1,7 @@
 ---
 title: 管理 Django Settings
 lang: zh-CN
-date: 2023-12-21
+order: 20231221
 created: 2023-12-21 11:48
 expires: 1000
 excerpt: '<img src="https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django"/>

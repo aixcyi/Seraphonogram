@@ -1,3 +1,3 @@
 ---
-title: Python 相关
+title: Python & Django
 ---

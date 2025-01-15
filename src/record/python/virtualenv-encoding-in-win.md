@@ -1,7 +1,7 @@
 ---
 title: virtualenv 在 Windows 中无法激活
 lang: zh-CN
-date: 2024-02-28
+order: 20240228
 created: 2024-02-28 16:29
 expires: 365
 excerpt: '使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀

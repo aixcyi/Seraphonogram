@@ -1,7 +1,7 @@
 ---
 title: 连续自然数之和
 lang: zh-CN
-date: 2020-04-06
+order: 20200406
 created: 2020-04-06 12:53
 tags:
     - 刷题

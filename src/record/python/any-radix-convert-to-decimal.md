@@ -2,7 +2,7 @@
 title: 实现任意进制转十进制
 lang: zh-CN
 outline: deep
-date: 2022-08-17
+order: 20220817
 created: 2022-08-17 16:39
 expires: 1000
 excerpt: '仅用 <a href="https://docs.python.org/zh-cn/3/library/functions.html">内置函数</a> 及列表推导式完成任意进制转十进制。本文先分析“从十六进制到十进制”，然后推广到“任意进制到十进制”。'

@@ -2,7 +2,7 @@
 title: 直接运行 Python 脚本
 lang: zh-CN
 outline: deep
-date: 2023-09-05
+order: 20230905
 created: 2023-09-05 23:32
 updated: 2024-01-03 09:44
 expires: 365

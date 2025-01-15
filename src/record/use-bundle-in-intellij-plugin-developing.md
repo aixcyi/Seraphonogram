@@ -1,7 +1,7 @@
 ---
 title: IntelliJ 插件中使用 Bundle
 lang: zh-CN
-date: 2023-09-06
+order: 20230906
 created: 2023-09-06 23:32
 expires: 365
 excerpt: 'Bundle 是 Java 自带的提供本地化翻译的功能，因为出现时间比 IntelliJ

@@ -1,7 +1,7 @@
 ---
 title: LeetCode 20. 有效的括号
 lang: zh-CN
-date: 2024-01-10
+order: 20240110
 created: 2024-01-10 00:04
 tags:
     - 刷题
