@@ -43,6 +43,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     { text: 'Python 语法更新摘要', link: '/grammar' },
                 ]
             },
+            { text: '目录', link: '/catalog' },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
@@ -92,6 +93,7 @@ const configsVitePressSidebar: VitePressSidebarOptions = {
     scanStartPath: 'src/',
     excludePattern: [
         'about.md',
+        'catalog.md',
     ],
     // 分组、菜单标题
     collapsed: true,

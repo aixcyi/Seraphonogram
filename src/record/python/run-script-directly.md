@@ -8,12 +8,10 @@ updated: 2024-01-03 09:44
 expires: 365
 excerpt: 本文介绍了在 Ubuntu 和 Windows 下直接运行 Python 脚本所需的配置。
 tags:
+    - 运维
     - Python
-    - 配置
     - Windows
     - Ubuntu
-    - 命令行
-    - 批处理脚本
 ---
 
 # 直接运行 Python 脚本

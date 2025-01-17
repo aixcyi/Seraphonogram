@@ -8,6 +8,7 @@ excerpt: '一些类自带了 <code>copy()</code> 或者用于浅拷贝的方法�
           <code>list</code>、<code>dict</code>、decimal 的 <code>Decimal</code>
           等等。如果不借助标准库 copy，可以在 <b>类体内</b> 调用自身的 <b>构造方法</b> 达到相同目的。'
 tags:
+    - 开发
     - Python
     - 浅拷贝
 ---

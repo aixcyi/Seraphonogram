@@ -8,8 +8,8 @@ hero:
   tagline: "干净、整洁、纯粹、静谧、保鲜的技术日志树洞。"
   actions:
     - theme: brand
-      text: 关于
-      link: /about
+      text: 目录
+      link: /catalog
     - theme: alt
       text: 时间戳对照表
       link: /timestamp

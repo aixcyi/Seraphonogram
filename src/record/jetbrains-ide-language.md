@@ -6,11 +6,8 @@ created: 2024-12-30 00:55
 expires: 1000
 excerpt: 本篇主要帮助新手入门，介绍了如何修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
 tags:
-    - 配置
-    - IDE
-    - PyCharm
-    - IDEA
-    - IntelliJ
+    - 开发
+    - IntelliJ IDE
 ---
 
 # 设置 JetBrains IDE 的语言

@@ -6,6 +6,7 @@ created: 2021-10-21 00:00
 expires: 3650
 excerpt: 内置函数 <a href="https://docs.python.org/zh-cn/3/library/functions.html#open"><code>open()</code></a> 打开模式这个参数的归纳。
 tags:
+    - 开发
     - Python
     - 文件IO
 ---

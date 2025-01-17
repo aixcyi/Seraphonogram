@@ -8,11 +8,9 @@ expires: 1000
 excerpt: '简述 <a href="https://django-oauth-toolkit.readthedocs.io/en/latest/">Django OAuth Toolkit</a>
           中的令牌 <code>Token</code> 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。'
 tags:
+    - 开发
     - Django
     - Django OAuth Toolkit
-    - 数据库
-    - Token
-    - ORM
 ---
 
 

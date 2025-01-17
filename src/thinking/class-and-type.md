@@ -9,10 +9,9 @@ updated: 2024-12-27 17:54
 expires: 1000
 excerpt: 一次关于 Python 类型（type）、类（class）、对象（object）的思考。
 tags:
+    - 设计
+    - 开发
     - Python
-    - 类型
-    - 类
-    - 对象
 ---
 
 # 类与类型

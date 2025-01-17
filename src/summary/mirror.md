@@ -7,8 +7,8 @@ created: 2024-11-13 00:08
 updated: 2024-12-26 00:11
 expires: 3650
 tags:
-    - 镜像
-    - 镜像源
+    - 开发
+    - 运维
     - PyPI
     - npm
 ---

@@ -4,7 +4,7 @@ lang: zh-CN
 order: 20240110
 created: 2024-01-10 00:04
 tags:
-    - 刷题
+    - 算法
     - LeetCode
 ---
 

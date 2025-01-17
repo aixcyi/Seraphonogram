@@ -8,8 +8,9 @@ excerpt: '<img src="https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%20
           <span>　　</span>
           Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 <b>修改</b> 配置。本文仅围绕导入配置初值展开。'
 tags:
+    - 开发
+    - 测试
     - Django
-    - 配置
 ---
 
 # 管理 Django Settings

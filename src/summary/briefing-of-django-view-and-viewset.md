@@ -8,9 +8,9 @@ expires: 1000
 excerpt: '浅析 <a href="https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/">Django</a>
           与 <a href="https://www.django-rest-framework.org/api-guide/views/">Django REST Framework</a> 两个框架视图类的脉络。'
 tags:
+    - 开发
     - Django
     - Django REST Framework
-    - 视图
 ---
 
 # 浅析 Django 及衍生的类视图
