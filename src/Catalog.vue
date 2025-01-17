@@ -38,6 +38,9 @@ const tags = new Map<string, { type: string }>([
     [ 'npm', { type: 'success' } ],
 ])
 
+/**
+ * 所有博客。
+ */
 const posts = (data as RawPost[]).map<Content>(post => {
     const posted = new Date(post.changed)
     return {
@@ -48,6 +51,9 @@ const posts = (data as RawPost[]).map<Content>(post => {
     }
 })
 
+/**
+ * 按年分组的博客。
+ */
 const annuals = posts.reduce((map, post) => {
     const year = post.year
     if (!map.has(year)) {
@@ -57,6 +63,9 @@ const annuals = posts.reduce((map, post) => {
     return map;
 }, new Map<integer, Content[]>())
 
+/**
+ * 按标签分组的博客。
+ */
 const labels = posts.reduce((map, post) => {
     post.tags.forEach(tag => {
         if (!map.has(tag)) {
@@ -67,6 +76,9 @@ const labels = posts.reduce((map, post) => {
     return map;
 }, new Map<string, Content[]>());
 
+/**
+ * 标签开关。
+ */
 const toggles = reactive(new Map(Array.from(labels.keys(), key => [ key, false ])))
 
 function handleToggle(tag: string) {
@@ -96,10 +108,15 @@ function handleToggle(tag: string) {
                     <span>{{ posts.length }} 篇</span>
                 </div>
             </div>
-            <menu class="catalog-list">
-                <li v-for="post in posts" class="catalog-item">
-                    <pre class="catalog-date">{{ post.date }}</pre>
-                    <a :href="post.url" class="catalog-link">{{ post.title }}</a>
+            <menu class="article-list">
+                <li v-for="post in posts" class="article-item">
+                    <pre>{{ post.date }}</pre>
+                    <a :href="post.url" class="article-link gradient-card">
+                        <el-space wrap>
+                            {{ post.title }}
+                            <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
+                        </el-space>
+                    </a>
                 </li>
             </menu>
         </div>
@@ -122,11 +139,6 @@ function handleToggle(tag: string) {
     margin: 1rem 0 3rem;
 }
 
-.catalog-list {
-    margin: unset;
-    padding: unset;
-}
-
 .catalog-title {
     display: flex;
     border-top: unset;
@@ -145,7 +157,7 @@ function handleToggle(tag: string) {
     }
 
     > .catalog-year {
-        margin: 0 0 -0.3em 0;
+        margin: 0 0 -0.4em 0;
         padding: 0;
         border-top: 0;
         mask: linear-gradient(#fff 50%, transparent);
@@ -162,36 +174,84 @@ function handleToggle(tag: string) {
     }
 }
 
-.catalog-item {
-    list-style: none;
-    align-items: center;
-    animation: float-in .2s 0s backwards;
-    display: flex;
-    gap: .5em;
-    margin: .2em 0;
-    transition: all .2s;
+.article-list {
+    margin: unset;
+    padding: unset;
 }
 
-.catalog-date {
-    color: var(--el-color-info);
-    margin: unset;
+.article-item {
     display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0.2em 0;
+    transition: all 0.2s;
+    animation: float-in 0.2s 0s backwards;
 
-    :hover > & {
-        color: inherit;
+    @media (max-width: 768px) {
+        font-size: 0.9em;
+    }
+
+    pre {
+        margin: 0;
+        display: inline-block;
+        opacity: 0.4;
+
+        // 缓解移动端 Edge 字体尺寸不准导致的换行溢出
+        white-space: nowrap;
+        transition: opacity 0.2s;
+    }
+
+    &:hover > pre {
+        opacity: 1;
     }
 }
 
-.catalog-link {
-    color: lightgray;
+.article-link {
     text-decoration: none;
-    display: flex;
     flex-grow: 1;
     overflow: hidden;
-    padding: .3em .6em;
+    padding: 0.3em 0.6em;
+    color: var(--vp-c-text-1);
+}
 
-    :hover > & {
+.gradient-card {
+    position: relative;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    transition: all 0.25s;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+        transition: all 1.5s;
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: calc(0.5rem - 3px);
+        transition: all 2s;
+        background-color: transparent;
+        z-index: -1;
+    }
+
+    &:hover, &.active {
+        background-position: 0;
         color: white;
+
+        &::before {
+            background: no-repeat 100% / 400%;
+            background-image: linear-gradient(-45deg, #bd34fe, #47caff 40%, transparent 50%);
+        }
+
+        &::after {
+            background-color: var(--vp-c-bg);
+        }
     }
 }
 </style>
