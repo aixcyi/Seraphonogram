@@ -26,7 +26,7 @@ export default createContentLoader(blogsPattern, {
                     url,
                     title: frontmatter.title,
                     changed: parse(frontmatter.updated ?? frontmatter.created, "yyyy-MM-dd HH:mm", new Date()).getTime(),
-                    tags: frontmatter.tags ?? [],
+                    tags: [ ...new Set<string>(frontmatter.tags ?? []) ],
                 })
             )
             .sort((a, b) => b.changed - a.changed)

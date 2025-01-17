@@ -5,13 +5,56 @@ import { reactive } from "vue";
 import { data, type RawPost } from "../.vitepress/theme/posts.data.ts";
 
 
-interface Content extends RawPost {
+interface Post extends RawPost {
     year: number;
     date: string;
     shown: boolean;
 }
 
-const tags = new Map<string, { type: string }>([
+const url = new URL(window.location.href);
+const query = new URLSearchParams(url.search)
+const queryTags = new Set<string>(query.getAll('tag'))
+
+/**
+ * 所有博客。
+ */
+const posts = (data as RawPost[]).map<Post>(post => {
+    const posted = new Date(post.changed)
+    return {
+        ...post,
+        year: posted.getFullYear(),
+        date: format(posted, 'MM-dd'),
+        shown: true,
+    }
+})
+
+/**
+ * 按年分组的博客。
+ */
+const annuals = posts.reduce((map, post) => {
+    const year = post.year
+    if (queryTags.size && !post.tags.filter(t => queryTags.has(t)).length)
+        return map
+    if (!map.has(year))
+        map.set(year, [])
+    map.get(year)!.push(post)
+    return map
+}, new Map<integer, Post[]>())
+
+/**
+ * 按标签统计的博客数量。
+ */
+const labels = posts.reduce((map, post) => {
+    post.tags.forEach(tag => {
+        map.set(tag, map.has(tag) ? (map.get(tag)! + 1) : 1)
+    })
+    return map
+}, new Map<string, number>())
+
+/**
+ * 标签样式（少部分）。
+ */
+const tagsStyle = new Map<string, { type: string }>([
     // 大类
     [ '开发', { type: 'danger' } ],
     [ '测试', { type: 'danger' } ],
@@ -39,63 +82,42 @@ const tags = new Map<string, { type: string }>([
 ])
 
 /**
- * 所有博客。
- */
-const posts = (data as RawPost[]).map<Content>(post => {
-    const posted = new Date(post.changed)
-    return {
-        ...post,
-        year: posted.getFullYear(),
-        date: format(posted, 'MM-dd'),
-        shown: true,
-    }
-})
-
-/**
- * 按年分组的博客。
- */
-const annuals = posts.reduce((map, post) => {
-    const year = post.year
-    if (!map.has(year)) {
-        map.set(year, [])
-    }
-    map.get(year)!.push(post)
-    return map;
-}, new Map<integer, Content[]>())
-
-/**
- * 按标签分组的博客。
- */
-const labels = posts.reduce((map, post) => {
-    post.tags.forEach(tag => {
-        if (!map.has(tag)) {
-            map.set(tag, []);
-        }
-        map.get(tag)!.push(post);
-    });
-    return map;
-}, new Map<string, Content[]>());
-
-/**
  * 标签开关。
  */
-const toggles = reactive(new Map(Array.from(labels.keys(), key => [ key, false ])))
+const toggles = reactive(new Map(Array.from(labels.keys(), key => [ key, queryTags.has(key) ])))
 
+/**
+ * 处理标签点击事件。
+ *
+ * @param tag 标签。
+ */
 function handleToggle(tag: string) {
-    toggles.set(tag, !toggles.get(tag)!)
+    switch (toggles.get(tag)!) {
+        case true:
+            query.delete('tag', tag)
+            toggles.set(tag, false)
+            break
+        case false:
+            query.append('tag', tag)
+            toggles.set(tag, true)
+            break
+    }
+    url.search = query.toString()
+    window.history.pushState({}, "", url.toString())
+    window.location.reload()  // TODO: 改成页面内热更新
 }
 </script>
 
 <template>
     <div class="labeler">
         <el-space wrap>
-            <el-check-tag v-for="[tag, posts] in labels"
+            <el-check-tag v-for="[tag, quantity] in labels"
                           :key="tag"
                           :checked="toggles.get(tag)!"
-                          :type="tags.has(tag) ? tags.get(tag)!.type : 'primary'"
+                          :type="tagsStyle.has(tag) ? tagsStyle.get(tag)!.type : 'primary'"
                           @change="handleToggle(tag)">
                 {{ tag }}
-                <el-badge :value="posts.length" color="#303030"></el-badge>
+                <el-badge :value="quantity" color="#303030"></el-badge>
             </el-check-tag>
         </el-space>
     </div>
