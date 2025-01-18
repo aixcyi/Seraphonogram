@@ -1,126 +1,47 @@
 <script lang="ts" setup>
+import CatalogLabeler from "@/CatalogLabeler.vue";
 import type { integer } from "@vue/language-server";
-import { format } from "date-fns";
-import { reactive } from "vue";
-import { data, type RawPost } from "../.vitepress/theme/posts.data.ts";
+import { reactive, watch } from "vue";
+import { data, type Post } from "../.vitepress/theme/posts.data.ts";
 
-
-interface Post extends RawPost {
-    year: number;
-    date: string;
-    shown: boolean;
-}
-
-const url = new URL(window.location.href);
-const query = new URLSearchParams(url.search)
-const queryTags = new Set<string>(query.getAll('tag'))
-
-/**
- * 所有博客。
- */
-const posts = (data as RawPost[]).map<Post>(post => {
-    const posted = new Date(post.changed)
-    return {
-        ...post,
-        year: posted.getFullYear(),
-        date: format(posted, 'MM-dd'),
-        shown: true,
-    }
-})
 
 /**
  * 按年分组的博客。
  */
-const annuals = posts.reduce((map, post) => {
-    const year = post.year
-    if (queryTags.size && !post.tags.filter(t => queryTags.has(t)).length)
-        return map
-    if (!map.has(year))
-        map.set(year, [])
-    map.get(year)!.push(post)
-    return map
-}, new Map<integer, Post[]>())
-
-/**
- * 按标签统计的博客数量。
- */
-const labels = posts.reduce((map, post) => {
-    post.tags.forEach(tag => {
-        map.set(tag, map.has(tag) ? (map.get(tag)! + 1) : 1)
-    })
-    return map
-}, new Map<string, number>())
-
-/**
- * 标签样式（少部分）。
- */
-const tagsStyle = new Map<string, { type: string }>([
-    // 大类
-    [ '开发', { type: 'danger' } ],
-    [ '测试', { type: 'danger' } ],
-    [ '运维', { type: 'danger' } ],
-    [ '算法', { type: 'danger' } ],
-    [ '设计', { type: 'danger' } ],
-
-    // 技术栈
-    [ 'Python', { type: 'warning' } ],
-    [ 'Kotlin', { type: 'warning' } ],
-    [ 'Golang', { type: 'warning' } ],
-    [ 'Java', { type: 'warning' } ],
-    [ 'IntelliJ 插件', { type: 'warning' } ],
-    [ 'datetime', { type: 'warning' } ],
-    [ 'Django', { type: 'warning' } ],
-    [ 'Django REST Framework', { type: 'warning' } ],
-    [ 'Django OAuth Toolkit', { type: 'warning' } ],
-
-    // 系统、工具、脚手架、依赖包
-    [ 'Windows', { type: 'success' } ],
-    [ 'Ubuntu', { type: 'success' } ],
-    [ 'CentOS', { type: 'success' } ],
-    [ 'PyPI', { type: 'success' } ],
-    [ 'npm', { type: 'success' } ],
-])
+const annuals = reactive(new Map<integer, Post[]>())
 
 /**
  * 标签开关。
  */
-const toggles = reactive(new Map(Array.from(labels.keys(), key => [ key, queryTags.has(key) ])))
+const switches = reactive(new Map<string, boolean>())
 
 /**
- * 处理标签点击事件。
- *
- * @param tag 标签。
+ * 按照标签过滤博客，然后按年份分组。
  */
-function handleToggle(tag: string) {
-    switch (toggles.get(tag)!) {
-        case true:
-            query.delete('tag', tag)
-            toggles.set(tag, false)
-            break
-        case false:
-            query.append('tag', tag)
-            toggles.set(tag, true)
-            break
-    }
-    url.search = query.toString()
-    window.history.pushState({}, "", url.toString())
-    window.location.reload()  // TODO: 改成页面内热更新
+function filterPosts(tags: Set<string>) {
+    annuals.clear()
+    data.posts.forEach(post => {
+        const year = post.year
+        if (tags.size && !post.tags.filter(t => tags.has(t)).length)
+            return
+        if (!annuals.has(year))
+            annuals.set(year, [])
+        annuals.get(year)!.push(post)
+    })
 }
+
+watch(switches, () => {
+    const _tags = new Set<string>();
+    switches.forEach((v, k) => {
+        if (v)
+            _tags.add(k)
+    })
+    filterPosts(_tags)
+})
 </script>
 
 <template>
-    <div class="labeler">
-        <el-space wrap>
-            <el-check-tag v-for="[tag, quantity] in labels"
-                          :key="tag"
-                          :checked="toggles.get(tag)!"
-                          :type="tagsStyle.has(tag) ? tagsStyle.get(tag)!.type : 'primary'"
-                          @change="handleToggle(tag)">
-                {{ tag }}
-                <el-badge :value="quantity" color="#303030"></el-badge>
-            </el-check-tag>
-        </el-space>
-    </div>
+    <CatalogLabeler v-model:switches="switches" class="labeler"/>
 
     <div class="catalog">
         <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
@@ -146,7 +67,7 @@ function handleToggle(tag: string) {
 </template>
 
 <style lang="scss" scoped>
-// https://github.com/L33Z22L11/blog-v3/blob/main/app/pages/archive.vue
+// https://github.com/L33Z22L11/blog-v3/
 
 .labeler {
     margin-bottom: 3rem;
@@ -179,7 +100,7 @@ function handleToggle(tag: string) {
     }
 
     > .catalog-year {
-        margin: 0 0 -0.4em 0;
+        margin: 0 0 -0.5em 0;
         padding: 0;
         border-top: 0;
         mask: linear-gradient(#fff 50%, transparent);
