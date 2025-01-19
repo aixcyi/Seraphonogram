@@ -16,18 +16,22 @@ const annuals = reactive(new Map<integer, Post[]>())
 const switches = reactive(new Map<string, boolean>())
 
 /**
- * 按照标签过滤博客，然后按年份分组。
+ * 按照标签过滤博客，然后按年份分组（会确保倒序）。
  */
 function filterPosts(tags: Set<string>) {
-    annuals.clear()
+    const group = new Map<integer, Post[]>()
     data.posts.forEach(post => {
         const year = post.year
         if (tags.size && !post.tags.filter(t => tags.has(t)).length)
             return
-        if (!annuals.has(year))
-            annuals.set(year, [])
-        annuals.get(year)!.push(post)
+        if (!group.has(year))
+            group.set(year, [])
+        group.get(year)!.push(post)
     })
+    annuals.clear()
+    for (const year of [ ...group.keys() ].sort().reverse()) {
+        annuals.set(year, group.get(year)!.sort((a, b) => b.changed - a.changed))
+    }
 }
 
 watch(switches, () => {
