@@ -7,25 +7,29 @@ import { data } from "../.vitepress/theme/posts.data.ts";
  * 标签的预设样式。
  */
 const styles = new Map<string, { type: string }>([
-    // 大类
+    // 领域
     [ '开发', { type: 'danger' } ],
     [ '测试', { type: 'danger' } ],
     [ '运维', { type: 'danger' } ],
     [ '算法', { type: 'danger' } ],
     [ '设计', { type: 'danger' } ],
 
-    // 技术栈
-    [ 'Python', { type: 'warning' } ],
-    [ 'Kotlin', { type: 'warning' } ],
-    [ 'Golang', { type: 'warning' } ],
-    [ 'Java', { type: 'warning' } ],
-    [ 'IntelliJ 插件', { type: 'warning' } ],
-    [ 'datetime', { type: 'warning' } ],
-    [ 'Django', { type: 'warning' } ],
-    [ 'Django REST Framework', { type: 'warning' } ],
-    [ 'Django OAuth Toolkit', { type: 'warning' } ],
+    // 大类
+    [ '总结／摘要', { type: 'warning' } ],
+    [ '经验／踩坑／备忘', { type: 'warning' } ],
+    [ '思考／碎碎念', { type: 'warning' } ],
+    [ '题集', { type: 'warning' } ],
 
-    // 系统、工具、脚手架、依赖包
+    // 技术栈
+    [ 'Python', { type: 'primary' } ],
+    [ 'Kotlin', { type: 'primary' } ],
+    [ 'Golang', { type: 'primary' } ],
+    [ 'Java', { type: 'primary' } ],
+    [ 'IntelliJ 插件', { type: 'primary' } ],
+    [ 'datetime', { type: 'primary' } ],
+    [ 'Django', { type: 'primary' } ],
+    [ 'Django REST Framework', { type: 'primary' } ],
+    [ 'Django OAuth Toolkit', { type: 'primary' } ],
     [ 'Windows', { type: 'primary' } ],
     [ 'Ubuntu', { type: 'primary' } ],
     [ 'CentOS', { type: 'primary' } ],

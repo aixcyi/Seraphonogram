@@ -25,13 +25,17 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
         nav: [
             {
                 text: '博客',
-                activeMatch: '^(/summary|/record|/thinking|/problem)',
                 items: [
-                    // TODO: 每个分类都加一个索引，并替换这里的链接
-                    { text: '总结／摘要', activeMatch: '/summary', link: '/summary/python/dot-token-generation' },
-                    { text: '经验／踩坑／备忘', activeMatch: '/record', link: '/record/jetbrains-ide-language' },
-                    { text: '思考／碎碎念', activeMatch: '/thinking', link: '/thinking/parameter-default-value' },
-                    { text: '题集', activeMatch: '/problem', link: '/problem/leetcode-20-valid-parentheses' }
+                    { text: '目录索引', link: '/catalog' },
+                    {
+                        items: [
+                            { text: '总结／摘要', activeMatch: '/summary', link: '/catalog?tag=总结／摘要' },
+                            { text: '经验／踩坑／备忘', activeMatch: '/record', link: '/catalog?tag=经验／踩坑／备忘' },
+                            { text: '思考／碎碎念', activeMatch: '/thinking', link: '/catalog?tag=思考／碎碎念' },
+                            { text: '题集', activeMatch: '/problem', link: '/catalog?tag=题集' },
+                        ]
+                    },
+                    { text: '关于', link: '/about' },
                 ]
             },
             {
@@ -43,8 +47,6 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     { text: 'Python 语法更新摘要', link: '/grammar' },
                 ]
             },
-            { text: '目录', link: '/catalog' },
-            { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
         sidebar: [],
