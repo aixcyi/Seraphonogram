@@ -70,13 +70,13 @@
     --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
+/**
+ * Global
+ * -------------------------------------------------------------------------- */
+
 a,
 a:hover {
     text-underline-offset: 4px !important;
-}
-
-.VPDoc.has-aside .content-container {
-    max-width: unset !important;
 }
 
 /**
@@ -153,4 +153,12 @@ a:hover {
 
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/**
+ * Component: Document
+ * -------------------------------------------------------------------------- */
+
+.VPDoc.has-aside .content-container {
+    max-width: unset !important;
 }
