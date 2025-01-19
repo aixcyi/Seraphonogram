@@ -15,26 +15,26 @@ const styles = new Map<string, { type: string }>([
     [ '设计', { type: 'danger' } ],
 
     // 大类
-    [ '总结／摘要', { type: 'warning' } ],
-    [ '经验／踩坑／备忘', { type: 'warning' } ],
-    [ '思考／碎碎念', { type: 'warning' } ],
-    [ '题集', { type: 'warning' } ],
+    [ '总结／摘要', { type: 'primary' } ],
+    [ '经验／踩坑／备忘', { type: 'primary' } ],
+    [ '思考／碎碎念', { type: 'primary' } ],
+    [ '题集', { type: 'primary' } ],
 
     // 技术栈
-    [ 'Python', { type: 'primary' } ],
-    [ 'Kotlin', { type: 'primary' } ],
-    [ 'Golang', { type: 'primary' } ],
-    [ 'Java', { type: 'primary' } ],
-    [ 'IntelliJ 插件', { type: 'primary' } ],
-    [ 'datetime', { type: 'primary' } ],
-    [ 'Django', { type: 'primary' } ],
-    [ 'Django REST Framework', { type: 'primary' } ],
-    [ 'Django OAuth Toolkit', { type: 'primary' } ],
-    [ 'Windows', { type: 'primary' } ],
-    [ 'Ubuntu', { type: 'primary' } ],
-    [ 'CentOS', { type: 'primary' } ],
-    [ 'PyPI', { type: 'primary' } ],
-    [ 'npm', { type: 'primary' } ],
+    [ 'Python', { type: 'warning' } ],
+    [ 'Kotlin', { type: 'warning' } ],
+    [ 'Golang', { type: 'warning' } ],
+    [ 'Java', { type: 'warning' } ],
+    [ 'IntelliJ 插件', { type: 'warning' } ],
+    [ 'datetime', { type: 'warning' } ],
+    [ 'Django', { type: 'warning' } ],
+    [ 'Django REST Framework', { type: 'warning' } ],
+    [ 'Django OAuth Toolkit', { type: 'warning' } ],
+    [ 'Windows', { type: 'warning' } ],
+    [ 'Ubuntu', { type: 'warning' } ],
+    [ 'CentOS', { type: 'warning' } ],
+    [ 'PyPI', { type: 'warning' } ],
+    [ 'npm', { type: 'warning' } ],
 
     // 其它特定主题
     [ 'IntelliJ IDE', { type: 'success' } ],
@@ -78,7 +78,7 @@ onMounted(() => {
 
 <template>
     <el-space wrap>
-        <el-button v-for="(quantity, tag) in data.tags"
+        <el-button v-for="tag in Object.keys(data.tags)"
                    :key="tag"
                    :plain="switches.get(tag)"
                    :text="!switches.get(tag)"
@@ -86,7 +86,7 @@ onMounted(() => {
                    round
                    @click="handleSwitch(tag)">
             {{ tag }}&nbsp;
-            <el-badge :value="quantity" color="#303030"></el-badge>
+            <el-badge :value="data.tags[tag]" color="#303030"></el-badge>
         </el-button>
     </el-space>
 </template>
@@ -104,12 +104,12 @@ onMounted(() => {
 }
 
 .el-button--primary.is-link, .el-button--primary.is-plain, .el-button--primary.is-text {
-    --el-button-text-color: #47caff;
-    --el-button-bg-color: #174354;
-    --el-button-border-color: #38A0C9;
+    --el-button-text-color: var(--vp-c-purple-1);
+    --el-button-bg-color: var(--vp-c-purple-soft);
+    --el-button-border-color: var(--vp-c-purple-3);
     --el-button-hover-text-color: var(--vp-c-bg);
-    --el-button-hover-bg-color: #47caff;
-    --el-button-hover-border-color: #47caff;
+    --el-button-hover-bg-color: var(--vp-c-purple-1);
+    --el-button-hover-border-color: var(--vp-c-purple-1);
     --el-button-active-text-color: var(--vp-c-bg);
 }
 
@@ -134,12 +134,12 @@ onMounted(() => {
 }
 
 .el-button--danger.is-link, .el-button--danger.is-plain, .el-button--danger.is-text {
-    --el-button-text-color: var(--vp-c-red-1);
-    --el-button-bg-color: var(--vp-c-red-soft);
-    --el-button-border-color: var(--vp-c-red-3);
+    --el-button-text-color: var(--vp-c-danger-1);
+    --el-button-bg-color: var(--vp-c-danger-soft);
+    --el-button-border-color: var(--vp-c-danger-3);
     --el-button-hover-text-color: var(--vp-c-bg);
-    --el-button-hover-bg-color: var(--vp-c-red-1);
-    --el-button-hover-border-color: var(--vp-c-red-1);
+    --el-button-hover-bg-color: var(--vp-c-danger-1);
+    --el-button-hover-border-color: var(--vp-c-danger-1);
     --el-button-active-text-color: var(--vp-c-bg);
 }
 </style>

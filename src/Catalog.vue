@@ -61,7 +61,9 @@ watch(switches, () => {
                     <a :href="post.url" class="article-link gradient-card">
                         <el-space wrap>
                             {{ post.title }}
-                            <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
+                            <el-space wrap>
+                                <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
+                            </el-space>
                         </el-space>
                     </a>
                 </li>
