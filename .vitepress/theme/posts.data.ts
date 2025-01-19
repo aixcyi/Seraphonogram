@@ -1,3 +1,4 @@
+import { pinyin } from "@napi-rs/pinyin";
 import type { integer } from "@vue/language-server";
 import { format, parse } from "date-fns";
 import matter from "gray-matter";
@@ -106,6 +107,17 @@ export default {
                 date: format(changed, 'MM-dd'),
             })
         }
+
+        // 对标签按照拼音排序
+        const names = Object.keys(data.tags).sort((a, b) =>
+            pinyin(a).join('').localeCompare(pinyin(b).join(''))
+        )
+        const tags: Data['tags'] = {}
+        for (const tag of names) {
+            tags[tag] = data.tags[tag]
+        }
+        data.tags = tags
+
         return data
     }
 }
