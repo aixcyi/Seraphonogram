@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import CatalogLabeler from "@/CatalogLabeler.vue";
 import type { integer } from "@vue/language-server";
 import { reactive, watch } from "vue";
-import { data, type Post } from "../.vitepress/theme/posts.data.ts";
+import { data, type Post } from "../../.vitepress/theme/posts.data.ts";
+import CatalogLabeler from "./CatalogLabeler.vue";
 
 
 /**

@@ -14,7 +14,7 @@ tags:
 ---
 
 <script setup lang="ts">
-import Mirrors from "@/summary/Mirrors.vue";
+import Mirrors from "./Mirrors.vue";
 </script>
 
 # 镜像源

@@ -1,4 +1,4 @@
 ---
-title: 题集
+title: 解题集
 order: 8
 ---

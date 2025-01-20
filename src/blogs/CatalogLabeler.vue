@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import { data } from "../.vitepress/theme/posts.data.ts";
+import { data } from "../../.vitepress/theme/posts.data.ts";
 
 
 /**
@@ -18,7 +18,7 @@ const styles = new Map<string, { type: string }>([
     [ '总结／摘要', { type: 'primary' } ],
     [ '经验／踩坑／备忘', { type: 'primary' } ],
     [ '思考／碎碎念', { type: 'primary' } ],
-    [ '题集', { type: 'primary' } ],
+    [ '解题集', { type: 'primary' } ],
 
     // 技术栈
     [ 'Python', { type: 'warning' } ],

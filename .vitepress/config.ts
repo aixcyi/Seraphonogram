@@ -12,7 +12,7 @@ const now = new Date().getFullYear()
 const configsVitePress: UserConfig<DefaultTheme.Config> = {
     lang: 'zh-CN',
     title: 'Seraphonogram',
-    description: '砹小翼的博客',
+    description: '阿羽的树洞',
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
@@ -29,10 +29,10 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     { text: '目录索引', link: '/catalog' },
                     {
                         items: [
-                            { text: '总结／摘要', activeMatch: '/summary', link: '/catalog?tag=总结／摘要' },
-                            { text: '经验／踩坑／备忘', activeMatch: '/record', link: '/catalog?tag=经验／踩坑／备忘' },
-                            { text: '思考／碎碎念', activeMatch: '/thinking', link: '/catalog?tag=思考／碎碎念' },
-                            { text: '题集', activeMatch: '/problem', link: '/catalog?tag=题集' },
+                            { text: '总结／摘要', activeMatch: '/summary/', link: '/catalog?tag=总结／摘要' },
+                            { text: '经验／踩坑／备忘', activeMatch: '/record/', link: '/catalog?tag=经验／踩坑／备忘' },
+                            { text: '思考／碎碎念', activeMatch: '/thinking/', link: '/catalog?tag=思考／碎碎念' },
+                            { text: '解题集', activeMatch: '/problem/', link: '/catalog?tag=解题集' },
                         ]
                     },
                     { text: '关于', link: '/about' },
@@ -40,11 +40,16 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
             },
             {
                 text: '快速参考',
-                activeMatch: '^(/mirror|/timestamp|/grammar)',
                 items: [
                     { text: '镜像源', link: '/mirror' },
                     { text: '时间戳对照表', link: '/timestamp' },
                     { text: 'Python 语法更新摘要', link: '/grammar' },
+                ]
+            },
+            {
+                text: '题库',
+                items: [
+                    { text: 'Python', link: '/problemset/python' },
                 ]
             },
             { text: '主站', link: 'https://aixcyi.cn/' },
@@ -71,9 +76,12 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
     },
     cleanUrls: true,
     rewrites: {
-        'summary/mirror.md': 'mirror.md',
-        'summary/timestamp.md': 'timestamp.md',
-        'summary/grammar.md': 'grammar.md',
+        'blogs/summary/mirror.md': 'mirror.md',
+        'blogs/summary/timestamp.md': 'timestamp.md',
+        'blogs/summary/grammar.md': 'grammar.md',
+        'blogs/:file': ':file',
+        'blogs/:style/:file': ':style/:file',
+        'blogs/:style/:topic/:file': ':style/:topic/:file',
     },
     markdown: {
         lineNumbers: true,
@@ -89,26 +97,41 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
 }
 
 // https://vitepress-sidebar.cdget.com/zhHans/guide/options
-const configsVitePressSidebar: VitePressSidebarOptions = {
-    // 路由、包含、排除
-    documentRootPath: '/',
-    scanStartPath: 'src/',
-    excludePattern: [
-        'about.md',
-        'catalog.md',
-    ],
-    // 分组、菜单标题
-    collapsed: true,
-    useTitleFromFrontmatter: true,
-    useFolderTitleFromIndexFile: true,
-    // 排序
-    sortFolderTo: 'top',
-    sortMenusByFrontmatterOrder: true,
-    sortMenusOrderByDescending: true,
-};
+const configsVitePressSidebar: VitePressSidebarOptions[] = [
+    {
+        // 路由、包含、排除
+        documentRootPath: '/',
+        scanStartPath: 'src/blogs/',
+        excludePattern: [
+            'catalog.md',
+        ],
+        // 分组、菜单标题
+        collapsed: true,
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        // 排序
+        sortFolderTo: 'top',
+        sortMenusByFrontmatterOrder: true,
+        sortMenusOrderByDescending: true,
+    },
+    {
+        // 路由、包含、排除
+        documentRootPath: '/',
+        scanStartPath: 'src/problemset/',
+        resolvePath: '/problemset/',
+        basePath: '/problemset/',
+        // 分组、菜单标题
+        collapsed: false,
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        // 排序
+        sortFolderTo: 'top',
+        sortMenusOrderNumericallyFromLink: true,
+    },
+]
 
 export default defineConfig(
     rewriteSidebar(
         withSidebar(configsVitePress, configsVitePressSidebar)
     )
-);
+)

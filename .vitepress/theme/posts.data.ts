@@ -17,10 +17,7 @@ if (!config) {
 }
 
 const blogsPattern = [
-    'summary/**/*.md',
-    'record/**/*.md',
-    'thinking/**/*.md',
-    'problem/**/*.md',
+    'blogs/**/*.md',
 ].map((p) =>
     normalizePath(pathlib.join(config.srcDir!, p))
 )
@@ -45,6 +42,8 @@ export { data }
 export default {
     watch: blogsPattern,
     async load(files: string[]) {
+        // @ts-expect-error
+        const maps = config!.rewrites!['map']
         const folders = new Map<string, string>()
         const data: Data = { posts: [], tags: {} }
 
@@ -55,23 +54,26 @@ export default {
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
             folders.set(
-                pathlib.dirname(file).split('/').reverse()[0],
+                pathlib.dirname(file).split('/').reverse()[1],
                 frontmatter.title
             )
         }
 
         // 提取文件信息
         for (const file of files) {
-            if (!file.endsWith('.md') || file.endsWith('/index.md')) {
-                // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.created 属性）
+            if (!file.endsWith('.md')) {
                 continue
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
+            if (!('created' in frontmatter)) {
+                // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.created 属性）
+                continue
+            }
 
             // 提取路径中的文件夹，转换为名称，添加到标签
-            const srcPath = pathlib.relative(config.srcDir!, file)
+            const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
             const tags = [
-                folders.get(srcPath.split(pathlib.sep)[0])!,
+                folders.get(srcPath.split('/')[0])!,
                 ...new Set<string>(frontmatter.tags ?? [])
             ].sort((a, b) => {
                 // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
@@ -80,7 +82,7 @@ export default {
                 return lenA - lenB
             })
 
-            const url = normalizePath(srcPath)
+            const url = normalizePath(srcPath in maps ? maps[srcPath] : srcPath)
                 .replace(/(^|\/)index\.md$/, '$1')
                 .replace(/\.md$/, config.cleanUrls ? '' : '.html')
 

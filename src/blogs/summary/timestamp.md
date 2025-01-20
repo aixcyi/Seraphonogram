@@ -15,7 +15,7 @@ tags:
 ---
 
 <script setup lang="ts">
-import TimestampTables from "@/summary/TimestampTables.vue";
+import TimestampTables from "./TimestampTables.vue";
 </script>
 
 # 时间戳对照表
