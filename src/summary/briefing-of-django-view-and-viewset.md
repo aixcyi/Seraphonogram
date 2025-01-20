@@ -4,7 +4,7 @@ lang: zh-CN
 outline: deep
 order: 20221011
 created: 2022-10-11 11:52
-expires: 1000
+expires: 1096
 excerpt: '浅析 <a href="https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/">Django</a>
           与 <a href="https://www.django-rest-framework.org/api-guide/views/">Django REST Framework</a> 两个框架视图类的脉络。'
 tags:

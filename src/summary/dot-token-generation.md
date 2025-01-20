@@ -4,7 +4,7 @@ lang: zh-CN
 outline: deep
 order: 20240220
 created: 2024-02-20 11:55
-expires: 1000
+expires: 1096
 excerpt: '简述 <a href="https://django-oauth-toolkit.readthedocs.io/en/latest/">Django OAuth Toolkit</a>
           中的令牌 <code>Token</code> 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。'
 tags:

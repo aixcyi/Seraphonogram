@@ -4,7 +4,7 @@ lang: zh-CN
 outline: deep
 order: 20231114
 created: 2023-11-14 23:32
-expires: 1000
+expires: 1096
 excerpt: Windows 下 Python 3.7 中 <code>date().strftime(fmt)</code> 参数 <code>fmt</code> 不能含有中文。
 tags:
     - 开发
