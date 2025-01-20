@@ -7,8 +7,7 @@ const $frontmatter = useData().frontmatter.value
 <template>
     <el-space spacer=" " wrap>
         <el-text type="info">标签</el-text>
-        <!-- TODO: 实现搜索链接 -->
-        <a v-for="tag in $frontmatter.tags" href="">{{ tag }}</a>
+        <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`">{{ tag }}</a>
     </el-space>
 </template>
 
