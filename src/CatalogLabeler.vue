@@ -25,6 +25,7 @@ const styles = new Map<string, { type: string }>([
     [ 'Kotlin', { type: 'warning' } ],
     [ 'Golang', { type: 'warning' } ],
     [ 'Java', { type: 'warning' } ],
+    [ '易语言', { type: 'warning' } ],
     [ 'IntelliJ 插件', { type: 'warning' } ],
     [ 'datetime', { type: 'warning' } ],
     [ 'Django', { type: 'warning' } ],
@@ -86,7 +87,7 @@ onMounted(() => {
                    round
                    @click="handleSwitch(tag)">
             {{ tag }}&nbsp;
-            <el-badge :value="data.tags[tag]" color="#303030"></el-badge>
+            <el-badge v-if="data.tags[tag] > 1" :value="data.tags[tag]" color="#303030"></el-badge>
         </el-button>
     </el-space>
 </template>
