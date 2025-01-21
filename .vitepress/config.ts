@@ -2,7 +2,6 @@ import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
 import { withSidebar } from "vitepress-sidebar";
 import { VitePressSidebarOptions } from "vitepress-sidebar/dist/types";
-import { rewriteSidebar } from "../src/utils/vpt";
 
 
 const env = loadEnv('', process.cwd())
@@ -25,8 +24,9 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
         nav: [
             {
                 text: '博客',
+                activeMatch: '^/(summary|record|thinking|problem)/',
                 items: [
-                    { text: '目录索引', link: '/catalog' },
+                    { text: '目录', link: '/catalog' },
                     {
                         items: [
                             { text: '总结／摘要', activeMatch: '/summary/', link: '/catalog?tag=总结／摘要' },
@@ -35,7 +35,6 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                             { text: '解题集', activeMatch: '/problem/', link: '/catalog?tag=解题集' },
                         ]
                     },
-                    { text: '关于', link: '/about' },
                 ]
             },
             {
@@ -46,6 +45,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     { text: 'Python 语法更新摘要', link: '/grammar' },
                 ]
             },
+            { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
         sidebar: [],
@@ -124,8 +124,19 @@ const configsVitePressSidebar: VitePressSidebarOptions[] = [
     },
 ]
 
-export default defineConfig(
-    rewriteSidebar(
-        withSidebar(configsVitePress, configsVitePressSidebar)
-    )
+const configs = defineConfig(
+    withSidebar(configsVitePress, configsVitePressSidebar)
 )
+
+export default configs
+
+
+// 硬编码代码
+// 因为 VitePress Sidebar 不能 rewrite 路由，无奈出此下策
+const items = configs.themeConfig.sidebar['/'].items[0].items
+for (const item of (items as DefaultTheme.SidebarItem[])) {
+    item.link = item.link.replace(
+        /.*(mirror|timestamp|grammar).*/,
+        '$1',
+    )
+}

@@ -1,5 +1,5 @@
 ---
-title: 目录索引
+title: 目录
 lang: zh-CN
 prev: false
 next: false
