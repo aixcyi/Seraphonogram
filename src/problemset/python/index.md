@@ -1,4 +1,7 @@
 ---
-title: Python 题库
+title: Python 题单
 order: 1024
+aside: false
+prev: false
+next: false
 ---
