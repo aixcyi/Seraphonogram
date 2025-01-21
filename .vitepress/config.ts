@@ -46,12 +46,6 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     { text: 'Python 语法更新摘要', link: '/grammar' },
                 ]
             },
-            {
-                text: '题库',
-                items: [
-                    { text: 'Python', link: '/problemset/python' },
-                ]
-            },
             { text: '主站', link: 'https://aixcyi.cn/' },
         ],
         sidebar: [],
