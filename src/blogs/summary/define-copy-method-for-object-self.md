@@ -16,7 +16,6 @@ tags:
 # 为自身定义 `copy` 方法
 
 <RevisionInfo indent/>
-<TagsBar />
 
 ## 直接调用
 

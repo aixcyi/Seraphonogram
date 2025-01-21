@@ -61,69 +61,79 @@ const slotsName =
 </script>
 
 <template>
-    <table>
-        <tbody style="width: 100%">
-        <tr>
-            <td class="col-intro" rowspan="4">
-                <template v-if="slotsName.length">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td v-for="name in slotsName">
-                                <slot :name="name"/>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </template>
-                <template v-else-if="$frontmatter.excerpt !== undefined">
+    <div class="status-bar">
+        <el-space spacer=" " wrap>
+            <el-text type="info">标签</el-text>
+            <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`" class="tag">{{ tag }}</a>
+        </el-space>
+    </div>
+    <div class="status-bar multiple">
+        <div class="excerpt">
+            <template v-if="slotsName.length">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td v-for="name in slotsName">
+                            <slot :name="name"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </template>
+            <template v-else-if="$frontmatter.excerpt !== undefined">
+                <div>
                     <span v-if="props.indent">　　</span>
                     <el-text type="info" v-html="$frontmatter.excerpt"></el-text>
-                </template>
-                <template v-else>
-                    <el-text type="info">
-                        <slot/>
-                    </el-text>
-                </template>
-            </td>
-            <td class="col-divider" rowspan="4"></td>
-            <td class="col-key">
-                <el-text type="info">{{ $frontmatter.revised ? '修订于' : '发布于' }}</el-text>
-            </td>
-            <td class="col-value">
-                <el-text type="info">{{ $frontmatter.revised ?? $frontmatter.created }}</el-text>
-            </td>
-        </tr>
-        <tr v-if="$frontmatter.updated !== undefined">
-            <td class="col-key">
-                <el-text type="info">更新于</el-text>
-            </td>
-            <td class="col-value">
-                <el-text type="info">{{ $frontmatter.updated }}</el-text>
-            </td>
-        </tr>
-        <tr v-if="expires !== undefined">
-            <td class="col-key">
-                <el-text type="info">保质期</el-text>
-            </td>
-            <td class="col-value">
-                <el-text type="info">{{ expires }}</el-text>
-            </td>
-        </tr>
-        <tr v-if="freshness !== undefined">
-            <td class="col-key">
-                <el-text type="info">新鲜度</el-text>
-            </td>
-            <td class="col-value">
-                <el-progress :color="getFreshnessColor" :percentage="freshness!" style="min-width: 100px"/>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+                </div>
+            </template>
+            <template v-else>
+                <el-text type="info">
+                    <slot/>
+                </el-text>
+            </template>
+        </div>
+        <table class="attributes">
+            <tbody>
+            <tr>
+                <td class="col-key">
+                    <el-text type="info">{{ $frontmatter.revised ? '修订于' : '发布于' }}</el-text>
+                </td>
+                <td class="col-value">
+                    <el-text type="info">{{ $frontmatter.revised ?? $frontmatter.created }}</el-text>
+                </td>
+            </tr>
+            <tr v-if="$frontmatter.updated !== undefined">
+                <td class="col-key">
+                    <el-text type="info">更新于</el-text>
+                </td>
+                <td class="col-value">
+                    <el-text type="info">{{ $frontmatter.updated }}</el-text>
+                </td>
+            </tr>
+            <tr v-if="expires !== undefined">
+                <td class="col-key">
+                    <el-text type="info">保质期</el-text>
+                </td>
+                <td class="col-value">
+                    <el-text type="info">{{ expires }}</el-text>
+                </td>
+            </tr>
+            <tr v-if="freshness !== undefined">
+                <td class="col-key">
+                    <el-text type="info">新鲜度</el-text>
+                </td>
+                <td class="col-value">
+                    <el-progress :color="getFreshnessColor" :percentage="freshness!" style="min-width: 100px"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
+    margin: 0;
     overflow-x: visible !important;
     border-collapse: collapse !important;
 }
@@ -140,14 +150,6 @@ td {
     padding: 0 4px !important;
 }
 
-.col-intro {
-    width: 100%;
-}
-
-.col-divider {
-    border-left: 1px solid var(--vp-c-divider) !important;
-}
-
 .col-key {
     min-width: 50px;
     text-wrap: nowrap;
@@ -156,5 +158,70 @@ td {
 .col-value {
     min-width: 130px;
     text-wrap: nowrap;
+}
+
+.status-bar {
+    padding: 1rem 4px 0 4px;
+}
+
+.multiple {
+    display: flex;
+}
+
+.excerpt {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.tag {
+    color: var(--el-color-info);
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0.15s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out 0.15s;
+        background-color: var(--vp-c-brand-2);
+
+        :hover > & {
+            width: calc(100% + 6px);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: -3px;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out 0.15s;
+        background-color: var(--vp-c-brand-2);
+
+        :hover > & {
+            width: calc(100% + 6px);
+        }
+    }
+}
+
+.attributes {
+    margin-left: 16px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        width: 1px;
+        height: 100%;
+        background-color: var(--vp-c-divider);
+    }
 }
 </style>

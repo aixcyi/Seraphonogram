@@ -15,7 +15,6 @@ tags:
 # 实现任意进制转十进制
 
 <RevisionInfo indent />
-<TagsBar />
 
 ## 十六进制转十进制
 

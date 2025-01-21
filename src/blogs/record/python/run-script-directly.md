@@ -17,7 +17,6 @@ tags:
 # 直接运行 Python 脚本
 
 <RevisionInfo />
-<TagsBar />
 
 ## 在 Ubuntu 下
 

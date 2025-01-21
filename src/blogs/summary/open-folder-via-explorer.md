@@ -13,7 +13,6 @@ tags:
 # 通过命令行打开文件夹
 
 <RevisionInfo />
-<TagsBar />
 
 `explorer.exe /select,addr`
 

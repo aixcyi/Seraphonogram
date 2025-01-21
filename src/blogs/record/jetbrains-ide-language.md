@@ -13,7 +13,6 @@ tags:
 # 设置 JetBrains IDE 的语言
 
 <RevisionInfo indent />
-<TagsBar />
 
 ## 2024.2+ 版本
 

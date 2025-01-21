@@ -12,7 +12,6 @@ tags:
 # Java 运算精度
 
 <RevisionInfo />
-<TagsBar />
 
 Java的 `+` `-` `*` `/` 的最低运算精度是 `int` ，所以以下代码会报错：
 

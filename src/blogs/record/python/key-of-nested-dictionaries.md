@@ -13,7 +13,6 @@ tags:
 # 字典添加二级键值的问题
 
 <RevisionInfo />
-<TagsBar />
 
 ## 问题来源
 

@@ -17,7 +17,6 @@ tags:
 # Python 推导式
 
 <RevisionInfo indent />
-<TagsBar />
 
 ## 列表推导式
 

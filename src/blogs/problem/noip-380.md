@@ -13,7 +13,6 @@ tags:
 # NOIP 380. 校门外的树
 
 <RevisionInfo />
-<TagsBar />
 
 ## 题干
 

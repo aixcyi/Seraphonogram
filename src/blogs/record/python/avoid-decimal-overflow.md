@@ -15,8 +15,7 @@ tags:
 
 # 避免 Decimal 精度溢出
 
-<RevisionInfo indent />
-<TagsBar />
+<RevisionInfo />
 
 > [!IMPORTANT] 声明
 > 以下将 `Decimal` 称为十进制小数、将 `float` 称为二进制小数，因为

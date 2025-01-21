@@ -16,7 +16,6 @@ tags:
 # 浅析 Django 及衍生的类视图
 
 <RevisionInfo />
-<TagsBar />
 
 ## 类的继承脉络
 

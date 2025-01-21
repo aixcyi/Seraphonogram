@@ -14,7 +14,6 @@ tags:
 # Python 文件打开模式
 
 <RevisionInfo />
-<TagsBar />
 
 ## 打开模式
 

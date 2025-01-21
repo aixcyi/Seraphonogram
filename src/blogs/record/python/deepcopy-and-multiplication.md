@@ -15,7 +15,6 @@ tags:
 # 使用乘号复制变量引起的问题
 
 <RevisionInfo />
-<TagsBar />
 
 ## 问题复现
 

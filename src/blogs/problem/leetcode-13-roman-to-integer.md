@@ -22,7 +22,6 @@ tags:
     </a>
 </template>
 </RevisionInfo>
-<TagsBar />
 
 ## 题目
 

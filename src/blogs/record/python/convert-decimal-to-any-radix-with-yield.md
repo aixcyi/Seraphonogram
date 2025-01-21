@@ -15,7 +15,6 @@ tags:
 # 十进制转任意进制与 `yield`
 
 <RevisionInfo indent />
-<TagsBar />
 
 ## 过程描述
 

@@ -13,7 +13,6 @@ tags:
 # 编译安装 Python3 后 pip3 安装的库如何在命令行调用
 
 <RevisionInfo />
-<TagsBar />
 
 ## 问题描述
 

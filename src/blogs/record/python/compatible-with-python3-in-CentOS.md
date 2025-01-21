@@ -14,7 +14,6 @@ tags:
 # 宝塔面板与 Python 3 的恩怨情仇
 
 <RevisionInfo />
-<TagsBar />
 
 ## 问题描述
 

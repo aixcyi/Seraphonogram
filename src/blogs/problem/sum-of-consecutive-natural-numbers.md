@@ -10,7 +10,6 @@ tags:
 # 连续自然数之和
 
 <RevisionInfo />
-<TagsBar />
 
 ## 题干
 

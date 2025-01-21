@@ -21,7 +21,6 @@ import TimestampTables from "./TimestampTables.vue";
 # 时间戳对照表
 
 <RevisionInfo />
-<TagsBar />
 
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。

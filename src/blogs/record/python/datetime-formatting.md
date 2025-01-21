@@ -16,7 +16,6 @@ tags:
 # `date` 格式化失败
 
 <RevisionInfo />
-<TagsBar />
 
 ## 复现
 

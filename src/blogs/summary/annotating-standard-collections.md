@@ -16,7 +16,6 @@ tags:
 # 标准多项集的标注方式
 
 <RevisionInfo />
-<TagsBar />
 
 > [!NOTE] 备注
 > Python 3.9 之前，内置数据类型不支持下标操作，像 `list[]` 要用 `typing.List[]` 代替，其余类型同理。但如果需要跨版本，可以用 `from __future__ import annotations` 实现向前兼容。

@@ -10,7 +10,6 @@ tags:
 # 多个整数连接为最大整数问题
 
 <RevisionInfo />
-<TagsBar />
 
 ## 题干
 

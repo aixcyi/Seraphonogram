@@ -17,7 +17,6 @@ tags:
 # Django OAuth Toolkit 令牌机制
 
 <RevisionInfo indent />
-<TagsBar />
 
 > [!TIP] 提示
 > 正常来说应该继承 `OAuthLibMixin` 写一个类视图，调用 `create_token_response()` 来生成和刷新令牌，调用 `create_revocation_response()` 来撤销令牌，但如果要手动实现某些过程，可以参考本文的伪代码。

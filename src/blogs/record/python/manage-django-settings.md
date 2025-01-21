@@ -16,7 +16,6 @@ tags:
 # 管理 Django Settings
 
 <RevisionInfo />
-<TagsBar />
 
 > [!NOTE] 下文约定
 > 项目所在目录为 `./` ，Django Settings 所在目录为 `./{service}/` ，项目名称为 service 。

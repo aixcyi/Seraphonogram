@@ -14,7 +14,6 @@ tags:
 # Python 字典中，键的顺序
 
 <RevisionInfo />
-<TagsBar />
 
 ## `dict`
 

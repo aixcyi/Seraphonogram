@@ -17,7 +17,6 @@ tags:
 # 类与类型
 
 <RevisionInfo />
-<TagsBar />
 
 在万物皆对象的理念下，Python 的类实际上也是一个对象，或者叫实例，它是类型特殊实例化产生的东西，听起来就是类型 -> 类 -> 对象（type -> class -> object）。
 

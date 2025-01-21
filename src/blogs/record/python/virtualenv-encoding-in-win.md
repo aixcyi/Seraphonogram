@@ -16,7 +16,6 @@ tags:
 # virtualenv 在 Windows 中无法激活
 
 <RevisionInfo indent />
-<TagsBar />
 
 ## 环境（参考）
 
