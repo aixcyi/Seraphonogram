@@ -16,12 +16,23 @@ if (!config) {
     )
 }
 
+/**
+ * src深度，用于匹配文件夹作为标签。./src/* 为 0，./src/blogs/* 为 1，以此类推。
+ */
+const depth = 1
+
+/**
+ * 博客文件路径通配符。
+ */
 const blogsPattern = [
     'blogs/**/*.md',
 ].map((p) =>
     normalizePath(pathlib.join(config.srcDir!, p))
 )
 
+/**
+ * 博客信息结构。
+ */
 export interface Post {
     url: string
     title: string
@@ -31,6 +42,9 @@ export interface Post {
     date: string
 }
 
+/**
+ * 博客数据结构。
+ */
 export interface Data {
     posts: Post[]
     tags: { [key: string]: integer }
@@ -54,7 +68,7 @@ export default {
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
             folders.set(
-                pathlib.dirname(file).split('/').reverse()[1],
+                pathlib.dirname(file).split('/').reverse()[0],
                 frontmatter.title
             )
         }
@@ -73,7 +87,7 @@ export default {
             // 提取路径中的文件夹，转换为名称，添加到标签
             const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
             const tags = [
-                folders.get(srcPath.split('/')[0])!,
+                folders.get(srcPath.split('/')[depth])!,
                 ...new Set<string>(frontmatter.tags ?? [])
             ].sort((a, b) => {
                 // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
