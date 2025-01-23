@@ -7,6 +7,7 @@ expires: 3650
 excerpt: <code>dict</code> 里的键原本是无序排列的，后来改成有序的了。
 tags:
     - 测试
+    - 兼容
     - Python
     - 标准多项集
 ---

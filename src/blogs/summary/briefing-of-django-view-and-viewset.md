@@ -11,6 +11,8 @@ tags:
     - 开发
     - Django
     - Django REST Framework
+    - 视图
+    - 类
 ---
 
 # 浅析 Django 及衍生的类视图

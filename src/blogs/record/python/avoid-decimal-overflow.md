@@ -7,6 +7,8 @@ expires: 1096
 excerpt: '省流：后端使用 Decimal 时，前端应当配合传递 string 而非 number。'
 tags:
     - 开发
+    - 十进制小数
+    - 序列化
     - 测试
     - Python
     - Django

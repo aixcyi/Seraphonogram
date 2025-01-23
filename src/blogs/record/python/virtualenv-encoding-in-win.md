@@ -7,6 +7,9 @@ expires: 365
 excerpt: '使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀
           <code>(venv)</code> 字样，但 <code>pip -V</code> 显示当前 pip 并没有指向父环境。'
 tags:
+    - 运维
+    - virtualenv
+    - conda
     - 开发
     - Windows
     - Python

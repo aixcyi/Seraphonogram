@@ -31,18 +31,26 @@ const styles = new Map<string, { type: string }>([
     [ 'Django', { type: 'warning' } ],
     [ 'Django REST Framework', { type: 'warning' } ],
     [ 'Django OAuth Toolkit', { type: 'warning' } ],
-    [ 'Windows', { type: 'warning' } ],
-    [ 'Ubuntu', { type: 'warning' } ],
-    [ 'CentOS', { type: 'warning' } ],
-    [ 'PyPI', { type: 'warning' } ],
+    [ 'pip', { type: 'warning' } ],
+    [ 'conda', { type: 'warning' } ],
+    [ 'virtualenv', { type: 'warning' } ],
+    [ 'venv', { type: 'warning' } ],
     [ 'npm', { type: 'warning' } ],
 
     // 其它特定主题
+    [ 'Windows', { type: 'success' } ],
+    [ 'Ubuntu', { type: 'success' } ],
+    [ 'CentOS', { type: 'success' } ],
     [ 'IntelliJ IDE', { type: 'success' } ],
+    [ 'PyCharm', { type: 'success' } ],
     [ 'LeetCode', { type: 'success' } ],
     [ '蓝桥杯', { type: 'success' } ],
     [ 'NOIP', { type: 'success' } ],
     [ '微信', { type: 'success' } ],
+    [ 'win32api', { type: 'success' } ],
+    [ '组件对象模型 COM', { type: 'success' } ],
+    [ '宝塔面板', { type: 'success' } ],
+    [ '注册表', { type: 'success' } ],
 ])
 
 /**

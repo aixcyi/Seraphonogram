@@ -2,7 +2,7 @@
 import type { integer } from "@vue/language-server";
 import { reactive, watch } from "vue";
 import { data, type Post } from "../../.vitepress/theme/posts.data.ts";
-import CatalogLabeler from "./CatalogLabeler.vue";
+import CatalogFilter from "./CatalogFilter.vue";
 
 
 /**
@@ -35,17 +35,17 @@ function filterPosts(tags: Set<string>) {
 }
 
 watch(switches, () => {
-    const _tags = new Set<string>();
+    const tags = new Set<string>();
     switches.forEach((v, k) => {
         if (v)
-            _tags.add(k)
+            tags.add(k)
     })
-    filterPosts(_tags)
+    filterPosts(tags)
 })
 </script>
 
 <template>
-    <CatalogLabeler v-model:switches="switches" class="labeler"/>
+    <CatalogFilter v-model:switches="switches" class="filter"/>
 
     <div class="catalog">
         <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
@@ -61,9 +61,7 @@ watch(switches, () => {
                     <a :href="post.url" class="article-link gradient-card">
                         <el-space wrap>
                             {{ post.title }}
-                            <el-space wrap>
-                                <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
-                            </el-space>
+                            <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
                         </el-space>
                     </a>
                 </li>
@@ -75,7 +73,7 @@ watch(switches, () => {
 <style lang="scss" scoped>
 // https://github.com/L33Z22L11/blog-v3/
 
-.labeler {
+.filter {
     margin-bottom: 3rem;
 }
 
@@ -195,7 +193,7 @@ watch(switches, () => {
 
         &::before {
             background: no-repeat 100% / 400%;
-            background-image: linear-gradient(-45deg, #bd34fe, #47caff 40%, transparent 50%);
+            background-image: linear-gradient(-135deg, #bd34fe, #47caff 40%, transparent 50%);
         }
 
         &::after {

@@ -11,6 +11,7 @@ tags:
     - 开发
     - 测试
     - Django
+    - 配置
 ---
 
 # 管理 Django Settings

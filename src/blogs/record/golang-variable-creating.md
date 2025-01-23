@@ -7,6 +7,7 @@ expires: 1096
 tags:
     - 开发
     - Golang
+    - 语法
 ---
 
 # Golang 创建同一个变量

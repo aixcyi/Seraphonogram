@@ -9,8 +9,11 @@ expires: 3650
 tags:
     - 开发
     - 运维
-    - PyPI
+    - pip
     - npm
+    - 命令行
+    - 镜像
+    - 配置
 ---
 
 <script setup lang="ts">

@@ -11,7 +11,7 @@ tags:
     - 开发
     - 设计
     - 时间戳
-    - 进制转换
+    - 进位制
 ---
 
 <script setup lang="ts">

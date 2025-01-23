@@ -9,7 +9,9 @@ tags:
     - 开发
     - IntelliJ IDE
     - Django
+    - PyCharm
     - 控制台
+    - 配置
 ---
 
 # PyCharm 配置 Django 控制台

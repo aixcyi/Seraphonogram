@@ -125,12 +125,12 @@ export default {
         }
 
         // 对标签按照拼音排序
-        const names = Object.keys(data.tags).sort((a, b) =>
+        const labels = Object.keys(data.tags).sort((a, b) =>
             pinyin(a).join('').localeCompare(pinyin(b).join(''))
         )
         const tags: Data['tags'] = {}
-        for (const tag of names) {
-            tags[tag] = data.tags[tag]
+        for (const label of labels) {
+            tags[label] = data.tags[label]
         }
         data.tags = tags
 

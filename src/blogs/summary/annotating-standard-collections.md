@@ -8,6 +8,7 @@ excerpt: '列表、元组、集合、字典的正确类型标注方式，细节�
           <a href="https://peps.python.org/pep-0484/#the-typing-module"><b>PEP 484</b></a>。'
 tags:
     - 开发
+    - 语法
     - Python
     - 类型标注
     - 标准多项集

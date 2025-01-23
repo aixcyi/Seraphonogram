@@ -9,8 +9,10 @@ excerpt: Windows 下 Python 3.7 中 <code>date().strftime(fmt)</code> 参数 <co
 tags:
     - 开发
     - Python
+    - 兼容
     - Windows
     - datetime
+    - 格式化
 ---
 
 # `date` 格式化失败

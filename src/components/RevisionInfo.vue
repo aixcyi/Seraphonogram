@@ -63,8 +63,8 @@ const slotsName =
 <template>
     <div class="status-bar">
         <el-space spacer=" " wrap>
-            <el-text type="info">标签</el-text>
-            <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`" class="tag">{{ tag }}</a>
+            <el-text class="label" type="info">标签</el-text>
+            <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`" class="tag label">{{ tag }}</a>
         </el-space>
     </div>
     <div class="status-bar multiple">
@@ -172,6 +172,11 @@ td {
     align-items: center;
     display: flex;
     width: 100%;
+}
+
+.label {
+    font-size: 14px !important;
+    font-weight: unset !important;
 }
 
 .tag {

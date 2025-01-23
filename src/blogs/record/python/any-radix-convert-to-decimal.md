@@ -10,6 +10,7 @@ tags:
     - 算法
     - 进位制
     - Python
+    - 生成器
 ---
 
 # 实现任意进制转十进制
@@ -92,7 +93,7 @@ $$
 product_p = pair_0 \times 16^{pair_1}
 $$
 
-使用Python表达如下：
+使用 Python 表达如下：
 
 ```python
 def multiply(pair):
