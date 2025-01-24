@@ -64,7 +64,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
         // lastUpdated: { text: '最后更新于' },
         // editLink: { text: '源代码', pattern: 'https://github.com/username/repository-name/blame/main/docs/:path' },
         footer: {
-            message: `${env.VITE_FOOTER_MSG}`,
+            message: 'VITE_FOOTER_MSG' in env ? `${env.VITE_FOOTER_MSG}` : undefined,
             copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
         },
     },
