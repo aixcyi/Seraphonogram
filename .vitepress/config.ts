@@ -32,7 +32,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                             { text: '总结／摘要', activeMatch: '/summary/', link: '/catalog?tag=总结／摘要' },
                             { text: '经验／踩坑／备忘', activeMatch: '/record/', link: '/catalog?tag=经验／踩坑／备忘' },
                             { text: '思考／碎碎念', activeMatch: '/thinking/', link: '/catalog?tag=思考／碎碎念' },
-                            { text: '解题集', activeMatch: '/problem/', link: '/catalog?tag=解题集' },
+                            { text: '题解集', activeMatch: '/problem/', link: '/catalog?tag=题解集' },
                         ]
                     },
                 ]

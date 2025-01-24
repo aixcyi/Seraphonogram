@@ -1,5 +1,5 @@
 ---
-title: 解题集
+title: 题解集
 order: 8
 aside: false
 prev: false
