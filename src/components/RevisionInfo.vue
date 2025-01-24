@@ -29,8 +29,7 @@ function getFreshnessColor(percentage: number) {
 const current = Date.now()
 const createAt = resolve($frontmatter.created)!
 const updateAt = resolve($frontmatter.updated)
-const reviseAt = resolve($frontmatter.revised)
-const latestAt = [ reviseAt, updateAt, createAt ]
+const latestAt = [ updateAt, createAt ]
     .filter(v => v !== undefined)
     .sort((a, b) => b!.getTime() - a!.getTime())
     [0]
@@ -96,10 +95,10 @@ const slotsName =
             <tbody>
             <tr>
                 <td class="col-key">
-                    <el-text type="info">{{ $frontmatter.revised ? '修订于' : '发布于' }}</el-text>
+                    <el-text type="info">发布于</el-text>
                 </td>
                 <td class="col-value">
-                    <el-text type="info">{{ $frontmatter.revised ?? $frontmatter.created }}</el-text>
+                    <el-text type="info">{{ $frontmatter.created }}</el-text>
                 </td>
             </tr>
             <tr v-if="$frontmatter.updated !== undefined">
