@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import { data } from "../../.vitepress/theme/posts.data.ts";
+import { data } from "../../.vitepress/theme/blogs.data.ts";
 
 
 /**

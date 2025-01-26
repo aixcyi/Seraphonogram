@@ -33,7 +33,7 @@ const blogsPattern = [
 /**
  * 博客信息结构。
  */
-export interface Post {
+export interface Blog {
     url: string
     title: string
     changed: number
@@ -46,7 +46,7 @@ export interface Post {
  * 博客数据结构。
  */
 export interface Data {
-    posts: Post[]
+    posts: Blog[]
     tags: { [key: string]: integer }
 }
 

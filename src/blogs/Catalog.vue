@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import type { integer } from "@vue/language-server";
 import { reactive, watch } from "vue";
-import { data, type Post } from "../../.vitepress/theme/posts.data.ts";
+import { type Blog, data } from "../../.vitepress/theme/blogs.data.ts";
 import CatalogFilter from "./CatalogFilter.vue";
 
 
 /**
  * 按年分组的博客。
  */
-const annuals = reactive(new Map<integer, Post[]>())
+const annuals = reactive(new Map<integer, Blog[]>())
 
 /**
  * 标签开关。
@@ -19,14 +19,14 @@ const switches = reactive(new Map<string, boolean>())
  * 按照标签过滤博客，然后按年份分组（会确保倒序）。
  */
 function filterPosts(tags: Set<string>) {
-    const group = new Map<integer, Post[]>()
-    data.posts.forEach(post => {
-        const year = post.year
-        if (tags.size && !post.tags.filter(t => tags.has(t)).length)
+    const group = new Map<integer, Blog[]>()
+    data.posts.forEach(blog => {
+        const year = blog.year
+        if (tags.size && !blog.tags.filter(t => tags.has(t)).length)
             return
         if (!group.has(year))
             group.set(year, [])
-        group.get(year)!.push(post)
+        group.get(year)!.push(blog)
     })
     annuals.clear()
     for (const year of [ ...group.keys() ].sort().reverse()) {
@@ -48,20 +48,20 @@ watch(switches, () => {
     <CatalogFilter v-model:switches="switches" class="filter"/>
 
     <div class="catalog">
-        <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
+        <div v-for="[year, blogs] in annuals" :key="year" class="catalog-group">
             <div class="catalog-title">
                 <h2 class="catalog-year">{{ year }}</h2>
                 <div class="catalog-info">
-                    <span>{{ posts.length }} 篇</span>
+                    <span>{{ blogs.length }} 篇</span>
                 </div>
             </div>
             <menu class="article-list">
-                <li v-for="post in posts" class="article-item">
-                    <pre>{{ post.date }}</pre>
-                    <a :href="post.url" class="article-link gradient-card">
+                <li v-for="blog in blogs" class="article-item">
+                    <pre>{{ blog.date }}</pre>
+                    <a :href="blog.url" class="article-link gradient-card">
                         <el-space wrap>
-                            {{ post.title }}
-                            <el-tag v-for="tag in post.tags" size="small" type="info">{{ tag }}</el-tag>
+                            {{ blog.title }}
+                            <el-tag v-for="tag in blog.tags" size="small" type="info">{{ tag }}</el-tag>
                         </el-space>
                     </a>
                 </li>
