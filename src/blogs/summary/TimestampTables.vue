@@ -68,20 +68,25 @@ const configs = {
     </el-tabs>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 ul {
     margin-top: 0;
 }
 
-.el-tabs--card :deep(.el-tabs__nav) {
-    margin: 0 16px;
-}
+.el-tabs__card {
+    :deep() {
+        .el-tabs__nav {
+            margin: 0 16px;
+        }
 
-.el-tabs--card :deep(.el-tabs__content) {
-    margin: 0 16px;
-}
+        .el-tabs__content {
+            margin: 0 16px;
+        }
 
-.el-tabs--card :deep(.el-tabs__item.is-active), :deep(.el-tabs__item:hover) {
-    color: var(--vp-c-brand-1);
+        .el-tabs__item.is-active,
+        .el-tabs__item:hover {
+            color: var(--vp-c-brand-1);
+        }
+    }
 }
 </style>

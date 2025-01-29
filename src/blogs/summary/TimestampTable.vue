@@ -45,7 +45,7 @@ const data = [ ...table.values() ].sort(
     <table>
         <thead>
         <tr>
-            <th v-for="_ in bases" style="text-align:center;"></th>
+            <th v-for="() in bases" style="text-align:center;"></th>
             <th style="text-align:right;">存储上限</th>
             <th style="text-align:right;">时间上限</th>
         </tr>
@@ -66,6 +66,6 @@ const data = [ ...table.values() ].sort(
 
 <style scoped>
 table {
-    font-family: "HarmonyOS Sans SC", "JetBrains Mono", var(--vp-font-family-mono);
+    font-family: "HarmonyOS Sans SC", "JetBrains Mono", var(--vp-font-family-mono), monospace;
 }
 </style>
