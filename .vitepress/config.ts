@@ -37,16 +37,9 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
                     },
                 ]
             },
-            {
-                text: '快速参考',
-                items: [
-                    { text: '镜像源', link: '/mirror' },
-                    { text: '时间戳对照表', link: '/timestamp' },
-                    { text: 'Python 语法更新摘要', link: '/grammar' },
-                ]
-            },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://aixcyi.cn/' },
+            { text: 'QQ群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
         ],
         sidebar: [],
         socialLinks: [
@@ -107,20 +100,6 @@ const configsVitePressSidebar: VitePressSidebarOptions[] = [
         sortFolderTo: 'top',
         sortMenusByFrontmatterOrder: true,
         sortMenusOrderByDescending: true,
-    },
-    {
-        // 路由、包含、排除
-        documentRootPath: '/',
-        scanStartPath: 'src/problemset/',
-        resolvePath: '/problemset/',
-        basePath: '/problemset/',
-        // 分组、菜单标题
-        collapsed: false,
-        useTitleFromFrontmatter: true,
-        useFolderTitleFromIndexFile: true,
-        // 排序
-        sortFolderTo: 'top',
-        sortMenusOrderNumericallyFromLink: true,
     },
 ]
 
