@@ -29,13 +29,13 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 <SeeAlsoLink href="https://devguide.python.org/versions/">Status of Python Versions</SeeAlsoLink>
 
-## 3.13 版本
+## 3.13 版本 {#313}
 
 无语法层面变动。
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.13.html">所有新变化</SeeAlsoLink>
 
-## 3.12 版本
+## 3.12 版本 {#312}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html">所有新变化</SeeAlsoLink>
 
@@ -131,7 +131,7 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-701-syntactic-formalization-of-f-strings">更新详情</SeeAlsoLink>
 
-## 3.11 版本
+## 3.11 版本 {#311}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html">所有新变化</SeeAlsoLink>
 
@@ -141,7 +141,7 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except">更新详情</SeeAlsoLink>
 
-## 3.10 版本
+## 3.10 版本 {#310}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html">所有新变化</SeeAlsoLink>
 
@@ -275,7 +275,7 @@ with (
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html#parenthesized-context-managers">更新详情</SeeAlsoLink>
 
-## 3.9 版本
+## 3.9 版本 {#39}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.9.html">所有新变化</SeeAlsoLink>
 
@@ -299,7 +299,7 @@ def choice(numbers: list[int]) -> int:
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections">更新详情</SeeAlsoLink>
 
-## 3.8 版本
+## 3.8 版本 {#38}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html">所有新变化</SeeAlsoLink>
 
@@ -431,7 +431,7 @@ print(f'{tomorrow=:%Y-%m-%d}')
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes">更新详情</SeeAlsoLink>
 
-## 3.7 版本
+## 3.7 版本 {#37}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html">所有新变化</SeeAlsoLink>
 
@@ -473,7 +473,7 @@ class Book:
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights">更新详情</SeeAlsoLink>
 
-## 3.6 版本
+## 3.6 版本 {#36}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html">所有新变化</SeeAlsoLink>
 
@@ -576,7 +576,7 @@ assert 0x_0314_1592 == 0x03141592
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-515-underscores-in-numeric-literals">更新详情</SeeAlsoLink>
 
-## 3.5 版本
+## 3.5 版本 {#35}
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html">所有新变化</SeeAlsoLink>
 
@@ -674,13 +674,13 @@ login((1, 'admin'))
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-484-type-hints">更新详情</SeeAlsoLink>
 
-## 3.4 版本
+## 3.4 版本 {#34}
 
 无语法层面变动。
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.4.html">所有新变化</SeeAlsoLink>
 
-## 3.3 版本
+## 3.3 版本 {#33}
 
 无语法层面变动。
 
@@ -706,19 +706,19 @@ list(generate(5))
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.3.html#pep-380-syntax-for-delegating-to-a-subgenerator">更新详情</SeeAlsoLink>
 
-## 3.2 版本
+## 3.2 版本 {#32}
 
 无语法层面变动。
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.2.html">所有新变化</SeeAlsoLink>
 
-## 3.1 版本
+## 3.1 版本 {#31}
 
 无语法层面变动。
 
 <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.1.html">所有新变化</SeeAlsoLink>
 
-## 3.0 版本
+## 3.0 版本 {#30}
 
 Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，也欢迎提 issue 告知，或者提 pull-request 协助增补。
 

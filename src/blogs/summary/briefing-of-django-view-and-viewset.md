@@ -19,9 +19,9 @@ tags:
 
 <RevisionInfo />
 
-## 类的继承脉络
+## 类的继承脉络 {#hierarchy}
 
-### 视图（基类）
+### 视图（基类） {#view}
 
 主要逻辑通过在这几个类扩写，它们通过单继承来扩展：
 
@@ -29,18 +29,18 @@ tags:
 - `APIView` 提供了标头定制、权限检查、限流、请求内容解析定制、响应内容序列化定制、异常处理、接口版本管理等功能。
 - `GenericAPIView` 提供了查询集、对象、序列化器的获取接口，以及分页接口。
 
-以上，所有HTTP请求都会按照HTTP方法转发给 **同名类方法** 来处理。梳理基类的脉络可以看[dispatch线](#dispatch线)。
+以上，所有HTTP请求都会按照HTTP方法转发给 **同名类方法** 来处理。梳理基类的脉络可以看[dispatch线](#dispatch)。
 
-### 视图集
+### 视图集 {#viewset}
 
 混入了 `ViewSetMixin` 通过其中的 `as_view` 方法允许一个视图类处理多个同种HTTP请求，比如列表的GET和详情的GET分别转发到自定义的 `.list()` 和 `retrieve()` ，继而衍生出以下视图集类：
 
 - `ViewSet` = `ViewSetMixin` + `APIView`
 - `GenericViewSet` = `ViewSetMixin` + `GenericAPIView`
 
-写路由时必须要使用 `as_view` 并且指定HTTP请求与类方法的映射。梳理视图集的脉络可以看[as_view线](#as_view线)。
+写路由时必须要使用 `as_view` 并且指定HTTP请求与类方法的映射。梳理视图集的脉络可以看[as_view线](#as_view)。
 
-### 视图集 Pro Max Plus
+### 视图集 Pro Max Plus {#viewset-subclass}
 
 `GenericAPIView` 和 `GenericViewSet` 又可以通过混入以下几个基础的 Mix-in 衍生出一堆预制的视图类。
 
@@ -54,7 +54,7 @@ tags:
 
 下面通过两条主线来浅析视图(集)。
 
-## `dispatch()` 线
+## `dispatch()` 线 {#dispatch}
 
 Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
 
@@ -132,7 +132,7 @@ def dispatch(self, request, *args, **kwargs):
     return self.response
 ```
 
-## `as_view()` 线
+## `as_view()` 线 {#as_view}
 
 `.as_view()` 是将视图类的初始化、执行等操作存储在一个函数中（有点装饰器那味儿），供路由调用，也就是处理请求和响应的主入口（Main entry point for a request-response process.）。
 

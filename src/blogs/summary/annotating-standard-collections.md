@@ -21,7 +21,7 @@ tags:
 > [!NOTE] 备注
 > Python 3.9 之前，内置数据类型不支持下标操作，像 `list[]` 要用 `typing.List[]` 代替，其余类型同理。但如果需要跨版本，可以用 `from __future__ import annotations` 实现向前兼容。
 
-## 列表、集合、不可变集合
+## 列表、集合、不可变集合 {#set}
 
 标注时只提供一个参数：
 
@@ -61,7 +61,7 @@ set08: set = {0, "meow", 1, 2}
 set09: set[typing.Any] = {0, "meow", 1, 2}
 ```
 
-## 字典
+## 字典 {#map}
 
 字典的标注只使用两个参数，第一个表示键的类型，第二个表示值的类型。
 
@@ -71,7 +71,7 @@ dict02: dict[int, str] = {200: "OK"}
 dict03: dict[int, str] = {200: "OK", 404: "Not Found"}
 ```
 
-对于多种类型，需要通过 `typing.Union[A, B]` 或者 `A | B` 的形式进行联合，类似于[列表](#列表)。
+对于多种类型，需要通过 `typing.Union[A, B]` 或者 `A | B` 的形式进行联合，类似于[列表](#set)。
 
 对于任意键值类型，以下两种标注是等价的：
 
@@ -82,7 +82,7 @@ dict04: dict = {200: "OK", "OK": 200}
 dict05: dict[typing.Any, typing.Any] = {200: "OK", "OK": 200}
 ```
 
-## 元组
+## 元组 {#tuple}
 
 元组的标注与实际值需要一一对应：
 
