@@ -14,12 +14,12 @@ tags:
 <RevisionInfo :badge="2">
 <template #badge1>
     <a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank">
-        <img src="https://img.shields.io/badge/LeetCode-20. 有效的括号-895200?logo=leetcode&logoColor=FFA116"/>
+        <img alt="力扣-20" src="https://img.shields.io/badge/LeetCode-20. 有效的括号-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </template>
 <template #badge2>
     <a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">
-        <img src="https://img.shields.io/badge/LeetCode-20. Valid Parentheses-895200?logo=leetcode&logoColor=FFA116"/>
+        <img alt="LeetCode-20" src="https://img.shields.io/badge/LeetCode-20. Valid Parentheses-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </template>
 </RevisionInfo>

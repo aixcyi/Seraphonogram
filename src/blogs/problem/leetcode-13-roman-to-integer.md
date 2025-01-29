@@ -14,12 +14,12 @@ tags:
 <RevisionInfo :badge="2">
 <template #badge1>
     <a href="https://leetcode.cn/problems/roman-to-integer/" target="_blank">
-        <img src="https://img.shields.io/badge/LeetCode-13. 罗马数字转整数-895200?logo=leetcode&logoColor=FFA116"/>
+        <img alt="力扣-13" src="https://img.shields.io/badge/LeetCode-13. 罗马数字转整数-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </template>
 <template #badge2>
     <a href="https://leetcode.com/problems/roman-to-integer/" target="_blank">
-        <img src="https://img.shields.io/badge/LeetCode-13. Roman to Integer-895200?logo=leetcode&logoColor=FFA116"/>
+        <img alt="LeetCode-13" src="https://img.shields.io/badge/LeetCode-13. Roman to Integer-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </template>
 </RevisionInfo>

@@ -10,31 +10,33 @@ import { Icon } from "@iconify/vue";
         <tr>
             <td style="text-align: end"><h5>后端</h5></td>
             <td>
-                <img src="https://skillicons.dev/icons?i=py,django,pycharm,postgres,redis,regex,postman"/>
+                <img alt="后端技术栈图标"
+                     src="https://skillicons.dev/icons?i=py,django,pycharm,postgres,redis,regex,postman"/>
             </td>
         </tr>
         <tr>
             <td style="text-align: end"><h5>前端</h5></td>
             <td>
-                <img src="https://skillicons.dev/icons?i=ts,vue,vite,webstorm,vscode"/>
+                <img alt="前端技术栈图标" src="https://skillicons.dev/icons?i=ts,vue,vite,webstorm,vscode"/>
             </td>
         </tr>
         <tr>
             <td style="text-align: end"><h5>运维</h5></td>
             <td>
-                <img src="https://skillicons.dev/icons?i=git,nginx,grafana,bash,github,stackoverflow,ubuntu,windows"/>
+                <img alt="运维技术栈图标"
+                     src="https://skillicons.dev/icons?i=git,nginx,grafana,bash,github,stackoverflow,ubuntu,windows"/>
             </td>
         </tr>
         <tr>
             <td style="text-align: end"><h5>IntelliJ 插件</h5></td>
             <td>
-                <img src="https://skillicons.dev/icons?i=kotlin,java,gradle,idea"/>
+                <img alt="IntelliJ 技术栈图标" src="https://skillicons.dev/icons?i=kotlin,java,gradle,idea"/>
             </td>
         </tr>
         <tr>
             <td style="text-align: end"><h5>设计创作</h5></td>
             <td>
-                <img src="https://skillicons.dev/icons?i=md,obsidian,blender"/>
+                <img alt="设计创作类技术栈图标" src="https://skillicons.dev/icons?i=md,obsidian,blender"/>
             </td>
         </tr>
         </tbody>
