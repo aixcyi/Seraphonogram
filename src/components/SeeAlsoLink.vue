@@ -1,25 +1,25 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 
-const props = defineProps<{ href: string, multi?: boolean }>()
+const { href, pure } = defineProps<{ href: string, pure?: boolean }>()
 </script>
 
 <template>
-    <template v-if="multi">
-        <a :href="props.href" style="display: inline; text-decoration: none" target="_blank">
-            <span><slot/></span>
-            <Icon icon="ep:top-right" style="display: inline; vertical-align: middle; margin-left: 5px"/>
-        </a>
-    </template>
-    <template v-else>
-        <p style="text-align: end">
-            <a :href="props.href" style="display: inline; text-decoration: none" target="_blank">
-                <span><slot/></span>
-                <Icon icon="ep:top-right" style="display: inline; vertical-align: middle; margin-left: 5px"/>
-            </a>
-        </p>
-    </template>
+    <a :href="href" class="see-also-link" target="_blank">
+        <span><slot/></span>
+        <Icon v-if="!pure" class="see-also-icon" icon="ep:top-right"/>
+    </a>
 </template>
 
 <style scoped>
+.see-also-link {
+    display: inline;
+    text-decoration: none;
+}
+
+.see-also-icon {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 3px;
+}
 </style>
