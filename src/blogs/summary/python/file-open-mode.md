@@ -1,5 +1,5 @@
 ---
-title: Python 文件打开模式
+title: 文件打开模式
 lang: zh-CN
 order: 20211021
 created: 2021-10-21 00:00

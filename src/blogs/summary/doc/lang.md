@@ -1,5 +1,5 @@
 ---
-title: 即食文档 语言篇
+title: 语言篇
 lang: zh-CN
 outline: deep
 order: 20250125

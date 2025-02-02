@@ -1,5 +1,5 @@
 ---
-title: Python 语法更新摘要
+title: 语法更新摘要
 lang: zh-CN
 outline: deep
 order: 20241227

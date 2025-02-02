@@ -1,5 +1,5 @@
 ---
-title: Python 为自身定义 copy 方法
+title: 为自身定义 copy 方法
 lang: zh-CN
 order: 20220817
 created: 2022-08-17 00:04

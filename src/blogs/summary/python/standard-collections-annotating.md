@@ -1,5 +1,5 @@
 ---
-title: Python 标准多项集的标注方式
+title: 标准多项集的标注方式
 lang: zh-CN
 order: 20240131
 created: 2024-01-31 17:13

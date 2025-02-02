@@ -2,6 +2,7 @@ import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
 import { withSidebar } from "vitepress-sidebar";
 import { VitePressSidebarOptions } from "vitepress-sidebar/dist/types";
+import { rewriteItems } from "../src/utils/vitepress";
 
 
 const env = loadEnv('', process.cwd())
@@ -65,7 +66,7 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
     rewrites: {
         'blogs/summary/mirror.md': 'mirror.md',
         'blogs/summary/timestamp.md': 'timestamp.md',
-        'blogs/summary/grammar.md': 'grammar.md',
+        'blogs/summary/python/grammar.md': 'grammar.md',
         'blogs/:file': ':file',
         'blogs/:style/:file': ':style/:file',
         'blogs/:style/:topic/:file': ':style/:topic/:file',
@@ -103,19 +104,16 @@ const configsVitePressSidebar: VitePressSidebarOptions[] = [
     },
 ]
 
-const configs = defineConfig(
-    withSidebar(configsVitePress, configsVitePressSidebar)
-)
-
+const configs = defineConfig(withSidebar(configsVitePress, configsVitePressSidebar))
 export default configs
 
 
 // 硬编码代码
-// 因为 VitePress Sidebar 不能 rewrite 路由，无奈出此下策
-const items = configs.themeConfig.sidebar['/'].items[0].items
-for (const item of (items as DefaultTheme.SidebarItem[])) {
-    item.link = item.link.replace(
-        /.*(mirror|timestamp|grammar).*/,
+// 由于 VitePress Sidebar 指定了 scanStartPath，生成的路径与 rewrite 规则不一，导致不能重写路由。
+rewriteItems(
+    configs.themeConfig.sidebar['/'].items[0].items,
+    link => link.replace(
+        /^.*(mirror|timestamp|grammar)$/,
         '$1',
     )
-}
+)

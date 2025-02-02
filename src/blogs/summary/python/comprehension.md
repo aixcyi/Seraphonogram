@@ -1,5 +1,5 @@
 ---
-title: Python 推导式
+title: 推导式
 lang: zh-CN
 outline: deep
 order: 20211105
