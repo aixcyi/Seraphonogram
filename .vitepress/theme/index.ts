@@ -7,13 +7,15 @@ import { h } from "vue";
 import "./style.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
+import NotFound from "../../src/components/NotFound.vue";
 import RevisionInfo from "../../src/components/RevisionInfo.vue";
 
 export default {
     extends: DefaultTheme,
     Layout: () => {
         return h(DefaultTheme.Layout, null, {
-            // https://vitepress.dev/guide/extending-default-theme#layout-slots
+            // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
+            'not-found': () => h(NotFound),
         })
     },
     enhanceApp({ app }) {
