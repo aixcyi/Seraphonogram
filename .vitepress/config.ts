@@ -1,15 +1,13 @@
 import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
-import { withSidebar } from "vitepress-sidebar";
-import { VitePressSidebarOptions } from "vitepress-sidebar/dist/types";
-import { rewriteItems } from "../src/utils/vitepress";
+import { SidebarBuilder } from "../src/utils/vitepress";
 
 
 const env = loadEnv('', process.cwd())
 const now = new Date().getFullYear()
 
 // https://vitepress.dev/reference/site-config
-const configsVitePress: UserConfig<DefaultTheme.Config> = {
+const configs: UserConfig<DefaultTheme.Config> = {
     lang: 'zh-CN',
     title: 'Seraphonogram',
     description: '阿羽的树洞',
@@ -84,36 +82,10 @@ const configsVitePress: UserConfig<DefaultTheme.Config> = {
     },
 }
 
-// https://vitepress-sidebar.cdget.com/zhHans/guide/options
-const configsVitePressSidebar: VitePressSidebarOptions[] = [
-    {
-        // 路由、包含、排除
-        documentRootPath: '/',
-        scanStartPath: 'src/blogs/',
-        excludePattern: [
-            'catalog.md',
-        ],
-        // 分组、菜单标题
-        collapsed: true,
-        useTitleFromFrontmatter: true,
-        useFolderTitleFromIndexFile: true,
-        // 排序
-        sortFolderTo: 'top',
-        sortMenusByFrontmatterOrder: true,
-        sortMenusOrderByDescending: true,
-    },
-]
+const sidebar = new SidebarBuilder().scan(configs, [ '**/catalog.md' ])
+sidebar.compareItem = () => 0
+configs.themeConfig.sidebar = {
+    '/': sidebar.build('./src/blogs/', true, true),
+}
 
-const configs = defineConfig(withSidebar(configsVitePress, configsVitePressSidebar))
-export default configs
-
-
-// 硬编码代码
-// 由于 VitePress Sidebar 指定了 scanStartPath，生成的路径与 rewrite 规则不一，导致不能重写路由。
-rewriteItems(
-    configs.themeConfig.sidebar['/'].items[0].items,
-    link => link.replace(
-        /^.*(mirror|timestamp|grammar)$/,
-        '$1',
-    )
-)
+export default defineConfig(configs)

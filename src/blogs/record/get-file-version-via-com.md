@@ -1,7 +1,6 @@
 ---
 title: 使用COM对象取文件版本
 lang: zh-CN
-order: 20160822
 created: 2016-08-22 15:06
 expires: 1096
 tags:

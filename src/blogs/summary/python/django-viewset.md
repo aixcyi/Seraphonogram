@@ -2,7 +2,6 @@
 title: Django 及衍生的类视图
 lang: zh-CN
 outline: deep
-order: 20221011
 created: 2022-10-11 11:52
 expires: 1096
 excerpt: '浅析 <a href="https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/">Django</a>

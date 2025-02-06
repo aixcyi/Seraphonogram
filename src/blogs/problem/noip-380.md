@@ -1,7 +1,6 @@
 ---
 title: NOIP 380. 校门外的树
 lang: zh-CN
-order: 20200312
 created: 2020-03-12 17:24
 excerpt: 'NOIP 2005 普及组第二题，蓝桥杯 ALGO-29'
 tags:

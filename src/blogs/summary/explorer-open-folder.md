@@ -1,7 +1,6 @@
 ---
 title: 通过命令行打开文件夹
 lang: zh-CN
-order: 20160923
 created: 2016-09-23 17:57
 expires: 1096
 ex: 本文介绍如何通过运行命令打开文件夹。

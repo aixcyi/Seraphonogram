@@ -2,7 +2,6 @@
 title: Django OAuth Toolkit 令牌机制
 lang: zh-CN
 outline: deep
-order: 20240220
 created: 2024-02-20 11:55
 expires: 1096
 excerpt: '简述 <a href="https://django-oauth-toolkit.readthedocs.io/en/latest/">Django OAuth Toolkit</a>

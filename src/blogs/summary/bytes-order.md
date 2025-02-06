@@ -1,7 +1,6 @@
 ---
 title: 两种字节序的直观比较
 lang: zh-CN
-order: 20200222
 created: 2020-02-22 16:45
 expires: 1096
 tags:
