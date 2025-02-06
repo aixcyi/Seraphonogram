@@ -50,6 +50,7 @@ export class Page {
                 public readonly frontmatter: Record<string, any>,
                 public depth: integer = 0,
                 public isIndex: boolean = false) {
+        this.frontmatter = { ...frontmatter }
         this.frontmatter.created = Page.parseTime(this.frontmatter.created)
         this.frontmatter.updated = Page.parseTime(this.frontmatter.updated)
     }
