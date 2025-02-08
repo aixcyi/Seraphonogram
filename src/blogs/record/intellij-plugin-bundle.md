@@ -42,7 +42,7 @@ import java.util.ResourceBundle;
 /**
  * 提供本地化能力的工具类。
  *
- * @author <a href="https://github.com/aixcyi">砹小翼</a>
+ * @author <a href="https://github.com/aixcyi">阿羽</a>
  */
 public class Translation {
 

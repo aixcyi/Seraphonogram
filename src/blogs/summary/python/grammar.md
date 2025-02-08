@@ -370,7 +370,7 @@ if length := len(string):  # 使用 length 作为条件判断
 赋值后可以立即使用：
 
 ```python
-username = 'aixcyi'
+username = 'ayuu'
 password = '摸一凹喵'
 
 if (user := check(username, password)) is None or user.delete_at is not None:
@@ -409,10 +409,10 @@ def serialize(data, /, many=False, *, raise_exception=False, **others):
 >     print("收到的数据", data)
 >     print("额外的数据", others["data"])
 > 
-> serialize({"weblog": "blog.aixcyi.cn"}, data={"author": "aixcyi"})
+> serialize({"weblog": "blog.ayuu.cc"}, data={"author": "ayuu"})
 > # 打印：
-> # 收到的数据 {'weblog': 'blog.aixcyi.cn'}
-> # 额外的数据 {'author': 'aixcyi'}
+> # 收到的数据 {'weblog': 'blog.ayuu.cc'}
+> # 额外的数据 {'author': 'ayuu'}
 > ```
 
 <SeeAlso>

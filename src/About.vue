@@ -4,6 +4,16 @@ import { Icon } from "@iconify/vue";
 </script>
 
 <template>
+    <h3>昵称与 ID</h3>
+    <p>
+        <span>　　“砹小翼”是最初的昵称，取双拼拼音得到常用 ID <code>aixcyi</code> 并衍生出域名
+        <a href="https://aixcyi.cn/" target="_blank"><code>aixcyi.cn</code></a>
+        ，但因为昵称不好叫，工作中一般喊“阿羽”。后来发现一个更好记的域名
+        <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
+        ，于是改用 <code>ayuu</code> 作为新的 ID。不过
+        <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。</span>
+    </p>
+
     <h3>技能树</h3>
     <table>
         <tbody>
@@ -125,6 +135,13 @@ import { Icon } from "@iconify/vue";
         </el-timeline-item>
         <el-timeline-item color="#FF7F27" timestamp="2024 年 12 月">
             按图索骥从 Vue 生态了解到 Vitepress，于是有了这个博客。
+        </el-timeline-item>
+        <el-timeline-item color="#FF7F27" timestamp="2025 年 2 月">
+            主站从
+            <a href="https://aixcyi.cn/" target="_blank"><code>aixcyi.cn</code></a>
+            迁移到更好记的
+            <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
+            。
         </el-timeline-item>
         <el-timeline-item timestamp="现在">
             编码已融入生活，而生活仍在继续……

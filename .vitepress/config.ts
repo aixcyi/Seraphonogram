@@ -37,7 +37,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
                 ]
             },
             { text: '关于', link: '/about' },
-            { text: '主站', link: 'https://aixcyi.cn/' },
+            { text: '主站', link: 'https://ayuu.cc/' },
             { text: 'QQ群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
         ],
         sidebar: [],
@@ -57,7 +57,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         // editLink: { text: '源代码', pattern: 'https://github.com/username/repository-name/blame/main/docs/:path' },
         footer: {
             message: 'VITE_FOOTER_MSG' in env ? `${env.VITE_FOOTER_MSG}` : undefined,
-            copyright: `Copyright © 2016-${now} <a href="https://aixcyi.cn/">砹小翼</a>`,
+            copyright: `Copyright © 2016-${now} <a href="https://ayuu.cc/">阿羽</a>`,
         },
     },
     cleanUrls: true,
