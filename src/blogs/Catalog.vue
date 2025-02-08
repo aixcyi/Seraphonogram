@@ -59,7 +59,7 @@ watch(switches, () => {
                 <li v-for="blog in blogs" class="article-item">
                     <pre>{{ blog.date }}</pre>
                     <a :href="blog.url" class="article-link gradient-card">
-                        <el-space wrap>
+                        <el-space class="article-link-inner" wrap>
                             {{ blog.title }}
                             <el-tag v-for="tag in blog.tags" size="small" type="info">{{ tag }}</el-tag>
                         </el-space>
@@ -129,7 +129,7 @@ watch(switches, () => {
 .article-item {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.7em;
     margin: 0.2em 0;
     transition: all 0.2s;
     animation: float-in 0.2s 0s backwards;
@@ -159,6 +159,10 @@ watch(switches, () => {
     overflow: hidden;
     padding: 0.3em 0.6em;
     color: var(--vp-c-text-1);
+
+    & > .article-link-inner {
+        gap: 2px 8px !important;
+    }
 }
 
 .gradient-card {
@@ -189,11 +193,11 @@ watch(switches, () => {
 
     &:hover, &.active {
         background-position: 0;
-        color: white;
+        color: var(--vp-c-text-1);
 
         &::before {
             background: no-repeat 100% / 400%;
-            background-image: linear-gradient(-135deg, #bd34fe, #47caff 40%, transparent 50%);
+            background-image: linear-gradient(-15deg, #bd34fe, #47caff 40%, transparent 50%);
         }
 
         &::after {
