@@ -80,7 +80,9 @@ function toggle(tag: string) {
                    round
                    @click="toggle(tag)">
             {{ tag }}&nbsp;
-            <el-badge v-if="data.tags[tag] > 1" :value="data.tags[tag]" color="#303030"></el-badge>
+            <el-badge v-if="data.tags[tag] > 1"
+                      :badge-style="{color:'var(--vp-c-text-1)', backgroundColor:'var(--vp-c-gray-3)'}"
+                      :value="data.tags[tag]"></el-badge>
         </el-button>
     </el-space>
 </template>
