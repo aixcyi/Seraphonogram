@@ -5,30 +5,31 @@ import matter from "gray-matter";
 import * as fs from "node:fs";
 import pathlib from "path";
 import { normalizePath } from "vite";
-import { type DefaultTheme, type UserConfig } from "vitepress";
+import type { SiteConfig } from "vitepress";
 
 
-// @ts-ignore
-const config = global.VITEPRESS_CONFIG as UserConfig<DefaultTheme.Config>
-if (!config) {
-    throw new Error(
-        "content loader invoked without an active vitepress process, or before vitepress config is resolved."
-    )
-}
+const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
+
 
 /**
  * src深度，用于匹配文件夹作为标签。./src/* 为 0，./src/blogs/* 为 1，以此类推。
  */
 const depth = 1
 
+
 /**
  * 博客文件路径通配符。
  */
-const blogsPattern = [
-    'blogs/**/*.md',
-].map((p) =>
-    normalizePath(pathlib.join(config.srcDir!, p))
+const patterns = [
+    './blogs/**/*.md',
+    ...(config.userConfig.srcExclude?.map(p => `!${p}`) ?? []),
+].map(p =>
+    // https://github.com/micromatch/micromatch#extended-globbing
+    p.match(/^[\/\w.].*$/)
+        ? normalizePath(pathlib.join(config.srcDir!, p))
+        : p[0] + normalizePath(pathlib.join(config.srcDir!, p.substring(1)))
 )
+
 
 /**
  * 博客信息结构。
@@ -42,6 +43,7 @@ export interface Blog {
     date: string
 }
 
+
 /**
  * 博客数据结构。
  */
@@ -50,14 +52,15 @@ export interface Data {
     tags: { [key: string]: integer }
 }
 
+
 declare const data: Data
 export { data }
 
+
 export default {
-    watch: blogsPattern,
+    watch: patterns,
     async load(files: string[]) {
-        // @ts-expect-error
-        const maps = config!.rewrites!['map']
+        const maps = config.rewrites['map']
         const folders = new Map<string, string>()
         const data: Data = { posts: [], tags: {} }
 
@@ -96,7 +99,10 @@ export default {
                 return lenA - lenB
             })
 
-            const url = normalizePath(srcPath in maps ? maps[srcPath] : srcPath)
+            const mappedPath = srcPath in maps ? maps[srcPath] : srcPath
+            if (!mappedPath)
+                continue
+            const url = normalizePath(mappedPath)
                 .replace(/(^|\/)index\.md$/, '$1')
                 .replace(/\.md$/, config.cleanUrls ? '' : '.html')
 
