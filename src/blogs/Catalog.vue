@@ -1,51 +1,20 @@
 <script lang="ts" setup>
-import type { integer } from "@vue/language-server";
-import { reactive, watch } from "vue";
-import { type Blog, data } from "../../.vitepress/theme/blogs.data.ts";
+import { annuals, filterBlogs, switches } from "@/states.ts";
+import { onMounted } from "vue";
 import CatalogFilter from "./CatalogFilter.vue";
 
-
-/**
- * 按年分组的博客。
- */
-const annuals = reactive(new Map<integer, Blog[]>())
-
-/**
- * 标签开关。
- */
-const switches = reactive(new Map<string, boolean>())
-
-/**
- * 按照标签过滤博客，然后按年份分组（会确保倒序）。
- */
-function filterPosts(tags: Set<string>) {
-    const group = new Map<integer, Blog[]>()
-    data.posts.forEach(blog => {
-        const year = blog.year
-        if (tags.size && !blog.tags.filter(t => tags.has(t)).length)
-            return
-        if (!group.has(year))
-            group.set(year, [])
-        group.get(year)!.push(blog)
-    })
-    annuals.clear()
-    for (const year of [ ...group.keys() ].sort().reverse()) {
-        annuals.set(year, group.get(year)!.sort((a, b) => b.changed - a.changed))
-    }
-}
-
-watch(switches, () => {
-    const tags = new Set<string>();
-    switches.forEach((v, k) => {
-        if (v)
-            tags.add(k)
-    })
-    filterPosts(tags)
+onMounted(() => {
+    const tags = new Set(
+        new URLSearchParams(window.location.search).getAll('tag')
+    )
+    for (const tag in switches)
+        switches[tag] = tags.has(tag)
+    filterBlogs()
 })
 </script>
 
 <template>
-    <CatalogFilter v-model:switches="switches" class="filter"/>
+    <CatalogFilter class="filter"/>
 
     <div class="catalog">
         <div v-for="[year, blogs] in annuals" :key="year" class="catalog-group">

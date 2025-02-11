@@ -38,7 +38,12 @@ const configs: UserConfig<DefaultTheme.Config> = {
             },
             { text: '关于', link: '/about' },
             { text: '主站', link: 'https://ayuu.cc/' },
-            { text: 'QQ群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
+            {
+                text: '交流',
+                items: [
+                    { text: 'QQ群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
+                ]
+            },
         ],
         sidebar: [],
         socialLinks: [

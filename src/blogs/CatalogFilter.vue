@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted } from "vue";
+import { filterBlogs, switches } from "@/states.ts";
 import { data } from "../../.vitepress/theme/blogs.data.ts";
 
 
@@ -53,47 +53,32 @@ const styles = new Map<string, { type: string }>([
     [ '注册表', { type: 'success' } ],
 ])
 
-/**
- * 标签开关。
- */
-const switches = defineModel<Map<string, boolean>>('switches', { required: true })
 
-/**
- * 处理标签点击事件。
- */
-function handleSwitch(tagName: string) {
-    const _switches = switches.value as Map<string, boolean>
+function toggle(tag: string) {
+    switches[tag] = !switches[tag]
+    filterBlogs()
+
     const url = new URL(window.location.href)
     const query = new URLSearchParams(url.search)
-
     query.delete('tag')
-    _switches
-        .set(tagName, !_switches.get(tagName)!)
-        .forEach((switched, tag) => switched ? query.append('tag', tag) : {})
+    for (const label in switches)
+        if (switches[label])
+            query.append('tag', label)
 
     url.search = query.toString()
     window.history.pushState({}, "", url)
 }
-
-onMounted(() => {
-    const _switches = switches.value as Map<string, boolean>
-    const queryTags = new Set(new URLSearchParams(window.location.search).getAll('tag'))
-
-    for (const _tag in data.tags) {
-        _switches.set(_tag, queryTags.has(_tag))
-    }
-})
 </script>
 
 <template>
     <el-space wrap>
-        <el-button v-for="tag in Object.keys(data.tags)"
+        <el-button v-for="tag in Object.keys(switches)"
                    :key="tag"
-                   :plain="switches.get(tag)"
-                   :text="!switches.get(tag)"
+                   :plain="switches[tag]"
+                   :text="!switches[tag]"
                    :type="styles.has(tag) ? styles.get(tag)!.type : 'info'"
                    round
-                   @click="handleSwitch(tag)">
+                   @click="toggle(tag)">
             {{ tag }}&nbsp;
             <el-badge v-if="data.tags[tag] > 1" :value="data.tags[tag]" color="#303030"></el-badge>
         </el-button>
