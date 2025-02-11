@@ -122,7 +122,8 @@ const slotsName =
                     <el-text type="info">新鲜度</el-text>
                 </td>
                 <td class="col-value">
-                    <el-progress :color="getFreshnessColor" :percentage="freshness!" style="min-width: 100px"/>
+                    <el-progress :color="getFreshnessColor" :percentage="freshness!" :stroke-width="10"
+                                 style="min-width: 100px"/>
                 </td>
             </tr>
             </tbody>
