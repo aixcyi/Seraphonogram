@@ -4,6 +4,7 @@ lang: zh-CN
 prev: false
 next: false
 outline: false
+tagsCloud: true
 ---
 
 <script setup lang="ts">

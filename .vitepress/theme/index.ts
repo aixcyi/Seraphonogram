@@ -9,6 +9,7 @@ import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import NotFound from "../../src/components/NotFound.vue";
 import RevisionInfo from "../../src/components/RevisionInfo.vue";
+import TagsCloud from "../../src/components/TagsCloud.vue";
 
 export default {
     extends: DefaultTheme,
@@ -16,6 +17,7 @@ export default {
         return h(DefaultTheme.Layout, null, {
             // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
             'not-found': () => h(NotFound),
+            'aside-outline-after': () => h(TagsCloud),
         })
     },
     enhanceApp({ app }) {

@@ -32,6 +32,54 @@ const patterns = [
 
 
 /**
+ * 未分组标签的分组名称。
+ */
+const groupOther = '其它'
+
+/**
+ * 标签分组。
+ */
+const groups: { [title: string]: string[] } = {
+    '领域': [ '开发', '测试', '运维', '算法', '设计' ],
+    '写作风格': [
+        '总结／摘要',
+        '经验／踩坑／备忘',
+        '思考／碎碎念',
+        '题解集',
+    ],
+    '语言': [
+        'Python',
+        'Kotlin',
+        'Golang',
+        'Java',
+        '易语言',
+    ],
+    '库、框架': [
+        'datetime',
+        'Django',
+        'Django REST Framework',
+        'Django OAuth Toolkit',
+    ],
+    '技术栈': [
+        'pip',
+        'conda',
+        'virtualenv',
+        'venv',
+        'npm',
+        'IntelliJ 插件',
+    ],
+    '系统、工具、IDE': [
+        'Windows',
+        'Ubuntu',
+        'CentOS',
+        'PyCharm',
+        'IntelliJ IDE',
+        '宝塔面板',
+    ],
+}
+
+
+/**
  * 博客信息结构。
  */
 export interface Blog {
@@ -48,8 +96,15 @@ export interface Blog {
  * 博客数据结构。
  */
 export interface Data {
+
+    /** 所有博客 */
     posts: Blog[]
+
+    /** 标签及相应博客的数量 */
     tags: { [key: string]: integer }
+
+    /** 标签分组 **/
+    groups: { [key: string]: string[] }
 }
 
 
@@ -62,7 +117,7 @@ export default {
     async load(files: string[]) {
         const maps = config.rewrites['map']
         const folders = new Map<string, string>()
-        const data: Data = { posts: [], tags: {} }
+        const data: Data = { posts: [], tags: {}, groups }
 
         // 提取文件夹名称
         for (const file of files) {
@@ -140,6 +195,14 @@ export default {
         }
         data.tags = tags
 
+        // 统一存放未分组的标签
+        data.groups[groupOther] = []
+        const groupedTags = new Set(Object.values(groups).flat())
+        for (const label of labels) {
+            if (groupedTags.has(label))
+                continue
+            data.groups[groupOther].push(label)
+        }
         return data
     }
 }

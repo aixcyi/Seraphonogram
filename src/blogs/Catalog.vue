@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { annuals, filterBlogs, switches } from "@/states.ts";
 import { onMounted } from "vue";
-import CatalogFilter from "./CatalogFilter.vue";
 
 onMounted(() => {
     const tags = new Set(
@@ -14,8 +13,6 @@ onMounted(() => {
 </script>
 
 <template>
-    <CatalogFilter class="filter"/>
-
     <div class="catalog">
         <div v-for="[year, blogs] in annuals" :key="year" class="catalog-group">
             <div class="catalog-title">
