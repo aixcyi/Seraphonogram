@@ -30,7 +30,6 @@ const patterns = [
  */
 const groups: { [title: string]: string[] } = {
     '领域': [ '开发', '测试', '运维', '算法', '设计' ],
-    '写作风格': [ '总结／摘要', '经验／踩坑／备忘', '思考／碎碎念', '题解集' ],
     '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言' ],
     '包、库、框架': [ 'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit' ],
     '技术栈': [ 'pip', 'conda', 'virtualenv', 'venv', 'npm', 'IntelliJ 插件' ],
@@ -87,10 +86,10 @@ export default {
     watch: patterns,
     async load(files: string[]) {
         const maps = config.rewrites['map']
-        const folders = new Map<string, string>()
         const data: Data = { posts: [], tags: {}, groups }
 
         // 提取文件夹名称
+        let folders = new Map<string, Record<string, any>>()
         for (const file of files) {
             if (!file.endsWith('/index.md')) {
                 continue
@@ -98,8 +97,20 @@ export default {
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
             folders.set(
                 pathlib.dirname(file).split('/').reverse()[0],
-                frontmatter.title
+                frontmatter
             )
+        }
+        folders = new Map(
+            Array
+                .from(folders.entries())
+                .sort(([ , af ], [ , bf ]) => af.order - bf.order)
+        )
+        data.groups = {
+            '写作风格': Array
+                .from(folders.entries())
+                .filter(([ , f ]) => f.order < 0)
+                .map(([ , f ]) => f.title),
+            ...data.groups,
         }
 
         // 提取文件信息
@@ -116,7 +127,8 @@ export default {
             // 提取路径中的文件夹，转换为名称，添加到标签
             const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
             const tags = [
-                folders.get(srcPath.split('/')[depth])!,
+                // 下标表示src深度：./src/* => 0，./src/blogs/* => 1，以此类推。
+                folders.get(srcPath.split('/')[1])!.title,
                 ...new Set<string>(frontmatter.tags ?? [])
             ].sort((a, b) => {
                 // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
@@ -168,7 +180,7 @@ export default {
 
         // 统一存放未分组的标签
         data.groups['其它'] = []
-        const groupedTags = new Set(Object.values(groups).flat())
+        const groupedTags = new Set(Object.values(data.groups).flat())
         for (const label of labels) {
             if (groupedTags.has(label))
                 continue

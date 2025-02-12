@@ -128,7 +128,7 @@ export class SidebarBuilder {
      * 比较所有文件夹（即所有 xxx/index.md）。
      */
     public compareFolder = (a: Page, b: Page) => {
-        return b.frontmatter.order - a.frontmatter.order
+        return a.frontmatter.order - b.frontmatter.order
     }
 
     /**
