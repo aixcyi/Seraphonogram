@@ -12,12 +12,6 @@ const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
 
 
 /**
- * src深度，用于匹配文件夹作为标签。./src/* 为 0，./src/blogs/* 为 1，以此类推。
- */
-const depth = 1
-
-
-/**
  * 博客文件路径通配符。
  */
 const patterns = [
@@ -32,50 +26,27 @@ const patterns = [
 
 
 /**
- * 未分组标签的分组名称。
- */
-const groupOther = '其它'
-
-/**
  * 标签分组。
  */
 const groups: { [title: string]: string[] } = {
     '领域': [ '开发', '测试', '运维', '算法', '设计' ],
-    '写作风格': [
-        '总结／摘要',
-        '经验／踩坑／备忘',
-        '思考／碎碎念',
-        '题解集',
-    ],
-    '语言': [
-        'Python',
-        'Kotlin',
-        'Golang',
-        'Java',
-        '易语言',
-    ],
-    '库、框架': [
-        'datetime',
-        'Django',
-        'Django REST Framework',
-        'Django OAuth Toolkit',
-    ],
-    '技术栈': [
-        'pip',
-        'conda',
-        'virtualenv',
-        'venv',
-        'npm',
-        'IntelliJ 插件',
-    ],
-    '系统、工具、IDE': [
-        'Windows',
-        'Ubuntu',
-        'CentOS',
-        'PyCharm',
-        'IntelliJ IDE',
-        '宝塔面板',
-    ],
+    '写作风格': [ '总结／摘要', '经验／踩坑／备忘', '思考／碎碎念', '题解集' ],
+    '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言' ],
+    '包、库、框架': [ 'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit' ],
+    '技术栈': [ 'pip', 'conda', 'virtualenv', 'venv', 'npm', 'IntelliJ 插件' ],
+    '系统、工具、集成开发环境': [ 'Windows', 'Ubuntu', 'CentOS', 'PyCharm', 'IntelliJ IDE', '宝塔面板' ],
+    '程序开发术语': [
+        '对象', '浮点数', '格式化', '国际化', '类', '类型', '类型标注', '浅拷贝', '生成器', '推导式',
+        '序列化', '运算', '转型', '标准多项集', '视图', '文件IO', '字节序', '组件对象模型 COM', '语法',
+        '十进制小数',
+    ].sort((a, b) =>
+        pinyin(a).join('').localeCompare(pinyin(b).join(''))
+    ),
+    '运维部署': [
+        '兼容', '镜像', '控制台', '命令行', '配置', '虚拟环境',
+    ].sort((a, b) =>
+        pinyin(a).join('').localeCompare(pinyin(b).join(''))
+    ),
 }
 
 
@@ -196,13 +167,14 @@ export default {
         data.tags = tags
 
         // 统一存放未分组的标签
-        data.groups[groupOther] = []
+        data.groups['其它'] = []
         const groupedTags = new Set(Object.values(groups).flat())
         for (const label of labels) {
             if (groupedTags.has(label))
                 continue
-            data.groups[groupOther].push(label)
+            data.groups['其它'].push(label)
         }
+
         return data
     }
 }
