@@ -27,8 +27,12 @@ function toggle(tag: string) {
     <template v-if="$frontmatter.tagsCloud">
         <div class="outline-title">标签分组</div>
         <el-collapse>
-            <el-collapse-item v-for="title in Object.keys(data.groups)" :icon="CaretRight" :name="title" :title="title">
-                <el-space wrap>
+            <el-collapse-item v-for="title in Object.keys(data.groups)"
+                              :icon="CaretRight"
+                              :name="title"
+                              :title="title"
+                              class="collapse-item">
+                <el-space :size="0" wrap>
                     <el-button v-for="tag in data.groups[title]"
                                :key="tag"
                                :plain="switches[tag]"
@@ -54,6 +58,15 @@ function toggle(tag: string) {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+.collapse-item > :deep(.el-collapse-item__header) {
+    --el-color-primary: var(--vp-c-indigo-1);
+}
+
+.el-button, .el-button.is-round {
+    padding: 4px 11px;
+    margin: 4px;
 }
 
 .el-button--info.is-link, .el-button--info.is-plain, .el-button--info.is-text {
