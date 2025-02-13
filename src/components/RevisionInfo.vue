@@ -229,4 +229,8 @@ td {
         background-color: var(--vp-c-divider);
     }
 }
+
+:deep(.el-progress__text) {
+    color: var(--el-color-info);
+}
 </style>
