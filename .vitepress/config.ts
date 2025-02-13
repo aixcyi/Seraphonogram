@@ -88,9 +88,16 @@ const configs: UserConfig<DefaultTheme.Config> = {
 }
 
 const sidebar = new SidebarBuilder().scan(configs, [ '**/catalog.md' ])
-sidebar.compareItem = () => 0
 configs.themeConfig.sidebar = {
-    '/': sidebar.build('./src/blogs/', true, true),
+    '/': sidebar.build('./src/blogs/', true, true, {
+        compareFolder(a, b) {
+            return a.frontmatter.order - b.frontmatter.order
+        },
+        compareFile(a, b) {
+            return +(b.frontmatter.updated ?? b.frontmatter.created ?? 0)
+                - +(a.frontmatter.updated ?? a.frontmatter.created ?? 0)
+        },
+    }),
 }
 
 export default defineConfig(configs)

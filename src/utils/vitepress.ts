@@ -62,6 +62,28 @@ export class Page {
 
 
 /**
+ * 页面信息处理的相关钩子。
+ */
+export type PageHooks = {
+
+    /**
+     * 比较所有文件夹（即所有 xxx/index.md）。
+     */
+    compareFolder?: (a: Page, b: Page) => number,
+
+    /**
+     * 比较所有文件（除了 xxx/index.md）。
+     */
+    compareFile?: (a: Page, b: Page) => number,
+
+    /**
+     * 比较文件与文件夹（即 xxx/index.md）。
+     */
+    compareItem?: (a: Page, b: Page) => number,
+}
+
+
+/**
  * 根据配置，扫描项目下的所有页面。
  *
  * @param configs VitePress 配置。
@@ -110,28 +132,6 @@ export class SidebarBuilder {
     private pages: Page[] = []
 
     /**
-     * 比较文件与文件夹（即 xxx/index.md）。
-     */
-    public compareItem = (a: Page, b: Page) => {
-        return a.frontmatter.title.localeCompare(b.frontmatter.title)
-    }
-
-    /**
-     * 比较所有文件（除了 xxx/index.md）。
-     */
-    public compareFile = (a: Page, b: Page) => {
-        return +(b.frontmatter.updated ?? b.frontmatter.created ?? 0)
-            - +(a.frontmatter.updated ?? a.frontmatter.created ?? 0)
-    }
-
-    /**
-     * 比较所有文件夹（即所有 xxx/index.md）。
-     */
-    public compareFolder = (a: Page, b: Page) => {
-        return a.frontmatter.order - b.frontmatter.order
-    }
-
-    /**
      * 扫描项目下的所有 Markdown 文件。
      *
      * @param configs VitePress 配置。
@@ -146,10 +146,11 @@ export class SidebarBuilder {
      * 构建某一级别侧边栏。
      *
      * @param dir 需要展示哪个目录下的 Markdown。
-     * @param deep 是否递归搜索该目录。
      * @param collapsed 是否收起当前目录。子目录会使用当前目录的设置。
+     * @param deep 是否递归搜索该目录。
+     * @param hooks 排序钩子。
      */
-    public build(dir: string, deep = false, collapsed = false): DefaultTheme.SidebarItem[] {
+    public build(dir: string, collapsed = false, deep = false, hooks?: PageHooks): DefaultTheme.SidebarItem[] {
         if (this.pages.length === 0)
             return []
 
@@ -162,14 +163,14 @@ export class SidebarBuilder {
             page.isIndex = parts[page.depth].match(/^index\.md$/) !== null
         }
 
-        const files = pages.filter(page => page.depth === 0 && !page.isIndex).sort(this.compareFile)
-        const folders = pages.filter(page => page.depth === 1 && page.isIndex).sort(this.compareFolder)
+        const files = pages.filter(page => page.depth === 0 && !page.isIndex).sort(hooks?.compareFile)
+        const folders = pages.filter(page => page.depth === 1 && page.isIndex).sort(hooks?.compareFolder)
 
         if (!deep)
             return files.map(v => ({ text: v.frontmatter.title, link: `/${v.url}` }))
 
         const items: DefaultTheme.SidebarItem[] = []
-        for (const page of [ ...folders, ...files ].sort(this.compareItem)) {
+        for (const page of [ ...folders, ...files ].sort(hooks?.compareItem)) {
             if (!page.isIndex)
                 items.push({
                     text: page.frontmatter.title,
@@ -178,7 +179,7 @@ export class SidebarBuilder {
             else
                 items.push({
                     text: page.frontmatter.title,
-                    items: this.build(pathlib.join(page.filepath, '../'), deep, collapsed),
+                    items: this.build(pathlib.join(page.filepath, '../'), collapsed, deep, hooks),
                     collapsed: collapsed,
                 })
         }
