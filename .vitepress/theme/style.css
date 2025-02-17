@@ -162,3 +162,7 @@ a:hover {
 .VPDoc.has-aside .content-container {
     max-width: unset !important;
 }
+
+.paragraph {
+    text-indent: 2em;
+}

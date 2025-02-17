@@ -80,10 +80,10 @@ const slotsName =
                 </table>
             </template>
             <template v-else-if="$frontmatter.excerpt !== undefined">
-                <div>
-                    <span v-if="props.indent">　　</span>
-                    <el-text type="info" v-html="$frontmatter.excerpt"></el-text>
-                </div>
+                <el-text :class="props.indent ? 'paragraph' : ''"
+                         type="info"
+                         v-html="$frontmatter.excerpt">
+                </el-text>
             </template>
             <template v-else>
                 <el-text type="info">

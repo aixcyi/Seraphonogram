@@ -5,13 +5,13 @@ import { Icon } from "@iconify/vue";
 
 <template>
     <h3>昵称与 ID</h3>
-    <p>
-        <span>　　“砹小翼”是最初的昵称，取双拼拼音得到常用 ID <code>aixcyi</code> 并衍生出域名
+    <p class="paragraph">
+        “砹小翼”是最初的昵称，取双拼拼音得到常用 ID <code>aixcyi</code> 并衍生出域名
         <a href="https://aixcyi.cn/" target="_blank"><code>aixcyi.cn</code></a>
         ，但因为昵称不好叫，工作中一般喊“阿羽”。后来发现一个更好记的域名
         <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
         ，于是改用 <code>ayuu</code> 作为新的 ID。不过
-        <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。</span>
+        <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
     </p>
 
     <h3>技能树</h3>

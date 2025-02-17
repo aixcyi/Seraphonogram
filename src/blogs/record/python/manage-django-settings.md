@@ -3,9 +3,7 @@ title: 管理 Django Settings
 lang: zh-CN
 created: 2023-12-21 11:48
 expires: 1096
-excerpt: '<img src="https://img.shields.io/badge/Django-2.x%20%7C%203.x%20%7C%204.x%20%7C%205.x-092E20?logo=django"/>
-          <span>　　</span>
-          Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 <b>修改</b> 配置。本文仅围绕导入配置初值展开。'
+excerpt: 'Django 本身可以动态生成配置初值乃至导入初值，但并不建议在运行时 <b>修改</b> 配置。本文仅围绕导入配置初值展开。'
 tags:
     - 开发
     - 测试
@@ -15,7 +13,7 @@ tags:
 
 # 管理 Django Settings
 
-<RevisionInfo />
+<RevisionInfo indent />
 
 > [!NOTE] 下文约定
 > 项目所在目录为 `./` ，Django Settings 所在目录为 `./{service}/` ，项目名称为 service 。
