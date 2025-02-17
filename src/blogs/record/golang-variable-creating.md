@@ -22,12 +22,12 @@ tags:
 ```go
 aaa, err := function(……)
 if err != nil {
-　　return ……
+    return ……
 }
 
 bbb, err := function(……)
 if err != nil {
-　　return ……
+    return ……
 }
 ```
 
@@ -39,13 +39,13 @@ if err != nil {
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	val := 123
-	val := 456
-	fmt.Println(val)
+    val := 123
+    val := 456
+    fmt.Println(val)
 }
 ```
 
@@ -57,14 +57,14 @@ func main() {
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 
 func main() {
-	bytes, kk := 789, 123
-	result, kk := 112, 456
-	fmt.Println(bytes, result)
-	fmt.Println(kk)
+    bytes, kk := 789, 123
+    result, kk := 112, 456
+    fmt.Println(bytes, result)
+    fmt.Println(kk)
 }
 ```
 

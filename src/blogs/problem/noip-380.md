@@ -71,42 +71,42 @@ package top.qlin.leo;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sr = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sr = new Scanner(System.in);
 
-		/** 马路上的树（没有移走之前），总共有L+1棵。 */
-		byte[] trees = new byte[sr.nextInt() + 1];
+        /** 马路上的树（没有移走之前），总共有L+1棵。 */
+        byte[] trees = new byte[sr.nextInt() + 1];
 
-		/** 区域个数。用于确定循环次数。 */
-		int time = sr.nextInt();
+        /** 区域个数。用于确定循环次数。 */
+        int time = sr.nextInt();
 
-		// 循环time次，读取所有“区域”。
-		// 如果某区域的终点和另一个区域的起点重叠，这种方法可以自动合并两个区域。
-		for (int t = 0; t < time; t++) {
-			trees[sr.nextInt()]++;    // 这里输入的int是该区域的起点位置。
-			trees[sr.nextInt()]--;    // 这里输入的int是区域的终点位置。
-		}
+        // 循环time次，读取所有“区域”。
+        // 如果某区域的终点和另一个区域的起点重叠，这种方法可以自动合并两个区域。
+        for (int t = 0; t < time; t++) {
+            trees[sr.nextInt()]++;    // 这里输入的int是该区域的起点位置。
+            trees[sr.nextInt()]--;    // 这里输入的int是区域的终点位置。
+        }
 
-		sr.close();
+        sr.close();
 
-		/** 某一位置的“树”身处的区域的个数。 */
-		int stack = 0,
+        /** 某一位置的“树”身处的区域的个数。 */
+        int stack = 0,
 
-		/** 当前未被移走的树的数量 */
-			quantity = 0;
+        /** 当前未被移走的树的数量 */
+            quantity = 0;
 
-		// 遍历trees以统计剩余树的数量。
-		for (int i = 0; i < trees.length; i++) {
-			// stack != 0表示第i棵树身处stack个叠加的区域中。
-			// trees[i] != 0表示第i棵树不在区域的两个端点上。
-			if (trees[i] != 0 || stack != 0) {
-				stack += trees[i];
-			} else {
-				quantity++;
-			}
-		}
-		System.out.print(quantity);
-	}
+        // 遍历trees以统计剩余树的数量。
+        for (int i = 0; i < trees.length; i++) {
+            // stack != 0表示第i棵树身处stack个叠加的区域中。
+            // trees[i] != 0表示第i棵树不在区域的两个端点上。
+            if (trees[i] != 0 || stack != 0) {
+                stack += trees[i];
+            } else {
+                quantity++;
+            }
+        }
+        System.out.print(quantity);
+    }
 }
 ```
 
