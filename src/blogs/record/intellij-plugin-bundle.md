@@ -31,7 +31,7 @@ tags:
 以下是截取自笔者部分开源代码的完整示例：
 
 ```java
-package cn.aixcyi.plugin.tinysnake;
+package cc.ayuu.plugin.tinysnake;
 
 import com.intellij.DynamicBundle;
 import org.jetbrains.annotations.NotNull;
@@ -76,9 +76,9 @@ src/main/resources/messages/TinySnakeBundle.properties
 用法如下：
 
 ```java
-package cn.aixcyi.plugin.tinysnake.testing;
+package cc.ayuu.plugin.tinysnake.testing;
 
-import static cn.aixcyi.plugin.tinysnake.Translation.$message;
+import static cc.ayuu.plugin.tinysnake.Translation.$message;
 
 public class MainTest {
     public static void main(String[] args) {

@@ -57,7 +57,7 @@ tags:
 如果无法确定for循环终点（`i` 的最大值），可以用while循环、动态计算第一个数是否大于0。
 
 ```java
-package top.qlin.leo;
+package cc.ayuu.test;
 import java.util.Scanner;
 
 public class Main {

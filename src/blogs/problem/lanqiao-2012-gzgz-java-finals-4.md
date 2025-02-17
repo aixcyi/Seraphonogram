@@ -56,7 +56,7 @@ tags:
 于是再向前借一，得到 `2054 == 676*2 + 26*26 + 1*26`，对照ASCII表得到`BZZ`，正确！
 
 ```java
-package top.qlin.leo;
+package cc.ayuu.test;
 import java.util.Scanner;
 
 public class Main {
