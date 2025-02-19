@@ -75,16 +75,13 @@ const hooksNav: PageHooks = {
     },
 }
 configs.themeConfig.sidebar = {
-    '/': sidebar.build('./src/posts/', true, true, hooks),
+    '/': sidebar.buildSidebar('./src/posts/', true, true, hooks),
 }
 configs.themeConfig.nav = [
     { text: '目录', link: '/catalog' },
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
-    {
-        text: '快速参考',
-        items: sidebar.build('./src/posts/cheatsheet/', true, true, hooksNav) as DefaultTheme.NavItemWithLink[],
-    },
+    sidebar.buildNav('./src/posts/cheatsheet/', true, hooksNav),
     {
         text: '交流',
         items: [

@@ -141,21 +141,11 @@ export class PageHandler {
      * @param deep 是否递归搜索该目录。
      * @param hooks 排序钩子。
      */
-    public build(dir: string, collapsed = false, deep = false, hooks?: PageHooks): DefaultTheme.SidebarItem[] {
-        if (this.pages.length === 0)
-            return []
-
-        const directory = pathlib.join(pathlib.resolve(dir), '/')
-        const dirLength = directory.length
-        const pages = this.pages.filter(page => page.filepath.startsWith(directory))
-        for (const page of pages) {
-            const parts = page.filepath.slice(dirLength).split(/[\\/]/)
-            page.depth = parts.length - 1
-            page.isIndex = parts[page.depth].match(/^index\.md$/) !== null
-        }
-
-        const files = pages.filter(page => page.depth === 0 && !page.isIndex).sort(hooks?.compareFile)
-        const folders = pages.filter(page => page.depth === 1 && page.isIndex).sort(hooks?.compareFolder)
+    public buildSidebar(dir: string, collapsed = false, deep = false, hooks?: PageHooks): DefaultTheme.SidebarItem[] {
+        this.check()
+        const soup = this.extract(dir)
+        const files = soup.filter(page => page.depth === 0 && !page.isIndex).sort(hooks?.compareFile)
+        const folders = soup.filter(page => page.depth === 1 && page.isIndex).sort(hooks?.compareFolder)
 
         if (!deep)
             return files.map(v => ({ text: v.frontmatter.title, link: `/${v.url}` }))
@@ -170,10 +160,70 @@ export class PageHandler {
             else
                 items.push({
                     text: page.frontmatter.title,
-                    items: this.build(pathlib.join(page.filepath, '../'), collapsed, deep, hooks),
+                    items: this.buildSidebar(pathlib.join(page.filepath, '../'), collapsed, deep, hooks),
                     collapsed: collapsed,
                 })
         }
         return items
+    }
+
+    /**
+     * 构建一项导航菜单。
+     *
+     * @param dir 需要搜索哪个目录下的 Markdown。
+     * @param deep 是否递归搜索该目录。
+     * @param hooks 排序钩子。
+     */
+    public buildNav(dir: string, deep = false, hooks?: PageHooks): DefaultTheme.NavItemWithChildren {
+        this.check()
+        const soup = this.extract(dir)
+        const text = soup.filter(page => page.depth === 0 && page.isIndex)[0]?.frontmatter?.title ?? '(未命名)'
+        const files = soup.filter(page => page.depth === 0 && !page.isIndex).sort(hooks?.compareFile)
+        const folders = soup.filter(page => page.depth === 1 && page.isIndex).sort(hooks?.compareFolder)
+
+        if (!deep)
+            return {
+                text,
+                items: files.map(v => ({ text: v.frontmatter.title, link: `/${v.url}` }))
+            }
+
+        const items: DefaultTheme.NavItemChildren['items'] = []
+        for (const page of [ ...folders, ...files ].sort(hooks?.compareItem)) {
+            if (!page.isIndex)
+                items.push({
+                    text: page.frontmatter.title,
+                    link: `/${page.url}`,
+                })
+            else
+                items.push(
+                    // @ts-ignore
+                    this.buildNav(pathlib.join(page.filepath, '../'), deep, hooks)
+                )
+        }
+        return { text, items }
+    }
+
+    /**
+     * 提取目录下的子孙 Markdown 文件。
+     *
+     * @param dir 被搜索的目录。
+     * @private
+     */
+    private extract(dir: string) {
+        const directory = pathlib.join(pathlib.resolve(dir), '/')
+        const dirLength = directory.length
+        const pages = this.pages.filter(page => page.filepath.startsWith(directory))
+        for (const page of pages) {
+            const parts = page.filepath.slice(dirLength).split(/[\\/]/)
+            page.depth = parts.length - 1
+            page.isIndex = parts[page.depth].match(/^index\.md$/) !== null
+        }
+        return pages
+    }
+
+    private check() {
+        if (this.pages.length === 0) {
+            throw new Error('项目下找不到任何 Markdown 文件。')
+        }
     }
 }
