@@ -52,35 +52,21 @@ vitepress build
 
 ## 架构
 
-### 目录结构简介
-
 ```text
 .
-├─.vitepress    # VitePress 配置
+├─.vitepress  # VitePress 配置
 │  └─theme    # VitePress 主题扩展
-├─cache    # VitePress 缓存
-├─dist    # VitePress 打包目录
+├─cache       # VitePress 缓存
+├─dist        # VitePress 打包目录
 └─src
-    ├─image    # 图片，对应URL中的 /image/*.*
-    ├─public    # 静态资源
-    ├─utils    # 工具代码
-    ├─components    # 组件代码
-    ├─problemset    # 题单文章
-    ├─blogs    # 博客文章
-    │  ├─problem
-    │  ├─record
-    │  ├─summary
-    │  ├─thinking
-    │  └─catalog.md    # 博客目录
+    ├─components  # 组件代码
+    ├─image       # 图片，对应URL中的 /image/*.*
+    ├─posts       # 博客文章
+    ├─public      # 静态资源
+    ├─utils       # 工具代码
     ├─about.md    # 关于
     └─index.md    # 首页
 ```
-
-### 路由布局
-
-- 博客文章 `./src/blogs` 直接映射到根目录（毕竟域名已经带上 `blog` 了，也就没必要重复）。
-- 快速参考的页面会直接映射到根目录，以便节省手动输入的时间。
-- 其余页面按照 VitePress 默认进行布局。
 
 ## 约定
 
@@ -93,7 +79,7 @@ vitepress build
 
 - `title` 必填，因为 VitePress Sidebar 没办法从正文提取标题。
 - `lang`：虽然并不使用国际化功能，但为了向前兼容，一般都写上。
-- `order`：目录排序，从小到大从前到后排序，在 `index.md` 中定义。小于 0 表示代表风格的目录，大于 0 表示其它目录或子目录，0 一般不用。
+- `order`：目录排序，从小到大从前到后排序，在 `index.md` 中定义。
 - `created`：创建时间，`yyyy-MM-dd HH:mm` 格式字符串，必填，否则将不会出现在目录中。
 - `updated`：修改时间，`yyyy-MM-dd HH:mm` 格式字符串，选填。
 - `expires`：保鲜时间，选填。提供一个以天为单位的整数时，显示保鲜进度条及百分比；提供一个字符串时直接显示字符串。

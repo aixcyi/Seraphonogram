@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { annuals, filterBlogs, switches } from "@/states.ts";
+import { annuals, filterPosts, switches } from "@/states.ts";
 import { onMounted } from "vue";
 
 onMounted(() => {
@@ -8,28 +8,24 @@ onMounted(() => {
     )
     for (const tag in switches)
         switches[tag] = tags.has(tag)
-    filterBlogs()
+    filterPosts()
 })
 </script>
 
 <template>
     <div class="catalog">
-        <div v-for="[year, blogs] in annuals" :key="year" class="catalog-group">
+        <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
             <div class="catalog-title">
                 <h2 class="catalog-year">{{ year }}</h2>
                 <div class="catalog-info">
-                    <span>{{ blogs.length }} 篇</span>
+                    <span>{{ posts.length }} 篇</span>
                 </div>
             </div>
             <menu class="article-list">
-                <li v-for="blog in blogs" class="article-item">
-                    <pre>{{ blog.date }}</pre>
-                    <a :href="blog.url" class="article-link gradient-card">
-                        <el-space class="article-link-inner" wrap>
-                            {{ blog.title }}
-                            <el-tag v-for="tag in blog.tags" size="small" type="info">{{ tag }}</el-tag>
-                        </el-space>
-                    </a>
+                <li v-for="post in posts" class="article-item">
+                    <pre>{{ post.date }}</pre>
+                    <a :href="post.url" class="article-link gradient-card">{{ post.title }}</a>
+                    <el-tag type="info">{{ post.column }}</el-tag>
                 </li>
             </menu>
         </div>
@@ -125,10 +121,6 @@ onMounted(() => {
     overflow: hidden;
     padding: 0.3em 0.6em;
     color: var(--vp-c-text-1);
-
-    & > .article-link-inner {
-        gap: 2px 8px !important;
-    }
 }
 
 .gradient-card {

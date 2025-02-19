@@ -10,12 +10,14 @@ import type { SiteConfig } from "vitepress";
 
 const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
 
+const comparePinyin = (a: string, b: string) => pinyin(a).join('').localeCompare(pinyin(b).join(''))
+
 
 /**
  * 博客文件路径通配符。
  */
 const patterns = [
-    './blogs/**/*.md',
+    './posts/**/*.md',
     ...(config.userConfig.srcExclude?.map(p => `!${p}`) ?? []),
 ].map(p =>
     // https://github.com/micromatch/micromatch#extended-globbing
@@ -38,24 +40,21 @@ const groups: { [title: string]: string[] } = {
         '对象', '浮点数', '格式化', '国际化', '类', '类型', '类型标注', '浅拷贝', '生成器', '推导式',
         '序列化', '运算', '转型', '标准多项集', '视图', '文件IO', '字节序', '组件对象模型 COM', '语法',
         '十进制小数',
-    ].sort((a, b) =>
-        pinyin(a).join('').localeCompare(pinyin(b).join(''))
-    ),
+    ].sort(comparePinyin),
     '运维部署': [
         '兼容', '镜像', '控制台', '命令行', '配置', '虚拟环境',
-    ].sort((a, b) =>
-        pinyin(a).join('').localeCompare(pinyin(b).join(''))
-    ),
+    ].sort(comparePinyin),
 }
 
 
 /**
  * 博客信息结构。
  */
-export interface Blog {
+export interface Post {
     url: string
     title: string
     changed: number
+    column: string
     tags: string[]
     year: number
     date: string
@@ -68,7 +67,7 @@ export interface Blog {
 export interface Data {
 
     /** 所有博客 */
-    posts: Blog[]
+    posts: Post[]
 
     /** 标签及相应博客的数量 */
     tags: { [key: string]: integer }
@@ -105,13 +104,6 @@ export default {
                 .from(folders.entries())
                 .sort(([ , af ], [ , bf ]) => af.order - bf.order)
         )
-        data.groups = {
-            '写作风格': Array
-                .from(folders.entries())
-                .filter(([ , f ]) => f.order < 0)
-                .map(([ , f ]) => f.title),
-            ...data.groups,
-        }
 
         // 提取文件信息
         for (const file of files) {
@@ -126,11 +118,9 @@ export default {
 
             // 提取路径中的文件夹，转换为名称，添加到标签
             const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
-            const tags = [
-                // 下标表示src深度：./src/* => 0，./src/blogs/* => 1，以此类推。
-                folders.get(srcPath.split('/')[1])!.title,
-                ...new Set<string>(frontmatter.tags ?? [])
-            ].sort((a, b) => {
+            // 下标表示src深度：./src/* => 0，./src/posts/* => 1，以此类推。
+            const column = folders.get(srcPath.split('/')[1])?.title
+            const tags = [ ...new Set([ column, ...(frontmatter.tags ?? []) ]) ].sort((a, b) => {
                 // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
                 const lenA = Buffer.byteLength(a, 'utf8')
                 const lenB = Buffer.byteLength(b, 'utf8')
@@ -162,6 +152,7 @@ export default {
                 url: `/${url}`,
                 title: frontmatter.title,
                 changed: changed.getTime(),
+                column,
                 tags,
                 year: changed.getFullYear(),
                 date: format(changed, 'MM-dd'),
@@ -177,6 +168,12 @@ export default {
             tags[label] = data.tags[label]
         }
         data.tags = tags
+
+        // 提取栏目名称
+        data.groups = {
+            '栏目': [ ...new Set(data.posts.map(p => p.column)) ].sort(comparePinyin),
+            ...data.groups,
+        }
 
         // 统一存放未分组的标签
         data.groups['其它'] = []

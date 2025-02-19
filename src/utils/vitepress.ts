@@ -84,61 +84,52 @@ export type PageHooks = {
 
 
 /**
- * 根据配置，扫描项目下的所有页面。
- *
- * @param configs VitePress 配置。
- * @param excludes 额外排除的文件，同 `UserConfig<DefaultTheme.Config>['srcExclude']`。
- */
-export function scan(configs: UserConfig<DefaultTheme.Config>, excludes: string[] = []) {
-    const rewrite = compileRewrites(configs.rewrites)
-    const base = configs.srcDir ?? '.'
-    const pages: Page[] = []
-    const files: string[] = glob.sync([ '**/**.md' ], {
-        cwd: configs.srcDir ?? '.',
-        nodir: true,
-        absolute: true,
-        ignore: [
-            '**/node_modules/**',
-            '**/dist/**',
-            ...(configs.srcExclude ?? []),
-            ...excludes,
-        ],
-    })
-    for (const file of files) {
-        const url = normalizePath(
-            rewrite(
-                pathlib.relative(base, file).replace(/\\/g, '/')
-            )
-        ).replace(
-            /(^|\/)index\.md$/, '$1'
-        ).replace(
-            /\.md$/, configs.cleanUrls ? '' : '.html'
-        )
-        const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
-        if (!('title' in frontmatter))
-            continue
-        pages.push(new Page(url, file, frontmatter))
-    }
-    return pages
-}
-
-
-/**
- * 侧边栏构建器。
+ * 页面处理器。
  *
  * 使用前请务必确保 **所有页面** 的 [frontmatter](https://vitepress.dev/zh/guide/frontmatter) 都具有 `title` 字段。
  */
-export class SidebarBuilder {
+export class PageHandler {
     private pages: Page[] = []
 
+    constructor(private configs: UserConfig<DefaultTheme.Config>) {
+    }
+
     /**
-     * 扫描项目下的所有 Markdown 文件。
+     * 根据配置，扫描项目下的所有 Markdown 文件。
      *
-     * @param configs VitePress 配置。
      * @param excludes 额外排除的文件，同 `UserConfig<DefaultTheme.Config>['srcExclude']`。
      */
-    public scan(configs: UserConfig<DefaultTheme.Config>, excludes: string[] = []) {
-        this.pages = scan(configs, excludes)
+    public scan(...excludes: string[]) {
+        const rewrite = compileRewrites(this.configs.rewrites)
+        const base = this.configs.srcDir ?? '.'
+        const pages: Page[] = []
+        const files: string[] = glob.sync([ '**/**.md' ], {
+            cwd: this.configs.srcDir ?? '.',
+            nodir: true,
+            absolute: true,
+            ignore: [
+                '**/node_modules/**',
+                '**/dist/**',
+                ...(this.configs.srcExclude ?? []),
+                ...excludes,
+            ],
+        })
+        for (const file of files) {
+            const url = normalizePath(
+                rewrite(
+                    pathlib.relative(base, file).replace(/\\/g, '/')
+                )
+            ).replace(
+                /(^|\/)index\.md$/, '$1'
+            ).replace(
+                /\.md$/, this.configs.cleanUrls ? '' : '.html'
+            )
+            const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
+            if (!('title' in frontmatter))
+                continue
+            pages.push(new Page(url, file, frontmatter))
+        }
+        this.pages = pages
         return this
     }
 

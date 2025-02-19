@@ -1,5 +1,5 @@
 ---
-title: 语法更新摘要
+title: Python 语法更新摘要
 lang: zh-CN
 outline: deep
 created: 2023-12-23 23:59

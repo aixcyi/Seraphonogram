@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
-import { SidebarBuilder } from "../src/utils/vitepress";
+import { PageHandler, PageHooks } from "../src/utils/vitepress";
 
 
 const env = loadEnv('', process.cwd())
@@ -20,31 +20,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/favicon.ico',
-        nav: [
-            {
-                text: '博客',
-                activeMatch: '^/(summary|record|thinking|problem)/',
-                items: [
-                    { text: '目录', link: '/catalog' },
-                    {
-                        items: [
-                            { text: '总结／摘要', activeMatch: '/summary/', link: '/catalog?tag=总结／摘要' },
-                            { text: '经验／踩坑／备忘', activeMatch: '/record/', link: '/catalog?tag=经验／踩坑／备忘' },
-                            { text: '思考／碎碎念', activeMatch: '/thinking/', link: '/catalog?tag=思考／碎碎念' },
-                            { text: '题解集', activeMatch: '/problem/', link: '/catalog?tag=题解集' },
-                        ]
-                    },
-                ]
-            },
-            { text: '关于', link: '/about' },
-            { text: '主站', link: 'https://ayuu.cc/' },
-            {
-                text: '交流',
-                items: [
-                    { text: 'QQ群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
-                ]
-            },
-        ],
+        nav: [],
         sidebar: [],
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
@@ -66,13 +42,8 @@ const configs: UserConfig<DefaultTheme.Config> = {
         },
     },
     cleanUrls: true,
-    rewrites: {
-        'blogs/summary/mirror.md': 'mirror.md',
-        'blogs/summary/timestamp.md': 'timestamp.md',
-        'blogs/summary/python/grammar.md': 'grammar.md',
-        'blogs/:file': ':file',
-        'blogs/:style/:file': ':style/:file',
-        'blogs/:style/:topic/:file': ':style/:topic/:file',
+    rewrites(id: string): string {
+        return id.replace(/^posts\/(.*)/, '$1')
     },
     markdown: {
         lineNumbers: true,
@@ -87,17 +58,40 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
 }
 
-const sidebar = new SidebarBuilder().scan(configs, [ '**/catalog.md' ])
-configs.themeConfig.sidebar = {
-    '/': sidebar.build('./src/blogs/', true, true, {
-        compareFolder(a, b) {
-            return a.frontmatter.order - b.frontmatter.order
-        },
-        compareFile(a, b) {
-            return +(b.frontmatter.updated ?? b.frontmatter.created ?? 0)
-                - +(a.frontmatter.updated ?? a.frontmatter.created ?? 0)
-        },
-    }),
+const sidebar = new PageHandler(configs).scan()
+const hooks: PageHooks = {
+    compareFolder(a, b) {
+        return a.frontmatter.order - b.frontmatter.order
+    },
+    compareFile(a, b) {
+        return +(b.frontmatter.updated ?? b.frontmatter.created ?? 0)
+            - +(a.frontmatter.updated ?? a.frontmatter.created ?? 0)
+    },
 }
+const hooksNav: PageHooks = {
+    ...hooks,
+    compareItem() {
+        return -1
+    },
+}
+configs.themeConfig.sidebar = {
+    '/': sidebar.build('./src/posts/', true, true, hooks),
+}
+configs.themeConfig.nav = [
+    { text: '目录', link: '/catalog' },
+    { text: '关于', link: '/about' },
+    { text: '主站', link: 'https://ayuu.cc/' },
+    {
+        text: '快速参考',
+        items: sidebar.build('./src/posts/cheatsheet/', true, true, hooksNav) as DefaultTheme.NavItemWithLink[],
+    },
+    {
+        text: '交流',
+        items: [
+            { text: 'QQ 群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
+            { text: 'Telegram 群组', link: 'https://t.me/ayuucc' },
+        ]
+    },
+]
 
 export default defineConfig(configs)

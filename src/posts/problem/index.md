@@ -1,7 +1,7 @@
 ---
-title: LeetCode 系列
-order: 32
+title: 题解札
 aside: false
 prev: false
 next: false
+order: 8
 ---

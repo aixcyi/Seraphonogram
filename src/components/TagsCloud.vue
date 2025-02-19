@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { filterBlogs, switches } from "@/states.ts";
+import { filterPosts, switches } from "@/states.ts";
 import { CaretRight } from "@element-plus/icons-vue";
 import { useData } from "vitepress";
-import { data } from "../../.vitepress/theme/blogs.data.ts";
+import { data } from "../../.vitepress/theme/posts.data.ts";
 
 
 const $frontmatter = useData().frontmatter
 
 function toggle(tag: string) {
     switches[tag] = !switches[tag]
-    filterBlogs()
+    filterPosts()
 
     const url = new URL(window.location.href)
     const query = new URLSearchParams(url.search)

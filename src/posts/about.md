@@ -8,7 +8,7 @@ outline: false
 ---
 
 <script setup lang="ts">
-import About from "@/About.vue";
+import About from "./About.vue";
 </script>
 
 # 阿羽

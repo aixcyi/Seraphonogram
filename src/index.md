@@ -5,13 +5,13 @@ layout: home
 hero:
   name: "Seraphonogram"
   text: "静谧星夜下\n不绝如缕的羽音"
-  tagline: "干净、整洁、纯粹、静谧、保鲜的技术日志树洞。"
+  tagline: "干净、整洁、纯粹、静谧、保鲜的日志树洞。"
   image:
     src: /mualani.gif
     alt: 阿羽的树洞
   actions:
     - theme: brand
-      text: 所有博客
+      text: 博客目录
       link: /catalog
     - theme: alt
       text: 时间戳对照表
