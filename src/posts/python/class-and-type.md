@@ -16,6 +16,12 @@ tags:
     - Python
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # 类与类型
 
 <RevisionInfo />

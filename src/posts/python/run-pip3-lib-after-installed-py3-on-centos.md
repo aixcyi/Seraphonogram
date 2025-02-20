@@ -9,6 +9,12 @@ tags:
     - Python
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # 编译安装 Python3 后 pip3 安装的库如何在命令行调用
 
 <RevisionInfo />

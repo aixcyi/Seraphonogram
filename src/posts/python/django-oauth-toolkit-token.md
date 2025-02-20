@@ -13,6 +13,12 @@ tags:
     - Django OAuth Toolkit
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # Django OAuth Toolkit 令牌机制
 
 <RevisionInfo indent />

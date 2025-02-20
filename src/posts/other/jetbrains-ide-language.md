@@ -11,6 +11,12 @@ tags:
     - 配置
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # 设置 JetBrains IDE 的语言
 
 <RevisionInfo indent />

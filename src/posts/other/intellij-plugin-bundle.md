@@ -11,6 +11,12 @@ tags:
     - 国际化
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # IntelliJ 插件中使用 Bundle
 
 <RevisionInfo indent/>
@@ -68,12 +74,7 @@ public class Translation {
 }
 ```
 
-其中 `messages.TinySnakeBundle` 指向文件  
-src/main/resources/messages/TinySnakeBundle.properties
-
-假设其中存在键值对 `action.OptimizeDunderAllAction.text=优化 __all__ (&O)`
-
-用法如下：
+其中 `messages.TinySnakeBundle` 指向文件 `src/main/resources/messages/TinySnakeBundle.properties`，假设其中存在键值对 `action.OptimizeDunderAllAction.text=优化 __all__ (&O)`，则用法如下：
 
 ```java
 package cc.ayuu.plugin.tinysnake.testing;

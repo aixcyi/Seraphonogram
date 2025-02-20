@@ -11,6 +11,12 @@ tags:
     - 标准多项集
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # Python 字典中，键的顺序
 
 <RevisionInfo />

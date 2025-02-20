@@ -13,6 +13,12 @@ tags:
     - Python
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # 默认值导致抽象泄漏
 
 <RevisionInfo indent />

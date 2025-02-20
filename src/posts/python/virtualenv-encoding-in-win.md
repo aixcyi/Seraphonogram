@@ -15,6 +15,12 @@ tags:
     - 虚拟环境
 ---
 
+<style scoped>
+.VPDoc p:not(.custom-block-title) {
+    text-indent: 2em;
+}
+</style>
+
 # virtualenv 在 Windows 中无法激活
 
 <RevisionInfo indent />
@@ -31,9 +37,7 @@ tags:
 
 #### 检测方法
 
-> 浏览 `activate.bat` 的源码可知，它会将当前虚拟环境的 Python 运行路径注入到环境变量 `PATH` 中。
-
-在除了 PyCharm 以外的地方激活虚拟环境，并观察 `PATH` 的值是否有乱码。
+浏览 `activate.bat` 的源码可知，它会将当前虚拟环境的 Python 运行路径注入到环境变量 `PATH` 中，于是决定在除了 PyCharm 以外的地方激活虚拟环境，并观察 `PATH` 的值是否有乱码。
 
 ```bat
 cd %PROJECT%/venv/Scripts  # 你的项目目录下的虚拟环境
@@ -50,7 +54,4 @@ echo %PATH%
 
 ## 解决
 
-将 `activate.bat` 的文件编码从 UTF-8 改为 GB2312 或 GBK 即可。
-
-但是更改编码后，PyCharm 部分与虚拟环境有关的功能无法正常使用，所以最好的办法还是去掉项目路径上的中文字符。
-
+将 `activate.bat` 的文件编码从 UTF-8 改为 GB2312 或 GBK 即可。但是更改编码后，PyCharm 部分与虚拟环境有关的功能无法正常使用，所以最好的办法还是去掉项目路径上的中文字符。
