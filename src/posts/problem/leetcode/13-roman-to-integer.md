@@ -81,7 +81,7 @@ M             1000
 
 综上，可以将每一位映射出来，并变换成负数，最后直接相加即可。
 
-```python
+```python :line-numbers
 class Solution:
     symbols = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 

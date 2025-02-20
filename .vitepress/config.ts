@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
+import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import { PageHandler, PageHooks } from "../src/utils/vitepress";
 
 
@@ -19,7 +20,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],
     ],
     themeConfig: {
-        // https://vitepress.dev/reference/default-theme-config
+        // https://vitepress.dev/zh/reference/default-theme-config
         logo: '/favicon.ico',
         nav: [],
         sidebar: [],
@@ -52,10 +53,16 @@ const configs: UserConfig<DefaultTheme.Config> = {
             : path
     },
     markdown: {
-        lineNumbers: true,
         math: true,
+        config(md) {
+            md.use(groupIconMdPlugin)
+        },
     },
     vite: {
+        plugins: [
+            // @ts-ignore
+            groupIconVitePlugin(),
+        ],
         resolve: {
             alias: {
                 '@': resolve(__dirname, '../src'),

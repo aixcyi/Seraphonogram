@@ -27,7 +27,7 @@ tags:
 
 以下示例封装了一个用于构造自定义标准响应的函数，标准响应约定为必定带有三个字段的JSON对象，其中 `code` 字段必定为整数，`message` 必定为字符串，`data` 可以为任意值。
 
-```python
+```python :line-numbers
 from typing import Any
 from django.db.models import IntegerChoices
 
@@ -62,7 +62,7 @@ body = response(message=None)
 
 但需要注意的是，`None` 的布尔值对应为 `False`，`...` 的布尔值对应为 `True`，改换默认值之后 `or` 之类的逻辑表达式需要同步变换。
 
-```python
+```python :line-numbers
 from typing import Any
 from django.db.models import IntegerChoices
 

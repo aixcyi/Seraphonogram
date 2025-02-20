@@ -84,14 +84,18 @@ print(Decimal(0.3))
 
 并定义以下模型和序列化器：
 
-```python
+```python [models.py]
 from django.db import models
-from rest_framework import serializers
 
 class Order(models.Model):
     ...
     discount = models.DecimalField(max_digits=12, decimal_places=2)
     ...
+```
+
+```python [serializers.py]
+from rest_framework import serializers
+from my_app.models import Order
 
 class OrderSerializer(serializers.ModelSerializer):
 

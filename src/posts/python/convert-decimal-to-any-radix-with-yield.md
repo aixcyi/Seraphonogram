@@ -49,7 +49,7 @@ $$
 
 ## 循环实现
 
-```python
+```python :line-numbers
 def dec2n(x, charset):
     base = len(charset)
     result = ''
@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
 ## 递归实现
 
-```python
+```python :line-numbers
 def dec2n(x, base, charset):
     if x < base:
         return charset[x]
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
 ## 迭代器实现
 
-```python
+```python :line-numbers
 def dec2n(x, charset):
     # i=3500266221, base=16, charset="0123456789ABCDEF"
     # -> [13, 14, 2, 13, 1, 10, 0, 13]

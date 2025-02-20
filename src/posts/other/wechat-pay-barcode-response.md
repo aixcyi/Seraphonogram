@@ -22,7 +22,7 @@ tags:
 
 `<return_code>` 和 `<result_code>` 只要有一个不为 `SUCCESS` 就会报 `WeChatPayException` 。
 
-```python
+```python :line-numbers
 from django.conf import settings
 from wechatpy import WeChatPay, WeChatPayException
 
@@ -56,7 +56,7 @@ except WeChatPayException as e:
 
 #### 支付成功
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>
@@ -85,7 +85,7 @@ except WeChatPayException as e:
 
 #### 支付失败，请撤销订单
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>
@@ -104,7 +104,7 @@ except WeChatPayException as e:
 
 #### 等待用户输入密码
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>
@@ -125,7 +125,7 @@ except WeChatPayException as e:
 
 #### 付款码已被使用
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>
@@ -142,7 +142,7 @@ except WeChatPayException as e:
 
 #### 用户取消支付
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>
@@ -159,7 +159,7 @@ except WeChatPayException as e:
 
 #### 需要用户确认支付
 
-```xml
+```xml :line-numbers
 <xml>
     <return_code><![CDATA[SUCCESS]]></return_code>
     <return_msg><![CDATA[OK]]></return_msg>

@@ -66,7 +66,7 @@ NOIP 2005年普及组第二题，收录于[NOIPOJ第380题](http://noipoj.cn/pro
 
 因为起点和终点必然成对存在，即+1和-1的个数必定相等，那么当没有进入或已经离开所有区间的时候，stack必定为0，而只要遍历位置在任意一个区间时，累加的stack必定大于0（按我定义的正负来说）。
 
-```java
+```java :line-numbers
 package cc.ayuu.test;
 import java.util.Scanner;
 

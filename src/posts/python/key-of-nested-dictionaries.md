@@ -35,7 +35,7 @@ tags:
 
 对于有限层的字典，可以像这样确保更新时所有层级都存在。虽然有些冗长，但这是最省事的实现。
 
-```python
+```python :line-numbers
 dataset = dict()
 
 def update(first: str, second: str, third: str, fourth: str, /, value=None):

@@ -1,10 +1,11 @@
-// https://vitepress.dev/guide/custom-theme
+// https://vitepress.dev/zh/guide/custom-theme
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import ElementPlus from "element-plus";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { h } from "vue";
 import "./style.css";
+import "virtual:group-icons.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import NotFound from "../../src/components/NotFound.vue";

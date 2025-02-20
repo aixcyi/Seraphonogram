@@ -16,15 +16,15 @@ tags:
 <RevisionInfo indent />
 
 > [!NOTE] 下文约定
-> 项目所在目录为 `./` ，Django Settings 所在目录为 `./{service}/` ，项目名称为 service 。
+> 项目所在目录为 `./` ，Django Settings 所在目录为 `./{project}/` ，项目名称为 project 。
 
 ## 原生方法
 
 - ./manage.py
-- ./{service}/wsgi.py
-- ./{service}/asgi.py
+- ./{project}/wsgi.py
+- ./{project}/asgi.py
 
-三个启动文件中都有一个名为 `DJANGO_SETTINGS_MODULE` 的环境变量，变量值实际上是一个 Python 包的路径，默认是 `"{service}.settings"` ，对应 ./{service}/settings.py 这个文件。
+三个启动文件中都有一个名为 `DJANGO_SETTINGS_MODULE` 的环境变量，变量值实际上是一个 Python 包的路径，默认是 `"{project}.settings"` ，对应 ./{project}/settings.py 这个文件。
 
 Django 就是在启动时通过这个包路径导入对应的配置代码，构造 `django.conf.settings` 对象。
 
@@ -38,15 +38,15 @@ Django 就是在启动时通过这个包路径导入对应的配置代码，构�
 >     pass
 > ```
 
-当需要配置不同环境的 settings 时，一般建立多个不受版本控制的 ./{service}/settings_*.py 文件，并在不同的环境下将环境变量 `DJANGO_SETTINGS_MODULE` 指向所需的文件。
+当需要配置不同环境的 settings 时，一般建立多个不受版本控制的 `./{project}/settings_*.py` 文件，并在不同的环境下将环境变量 `DJANGO_SETTINGS_MODULE` 指向所需的文件。
 
 - 开发环境：./manage.py
-- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/wsgi/)：./{service}/wsgi.py
-- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/asgi/)：./{service}/asgi.py
+- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/wsgi/)：./{project}/wsgi.py
+- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/asgi/)：./{project}/asgi.py
 
 这个文件可以配置如下：
 
-```python
+```python [./{project}/settings_*.py]
 from service.settings import *
 
 DEBUG = True
@@ -72,7 +72,7 @@ DATABASES['default'] = dict(
 
 使用方法为在 settings.py 中导入包：
 
-```python
+```python [./settings.py]
 from environ import Env
 
 BASE_DIR = Path(__file__).parent.parent
@@ -90,7 +90,7 @@ DATABASES = {
 
 而 ./.env 文件的写法为：
 
-```ini
+```ini [./.env]
 DEBUG=true
 SECRET_KEY="He110, me0w."
 ALLOWED_HOSTS=127.0.0.1,::1
@@ -110,7 +110,7 @@ DEFAULT_DATABASE=postgresql://meow:meowpassword@127.0.0.1:5432/db_name
 
 从 3.1 版本开始，Django 默认 settings 模板的 `BASE_DIR` 的值改为
 
-```python
+```python [./settings.py]
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +118,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 旧版本是
 
-```python
+```python [./settings.py]
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

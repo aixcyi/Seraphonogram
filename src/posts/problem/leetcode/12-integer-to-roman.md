@@ -90,7 +90,7 @@ M             1000
   - `90` 是 `C` 减去 `X` 得到 `XC`（100-10=90）
   - `900` 是 `M` 减去 `C` 得到 `CM`（1000-100=900）
 
-```python
+```python :line-numbers
 class Solution:
 
     def intToRoman(self, num: int) -> int:

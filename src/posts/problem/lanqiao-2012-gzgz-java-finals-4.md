@@ -55,7 +55,7 @@ tags:
 因为Excel的列号没有0，于是按照进位制的思想向前借一，得到 `2054 == 676*3 + 26*0 + 1*26`，仍然有0。  
 于是再向前借一，得到 `2054 == 676*2 + 26*26 + 1*26`，对照ASCII表得到`BZZ`，正确！
 
-```java
+```java :line-numbers
 package cc.ayuu.test;
 import java.util.Scanner;
 

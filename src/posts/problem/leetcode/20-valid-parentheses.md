@@ -54,7 +54,7 @@ tags:
 
 不过题干有一个坑：给定的字符串有可能以右括号开头，导致 `lasts[-1]` 报下标越界，因此在判断右括号的时候在 `not lasts` 时 `return False` 。因为输入只有左右两种括号，所以可以放心在这个位置判断。
 
-```python
+```python :line-numbers
 class Solution:
 
     def isValid(self, s: str) -> bool:
