@@ -6,11 +6,12 @@ import { PageHandler, PageHooks } from "../src/utils/vitepress";
 const env = loadEnv('', process.cwd())
 const now = new Date().getFullYear()
 
-// https://vitepress.dev/reference/site-config
+// https://vitepress.dev/zh/reference/site-config
 const configs: UserConfig<DefaultTheme.Config> = {
     lang: 'zh-CN',
     title: 'Seraphonogram',
-    description: '阿羽的树洞',
+    description: '羽音博客',
+    titleTemplate: ':title • 羽音',
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',

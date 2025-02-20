@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Seraphonogram"
   text: "静谧星夜下\n不绝如缕的羽音"
-  tagline: "干净、整洁、纯粹、静谧、保鲜的日志树洞。"
+  tagline: "干净、整洁、纯粹、温暖、保鲜的技术博客"
   image:
     src: /mualani.gif
     alt: 阿羽的树洞
