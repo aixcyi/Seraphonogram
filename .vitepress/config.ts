@@ -42,8 +42,13 @@ const configs: UserConfig<DefaultTheme.Config> = {
         },
     },
     cleanUrls: true,
-    rewrites(id: string): string {
-        return id.replace(/^posts\/(.*)/, '$1')
+    rewrites(page: string): string {
+        const path = page
+            .replace(/^posts\/(.*)$/, '$1')
+            .replace(/^cheatsheet\/(.*)$/, '$1')
+        return path === 'index.md' && page !== 'index.md'
+            ? page
+            : path
     },
     markdown: {
         lineNumbers: true,
