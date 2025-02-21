@@ -15,16 +15,13 @@ tags:
 
 <RevisionInfo indent />
 
-> [!NOTE] 下文约定
-> 项目所在目录为 `./` ，Django Settings 所在目录为 `./{project}/` ，项目名称为 project 。
-
 ## 原生方法
 
 - ./manage.py
-- ./{project}/wsgi.py
-- ./{project}/asgi.py
+- ./your_project/wsgi.py
+- ./your_project/asgi.py
 
-三个启动文件中都有一个名为 `DJANGO_SETTINGS_MODULE` 的环境变量，变量值实际上是一个 Python 包的路径，默认是 `"{project}.settings"` ，对应 ./{project}/settings.py 这个文件。
+三个启动文件中都有一个名为 `DJANGO_SETTINGS_MODULE` 的环境变量，变量值实际上是一个 Python 包的路径，默认是 `"your_project.settings"` ，对应 ./your_project/settings.py 这个文件。
 
 Django 就是在启动时通过这个包路径导入对应的配置代码，构造 `django.conf.settings` 对象。
 
@@ -38,15 +35,15 @@ Django 就是在启动时通过这个包路径导入对应的配置代码，构�
 >     pass
 > ```
 
-当需要配置不同环境的 settings 时，一般建立多个不受版本控制的 `./{project}/settings_*.py` 文件，并在不同的环境下将环境变量 `DJANGO_SETTINGS_MODULE` 指向所需的文件。
+当需要配置不同环境的 settings 时，一般建立多个不受版本控制的 `./your_project/settings_*.py` 文件，并在不同的环境下将环境变量 `DJANGO_SETTINGS_MODULE` 指向所需的文件。
 
 - 开发环境：./manage.py
-- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/wsgi/)：./{project}/wsgi.py
-- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/asgi/)：./{project}/asgi.py
+- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/wsgi/)：./your_project/wsgi.py
+- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/asgi/)：./your_project/asgi.py
 
 这个文件可以配置如下：
 
-```python [./{project}/settings_*.py]
+```python [./your_project/settings_*.py]
 from service.settings import *
 
 DEBUG = True

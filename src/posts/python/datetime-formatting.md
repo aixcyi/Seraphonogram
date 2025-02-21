@@ -57,7 +57,7 @@ class MemberInfoSerializer(serializers.ModelSerializer):
 
 指定DRF的 **默认** 日期时间格式，并去掉序列化器字段中的 `format` 参数，这是最佳方案。
 
-```python [./{project}/settings.py]
+```python [settings.py]
 REST_FRAMEWORK = {
     'DATE_FORMAT': '%Y-%m-%d',
     'TIME_FORMAT': '%H:%M:%S',
