@@ -9,6 +9,7 @@ import "virtual:group-icons.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import NotFound from "../../src/components/NotFound.vue";
+import Paragraph from "../../src/components/Paragraph.vue";
 import RevisionInfo from "../../src/components/RevisionInfo.vue";
 import TagsCloud from "../../src/components/TagsCloud.vue";
 
@@ -26,6 +27,7 @@ export default {
             app.component(key, component)
         }
         app.use(ElementPlus)
+        app.component('Paragraph', Paragraph)
         app.component('RevisionInfo', RevisionInfo)
     }
 } satisfies Theme
