@@ -1,7 +1,7 @@
 ---
 title: 管理 Django Settings
 lang: zh-CN
-created: 2023-12-21 11:48
+publishAt: 2023-12-21 11:48
 expires: 1096
 excerpt: Django 的设置本身就是一个 Python 包，因此可以动态生成配置初值乃至导入初值。本文主要讲述不借助和借助第三方库的情况下如何管理多个环境的设置。
 tags:

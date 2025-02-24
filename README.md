@@ -80,8 +80,8 @@ vitepress build
 - `title` 必填，因为 VitePress Sidebar 没办法从正文提取标题。
 - `lang`：虽然并不使用国际化功能，但为了向前兼容，一般都写上。
 - `order`：目录排序，从小到大从前到后排序，在 `index.md` 中定义。
-- `created`：创建时间，`yyyy-MM-dd HH:mm` 格式字符串，必填，否则将不会出现在目录中。
-- `updated`：修改时间，`yyyy-MM-dd HH:mm` 格式字符串，选填。
+- `publishAt`：首版时间，`yyyy-MM-dd HH:mm` 格式字符串，必填，否则将不会出现在目录中。
+- `reviseAt`：修订时间，`yyyy-MM-dd HH:mm` 格式字符串，选填。
 - `expires`：保鲜时间，选填。提供一个以天为单位的整数时，显示保鲜进度条及百分比。
 - `excerpt`：文章简介，约定使用 HTML。
 - `tags`：文章标签，选填，若需要则必须以字符串数组的方式提供，实际呈现时会自动添加一个文章风格标签。

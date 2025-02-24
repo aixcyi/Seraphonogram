@@ -2,7 +2,7 @@
 title: 推导式
 lang: zh-CN
 outline: deep
-created: 2021-11-05 00:00
+publishAt: 2021-11-05 00:00
 expires: 3650
 excerpt: 推导式又叫生成式，是一种用于生成序列、集合、映射的语句。本文用直观的方式向读者解释其语法。
 tags:

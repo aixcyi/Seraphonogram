@@ -2,7 +2,7 @@
 title: Django Channels 主动模式
 lang: zh-CN
 outline: deep
-created: 2025-02-21 20:55
+publishAt: 2025-02-21 20:55
 expires: 1096
 excerpt: 如何通过 Django Channels 在 Django 项目中通过 WebSocket 实现后端主动通知前端。
 tags:

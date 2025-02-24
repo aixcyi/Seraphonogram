@@ -112,8 +112,8 @@ export default {
                 continue
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
-            if (!('created' in frontmatter)) {
-                // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.created 属性）
+            if (!('publishAt' in frontmatter)) {
+                // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.publishAt 属性）
                 continue
             }
 
@@ -136,7 +136,7 @@ export default {
                 .replace(/\.md$/, config.cleanUrls ? '' : '.html')
 
             const changed = parse(
-                frontmatter.updated ?? frontmatter.created,
+                frontmatter.reviseAt ?? frontmatter.publishAt,
                 'yyyy-MM-dd HH:mm',
                 new Date()
             )

@@ -12,11 +12,11 @@ const freshness = ref<number | undefined>(undefined)
 onContentUpdated(() => {
     const matter = $frontmatter.value
     const current = Date.now()
-    const createAt = matter.created ? parse(matter.created, "yyyy-MM-dd HH:mm", new Date()) : undefined
-    const updateAt = matter.updated ? parse(matter.updated, "yyyy-MM-dd HH:mm", new Date()) : undefined
-    const latestAt = [ updateAt, createAt ].filter(v => v !== undefined).sort((a, b) => b!.getTime() - a!.getTime())[0]
-    expires.value = matter.expires ? format(add(latestAt, { days: matter.expires }), "yyyy-MM") : undefined
-    freshness.value = matter.expires ? 100 - limit(0, Math.round(differenceInDays(current, latestAt) / matter.expires * 100), 100) : undefined
+    const publishAt = matter.publishAt ? parse(matter.publishAt, "yyyy-MM-dd HH:mm", new Date()) : undefined
+    const reviseAt = matter.reviseAt ? parse(matter.reviseAt, "yyyy-MM-dd HH:mm", new Date()) : undefined
+    const changeAt = [ reviseAt, publishAt ].filter(v => v !== undefined).sort((a, b) => b!.getTime() - a!.getTime())[0]
+    expires.value = matter.expires ? format(add(changeAt, { days: matter.expires }), "yyyy-MM") : undefined
+    freshness.value = matter.expires ? 100 - limit(0, Math.round(differenceInDays(current, changeAt) / matter.expires * 100), 100) : undefined
 })
 
 /**
@@ -31,7 +31,7 @@ function getFreshnessColor(percentage: number) {
 
 <template>
     <div ref="container"
-         :class="{ 'has-status': $frontmatter.created !== undefined }"
+         :class="{ 'has-status': $frontmatter.publishAt !== undefined }"
          class="AiDocAsideStatus"
     >
         <div class="container">
@@ -39,12 +39,12 @@ function getFreshnessColor(percentage: number) {
             <el-container class="content">
                 <el-main style="padding: 0">
                     <el-row align="middle" class="item">
-                        <el-col :span="6">发布于</el-col>
-                        <el-col :span="18">{{ $frontmatter.created }}</el-col>
+                        <el-col :span="6">首版于</el-col>
+                        <el-col :span="18">{{ $frontmatter.publishAt }}</el-col>
                     </el-row>
-                    <el-row v-if="$frontmatter.updated" align="middle" class="item">
-                        <el-col :span="6">更新于</el-col>
-                        <el-col :span="18">{{ $frontmatter.updated }}</el-col>
+                    <el-row v-if="$frontmatter.reviseAt" align="middle" class="item">
+                        <el-col :span="6">修订于</el-col>
+                        <el-col :span="18">{{ $frontmatter.reviseAt }}</el-col>
                     </el-row>
                     <el-row v-if="$frontmatter.expires" align="middle" class="item">
                         <el-col :span="6">保质期</el-col>

@@ -1,7 +1,7 @@
 ---
 title: 为自身定义 copy 方法
 lang: zh-CN
-created: 2022-08-17 00:04
+publishAt: 2022-08-17 00:04
 expires: 1096
 excerpt: '一些类自带了 <code>copy()</code> 或者用于浅拷贝的方法，比如内置的
           <code>list</code>、<code>dict</code>、decimal 的 <code>Decimal</code>

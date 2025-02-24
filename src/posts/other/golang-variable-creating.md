@@ -1,7 +1,7 @@
 ---
 title: Golang 创建同一个变量
 lang: zh-CN
-created: 2019-11-04 10:32
+publishAt: 2019-11-04 10:32
 expires: 1096
 tags:
     - 开发

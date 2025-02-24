@@ -1,7 +1,7 @@
 ---
 title: 两种字节序的直观比较
 lang: zh-CN
-created: 2020-02-22 16:45
+publishAt: 2020-02-22 16:45
 expires: 1096
 tags:
     - 字节序

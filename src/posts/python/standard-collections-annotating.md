@@ -1,7 +1,7 @@
 ---
 title: 标准多项集的标注方式
 lang: zh-CN
-created: 2024-01-31 17:13
+publishAt: 2024-01-31 17:13
 expires: 3650
 excerpt: '列表、元组、集合、字典的正确类型标注方式，细节可参阅
           <a href="https://peps.python.org/pep-0484/#the-typing-module"><b>PEP 484</b></a>。'

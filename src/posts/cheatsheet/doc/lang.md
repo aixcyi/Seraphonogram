@@ -2,7 +2,7 @@
 title: 语言篇
 lang: zh-CN
 outline: deep
-created: 2025-01-25 03:48
+publishAt: 2025-01-25 03:48
 expires: 365
 excerpt: '由相应技术栈的开发者编写的、面向具有一定经验的开发人员的、用于快速切换技术栈的书签集锦。'
 tags:

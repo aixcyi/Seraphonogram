@@ -1,7 +1,7 @@
 ---
 title: 20. 有效的括号
 lang: zh-CN
-created: 2024-01-10 00:04
+publishAt: 2024-01-10 00:04
 tags:
     - 算法
     - LeetCode

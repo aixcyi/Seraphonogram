@@ -1,7 +1,7 @@
 ---
 title: 避免 Decimal 溢出
 lang: zh-CN
-created: 2025-01-14 14:49
+publishAt: 2025-01-14 14:49
 expires: 1096
 excerpt: 后端使用 Decimal 时，前端应当配合传递 string 而非 number，否则会从数据源就可能出现过长的小数，导致排查链路过长或者问题反复出现。
 tags:

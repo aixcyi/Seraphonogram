@@ -77,8 +77,8 @@ const hooks: PageHooks = {
         return a.frontmatter.order - b.frontmatter.order
     },
     compareFile(a, b) {
-        return +(b.frontmatter.updated ?? b.frontmatter.created ?? 0)
-            - +(a.frontmatter.updated ?? a.frontmatter.created ?? 0)
+        return +(b.frontmatter.reviseAt ?? b.frontmatter.publishAt ?? 0)
+            - +(a.frontmatter.reviseAt ?? a.frontmatter.publishAt ?? 0)
     },
 }
 const hooksNav: PageHooks = {
