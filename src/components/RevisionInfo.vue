@@ -2,7 +2,6 @@
 import { useData } from "vitepress";
 
 const $frontmatter = useData().frontmatter
-const props = defineProps<{ indent?: boolean }>()
 </script>
 
 <template>
@@ -12,22 +11,9 @@ const props = defineProps<{ indent?: boolean }>()
             <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`" class="tag label">{{ tag }}</a>
         </el-space>
     </div>
-    <div class="status-bar excerpt">
-        <el-text v-if="$frontmatter.excerpt"
-                 :class="props.indent ? 'paragraph' : ''"
-                 type="info"
-                 v-html="$frontmatter.excerpt">
-        </el-text>
-    </div>
 </template>
 
 <style lang="scss" scoped>
-.excerpt {
-    align-items: center;
-    display: flex;
-    width: 100%;
-}
-
 .label {
     font-size: 14px !important;
     font-weight: unset !important;

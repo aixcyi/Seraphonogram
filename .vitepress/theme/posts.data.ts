@@ -53,6 +53,7 @@ const groups: { [title: string]: string[] } = {
 export interface Post {
     url: string
     title: string
+    excerpt: string
     changed: number
     column: string
     tags: string[]
@@ -151,6 +152,7 @@ export default {
             data.posts.push({
                 url: `/${url}`,
                 title: frontmatter.title,
+                excerpt: frontmatter.excerpt,
                 changed: changed.getTime(),
                 column,
                 tags,

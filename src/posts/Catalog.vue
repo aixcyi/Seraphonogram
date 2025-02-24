@@ -24,7 +24,12 @@ onMounted(() => {
             <menu class="article-list">
                 <li v-for="post in posts" class="article-item">
                     <pre>{{ post.date }}</pre>
-                    <a :href="post.url" class="article-link gradient-card">{{ post.title }}</a>
+                    <a :href="post.url" class="article-link gradient-card">
+                        <p class="excerpt-paragraph">{{ post.title }}</p>
+                        <p class="excerpt-paragraph">
+                            <el-text type="info" v-html="post.excerpt"></el-text>
+                        </p>
+                    </a>
                     <el-tag type="info">{{ post.column }}</el-tag>
                 </li>
             </menu>
@@ -121,6 +126,11 @@ onMounted(() => {
     overflow: hidden;
     padding: 0.3em 0.6em;
     color: var(--vp-c-text-1);
+}
+
+.excerpt-paragraph {
+    margin: 0;
+    line-height: 24px;
 }
 
 .gradient-card {

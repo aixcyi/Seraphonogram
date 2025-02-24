@@ -15,7 +15,7 @@ tags:
 
 # Python 推导式
 
-<RevisionInfo indent />
+<RevisionInfo />
 
 ## 列表推导式
 

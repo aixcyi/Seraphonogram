@@ -20,7 +20,7 @@ tags:
 
 # 默认值导致抽象泄漏
 
-<RevisionInfo indent />
+<RevisionInfo />
 
 <hr style="margin-top: 48px"/>
 

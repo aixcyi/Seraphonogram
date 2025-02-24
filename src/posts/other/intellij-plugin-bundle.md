@@ -19,7 +19,7 @@ tags:
 
 # IntelliJ 插件中使用 Bundle
 
-<RevisionInfo indent/>
+<RevisionInfo />
 
 > [!TIP] 另见
 > [《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)

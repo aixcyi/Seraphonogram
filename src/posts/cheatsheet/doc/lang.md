@@ -19,7 +19,7 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 # 即食文档 语言篇
 
-<RevisionInfo indent />
+<RevisionInfo />
 
 ## Python
 
