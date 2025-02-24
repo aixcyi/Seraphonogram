@@ -21,10 +21,9 @@ tags:
 
 <RevisionInfo />
 
-> [!TIP] 另见
-> [《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)
-
-<hr style="margin-top: 48px"/>
+<LinkCard href="https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/"
+          text="基于 IntelliJ 的 IDE，完全中文化版本现已就绪！"
+          logo="https://blog.jetbrains.com/wp-content/uploads/2024/01/cropped-mstile-310x310-1-192x192.png" />
 
 在插件市场中搜索 `/tag:"Language Pack"` 可以快速罗列所有语言包。然而，自语言包正式发布开始后，截至帖子发布时，三年多以来仅有中、日、韩三个语言包。
 

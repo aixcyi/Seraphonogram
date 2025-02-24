@@ -33,17 +33,13 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 ## 3.13 版本 {#313}
 
-无语法层面变动。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.13.html" text="Python 3.13 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.13.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+无语法层面变动。
 
 ## 3.12 版本 {#312}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html" text="Python 3.12 有什么新变化" />
 
 ### 泛型标注
 
@@ -145,13 +141,17 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 ## 3.11 版本 {#311}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html" text="Python 3.11 有什么新变化" />
 
 ### 异常组与 `except*`
 
-> 程序能够同时引发和处理多个不相关的异常。内置类型 [`ExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#ExceptionGroup) 和 [`BaseExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#BaseExceptionGroup) 使得将异常划分成组并一起引发成为可能，新添加的 [`except*`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except-star) 是对 [`except`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except) 的泛化语法，这一语法能够匹配异常组的子组。
+> 程序能够同时引发和处理多个不相关的异常。内置类型
+> [`ExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#ExceptionGroup)
+> 和 [`BaseExceptionGroup`](https://docs.python.org/zh-cn/3/library/exceptions.html#BaseExceptionGroup)
+> 使得将异常划分成组并一起引发成为可能，新添加的
+> [`except*`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except-star)
+> 是对 [`except`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except)
+> 的泛化语法，这一语法能够匹配异常组的子组。
 
 <SeeAlso>
     <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except">更新详情</SeeAlsoLink>
@@ -159,9 +159,7 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 
 ## 3.10 版本 {#310}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html" text="Python 3.10 有什么新变化" />
 
 ### 类型联合
 
@@ -301,9 +299,7 @@ with (
 
 ## 3.9 版本 {#39}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.9.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.9.html" text="Python 3.9 有什么新变化" />
 
 ### 多项集泛型
 
@@ -329,9 +325,7 @@ def choice(numbers: list[int]) -> int:
 
 ## 3.8 版本 {#38}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html" text="Python 3.8 有什么新变化" />
 
 ### 赋值表达式
 
@@ -471,9 +465,7 @@ print(f'{tomorrow=:%Y-%m-%d}')
 
 ## 3.7 版本 {#37}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html" text="Python 3.7 有什么新变化" />
 
 ### 类型标注延迟求值
 
@@ -519,9 +511,7 @@ class Book:
 
 ## 3.6 版本 {#36}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html" text="Python 3.6 有什么新变化" />
 
 ### f-字符串
 
@@ -626,9 +616,7 @@ assert 0x_0314_1592 == 0x03141592
 
 ## 3.5 版本 {#35}
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html" text="Python 3.5 有什么新变化" />
 
 ### 协程 async 和 await 语句
 
@@ -694,7 +682,9 @@ print(*[1], *[2], 3, *[4, 5])
 引入了 [typing](https://docs.python.org/zh-cn/3.5/library/typing.html) 模块提供类型标注的 **标准定义** 和工具，以及一些对于注释不可用的情况的约定。
 
 > [!TIP] 提示
-> 标注存储在[`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)属性中。
+> 标注存储在
+> [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)
+> 属性中。
 
 > [!NOTE] 备注
 > `List[str]` 指列表中的元素都是 `str` 类型；  
@@ -732,19 +722,15 @@ login((1, 'admin'))
 
 ## 3.4 版本 {#34}
 
-无语法层面变动。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.4.html" text="Python 3.4 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.4.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+无语法层面变动。
 
 ## 3.3 版本 {#33}
 
-无语法层面变动。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.3.html" text="Python 3.3 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.3.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+无语法层面变动。
 
 ### 委托子生成器
 
@@ -770,27 +756,21 @@ list(generate(5))
 
 ## 3.2 版本 {#32}
 
-无语法层面变动。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.2.html" text="Python 3.2 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.2.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+无语法层面变动。
 
 ## 3.1 版本 {#31}
 
-无语法层面变动。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.1.html" text="Python 3.1 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.1.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+无语法层面变动。
 
 ## 3.0 版本 {#30}
 
-Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，也欢迎提 issue 告知，或者提 pull-request 协助增补。
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.0.html" text="Python 3.0 有什么新变化" />
 
-<SeeAlso align="start">
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.0.html">所有新变化</SeeAlsoLink>
-</SeeAlso>
+Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，也欢迎提 issue 告知，或者提 pull-request 协助增补。
 
 ### 移除打印语句
 
@@ -834,7 +814,9 @@ print("断言：API接口缺少参数", file=sys.stderr)
 [**PEP 3107**](https://peps.python.org/pep-3107/)提议对参数和返回值进行标注，不过该提案（截止 3.4）还没有标准语义。
 
 > [!TIP] 提示
-> 标注存储在[`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)属性中。
+> 标注存储在
+> [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)
+> 属性中。
 
 对参数的标注：
 
