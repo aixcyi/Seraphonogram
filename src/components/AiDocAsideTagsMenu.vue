@@ -24,7 +24,7 @@ function toggle(tag: string) {
 </script>
 
 <template>
-    <template v-if="$frontmatter.tagsCloud">
+    <template v-if="$frontmatter.asideTagsMenu">
         <div class="outline-title">标签分组</div>
         <el-collapse>
             <el-collapse-item v-for="title in Object.keys(data.groups)"

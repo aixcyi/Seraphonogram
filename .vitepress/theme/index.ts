@@ -9,10 +9,10 @@ import "virtual:group-icons.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
+import AiDocAsideTagsMenu from "../../src/components/AiDocAsideTagsMenu.vue";
 import NotFound from "../../src/components/NotFound.vue";
 import Paragraph from "../../src/components/Paragraph.vue";
 import RevisionInfo from "../../src/components/RevisionInfo.vue";
-import TagsCloud from "../../src/components/TagsCloud.vue";
 
 export default {
     extends: DefaultTheme,
@@ -21,7 +21,7 @@ export default {
             // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
             'not-found': () => h(NotFound),
             'aside-top': () => h(AiDocAsideStatus),
-            'aside-outline-after': () => h(TagsCloud),
+            'aside-outline-after': () => h(AiDocAsideTagsMenu),
         })
     },
     enhanceApp({ app }) {

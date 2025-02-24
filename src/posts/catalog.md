@@ -4,7 +4,7 @@ lang: zh-CN
 prev: false
 next: false
 outline: false
-tagsCloud: true
+asideTagsMenu: true
 ---
 
 <script setup lang="ts">
