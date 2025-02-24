@@ -141,10 +141,28 @@ a:hover {
  * -------------------------------------------------------------------------- */
 
 :root {
-    --vp-custom-block-tip-border: transparent;
-    --vp-custom-block-tip-text: var(--vp-c-text-1);
-    --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-    --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+    --vp-custom-block-tip-bg: rgb(27, 178, 229, 16%);
+    --vp-custom-block-tip-code-bg: rgb(27, 178, 229, 20%);
+}
+
+.custom-block.tip code {
+    color: rgb(27, 178, 229);
+}
+
+.custom-block.tip .custom-block-title {
+    color: #c9e8f2;
+}
+
+.custom-block.important .custom-block-title {
+    color: #c8abfa;
+}
+
+.custom-block.warning .custom-block-title {
+    color: #f9b44e;
+}
+
+.custom-block.caution .custom-block-title {
+    color: #f66f81;
 }
 
 /**

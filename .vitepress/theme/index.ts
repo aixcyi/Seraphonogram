@@ -4,7 +4,7 @@ import ElementPlus from "element-plus";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { h } from "vue";
-import "./style.css";
+import "./style/index.css";
 import "virtual:group-icons.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
