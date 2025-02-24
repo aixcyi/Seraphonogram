@@ -14,6 +14,8 @@ tags:
 
 <RevisionInfo />
 
+<hr style="margin-top: 48px"/>
+
 `explorer.exe /select,addr`
 
 - 说明：addr是文件的绝对地址。比如“C:\WINDOWS\system\clac.exe”。

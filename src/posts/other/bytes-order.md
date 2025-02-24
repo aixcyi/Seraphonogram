@@ -13,6 +13,8 @@ tags:
 
 <RevisionInfo />
 
+<hr style="margin-top: 48px"/>
+
 > 小端字节序：低位字节在前，高位字节在后。  
 > 大端字节序：高位字节在前，低位字节在后。
 

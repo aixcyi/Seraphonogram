@@ -14,6 +14,8 @@ tags:
 
 <RevisionInfo />
 
+<hr style="margin-top: 48px"/>
+
 Java的 `+` `-` `*` `/` 的最低运算精度是 `int` ，所以以下代码会报错：
 
 ```java

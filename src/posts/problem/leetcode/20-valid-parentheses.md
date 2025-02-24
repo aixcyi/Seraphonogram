@@ -10,18 +10,16 @@ tags:
 
 # LeetCode 20. 有效的括号
 
-<RevisionInfo :badge="2">
-<template #badge1>
+<el-space wrap class="status-bar" style="width: 100%">
     <a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank">
         <img alt="力扣-20" src="https://img.shields.io/badge/LeetCode-20. 有效的括号-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
-</template>
-<template #badge2>
     <a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">
         <img alt="LeetCode-20" src="https://img.shields.io/badge/LeetCode-20. Valid Parentheses-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
-</template>
-</RevisionInfo>
+</el-space>
+
+<RevisionInfo />
 
 ## 题目
 

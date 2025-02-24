@@ -24,6 +24,8 @@ tags:
 > [!TIP] 另见
 > [《基于 IntelliJ 的 IDE，完全中文化版本现已就绪！》](https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/)
 
+<hr style="margin-top: 48px"/>
+
 在插件市场中搜索 `/tag:"Language Pack"` 可以快速罗列所有语言包。然而，自语言包正式发布开始后，截至帖子发布时，三年多以来仅有中、日、韩三个语言包。
 
 正因语言包不能涵盖大部分（甚至“部分”都谈不上）非英语语言，所以笔者认为 IntelliJ 插件多语言适配应当是以语言包为先、本地语言为次、最后以英语保底，而不应只以语言包为准，这是不现实的。

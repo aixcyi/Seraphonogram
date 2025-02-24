@@ -166,3 +166,8 @@ a:hover {
 .paragraph {
     text-indent: 2em;
 }
+
+.status-bar {
+    line-height: initial;
+    padding-top: 0.75rem;
+}

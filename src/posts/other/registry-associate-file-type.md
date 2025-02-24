@@ -13,6 +13,8 @@ tags:
 
 <RevisionInfo />
 
+<hr style="margin-top: 48px"/>
+
 注册表中储存文件关联信息的一些位置：
 
 1. HKEY_CLASSES_ROOT\

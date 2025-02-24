@@ -1,7 +1,6 @@
 ---
 title: 默认值导致抽象泄漏
 lang: zh-CN
-aside: false
 outline: false
 created: 2024-01-30 23:42
 expires: 1096
@@ -22,6 +21,8 @@ tags:
 # 默认值导致抽象泄漏
 
 <RevisionInfo indent />
+
+<hr style="margin-top: 48px"/>
 
 对于已事先声明的参数——即不通过 `args` 或 `kwargs` 传递的参数，Python 无法检测到是否被省略，因为无法分辨入参来源于调用还是默认值。
 

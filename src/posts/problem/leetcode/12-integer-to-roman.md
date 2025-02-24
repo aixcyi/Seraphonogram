@@ -10,18 +10,16 @@ tags:
 
 # LeetCode 12. 整数转罗马数字
 
-<RevisionInfo :badge="2">
-<template #badge1>
+<el-space wrap class="status-bar" style="width: 100%">
     <a href="https://leetcode.cn/problems/integer-to-roman/" target="_blank">
         <img alt="力扣-12" src="https://img.shields.io/badge/LeetCode-12. 整数转罗马数字-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
-</template>
-<template #badge2>
     <a href="https://leetcode.com/problems/integer-to-roman/" target="_blank">
         <img alt="LeetCode-12" src="https://img.shields.io/badge/LeetCode-12. Integer to Roman-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
-</template>
-</RevisionInfo>
+</el-space>
+
+<RevisionInfo />
 
 ## 题目
 
