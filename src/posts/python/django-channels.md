@@ -96,7 +96,7 @@ class OrderConsumer(AsyncWebsocketConsumer):
 
 如果不使用异步，需要用 `asgiref` 库进行转换：
 
-```python{13,17,20} [./your_app/consumers.py]
+```python{13,17,20-23} [./your_app/consumers.py]
 import json
 
 from asgiref.sync import async_to_sync
