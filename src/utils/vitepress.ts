@@ -154,7 +154,7 @@ export class PageHandler {
         for (const page of [ ...folders, ...files ].sort(hooks?.compareItem)) {
             if (!page.isIndex)
                 items.push({
-                    text: page.frontmatter.title,
+                    text: page.frontmatter.navTitle ?? page.frontmatter.title,
                     link: `/${page.url}`,
                 })
             else
@@ -177,21 +177,25 @@ export class PageHandler {
     public buildNav(dir: string, deep = false, hooks?: PageHooks): DefaultTheme.NavItemWithChildren {
         this.check()
         const soup = this.extract(dir)
-        const text = soup.filter(page => page.depth === 0 && page.isIndex)[0]?.frontmatter?.title ?? '(未命名)'
+        const index = soup.filter(page => page.depth === 0 && page.isIndex)[0]
+        const text = index?.frontmatter?.navTitle ?? index?.frontmatter?.title ?? '(未命名)'
         const files = soup.filter(page => page.depth === 0 && !page.isIndex).sort(hooks?.compareFile)
         const folders = soup.filter(page => page.depth === 1 && page.isIndex).sort(hooks?.compareFolder)
 
         if (!deep)
             return {
                 text,
-                items: files.map(v => ({ text: v.frontmatter.title, link: `/${v.url}` }))
+                items: files.map(v => ({
+                    text: v.frontmatter.navTitle ?? v.frontmatter.title,
+                    link: `/${v.url}`
+                }))
             }
 
         const items: DefaultTheme.NavItemChildren['items'] = []
         for (const page of [ ...folders, ...files ].sort(hooks?.compareItem)) {
             if (!page.isIndex)
                 items.push({
-                    text: page.frontmatter.title,
+                    text: page.frontmatter.navTitle ?? page.frontmatter.title,
                     link: `/${page.url}`,
                 })
             else

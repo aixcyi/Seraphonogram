@@ -77,7 +77,8 @@ vitepress build
 
 ### Frontmatter 约定
 
-- `title` 必填，因为 VitePress Sidebar 没办法从正文提取标题。
+- `title` 标题。必填，因为 `posts.data.ts` 不会从正文提取标题。会显示在页面标题、侧边栏、导航栏中。
+- `navTitle` 导航标题。选填。如果在 `index.md` 中，会覆盖导航栏的 `title`，如果在其它文件中，则会同时覆盖侧边栏和导航栏的 `title`。
 - `lang`：虽然并不使用国际化功能，但为了向前兼容，一般都写上。
 - `order`：目录排序，从小到大从前到后排序，在 `index.md` 中定义。
 - `publishAt`：首版时间，`yyyy-MM-dd HH:mm` 格式字符串，必填，否则将不会出现在目录中。

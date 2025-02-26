@@ -1,5 +1,6 @@
 ---
 title: Python 语法更新摘要
+navTitle: 语法更新摘要
 lang: zh-CN
 outline: deep
 publishAt: 2023-12-23 23:59

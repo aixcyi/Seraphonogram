@@ -1,5 +1,6 @@
 ---
 title: Python 食用指南
+navTitle: 食用指南
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
