@@ -1,6 +1,6 @@
 # Seraphonogram
 
-羽音，一个基于 VitePress＋VitePress Sidebar＋Element Plus 的独立博客站点。
+羽音，一个基于 VitePress 的博客。
 
 ## 快速开始
 

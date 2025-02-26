@@ -32,7 +32,7 @@ features:
     details: '一个 IntelliJ IDEA 插件，提供 Shebang 的插入与管理。
     利用它，你可以在特定文件（例如 Python 或 Shell 脚本）的第一行插入预设的 Shebang，如果已有则替换之。'
   - title: Quick Reference
-    link: https://quickref.me/python
+    link: https://cheatsheets.zip/python
     details: 'There are some cheatsheets and quick references contributed by open source angels on Quick Reference.
     I mainly contributed the Python part of cheatsheets.'
 ---
