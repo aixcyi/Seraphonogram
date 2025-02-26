@@ -1,5 +1,5 @@
 ---
-title: 即食文档
+title: Python 系列
 aside: false
 prev: false
 next: false

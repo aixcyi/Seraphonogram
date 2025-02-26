@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-const { align, sep } = defineProps<{ sep?: string, align?: string }>()
+import type { VNode } from "vue";
+
+const { align, sep } = defineProps<{ sep?: string | VNode, align?: string }>()
 </script>
 
 <template>
     <p :style="{textAlign: align ?? 'end'}">
-        <el-space :spacer="sep ?? ' '">
+        <el-space :spacer="sep ?? ' '" wrap>
             <slot/>
         </el-space>
     </p>

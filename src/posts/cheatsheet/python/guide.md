@@ -1,10 +1,9 @@
 ---
-title: 语言篇
+title: Python 食用指南
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
 expires: 365
-excerpt: '由相应技术栈的开发者编写的、面向具有一定经验的开发人员的、用于快速切换技术栈的书签集锦。'
 tags:
     - 文档
     - 开发
@@ -13,21 +12,26 @@ tags:
 ---
 
 <script setup lang="ts">
+import { spacer } from "@/commons.ts";
 import SeeAlso from "@/components/SeeAlso.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# 即食文档：语言篇
+# Python 食用指南
 
 <RevisionInfo />
 
-## Python
+<hr style="margin-top: 48px; margin-bottom: 16px"/>
 
-<SeeAlso align="center" sep="›‹">
-    <SeeAlsoLink pure href="https://docs.python.org/zh-cn/3/index.html">官方文档</SeeAlsoLink>
-    <SeeAlsoLink pure href="https://www.python.org/">官方网站</SeeAlsoLink>
-    <SeeAlsoLink pure href="https://peps.python.org/">PEP 索引</SeeAlsoLink>
+<SeeAlso align="center" :sep="spacer">
+    <SeeAlsoLink no-arrow href="https://docs.python.org/zh-cn/3/index.html">官方文档</SeeAlsoLink>
+    <SeeAlsoLink no-arrow href="https://www.python.org/">官方网站</SeeAlsoLink>
+    <SeeAlsoLink no-arrow href="https://peps.python.org/">PEP 索引</SeeAlsoLink>
+    <SeeAlsoLink no-arrow href="https://cheatsheets.zip/python">Python Cheatsheet</SeeAlsoLink>
+    <SeeAlsoLink no-arrow href="https://quickref.cn/docs/python.html">Python 备忘清单</SeeAlsoLink>
 </SeeAlso>
+
+<hr style="margin-top: 16px"/>
 
 ### 教程 {#tutorial}
 

@@ -21,7 +21,7 @@ hero:
       link: /mirror
     - theme: alt
       text: Python 语法更新摘要
-      link: /grammar
+      link: /python/news
 
 features:
   - title: HooTool - Dunder All

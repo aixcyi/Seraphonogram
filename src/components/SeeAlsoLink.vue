@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 
-const { href, pure } = defineProps<{ href: string, pure?: boolean }>()
+const { href, noArrow } = defineProps<{ href: string, noArrow?: boolean }>()
 </script>
 
 <template>
     <a :href="href" class="see-also-link" target="_blank">
         <span><slot/></span>
-        <Icon v-if="!pure" class="see-also-icon" icon="ep:top-right"/>
+        <Icon v-if="!noArrow" class="see-also-icon" icon="ep:top-right"/>
     </a>
 </template>
 
