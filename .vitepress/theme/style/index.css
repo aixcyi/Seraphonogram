@@ -181,6 +181,16 @@ a:hover {
     max-width: unset !important;
 }
 
+.VPDoc s {
+    filter: blur(4px);
+    transition: filter .2s;
+    text-decoration: none;
+}
+
+.VPDoc s:hover {
+    filter: blur(0);
+}
+
 .paragraph {
     text-indent: 2em;
 }
