@@ -33,9 +33,13 @@ const patterns = [
 const groups: { [title: string]: string[] } = {
     '领域': [ '开发', '测试', '运维', '算法', '设计' ],
     '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言' ],
-    '包、库、框架': [ 'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit' ],
-    '技术栈': [ 'pip', 'conda', 'virtualenv', 'venv', 'npm', 'IntelliJ 插件' ],
     '系统、工具、集成开发环境': [ 'Windows', 'Ubuntu', 'CentOS', 'PyCharm', 'IntelliJ IDE', '宝塔面板' ],
+    '包、库、框架': [
+        'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit', 'Django Channels',
+    ],
+    '技术栈': [
+        'pip', 'conda', 'virtualenv', 'venv', 'npm', 'IntelliJ 插件',
+    ],
     '程序开发术语': [
         '对象', '浮点数', '格式化', '国际化', '类', '类型', '类型标注', '浅拷贝', '生成器', '推导式',
         '序列化', '运算', '转型', '标准多项集', '视图', '文件IO', '字节序', '组件对象模型 COM', '语法',
