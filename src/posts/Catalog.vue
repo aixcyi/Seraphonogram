@@ -119,8 +119,11 @@ onMounted(() => {
     }
 
     .time {
+        // 缓解移动端 Edge 字体尺寸不准导致的换行溢出
+        white-space: nowrap;
+        transition: opacity 0.2s;
+
         margin: 0;
-        display: inline-block;
         opacity: 0.4;
 
         @media (max-width: 500px) {
@@ -129,10 +132,6 @@ onMounted(() => {
         @media (min-width: 500px) {
             display: inline-block;
         }
-
-        // 缓解移动端 Edge 字体尺寸不准导致的换行溢出
-        white-space: nowrap;
-        transition: opacity 0.2s;
     }
 
     &:hover > .time {
