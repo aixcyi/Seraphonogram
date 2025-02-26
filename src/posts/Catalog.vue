@@ -1,12 +1,8 @@
 <script lang="ts" setup>
 import { annuals, filterPosts, switches } from "@/states.ts";
-import { onMounted, ref } from "vue";
-
-const isShortScreen = ref(false)
+import { onMounted } from "vue";
 
 onMounted(() => {
-    isShortScreen.value = window.screen.width <= 1024
-    console.log(isShortScreen.value)
     const tags = new Set(
         new URLSearchParams(window.location.search).getAll('tag')
     )
