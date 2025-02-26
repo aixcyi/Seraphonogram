@@ -4,6 +4,7 @@ import { Icon } from "@iconify/vue";
 </script>
 
 <template>
+    <h2>狐言</h2>
     <h3>昵称与 ID</h3>
     <p class="paragraph">
         “砹小翼”是最初的昵称，取双拼拼音得到常用 ID <code>aixcyi</code> 并衍生出域名
@@ -13,44 +14,6 @@ import { Icon } from "@iconify/vue";
         ，于是改用 <code>ayuu</code> 作为新的 ID。不过
         <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
     </p>
-
-    <h3>技能树</h3>
-    <table>
-        <tbody>
-        <tr>
-            <td style="text-align: end"><h5>后端</h5></td>
-            <td>
-                <img alt="后端技术栈图标"
-                     src="https://skillicons.dev/icons?i=py,django,pycharm,postgres,redis,regex,postman"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: end"><h5>前端</h5></td>
-            <td>
-                <img alt="前端技术栈图标" src="https://skillicons.dev/icons?i=ts,vue,vite,webstorm,vscode"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: end"><h5>运维</h5></td>
-            <td>
-                <img alt="运维技术栈图标"
-                     src="https://skillicons.dev/icons?i=git,nginx,grafana,bash,github,stackoverflow,ubuntu,windows"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: end"><h5>IntelliJ 插件</h5></td>
-            <td>
-                <img alt="IntelliJ 技术栈图标" src="https://skillicons.dev/icons?i=kotlin,java,gradle,idea"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: end"><h5>设计创作</h5></td>
-            <td>
-                <img alt="设计创作类技术栈图标" src="https://skillicons.dev/icons?i=md,obsidian,blender"/>
-            </td>
-        </tr>
-        </tbody>
-    </table>
 
     <h3>捕蛇者说</h3>
     <el-timeline>
@@ -153,14 +116,6 @@ import { Icon } from "@iconify/vue";
 </template>
 
 <style scoped>
-th, tr {
-    background-color: var(--vp-c-bg) !important;
-}
-
-td {
-    border: none !important;
-}
-
 ul {
     list-style: none !important;
 }
@@ -172,5 +127,9 @@ li {
 .logo {
     display: inline;
     vertical-align: middle;
+}
+
+.el-timeline :deep(.el-timeline-item__content) {
+    color: var(--vp-c-text-1);
 }
 </style>
