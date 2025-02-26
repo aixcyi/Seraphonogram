@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import { annuals, filterPosts, switches } from "@/states.ts";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+
+const isShortScreen = ref(false)
 
 onMounted(() => {
+    isShortScreen.value = window.screen.width <= 1024
+    console.log(isShortScreen.value)
     const tags = new Set(
         new URLSearchParams(window.location.search).getAll('tag')
     )
@@ -23,14 +27,14 @@ onMounted(() => {
             </div>
             <menu class="article-list">
                 <li v-for="post in posts" class="article-item">
-                    <pre>{{ post.date }}</pre>
+                    <pre class="time">{{ post.date }}</pre>
                     <a :href="post.url" class="article-link gradient-card">
                         <p class="excerpt-paragraph">{{ post.title }}</p>
                         <p class="excerpt-paragraph">
                             <el-text type="info" v-html="post.excerpt"></el-text>
                         </p>
                     </a>
-                    <el-tag type="info">{{ post.column }}</el-tag>
+                    <el-tag class="column" type="info">{{ post.column }}</el-tag>
                 </li>
             </menu>
         </div>
@@ -105,17 +109,33 @@ onMounted(() => {
         font-size: 0.9em;
     }
 
-    pre {
+    .column {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    .time {
         margin: 0;
         display: inline-block;
         opacity: 0.4;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
+        @media (min-width: 500px) {
+            display: inline-block;
+        }
 
         // 缓解移动端 Edge 字体尺寸不准导致的换行溢出
         white-space: nowrap;
         transition: opacity 0.2s;
     }
 
-    &:hover > pre {
+    &:hover > .time {
         opacity: 1;
     }
 }
@@ -159,17 +179,19 @@ onMounted(() => {
         z-index: -1;
     }
 
-    &:hover, &.active {
-        background-position: 0;
-        color: var(--vp-c-text-1);
+    @media (min-width: 768px) {
+        &:hover, &.active {
+            background-position: 0;
+            color: var(--vp-c-text-1);
 
-        &::before {
-            background: no-repeat 100% / 400%;
-            background-image: linear-gradient(-15deg, #bd34fe, #47caff 40%, transparent 50%);
-        }
+            &::before {
+                background: no-repeat 100% / 400%;
+                background-image: linear-gradient(-15deg, #bd34fe, #47caff 40%, transparent 50%);
+            }
 
-        &::after {
-            background-color: var(--vp-c-bg);
+            &::after {
+                background-color: var(--vp-c-bg);
+            }
         }
     }
 }
