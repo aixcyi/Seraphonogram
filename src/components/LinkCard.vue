@@ -21,7 +21,7 @@ const logoSrc = !logo && href ? (new URL(href).origin + '/favicon.ico') : logo
 </template>
 
 
-<style>
+<style scoped>
 /* https://vitepress.yiov.top/components.html#%E9%93%BE%E6%8E%A5%E5%8D%A1%E7%89%87 */
 
 /* 卡片背景 */
@@ -68,7 +68,7 @@ const logoSrc = !logo && href ? (new URL(href).origin + '/favicon.ico') : logo
 }
 
 /* 链接下划线去除 */
-.vp-doc a {
+.VPDoc a {
     text-decoration: none;
 }
 
