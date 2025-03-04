@@ -32,7 +32,7 @@ const patterns = [
  */
 const groups: { [title: string]: string[] } = {
     '领域': [ '开发', '测试', '运维', '算法', '设计' ],
-    '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言' ],
+    '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言', 'Markdown', 'LaTex' ],
     '系统、工具、集成开发环境': [ 'Windows', 'Ubuntu', 'CentOS', 'PyCharm', 'IntelliJ IDE', '宝塔面板' ],
     '包、库、框架': [
         'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit', 'Django Channels',
