@@ -1,31 +1,38 @@
 <script lang="ts" setup>
-import { favicons } from "@/commons.ts";
+import { getFavicon } from "@/commons.ts";
+import { onMounted, ref } from "vue";
 
 const { href, text, note, logo } = defineProps<{ href?: string, text?: string, note?: string, logo?: string }>()
-const image = new Image()
-if (href) {
-    let cursor = 0
-    const root = new URL(href).origin
+const logoSrc = ref('')
+
+onMounted(() => {
+    if (!href)
+        return
+    const url = new URL(href)
+    const root = url.origin
     const paths = [
-        ...(logo ? [ logo ] : []),
-        ...(root in favicons ? [ favicons[root] ] : []),
+        logo,
+        getFavicon(url),
         `${root}/favicon.ico`,
         `${root}/favicon.svg`,
         `${root}/favicon.png`,
         `${root}/favicon.jpg`,
         `${root}/favicon.jpeg`,
-        `${root}/icons/favicon.ico`,
-        `${root}/images/favicon.ico`,
-        `${root}/icon/favicon.ico`,
-        `${root}/image/favicon.ico`,
-    ]
+    ].filter(
+        path => path != undefined
+    )
+
+    let cursor = 0
+    const image = new Image()
     image.src = paths[cursor]
     image.onerror = () => {
-        if (cursor >= paths.length)
+        const path = paths[++cursor]
+        if (path == undefined)
             return
-        image.src = paths[++cursor]
+        image.src = path
     }
-}
+    logoSrc.value = image.src
+})
 </script>
 
 
@@ -39,7 +46,7 @@ if (href) {
                 <span v-else class="link">{{ href }}</span>
             </p>
             <div class="logo">
-                <img :src="image.src" alt="logo" height="64px" onerror="this.style.display='none'" width="64px"/>
+                <img :src="logoSrc" alt="logo" height="64px" onload="this.style.display='block'" width="64px"/>
             </div>
         </a>
     </div>
@@ -98,10 +105,11 @@ if (href) {
 .LinkCard .logo img {
     width: 64px;
     margin: 16px;
+    display: none;
     object-fit: contain;
 
     @media (max-width: 500px) {
-        display: none;
+        display: none !important;
     }
 }
 </style>
