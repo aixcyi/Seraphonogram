@@ -29,7 +29,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
         ],
         langMenuLabel: '切换语言',
-        sidebarMenuLabel: '所有博客',
+        sidebarMenuLabel: '栏目页面',
         darkModeSwitchLabel: '颜色主题',
         darkModeSwitchTitle: '切换到深色主题',
         lightModeSwitchTitle: '切换到浅色主题',
@@ -42,14 +42,6 @@ const configs: UserConfig<DefaultTheme.Config> = {
         },
     },
     cleanUrls: true,
-    rewrites(page: string): string {
-        const path = page
-            .replace(/^posts\/(.*)$/, '$1')
-            .replace(/^cheatsheet\/(.*)$/, '$1')
-        return path === 'index.md' && page !== 'index.md'
-            ? page
-            : path
-    },
     markdown: {
         math: true,
         config(md) {
@@ -69,7 +61,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
 }
 
-const sidebar = new PageHandler(configs).scan('./posts/about.md', './posts/catalog.md')
+const sidebar = new PageHandler(configs).scan('./about.md', './posts/catalog.md')
 const hooks: PageHooks = {
     compareFolder(a, b) {
         return a.frontmatter.order - b.frontmatter.order
@@ -86,13 +78,14 @@ const hooksNav: PageHooks = {
     },
 }
 configs.themeConfig.sidebar = {
-    '/': sidebar.buildSidebar('./src/posts/', true, true, hooks),
+    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hooks),
+    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hooksNav),
 }
 configs.themeConfig.nav = [
-    { text: '目录', link: '/catalog' },
+    { text: '博客', link: '/posts/catalog' },
+    sidebar.buildNav('./src/refs/', true, hooksNav),
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
-    sidebar.buildNav('./src/posts/cheatsheet/', true, hooksNav),
     {
         text: '交流',
         items: [

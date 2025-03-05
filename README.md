@@ -62,18 +62,15 @@ vitepress build
     ├─components  # 组件代码
     ├─image       # 图片，对应URL中的 /image/*.*
     ├─posts       # 博客文章
+    ├─problemset  # 题单
     ├─public      # 静态资源
+    ├─refs        # 快速参考
     ├─utils       # 工具代码
     ├─about.md    # 关于
     └─index.md    # 首页
 ```
 
 ## 约定
-
-### 目录命名约定
-
-- 会出现在 URL 中的目录使用单词**单数**命名；
-- 不会出现在 URL 中的目录使用单词**复数**命名。
 
 ### Frontmatter 约定
 

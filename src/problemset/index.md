@@ -1,5 +1,5 @@
 ---
-title: 自测题单 (非OJ)
+title: 自测题单
 aside: false
 prev: false
 next: false

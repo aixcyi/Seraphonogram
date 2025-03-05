@@ -12,16 +12,16 @@ hero:
   actions:
     - theme: brand
       text: 博客目录
-      link: /catalog
+      link: /posts/catalog
     - theme: alt
       text: 时间戳对照表
-      link: /timestamp
+      link: /refs/timestamp
     - theme: alt
       text: 镜像源
-      link: /mirror
+      link: /refs/mirror
     - theme: alt
       text: Python 语法更新摘要
-      link: /python/news
+      link: /refs/python/news
 
 features:
   - title: HooTool - Dunder All
