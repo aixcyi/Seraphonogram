@@ -8,7 +8,7 @@ const $frontmatter = useData().frontmatter
     <div class="status-bar">
         <el-space spacer=" " wrap>
             <el-text class="label" type="info">标签</el-text>
-            <a v-for="tag in $frontmatter.tags" :href="`/catalog?tag=${tag}`" class="tag label">{{ tag }}</a>
+            <a v-for="tag in $frontmatter.tags" :href="`/posts/catalog?tag=${tag}`" class="tag label">{{ tag }}</a>
         </el-space>
     </div>
 </template>
