@@ -45,15 +45,15 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <RevisionInfo><!-- TODO: 不知道为什么无法传参 -->
-        <div class="paragraph">
-            常见镜像站点有
-            <span v-for="(mirror, index) in mirrors">
-                <a :href="mirror.site">{{ mirror.name }}</a>
-                <span v-if="isLastMirror(index)">、</span>
-            </span>，排名不分先后，站点各有侧重，选择适合即可。以下是不同包管理的镜像源设置：<br/>
-        </div>
-    </RevisionInfo>
+    <RevisionInfo/>
+
+    <p class="paragraph">
+        常见镜像站点有
+        <span v-for="(mirror, index) in mirrors">
+            <a :href="mirror.site">{{ mirror.name }}</a>
+            <span v-if="isLastMirror(index)">、</span>
+        </span>，排名不分先后，站点各有侧重，选择适合即可。以下是不同包管理的镜像源设置：<br/>
+    </p>
 
     <h2 id="pypi">PyPI 镜像源</h2>
     <div class="tip custom-block">
