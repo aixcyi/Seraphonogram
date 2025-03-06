@@ -82,7 +82,7 @@ configs.themeConfig.sidebar = {
     '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hooksNav),
 }
 configs.themeConfig.nav = [
-    { text: '博客', link: '/posts/catalog' },
+    { text: '博客', link: '/posts/catalog', activeMatch: '/posts/' },
     sidebar.buildNav('./src/refs/', true, hooksNav),
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
