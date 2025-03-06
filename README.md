@@ -62,7 +62,6 @@ vitepress build
     ├─components  # 组件代码
     ├─image       # 图片，对应URL中的 /image/*.*
     ├─posts       # 博客文章
-    ├─problemset  # 题单
     ├─public      # 静态资源
     ├─refs        # 快速参考
     ├─utils       # 工具代码
