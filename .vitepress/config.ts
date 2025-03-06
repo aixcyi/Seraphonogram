@@ -61,7 +61,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
 }
 
-const sidebar = new PageHandler(configs).scan('./about.md', './posts/catalog.md')
+const sidebar = new PageHandler(configs).scan()
 const hooks: PageHooks = {
     compareFolder(a, b) {
         return a.frontmatter.order - b.frontmatter.order

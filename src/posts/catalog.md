@@ -1,5 +1,5 @@
 ---
-title: 目录
+title: 博客目录
 lang: zh-CN
 prev: false
 next: false
