@@ -60,6 +60,7 @@ class CustomList[T]:
 ```
 
 <SeeAlso>
+    <SeeAlsoLink href="https://typing.python.org/en/latest/spec/generics.html">Python 类型系统规范</SeeAlsoLink>
     <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax">更新详情</SeeAlsoLink>
 </SeeAlso>
 

@@ -54,6 +54,12 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 > 当你清楚一个英文术语，却不了解它在 Python 中对应的概念或翻译时，可以参考此表。并且，可能会出现在代码中的 `...` 在此亦有解释。
 
+### 类型与标注{typing}
+
+<LinkCard href="https://typing.python.org/en/latest/spec/" text="Python 类型系统规范（英文）" />
+
+> 讲述 Python 的类型系统设计、语法规范，对了解未知的语法颇有帮助。
+
 ### 运算符优先级 {#operator-precedence}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/reference/expressions.html#operator-precedence" text="6.17. 运算符优先级" />
