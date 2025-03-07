@@ -1,6 +1,6 @@
 ---
-title: Python 食用指南
-navTitle: 食用指南
+title: Python 导航
+navTitle: 导航
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
@@ -18,7 +18,7 @@ import SeeAlso from "@/components/SeeAlso.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# Python 食用指南
+# Python 导航
 
 <RevisionInfo />
 
