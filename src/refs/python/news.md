@@ -7,6 +7,7 @@ publishAt: 2023-12-23 23:59
 reviseAt: 2024-12-27 17:54
 expires: 365
 excerpt: 本文包含 Python 3.0 以来语法上的更新，主要包括类型标注系统以及一些语句语法的变动。
+order: 1
 ---
 
 <script setup lang="ts">

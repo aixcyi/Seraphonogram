@@ -64,28 +64,25 @@ const configs: UserConfig<DefaultTheme.Config> = {
 }
 
 const sidebar = new PageHandler(configs).scan()
-const hooks: PageHooks = {
-    compareFolder(a, b) {
-        return a.frontmatter.order - b.frontmatter.order
-    },
-    compareFile(a, b) {
-        return +(b.frontmatter.reviseAt ?? b.frontmatter.publishAt ?? 0)
-            - +(a.frontmatter.reviseAt ?? a.frontmatter.publishAt ?? 0)
-    },
+const hookPosts: PageHooks = {
+    compareFolder: (a, b) => a.frontmatter.order - b.frontmatter.order,
+    compareFile: (a, b) => (
+        +(b.frontmatter.reviseAt ?? b.frontmatter.publishAt ?? 0)
+        - +(a.frontmatter.reviseAt ?? a.frontmatter.publishAt ?? 0)
+    ),
 }
-const hooksNav: PageHooks = {
-    ...hooks,
-    compareItem() {
-        return -1
-    },
+const hookRefs: PageHooks = {
+    compareFolder: (a, b) => a.frontmatter.order - b.frontmatter.order,
+    compareFile: (a, b) => a.frontmatter.order - b.frontmatter.order,
+    compareItem: () => -1,
 }
 configs.themeConfig.sidebar = {
-    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hooks),
-    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hooksNav),
+    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
+    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
 }
 configs.themeConfig.nav = [
     { text: '博客', link: '/posts/catalog', activeMatch: '/posts/' },
-    sidebar.buildNav('./src/refs/', true, hooksNav),
+    sidebar.buildNav('./src/refs/', true, hookRefs),
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
 ]
