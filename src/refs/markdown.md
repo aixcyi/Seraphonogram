@@ -4,16 +4,9 @@ lang: zh-CN
 outline: deep
 publishAt: 2025-03-24 16:17
 expires: 365
-tags:
-    - 开发
-    - 运维
-    - Markdown
-    - LaTex
 ---
 
 # Markdown 语法
-
-<RevisionInfo />
 
 > [!WARNING] 注意
 > Markdown 在不同环境下语法会有细微差别，实际渲染效果也不完全相同，请根据所在环境查找相应文档。

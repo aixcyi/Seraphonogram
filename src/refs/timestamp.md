@@ -6,11 +6,6 @@ outline: false
 publishAt: 2023-12-21 10:02
 reviseAt: 2025-01-02 10:24
 excerpt: 工具表格，用来查不同进位制（不同字符集）下的计数空间，以及不同单位的时间存储上限。
-tags:
-    - 开发
-    - 设计
-    - 时间戳
-    - 进位制
 ---
 
 <script setup lang="ts">
@@ -18,8 +13,6 @@ import TimestampTables from "./TimestampTables.vue";
 </script>
 
 # 时间戳对照表
-
-<RevisionInfo />
 
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。

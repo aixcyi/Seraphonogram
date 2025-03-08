@@ -7,13 +7,6 @@ publishAt: 2023-12-23 23:59
 reviseAt: 2024-12-27 17:54
 expires: 365
 excerpt: 本文包含 Python 3.0 以来语法上的更新，主要包括类型标注系统以及一些语句语法的变动。
-tags:
-    - 开发
-    - 测试
-    - Python
-    - 语法
-    - 标准多项集
-    - 类型标注
 ---
 
 <script setup lang="ts">
@@ -21,9 +14,7 @@ import SeeAlso from "@/components/SeeAlso.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# 语法更新摘要
-
-<RevisionInfo />
+# Python 语法更新摘要
 
 > [!WARNING] 仅供粗略参考
 > 本文仅仅只是粗略摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。

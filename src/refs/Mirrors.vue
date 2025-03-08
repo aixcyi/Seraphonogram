@@ -45,8 +45,6 @@ function isLastMirror(_index: integer): boolean {
 </script>
 
 <template>
-    <RevisionInfo/>
-
     <p class="paragraph">
         常见镜像站点有
         <span v-for="(mirror, index) in mirrors">

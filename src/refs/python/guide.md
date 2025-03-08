@@ -5,11 +5,6 @@ lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
 expires: 365
-tags:
-    - 文档
-    - 开发
-    - 设计
-    - Python
 ---
 
 <script setup lang="ts">
@@ -19,8 +14,6 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
 # Python 导航
-
-<RevisionInfo />
 
 <hr style="margin-top: 48px; margin-bottom: 16px"/>
 
