@@ -11,7 +11,11 @@ outline: false
 
 𝑺𝒆𝒆𝒅𝒔 𝒐𝒇 𝒔𝒕𝒐𝒓𝒊𝒆𝒔, 𝒃𝒓𝒐𝒖𝒈𝒉𝒕 𝒃𝒚 𝒕𝒉𝒆 𝒘𝒊𝒏𝒅 𝒂𝒏𝒅 𝒄𝒖𝒍𝒕𝒊𝒗𝒂𝒕𝒆𝒅 𝒃𝒚 𝒕𝒊𝒎𝒆.
 
-## 技能
+## 现状
+
+### 生活与工作
+
+毛茸茸爱好者／Furry／全职后端开发／在职
 
 ### 开发技术栈
 
@@ -58,11 +62,17 @@ outline: false
     <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
 </p>
 
+### 站点简述
+
+<p class="paragraph">
+    站点名为「羽音」，对应 <i>Seraphonogram</i>，目前分“博客”和“快速参考”两个板块，板块之间的侧边栏是独立的，前者用来存放图文类的博文，后者用于存放平时总结的工具、经验的摘要等。
+</p>
+
 ### 捕蛇者说
 
 <el-timeline>
     <el-timeline-item color="#A349A4" timestamp="2012 年，暑假">
-        偶遇易语言，初窥计算机世界。
+        偶遇易语言，颇觉好玩，由此初窥计算机世界。
     </el-timeline-item>
     <el-timeline-item color="#A349A4" timestamp="2016 年 8 月">
         在博客园发布第一篇博客。
@@ -151,7 +161,7 @@ outline: false
         。
     </el-timeline-item>
     <el-timeline-item timestamp="现在">
-        编码已融入生活，而生活仍在继续……
+        编码已融入生活，而生活仍在继续。有一分热，发一分光。
     </el-timeline-item>
     <el-timeline-item :icon="Bottom" size="large">
         <i>有时明月无人夜，独向昭潭制恶龙</i>
