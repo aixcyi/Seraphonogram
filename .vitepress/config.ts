@@ -27,6 +27,8 @@ const configs: UserConfig<DefaultTheme.Config> = {
         socialLinks: [
             { icon: 'github', link: 'https://github.com/aixcyi' },
             { icon: 'gitee', link: 'https://gitee.com/aixcyi' },
+            { icon: 'qq', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
+            { icon: 'telegram', link: 'https://t.me/ayuucc' },
         ],
         langMenuLabel: '切换语言',
         sidebarMenuLabel: '栏目页面',
@@ -86,13 +88,6 @@ configs.themeConfig.nav = [
     sidebar.buildNav('./src/refs/', true, hooksNav),
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
-    {
-        text: '交流',
-        items: [
-            { text: 'QQ 群', link: 'https://qm.qq.com/q/ZqCGqpMXy8' },
-            { text: 'Telegram 群组', link: 'https://t.me/ayuucc' },
-        ]
-    },
 ]
 
 export default defineConfig(configs)
