@@ -92,11 +92,11 @@ export default {
                 continue
             }
 
-            // 提取路径中的文件夹，转换为名称，添加到标签
+            // 提取路径中的文件夹，转换为名称
             const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
             // 下标表示src深度：./src/* => 0，./src/posts/* => 1，以此类推。
             const column = folders.get(srcPath.split('/')[1])?.title
-            const tags = [ ...new Set([ column, ...(frontmatter.tags ?? []) ]) ].sort((a, b) => {
+            const tags = [ ...new Set(frontmatter.tags as string[] ?? []) ].sort((a, b) => {
                 // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
                 const lenA = Buffer.byteLength(a, 'utf8')
                 const lenB = Buffer.byteLength(b, 'utf8')
