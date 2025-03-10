@@ -4,7 +4,6 @@ lang: zh-CN
 prev: false
 next: false
 outline: false
-asideTagsMenu: true
 ---
 
 <script setup lang="ts">

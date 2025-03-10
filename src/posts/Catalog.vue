@@ -1,6 +1,23 @@
 <script lang="ts" setup>
 import { annuals, filterPosts, switches } from "@/states.ts";
 import { onMounted } from "vue";
+import { data } from "../../.vitepress/theme/posts.data.ts";
+
+
+function toggle(tag: string) {
+    switches[tag] = !switches[tag]
+    filterPosts()
+
+    const url = new URL(window.location.href)
+    const query = new URLSearchParams(url.search)
+    query.delete('tag')
+    for (const label in switches)
+        if (switches[label])
+            query.append('tag', label)
+
+    url.search = query.toString()
+    window.history.pushState({}, "", url)
+}
 
 onMounted(() => {
     const tags = new Set(
@@ -12,8 +29,28 @@ onMounted(() => {
 })
 </script>
 
+
 <template>
-    <div class="catalog">
+    <div class="ai-head">
+        <h1>羽音 • <i>Seraphonogram</i></h1>
+    </div>
+
+    <div class="ai-tags">
+        <el-space style="gap: .5rem" wrap>
+            <button v-for="(qty, tag) in data.tags"
+                    :key="tag"
+                    :class="['tag-btn', switches[tag] ? 'selected' : '']"
+                    @click="toggle(tag)">
+                <span>#</span>
+                <span class="tag-name">{{ tag }}</span>
+                <span v-if="qty > 1" class="tag-count">{{ data.tags[tag] }}</span>
+            </button>
+        </el-space>
+    </div>
+
+    <hr/>
+
+    <div class="ai-catalog">
         <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
             <div class="catalog-title">
                 <h2 class="catalog-year">{{ year }}</h2>
@@ -40,12 +77,46 @@ onMounted(() => {
 <style lang="scss" scoped>
 // https://github.com/L33Z22L11/blog-v3/
 
-.filter {
-    margin-bottom: 3rem;
+.ai-head {
+    text-align: center;
 }
 
-.catalog {
-    margin: 1rem;
+.ai-tags {
+    margin: 3rem 0;
+
+    .tag-btn {
+        padding: 1px 12px;
+        font-size: 14px;
+        color: var(--vp-c-text-3);
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background-color: rgba(#000, 20%);
+
+        &:hover {
+            background-color: var(--vp-c-text-3);
+        }
+    }
+
+    .tag-btn.selected {
+        background-color: var(--vp-c-text-3);
+
+        &:hover {
+            border: 2px solid var(--vp-c-text-3);
+            background-color: rgba(#000, 20%);
+        }
+    }
+
+    .tag-name {
+        color: var(--vp-c-text-1);
+    }
+
+    .tag-count {
+        margin-left: .25rem;
+    }
+}
+
+.ai-catalog {
+    margin: 3rem 1rem;
     mask: linear-gradient(#fff 50%, #fff5);
 }
 

@@ -10,8 +10,6 @@ import type { SiteConfig } from "vitepress";
 
 const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
 
-const comparePinyin = (a: string, b: string) => pinyin(a).join('').localeCompare(pinyin(b).join(''))
-
 
 /**
  * 博客文件路径通配符。
@@ -25,30 +23,6 @@ const patterns = [
         ? normalizePath(pathlib.join(config.srcDir!, p))
         : p[0] + normalizePath(pathlib.join(config.srcDir!, p.substring(1)))
 )
-
-
-/**
- * 标签分组。
- */
-const groups: { [title: string]: string[] } = {
-    '领域': [ '开发', '测试', '运维', '算法', '设计' ],
-    '语言': [ 'Python', 'Kotlin', 'Golang', 'Java', '易语言', 'Markdown', 'LaTex' ],
-    '系统、工具、集成开发环境': [ 'Windows', 'Ubuntu', 'CentOS', 'PyCharm', 'IntelliJ IDE', '宝塔面板' ],
-    '包、库、框架': [
-        'datetime', 'Django', 'Django REST Framework', 'Django OAuth Toolkit', 'Django Channels',
-    ],
-    '技术栈': [
-        'pip', 'conda', 'virtualenv', 'venv', 'npm', 'IntelliJ 插件',
-    ],
-    '程序开发术语': [
-        '对象', '浮点数', '格式化', '国际化', '类', '类型', '类型标注', '浅拷贝', '生成器', '推导式',
-        '序列化', '运算', '转型', '标准多项集', '视图', '文件IO', '字节序', '组件对象模型 COM', '语法',
-        '十进制小数',
-    ].sort(comparePinyin),
-    '运维部署': [
-        '兼容', '镜像', '控制台', '命令行', '配置', '虚拟环境',
-    ].sort(comparePinyin),
-}
 
 
 /**
@@ -75,10 +49,7 @@ export interface Data {
     posts: Post[]
 
     /** 标签及相应博客的数量 */
-    tags: { [key: string]: integer }
-
-    /** 标签分组 **/
-    groups: { [key: string]: string[] }
+    tags: Record<string, integer>
 }
 
 
@@ -90,7 +61,7 @@ export default {
     watch: patterns,
     async load(files: string[]) {
         const maps = config.rewrites['map']
-        const data: Data = { posts: [], tags: {}, groups }
+        const data: Data = { posts: [], tags: {} }
 
         // 提取文件夹名称
         let folders = new Map<string, Record<string, any>>()
@@ -174,21 +145,6 @@ export default {
             tags[label] = data.tags[label]
         }
         data.tags = tags
-
-        // 提取栏目名称
-        data.groups = {
-            '栏目': [ ...new Set(data.posts.map(p => p.column)) ].sort(comparePinyin),
-            ...data.groups,
-        }
-
-        // 统一存放未分组的标签
-        data.groups['其它'] = []
-        const groupedTags = new Set(Object.values(data.groups).flat())
-        for (const label of labels) {
-            if (groupedTags.has(label))
-                continue
-            data.groups['其它'].push(label)
-        }
 
         return data
     }
