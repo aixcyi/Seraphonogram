@@ -8,7 +8,7 @@ excerpt: 'Bundle 是 Java 自带的提供本地化翻译的功能，因为出现
 tags:
     - 开发
     - IntelliJ 插件
-    - 国际化
+    - 国际化 i18n
 ---
 
 <style scoped>
