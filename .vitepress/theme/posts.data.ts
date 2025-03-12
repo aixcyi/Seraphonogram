@@ -88,7 +88,7 @@ export default {
             if (!file.endsWith('.md')) {
                 continue
             }
-            const { data: frontmatter, excerpt } = matter(fs.readFileSync(file, 'utf-8'), { excerpt: true })
+            const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'), { excerpt: true })
             if (!('publishAt' in frontmatter)) {
                 // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.publishAt 属性）
                 continue
@@ -121,7 +121,7 @@ export default {
             )
 
             // 渲染页面摘要
-            const renderedExcerpt = excerpt ? md.renderInline(excerpt) : ''
+            const renderedExcerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
 
             // 按标签统计博客数目
             tags.forEach(tag => {

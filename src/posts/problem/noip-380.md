@@ -6,8 +6,8 @@ tags:
     - 算法
     - NOIP
     - 蓝桥杯
----
-NOIP 2005 普及组第二题，蓝桥杯 ALGO-29
+excerpt:
+    NOIP 2005 普及组第二题，蓝桥杯 ALGO-29
 ---
 
 # NOIP 380. 校门外的树

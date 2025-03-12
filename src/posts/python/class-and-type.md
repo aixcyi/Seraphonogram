@@ -10,8 +10,8 @@ tags:
     - 设计
     - 开发
     - Python
----
-一次关于 Python 类型（type）、类（class）、对象（object）的思考。
+excerpt:
+    一次关于 Python 类型（type）、类（class）、对象（object）的思考。
 ---
 
 <style scoped>

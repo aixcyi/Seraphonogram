@@ -8,7 +8,7 @@ tags:
     - 易语言
     - 组件对象模型 COM
     - win32api
----
+excerpt:
 ---
 
 # 使用COM对象取文件版本

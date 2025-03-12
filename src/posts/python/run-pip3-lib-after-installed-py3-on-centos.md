@@ -7,7 +7,7 @@ tags:
     - 运维
     - CentOS
     - Python
----
+excerpt:
 ---
 
 <style scoped>

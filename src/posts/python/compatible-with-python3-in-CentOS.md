@@ -8,7 +8,7 @@ tags:
     - CentOS
     - Python
     - 宝塔面板
----
+excerpt:
 ---
 
 # 宝塔面板与 Python 3 的恩怨情仇

@@ -7,8 +7,8 @@ tags:
     - 开发
     - Python
     - 文件IO
----
-内置函数 [`open()`](https://docs.python.org/zh-cn/3/library/functions.html#open) 打开模式这个参数的归纳。
+excerpt:
+    内置函数 [`open()`](https://docs.python.org/zh-cn/3/library/functions.html#open) 打开模式这个参数的归纳。
 ---
 
 # Python 文件打开模式

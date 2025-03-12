@@ -8,7 +8,7 @@ tags:
     - Java
     - 类型系统
     - 运算
----
+excerpt:
 ---
 
 # Java 运算精度

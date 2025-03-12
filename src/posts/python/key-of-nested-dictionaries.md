@@ -7,7 +7,7 @@ tags:
     - 开发
     - Python
     - 标准多项集
----
+excerpt:
 ---
 
 <style scoped>

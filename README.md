@@ -81,6 +81,7 @@ vitepress build
 - `reviseAt`：修订时间，`yyyy-MM-dd HH:mm` 格式字符串，选填。
 - `expires`：保鲜时间，选填。提供一个以天为单位的整数时，显示保鲜进度条及百分比。
 - `tags`：文章标签，选填，若需要则必须以字符串数组的方式提供，实际呈现时会自动添加一个文章风格标签。
+- `excerpt`：文章简介，Markdown 格式。须放在 Frontmatter 最后一个字段，方便日后迁移。
 
 ### 提交消息约定
 

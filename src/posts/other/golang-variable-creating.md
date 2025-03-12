@@ -7,7 +7,7 @@ tags:
     - 开发
     - Golang
     - 语法
----
+excerpt:
 ---
 
 # Golang 创建同一个变量

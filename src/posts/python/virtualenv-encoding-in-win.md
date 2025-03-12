@@ -11,9 +11,9 @@ tags:
     - Windows
     - Python
     - 虚拟环境
----
-使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀
-`(venv)` 字样，但 `pip -V` 显示当前 pip 并没有指向父环境。
+excerpt:
+    使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀
+    `(venv)` 字样，但 `pip -V` 显示当前 pip 并没有指向父环境。
 ---
 
 <style scoped>

@@ -8,8 +8,8 @@ tags:
     - 国际化 i18n
     - IntelliJ IDE
     - 配置
----
-帮助新手修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
+excerpt:
+    帮助新手修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
 ---
 
 <style scoped>
