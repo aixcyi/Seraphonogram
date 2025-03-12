@@ -10,7 +10,6 @@ tags:
     - 开发
     - 令牌
     - Django
-    - Django OAuth Toolkit
 ---
 
 <style scoped>

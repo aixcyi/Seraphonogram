@@ -11,7 +11,6 @@ tags:
     - 测试
     - Python
     - Django
-    - Django REST Framework
     - 浮点数
 ---
 

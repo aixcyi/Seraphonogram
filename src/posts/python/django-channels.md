@@ -9,7 +9,6 @@ tags:
     - 开发
     - Python
     - Django
-    - Django Channels
 ---
 
 # Django Channels 主动模式

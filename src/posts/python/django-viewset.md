@@ -9,9 +9,7 @@ excerpt: '浅析 <a href="https://docs.djangoproject.com/zh-hans/4.2/topics/clas
 tags:
     - 开发
     - Django
-    - Django REST Framework
     - 视图
-    - 类
 ---
 
 # 浅析 Django 及衍生的类视图

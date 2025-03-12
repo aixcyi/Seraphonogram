@@ -8,7 +8,6 @@ tags:
     - 开发
     - IntelliJ IDE
     - Django
-    - PyCharm
     - 控制台
     - 配置
 ---
