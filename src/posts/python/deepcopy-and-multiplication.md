@@ -4,11 +4,12 @@ lang: zh-CN
 outline: deep
 publishAt: 2020-12-20 23:29
 expired: 1000
-excerpt: <code>[...] * n</code> 是浅拷贝，所以尽量避免用来复制对象。
 tags:
     - 开发
     - Python
     - 浅拷贝
+---
+`[...] * n` 是浅拷贝，所以尽量避免用来复制对象。
 ---
 
 # 使用乘号复制变量引起的问题

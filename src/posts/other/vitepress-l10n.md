@@ -4,11 +4,12 @@ lang: zh-CN
 outline: deep
 publishAt: 2025-03-12 15:20
 expires: 1096
-excerpt: 'VitePress 没有自带翻译，一些不可避免展示文字的地方会使用英文，需要汉化时可以参考本文进行配置。'
 tags:
     - 开发
     - VitePress
     - 本土化 l10n
+---
+VitePress 没有自带翻译，一些不可避免展示文字的地方会使用英文，需要汉化时可以参考本文进行配置。
 ---
 
 # VitePress 汉化摘要

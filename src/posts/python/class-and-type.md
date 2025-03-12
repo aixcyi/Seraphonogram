@@ -5,12 +5,13 @@ outline: false
 publishAt: 2023-12-22 11:03
 reviseAt: 2024-12-27 17:54
 expires: 1096
-excerpt: 一次关于 Python 类型（type）、类（class）、对象（object）的思考。
 tags:
     - 类型系统
     - 设计
     - 开发
     - Python
+---
+一次关于 Python 类型（type）、类（class）、对象（object）的思考。
 ---
 
 <style scoped>

@@ -2,6 +2,7 @@ import { pinyin } from "@napi-rs/pinyin";
 import type { integer } from "@vue/language-server";
 import { format, parse } from "date-fns";
 import matter from "gray-matter";
+import MarkdownIt from "markdown-it";
 import * as fs from "node:fs";
 import pathlib from "path";
 import { normalizePath } from "vite";
@@ -60,6 +61,7 @@ export { data }
 export default {
     watch: patterns,
     async load(files: string[]) {
+        const md = MarkdownIt()
         const maps = config.rewrites['map']
         const data: Data = { posts: [], tags: {} }
 
@@ -86,7 +88,7 @@ export default {
             if (!file.endsWith('.md')) {
                 continue
             }
-            const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
+            const { data: frontmatter, excerpt } = matter(fs.readFileSync(file, 'utf-8'), { excerpt: true })
             if (!('publishAt' in frontmatter)) {
                 // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.publishAt 属性）
                 continue
@@ -103,6 +105,7 @@ export default {
                 return lenA - lenB
             })
 
+            // 计算页面真实 URL
             const mappedPath = srcPath in maps ? maps[srcPath] : srcPath
             if (!mappedPath)
                 continue
@@ -110,11 +113,15 @@ export default {
                 .replace(/(^|\/)index\.md$/, '$1')
                 .replace(/\.md$/, config.cleanUrls ? '' : '.html')
 
+            // 获取最近修改时间
             const changed = parse(
                 frontmatter.reviseAt ?? frontmatter.publishAt,
                 'yyyy-MM-dd HH:mm',
                 new Date()
             )
+
+            // 渲染页面摘要
+            const renderedExcerpt = excerpt ? md.renderInline(excerpt) : ''
 
             // 按标签统计博客数目
             tags.forEach(tag => {
@@ -127,7 +134,7 @@ export default {
             data.posts.push({
                 url: `/${url}`,
                 title: frontmatter.title,
-                excerpt: frontmatter.excerpt,
+                excerpt: renderedExcerpt,
                 changed: changed.getTime(),
                 column,
                 tags,

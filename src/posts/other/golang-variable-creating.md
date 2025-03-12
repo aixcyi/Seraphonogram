@@ -8,6 +8,7 @@ tags:
     - Golang
     - 语法
 ---
+---
 
 # Golang 创建同一个变量
 

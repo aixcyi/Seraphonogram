@@ -3,8 +3,6 @@ title: virtualenv 在 Windows 中无法激活
 lang: zh-CN
 publishAt: 2024-02-28 16:29
 expires: 365
-excerpt: '使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀
-          <code>(venv)</code> 字样，但 <code>pip -V</code> 显示当前 pip 并没有指向父环境。'
 tags:
     - 运维
     - virtualenv
@@ -13,6 +11,9 @@ tags:
     - Windows
     - Python
     - 虚拟环境
+---
+使用 PyCharm 创建带有基于 Python 3.10 的虚拟环境的项目后，在命令行中无法激活虚拟环境，虽然前缀
+`(venv)` 字样，但 `pip -V` 显示当前 pip 并没有指向父环境。
 ---
 
 <style scoped>

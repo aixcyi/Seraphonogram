@@ -4,12 +4,13 @@ lang: zh-CN
 outline: false
 publishAt: 2024-01-30 23:42
 expires: 1096
-excerpt: 使用默认值有可能导致抽象泄漏（Leaky Abstraction），指本应对用户隐藏实现细节的抽象行为会不可避免地暴露出底层细节与局限性。
 tags:
     - 抽象泄漏
     - 设计
     - 开发
     - Python
+---
+使用默认值有可能导致抽象泄漏（Leaky Abstraction），指本应对用户隐藏实现细节的抽象行为会不可避免地暴露出底层细节与局限性。
 ---
 
 <style scoped>

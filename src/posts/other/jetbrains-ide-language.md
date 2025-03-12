@@ -3,12 +3,13 @@ title: 设置 JetBrains IDE 的语言
 lang: zh-CN
 publishAt: 2024-12-30 00:55
 expires: 1096
-excerpt: 帮助新手修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
 tags:
     - 开发
     - 国际化 i18n
     - IntelliJ IDE
     - 配置
+---
+帮助新手修改包括 PyCharm、IDEA、WebStorm、GoLand、PhpStorm 等集成开发环境（IDE）的语言。
 ---
 
 <style scoped>

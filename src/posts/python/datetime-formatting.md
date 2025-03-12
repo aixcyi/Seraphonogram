@@ -4,13 +4,14 @@ lang: zh-CN
 outline: deep
 publishAt: 2023-11-14 23:32
 expires: 1096
-excerpt: Windows 下 Python 3.7 中 <code>date().strftime(fmt)</code> 参数 <code>fmt</code> 不能含有中文。
 tags:
     - 开发
     - Python
     - 兼容
     - Windows
     - 格式化
+---
+Windows 下 Python 3.7 中 `date().strftime(fmt)` 参数 `fmt` 不能含有中文。
 ---
 
 # `date` 格式化失败

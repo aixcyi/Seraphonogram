@@ -4,12 +4,13 @@ lang: zh-CN
 outline: deep
 publishAt: 2024-02-20 11:55
 expires: 1096
-excerpt: '简述 <a href="https://django-oauth-toolkit.readthedocs.io/en/latest/">Django OAuth Toolkit</a>
-          中的令牌 <code>Token</code> 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。'
 tags:
     - 开发
     - 令牌
     - Django
+---
+简述 [Django OAuth Toolkit](https://django-oauth-toolkit.readthedocs.io/en/latest/)
+中的令牌 `Token` 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。
 ---
 
 <style scoped>

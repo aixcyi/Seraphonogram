@@ -5,12 +5,13 @@ outline: deep
 publishAt: 2023-09-05 23:32
 reviseAt: 2024-01-03 09:44
 expires: 365
-excerpt: 本文介绍了在 Ubuntu 和 Windows 下直接运行 Python 脚本所需的配置。
 tags:
     - 运维
     - Python
     - Windows
     - Ubuntu
+---
+本文介绍了在 Ubuntu 和 Windows 下直接运行 Python 脚本所需的配置。
 ---
 
 # 直接运行 Python 脚本
