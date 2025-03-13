@@ -90,7 +90,7 @@ onMounted(() => {
         color: var(--vp-c-text-3);
         border: 2px solid transparent;
         border-radius: 4px;
-        background-color: rgba(#000, 20%);
+        background-color: var(--vp-c-bg-alt);
 
         &:hover {
             background-color: var(--vp-c-text-3);
@@ -102,7 +102,7 @@ onMounted(() => {
 
         &:hover {
             border: 2px solid var(--vp-c-text-3);
-            background-color: rgba(#000, 20%);
+            background-color: var(--vp-c-bg-alt);
         }
     }
 
