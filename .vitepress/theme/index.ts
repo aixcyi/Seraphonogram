@@ -8,6 +8,7 @@ import "./style/index.css";
 import "virtual:group-icons.css";
 import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
+import AiDocAsideColumns from "../../src/components/AiDocAsideColumns.vue";
 import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
 import LinkCard from "../../src/components/LinkCard.vue";
 import NotFound from "../../src/components/NotFound.vue";
@@ -21,6 +22,7 @@ export default {
             // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
             'not-found': () => h(NotFound),
             'aside-top': () => h(AiDocAsideStatus),
+            'aside-outline-after': () => h(AiDocAsideColumns),
         })
     },
     enhanceApp({ app }) {
