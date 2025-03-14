@@ -72,8 +72,8 @@ const hookPosts: PageHooks = {
     ),
 }
 const hookRefs: PageHooks = {
-    compareFolder: (a, b) => a.frontmatter.order - b.frontmatter.order,
-    compareFile: (a, b) => a.frontmatter.order - b.frontmatter.order,
+    compareFolder: (a, b) => b.frontmatter.order - a.frontmatter.order,
+    compareFile: (a, b) => b.frontmatter.order - a.frontmatter.order,
     compareItem: () => -1,
 }
 configs.themeConfig.sidebar = {
