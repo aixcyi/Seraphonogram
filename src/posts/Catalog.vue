@@ -1,8 +1,14 @@
 <script lang="ts" setup>
 import { annuals, filterPosts, switches } from "@/states.ts";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { data } from "../../.vitepress/theme/posts.data.ts";
 
+
+const widescreen = ref(window.innerWidth > 768)
+
+window.addEventListener('resize', () => {
+    widescreen.value = window.innerWidth > 768
+})
 
 function toggle(tag: string) {
     switches[tag] = !switches[tag]
@@ -35,7 +41,7 @@ onMounted(() => {
         <h1>羽音 • <i>Seraphonogram</i></h1>
     </div>
 
-    <div class="ai-tags">
+    <div v-if="widescreen" class="ai-tags">
         <el-space style="gap: .5rem" wrap>
             <button v-for="(qty, tag) in data.tags"
                     :key="tag"
@@ -47,8 +53,20 @@ onMounted(() => {
             </button>
         </el-space>
     </div>
-
-    <hr/>
+    <el-collapse v-else class="ai-tags">
+        <el-collapse-item title="所有标签">
+            <el-space style="gap: .5rem" wrap>
+                <button v-for="(qty, tag) in data.tags"
+                        :key="tag"
+                        :class="['tag-btn', switches[tag] ? 'selected' : '']"
+                        @click="toggle(tag)">
+                    <span>#</span>
+                    <span class="tag-name">{{ tag }}</span>
+                    <span v-if="qty > 1" class="tag-count">{{ data.tags[tag] }}</span>
+                </button>
+            </el-space>
+        </el-collapse-item>
+    </el-collapse>
 
     <div class="ai-catalog">
         <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
@@ -82,7 +100,7 @@ onMounted(() => {
 }
 
 .ai-tags {
-    margin: 3rem 0;
+    margin-top: 48px;
 
     .tag-btn {
         padding: 1px 12px;
