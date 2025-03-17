@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 博客目录
-      link: /posts/catalog
+      link: /posts
     - theme: alt
       text: 时间戳对照表
       link: /refs/timestamp

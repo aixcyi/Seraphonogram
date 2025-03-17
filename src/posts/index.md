@@ -5,6 +5,7 @@ prev: false
 next: false
 outline: false
 catalog: true
+order: 1
 ---
 
 <script setup lang="ts">
