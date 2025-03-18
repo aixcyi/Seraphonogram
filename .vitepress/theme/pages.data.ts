@@ -17,7 +17,8 @@ const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
  */
 const patterns = [
     './posts/**/*.md',
-    ...(config.userConfig.srcExclude?.map(p => `!${p}`) ?? []),
+    './refs/**/*.md',
+    ...(config.userConfig.srcExclude ?? []).map(p => `!${p}`),
 ].map(p =>
     // https://github.com/micromatch/micromatch#extended-globbing
     p.match(/^[\/\w.].*$/)
@@ -27,7 +28,16 @@ const patterns = [
 
 
 /**
- * 博客信息结构。
+ * 页面信息。
+ */
+export interface Page {
+    url: string
+    title: string
+}
+
+
+/**
+ * 博客信息。
  */
 export interface Post {
     url: string
@@ -42,9 +52,12 @@ export interface Post {
 
 
 /**
- * 博客数据结构。
+ * 导出数据。
  */
 export interface Data {
+
+    /** 所有页面 */
+    pages: Page[]
 
     /** 所有博客 */
     posts: Post[]
@@ -63,7 +76,7 @@ export default {
     async load(files: string[]) {
         const md = MarkdownIt()
         const maps = config.rewrites['map']
-        const data: Data = { posts: [], tags: {} }
+        const data: Data = { pages: [], posts: [], tags: {} }
 
         // 提取文件夹名称
         let folders = new Map<string, Record<string, any>>()
@@ -90,22 +103,18 @@ export default {
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'), { excerpt: true })
             if (!('publishAt' in frontmatter)) {
-                // 过滤掉文件夹（因为没有为 文件夹/index.md 配置 frontmatter.publishAt 属性）
+                // 过滤掉文件夹（因为不会为 ./<folder>/index.md 配置 frontmatter.publishAt 属性）
                 continue
             }
 
-            // 提取路径中的文件夹，转换为名称
+            // 从路径 ./src/<zone>/<column>/page.md 中提取参数
+            // <zone> 目前有 posts 和 refs
+            // <column> 是 posts 下的栏目
             const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
-            // 下标表示src深度：./src/* => 0，./src/posts/* => 1，以此类推。
-            const column = folders.get(srcPath.split('/')[1])?.title
-            const tags = [ ...new Set(frontmatter.tags as string[] ?? []) ].sort((a, b) => {
-                // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
-                const lenA = Buffer.byteLength(a, 'utf8')
-                const lenB = Buffer.byteLength(b, 'utf8')
-                return lenA - lenB
-            })
+            let [ zone, column, ] = srcPath.split('/')
+            column = folders.get(column)?.title
 
-            // 计算页面真实 URL
+            // 计算页面 URL
             const mappedPath = srcPath in maps ? maps[srcPath] : srcPath
             if (!mappedPath)
                 continue
@@ -113,34 +122,46 @@ export default {
                 .replace(/(^|\/)index\.md$/, '$1')
                 .replace(/\.md$/, config.cleanUrls ? '' : '.html')
 
-            // 获取最近修改时间
-            const changed = parse(
-                frontmatter.reviseAt ?? frontmatter.publishAt,
-                'yyyy-MM-dd HH:mm',
-                new Date()
-            )
-
-            // 渲染页面摘要
-            const renderedExcerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
-
-            // 按标签统计博客数目
-            tags.forEach(tag => {
-                if (!(tag in data.tags)) {
-                    data.tags[tag] = 0
-                }
-                data.tags[tag]++
-            })
-
-            data.posts.push({
+            data.pages.push({
                 url: `/${url}`,
                 title: frontmatter.title,
-                excerpt: renderedExcerpt,
-                changed: changed.getTime(),
-                column,
-                tags,
-                year: changed.getFullYear(),
-                date: format(changed, 'MM-dd'),
             })
+
+            // @ts-ignore
+            if (Object.is(data[zone], data.posts)) {
+                // 渲染页面摘要
+                const renderedExcerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
+                // 获取最近修改时间
+                const changed = parse(
+                    frontmatter.reviseAt ?? frontmatter.publishAt,
+                    'yyyy-MM-dd HH:mm',
+                    new Date()
+                )
+                // 提取每页的标签，并加以排序
+                const tags = [ ...new Set(frontmatter.tags as string[] ?? []) ].sort((a, b) => {
+                    // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
+                    const lenA = Buffer.byteLength(a, 'utf8')
+                    const lenB = Buffer.byteLength(b, 'utf8')
+                    return lenA - lenB
+                })
+                // 按标签统计博客数目
+                tags.forEach(tag => {
+                    if (!(tag in data.tags)) {
+                        data.tags[tag] = 0
+                    }
+                    data.tags[tag]++
+                })
+                data.posts.push({
+                    url: `/${url}`,
+                    title: frontmatter.title,
+                    excerpt: renderedExcerpt,
+                    changed: changed.getTime(),
+                    column,
+                    tags,
+                    year: changed.getFullYear(),
+                    date: format(changed, 'MM-dd'),
+                })
+            }
         }
 
         // 对标签按照拼音排序

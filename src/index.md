@@ -14,14 +14,8 @@ hero:
       text: 博客目录
       link: /posts
     - theme: alt
-      text: 时间戳对照表
-      link: /refs/timestamp
-    - theme: alt
-      text: 镜像源
-      link: /refs/mirror
-    - theme: alt
-      text: Python 语法更新摘要
-      link: /refs/grammar
+      text: 随便逛逛
+      link: /anywhere
 
 features:
   - title: HooTool - Dunder All

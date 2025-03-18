@@ -1,6 +1,6 @@
 import type { integer } from "@vue/language-server";
 import { reactive } from "vue";
-import { data, type Post } from "../.vitepress/theme/posts.data.ts";
+import { data, type Post } from "../.vitepress/theme/pages.data.ts";
 
 
 /**

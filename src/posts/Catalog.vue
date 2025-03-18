@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { annuals, filterPosts, switches } from "@/states.ts";
 import { onMounted, ref } from "vue";
-import { data } from "../../.vitepress/theme/posts.data.ts";
+import { data } from "../../.vitepress/theme/pages.data.ts";
 
 
 const widescreen = ref(window.innerWidth > 768)
