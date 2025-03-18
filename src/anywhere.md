@@ -8,7 +8,12 @@ outline: false
 ---
 
 <script setup lang="ts">
+import { onMounted } from "vue"; 
 import { data } from "../.vitepress/theme/pages.data.ts";
 
-window.location.replace(data.pages[Math.floor(Math.random() * data.pages.length)].url)
+onMounted(() => {
+    window.location.replace(data.pages[
+        window.crypto.getRandomValues(new Uint32Array(1))[0] % data.pages.length
+    ].url)
+})
 </script>
