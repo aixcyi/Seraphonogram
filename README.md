@@ -2,7 +2,7 @@
 
 羽音，一个基于 VitePress 的博客。
 
-## 快速开始
+## 开始
 
 ### 安装 Node.js 并克隆仓库
 
@@ -39,7 +39,7 @@ npm run docs:preview
 
 默认向所有访问开放浏览，即 `--host 0.0.0.0`，这是为了方便通过内网穿透服务向其它设备提供基于本地的生产环境预览，以便及时发现多设备兼容性问题。
 
-### 部署
+### 手动部署
 
 如果已经安装 7z，可以
 
@@ -50,7 +50,7 @@ vitepress build
 
 然后将 `dist.zip` 复制到服务器解压，并重启网络服务器（比如 nginx）。
 
-## 架构
+## 开发
 
 ```text
 .
@@ -60,6 +60,7 @@ vitepress build
 ├─dist        # VitePress 打包目录
 └─src
     ├─components  # 组件代码
+    ├─drafts      # 草稿文章（仅出现在本地开发环境中）
     ├─image       # 图片，对应URL中的 /image/*.*
     ├─posts       # 博客文章
     ├─public      # 静态资源
@@ -68,6 +69,32 @@ vitepress build
     ├─about.md    # 关于
     └─index.md    # 首页
 ```
+
+### 草稿箱功能
+
+「草稿箱」用于在本地预览草稿，其中的 Markdown 文件默认被 git 排除。如需显示其中的页面，需要指定环境变量 `VP_DEBUG` 为任意真值，比如在 `package.json` 中
+
+Windows 下可以指定
+
+```json
+{
+    "scripts": {
+        "docs:dev": "set VP_DEBUG=1 && vitepress dev"
+    }
+}
+```
+
+Linux/Mac 下可以指定
+
+```json
+{
+    "scripts": {
+        "docs:dev": "VP_DEBUG=1 vitepress dev"
+    }
+}
+```
+
+[为什么不使用 Vite 的开发模式？](https://github.com/vuejs/vitepress/discussions/3533)
 
 ## 约定
 

@@ -1,5 +1,6 @@
 import { resolve } from "path";
-import { DefaultTheme, defineConfig, loadEnv, UserConfig } from "vitepress";
+import { defineConfig } from "vite";
+import { DefaultTheme, loadEnv, UserConfig } from "vitepress";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import { PageHandler, PageHooks } from "../src/utils/vitepress";
 
@@ -16,6 +17,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
     srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
+    srcExclude: [
+        './drafts/**/*.md',
+    ],
     head: [
         [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],
     ],
@@ -63,6 +67,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
 }
 
+if (process.env.VP_DEBUG)
+    configs.srcExclude = []
+
 const sidebar = new PageHandler(configs).scan()
 const hookPosts: PageHooks = {
     compareFolder: (a, b) => a.frontmatter.order - b.frontmatter.order,
@@ -76,11 +83,21 @@ const hookRefs: PageHooks = {
     compareFile: (a, b) => b.frontmatter.order - a.frontmatter.order,
     compareItem: () => -1,
 }
-configs.themeConfig.sidebar = {
+configs.themeConfig.sidebar = process.env.VP_DEBUG ? {
+    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
+    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
+    '/drafts/': sidebar.buildSidebar('./src/drafts/', false, true, hookPosts),
+} : {
     '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
     '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
 }
-configs.themeConfig.nav = [
+configs.themeConfig.nav = process.env.VP_DEBUG ? [
+    { text: '博客', link: '/posts/catalog', activeMatch: '/posts/' },
+    sidebar.buildNav('./src/refs/', true, hookRefs),
+    sidebar.buildNav('./src/drafts/', true, hookPosts),
+    { text: '关于', link: '/about' },
+    { text: '主站', link: 'https://ayuu.cc/' },
+] : [
     { text: '博客', link: '/posts/catalog', activeMatch: '/posts/' },
     sidebar.buildNav('./src/refs/', true, hookRefs),
     { text: '关于', link: '/about' },
