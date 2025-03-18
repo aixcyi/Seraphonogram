@@ -1,6 +1,5 @@
 ---
 title: Python 导航
-navTitle: 导航
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
