@@ -3,6 +3,7 @@ title: VitePress 汉化摘要
 lang: zh-CN
 outline: deep
 publishAt: 2025-03-12 15:20
+reviseAt: 2025-03-21 15:41
 expires: 1096
 tags:
     - 开发
@@ -20,7 +21,7 @@ excerpt:
 
 <LinkCard href="https://vitepress.dev/zh/reference/default-theme-config" text="默认主题配置 | VitePress" />
 
-> 如果重写（而非扩展）了主题，那么以下配置可能并不适用。
+> 如果重写（而非扩展）了主题，那么本小节的配置可能并不适用。
 
 ### 刚性配置
 
@@ -112,5 +113,28 @@ import { DefaultTheme, UserConfig } from "vitepress";
 
 const configs: UserConfig<DefaultTheme.Config> = {
   lang: 'zh-CN',
+}
+```
+
+## Markdown
+
+[自定义容器](https://vitepress.dev/zh/guide/markdown#custom-containers)是
+VitePress 支持的一种语法，使用一对 `:::` 定义，类似于使用一对 <code>```</code> 定义的代码块。
+
+以下配置用于修改 VitePress 一些容器的 **默认** 标题；[GitHub 风格的警报](https://vitepress.dev/zh/guide/markdown#github-flavored-alerts)的标题不受该配置影响。
+
+```typescript [.vitepress/config.ts]
+import { DefaultTheme, UserConfig } from "vitepress";
+
+const configs: UserConfig<DefaultTheme.Config> = {
+  markdown: {
+    container: {
+      tipLabel: '提示',
+      warningLabel: '警告',
+      dangerLabel: '危险',
+      infoLabel: '信息',
+      detailsLabel: '详细信息',
+    },
+  },
 }
 ```

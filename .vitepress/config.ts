@@ -50,6 +50,13 @@ const configs: UserConfig<DefaultTheme.Config> = {
     cleanUrls: true,
     markdown: {
         math: true,
+        container: {
+            tipLabel: '提示',
+            warningLabel: '注意',
+            dangerLabel: '当心',
+            infoLabel: '信息',
+            detailsLabel: '详细信息',
+        },
         config(md) {
             md.use(groupIconMdPlugin)
         },
