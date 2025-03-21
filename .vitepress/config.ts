@@ -86,7 +86,7 @@ const hookRefs: PageHooks = {
 configs.themeConfig.sidebar = process.env.VP_DEBUG ? {
     '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
     '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
-    '/drafts/': sidebar.buildSidebar('./src/drafts/', false, true, hookPosts),
+    '/drafts/': sidebar.buildSidebar('./src/drafts/', false, true, hookRefs),
 } : {
     '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
     '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
@@ -94,7 +94,7 @@ configs.themeConfig.sidebar = process.env.VP_DEBUG ? {
 configs.themeConfig.nav = process.env.VP_DEBUG ? [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
     sidebar.buildNav('./src/refs/', true, hookRefs),
-    sidebar.buildNav('./src/drafts/', true, hookPosts),
+    sidebar.buildNav('./src/drafts/', true, hookRefs),
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
 ] : [

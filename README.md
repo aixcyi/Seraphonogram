@@ -59,20 +59,23 @@ vitepress build
 ├─cache       # VitePress 缓存
 ├─dist        # VitePress 打包目录
 └─src
-    ├─components  # 组件代码
-    ├─drafts      # 草稿文章（仅出现在本地开发环境中）
-    ├─image       # 图片，对应URL中的 /image/*.*
-    ├─posts       # 博客文章
-    ├─public      # 静态资源
-    ├─refs        # 快速参考
-    ├─utils       # 工具代码
-    ├─about.md    # 关于
-    └─index.md    # 首页
+    ├─components    # 组件代码
+    ├─drafts        # 草稿文章（仅出现在本地开发环境中）
+    │ └─wastepaper  # 废纸篓
+    ├─image         # 图片，对应URL中的 /image/*.*
+    ├─posts         # 博客文章
+    ├─public        # 静态资源
+    ├─refs          # 快速参考
+    ├─utils         # 工具代码
+    ├─about.md      # 关于
+    └─index.md      # 首页
 ```
 
 ### 草稿箱功能
 
-「草稿箱」用于在本地预览草稿，其中的 Markdown 文件默认被 git 排除。如需显示其中的页面，需要指定环境变量 `VP_DEBUG` 为任意真值，比如在 `package.json` 中
+「草稿箱」用于在本地预览草稿，该分区的所有 Markdown 文件都会被 git 排除；「草稿箱」内有一个文件夹「废纸篓」用于存放将弃未弃的文章页面。
+
+如需显示其中的页面，需要指定环境变量 `VP_DEBUG` 为任意真值，比如在 `package.json` 中
 
 Windows 下可以指定
 
