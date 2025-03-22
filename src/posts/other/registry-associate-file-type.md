@@ -10,10 +10,6 @@ tags:
 excerpt:
 ---
 
-# 注册表：文件关联与关联文件
-
-<RevisionInfo />
-
 <hr style="margin-top: 48px"/>
 
 注册表中储存文件关联信息的一些位置：

@@ -12,6 +12,4 @@ order: 2
 import Mirrors from "./Mirrors.vue";
 </script>
 
-# 镜像源
-
 <Mirrors />

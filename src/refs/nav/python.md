@@ -13,8 +13,6 @@ import SeeAlso from "@/components/SeeAlso.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# Python 导航
-
 <hr style="margin-top: 48px; margin-bottom: 16px"/>
 
 <SeeAlso align="center" :sep="spacer">

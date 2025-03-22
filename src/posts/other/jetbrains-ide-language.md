@@ -18,10 +18,6 @@ excerpt:
 }
 </style>
 
-# 设置 JetBrains IDE 的语言
-
-<RevisionInfo />
-
 ## 2024.2+ 版本
 
 从这一版本开始内置了语言插件，不必再另外下载安装，只需点击左上角菜单 → _File_ → _Settings_ 打开设置面板（见下方示意图），然后找到 _Appearance & Behavior_ → _System Settings_ → _Language and Region_ 更改 **Language** 的选项并重启即可。

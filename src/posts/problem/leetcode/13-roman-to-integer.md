@@ -1,5 +1,6 @@
 ---
-title: 13. 罗马数字转整数
+navTitle: 13. 罗马数字转整数
+title: LeetCode 13. 罗马数字转整数
 lang: zh-CN
 publishAt: 2024-01-09 17:37
 tags:
@@ -10,7 +11,7 @@ excerpt:
     给定一个罗马数字，将其转换成整数。
 ---
 
-# LeetCode 13. 罗马数字转整数
+## 题目
 
 <el-space wrap class="status-bar" style="width: 100%">
     <a href="https://leetcode.cn/problems/roman-to-integer/" target="_blank">
@@ -20,10 +21,6 @@ excerpt:
         <img alt="LeetCode-13" src="https://img.shields.io/badge/LeetCode-13. Roman to Integer-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </el-space>
-
-<RevisionInfo />
-
-## 题目
 
 罗马数字包含以下七种字符：`I`，`V`，`X`，`L`，`C`，`D` 和 `M` 。
 

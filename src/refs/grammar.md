@@ -15,8 +15,6 @@ import SeeAlso from "@/components/SeeAlso.vue";
 import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 </script>
 
-# Python 语法更新摘要
-
 > [!WARNING] 仅供粗略参考
 > 本文仅仅只是粗略摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。
 

@@ -10,10 +10,10 @@ import "element-plus/dist/index.css";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import AiDocAsideColumns from "../../src/components/AiDocAsideColumns.vue";
 import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
+import AiDocBeforeRevisionInfo from "../../src/components/AiDocBeforeRevisionInfo.vue";
 import LinkCard from "../../src/components/LinkCard.vue";
 import NotFound from "../../src/components/NotFound.vue";
 import Paragraph from "../../src/components/Paragraph.vue";
-import RevisionInfo from "../../src/components/RevisionInfo.vue";
 
 export default {
     extends: DefaultTheme,
@@ -21,6 +21,7 @@ export default {
         return h(DefaultTheme.Layout, null, {
             // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
             'not-found': () => h(NotFound),
+            'doc-before': () => h(AiDocBeforeRevisionInfo),
             'aside-top': () => h(AiDocAsideStatus),
             'aside-outline-after': () => h(AiDocAsideColumns),
         })
@@ -32,6 +33,5 @@ export default {
         app.use(ElementPlus)
         app.component('LinkCard', LinkCard)
         app.component('Paragraph', Paragraph)
-        app.component('RevisionInfo', RevisionInfo)
     }
 } satisfies Theme

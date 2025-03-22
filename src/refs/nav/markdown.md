@@ -7,8 +7,6 @@ expires: 365
 order: 4
 ---
 
-# Markdown 语法
-
 > [!WARNING] 注意
 > Markdown 在不同环境下语法会有细微差别，实际渲染效果也不完全相同，请根据所在环境查找相应文档。
 

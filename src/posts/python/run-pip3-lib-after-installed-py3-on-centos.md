@@ -1,5 +1,5 @@
 ---
-title: 安装 Python3 后 pip3 安装的库如何调用
+title: 编译安装 Python3 后 pip3 安装的库如何在命令行调用
 lang: zh-CN
 publishAt: 2020-03-04 11:13
 expires: 1096
@@ -15,10 +15,6 @@ excerpt:
     text-indent: 2em;
 }
 </style>
-
-# 编译安装 Python3 后 pip3 安装的库如何在命令行调用
-
-<RevisionInfo />
 
 ## 问题描述
 

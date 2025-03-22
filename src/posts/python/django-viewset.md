@@ -1,5 +1,6 @@
 ---
-title: Django 及衍生的类视图
+navTitle: Django 及衍生的类视图
+title: 浅析 Django 及衍生的类视图
 lang: zh-CN
 outline: deep
 publishAt: 2022-10-11 11:52
@@ -12,10 +13,6 @@ excerpt:
     浅析 [Django](https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/)
     与 [Django REST Framework](https://www.django-rest-framework.org/api-guide/views/) 两个框架视图类的脉络。
 ---
-
-# 浅析 Django 及衍生的类视图
-
-<RevisionInfo />
 
 ## 类的继承脉络 {#hierarchy}
 

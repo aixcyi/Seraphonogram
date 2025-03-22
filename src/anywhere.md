@@ -5,6 +5,7 @@ prev: false
 next: false
 aside: false
 outline: false
+hideRevisionInfo: true
 ---
 
 <script setup lang="ts">

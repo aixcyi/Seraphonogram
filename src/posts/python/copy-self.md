@@ -19,10 +19,6 @@ excerpt:
 }
 </style>
 
-# 为自身定义 `copy` 方法
-
-<RevisionInfo />
-
 ## 直接调用
 
 ```python

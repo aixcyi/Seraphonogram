@@ -130,7 +130,7 @@ export default {
             // @ts-ignore
             if (Object.is(data[zone], data.posts)) {
                 // 渲染页面摘要
-                const renderedExcerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
+                frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
                 // 获取最近修改时间
                 const changed = parse(
                     frontmatter.reviseAt ?? frontmatter.publishAt,
@@ -154,7 +154,7 @@ export default {
                 data.posts.push({
                     url: `/${url}`,
                     title: frontmatter.title,
-                    excerpt: renderedExcerpt,
+                    excerpt: frontmatter.excerpt,
                     changed: changed.getTime(),
                     column,
                     tags,

@@ -12,10 +12,6 @@ excerpt:
     Django 的设置本身就是一个 Python 包，因此可以动态生成配置初值乃至导入初值。本文主要讲述不借助和借助第三方库的情况下如何管理多个环境的设置。
 ---
 
-# 管理 Django Settings
-
-<RevisionInfo />
-
 ## 原生方法
 
 - ./manage.py

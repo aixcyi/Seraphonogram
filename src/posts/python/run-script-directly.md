@@ -14,10 +14,6 @@ excerpt:
     本文介绍了在 Ubuntu 和 Windows 下直接运行 Python 脚本所需的配置。
 ---
 
-# 直接运行 Python 脚本
-
-<RevisionInfo />
-
 ## 在 Ubuntu 下
 
 ### 1、准备

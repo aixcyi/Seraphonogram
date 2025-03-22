@@ -19,10 +19,6 @@ excerpt:
 }
 </style>
 
-# IntelliJ 插件中使用 Bundle
-
-<RevisionInfo />
-
 <LinkCard href="https://blog.jetbrains.com/zh-hans/idea/2021/07/language-packs-public-release/"
           text="基于 IntelliJ 的 IDE，完全中文化版本现已就绪！" />
 

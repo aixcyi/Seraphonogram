@@ -1,5 +1,6 @@
 ---
-title: 推导式
+navTitle: 推导式
+title: Python 推导式
 lang: zh-CN
 outline: deep
 publishAt: 2021-11-05 00:00
@@ -13,10 +14,6 @@ tags:
 excerpt:
     推导式又叫生成式，是一种用于生成序列、集合、映射的语句。本文用直观的方式向读者解释其语法。
 ---
-
-# Python 推导式
-
-<RevisionInfo />
 
 ## 列表推导式
 

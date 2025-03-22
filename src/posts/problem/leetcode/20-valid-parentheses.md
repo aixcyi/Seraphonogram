@@ -1,5 +1,6 @@
 ---
-title: 20. 有效的括号
+navTitle: 20. 有效的括号
+title: LeetCode 20. 有效的括号
 lang: zh-CN
 publishAt: 2024-01-10 00:04
 tags:
@@ -10,7 +11,7 @@ excerpt:
     判断给定字符串内的括号是否正确匹配。
 ---
 
-# LeetCode 20. 有效的括号
+## 题目
 
 <el-space wrap class="status-bar" style="width: 100%">
     <a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank">
@@ -20,10 +21,6 @@ excerpt:
         <img alt="LeetCode-20" src="https://img.shields.io/badge/LeetCode-20. Valid Parentheses-895200?logo=leetcode&logoColor=FFA116"/>
     </a>
 </el-space>
-
-<RevisionInfo />
-
-## 题目
 
 给定一个只包括 `'('`，`')'`，`'{'`，`'}'`，`'['`，`']'` 的字符串 `s` ，判断字符串是否有效。
 

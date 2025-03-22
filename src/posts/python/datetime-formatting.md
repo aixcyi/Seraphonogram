@@ -14,10 +14,6 @@ excerpt:
     Windows 下 Python 3.7 中 `date().strftime(fmt)` 参数 `fmt` 不能含有中文。
 ---
 
-# `date` 格式化失败
-
-<RevisionInfo />
-
 ## 复现
 
 ```python

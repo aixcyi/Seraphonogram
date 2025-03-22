@@ -14,8 +14,6 @@ excerpt:
 import TimestampTables from "./TimestampTables.vue";
 </script>
 
-# 时间戳对照表
-
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。
 > - 用 **整数** 存储时长：以 `2` 为底的数的指数表示所需的 **比特数**。

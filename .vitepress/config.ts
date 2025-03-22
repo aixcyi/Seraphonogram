@@ -1,3 +1,4 @@
+import MarkdownIt from "markdown-it";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import { DefaultTheme, loadEnv, UserConfig } from "vitepress";
@@ -5,6 +6,7 @@ import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-i
 import { PageHandler, PageHooks } from "../src/utils/vitepress";
 
 
+const md = MarkdownIt()
 const env = loadEnv('', process.cwd())
 const now = new Date().getFullYear()
 
@@ -71,6 +73,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
                 '@': resolve(__dirname, '../src'),
             },
         },
+    },
+    transformPageData(pageData) {
+        pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.renderInline(pageData.frontmatter.excerpt) : ''
     },
 }
 

@@ -22,10 +22,6 @@ excerpt:
 }
 </style>
 
-# virtualenv 在 Windows 中无法激活
-
-<RevisionInfo />
-
 ## 环境（参考）
 
 - 系统：Windows 11 x64

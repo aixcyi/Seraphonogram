@@ -5,6 +5,7 @@ prev: false
 next: false
 aside: false
 outline: false
+hideRevisionInfo: true
 ---
 
 # 阿羽

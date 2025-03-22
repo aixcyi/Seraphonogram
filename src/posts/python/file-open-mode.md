@@ -1,5 +1,6 @@
 ---
-title: 文件打开模式
+navTitle: 文件打开模式
+title: Python 文件打开模式
 lang: zh-CN
 publishAt: 2021-10-21 00:00
 expires: 3650
@@ -10,10 +11,6 @@ tags:
 excerpt:
     内置函数 [`open()`](https://docs.python.org/zh-cn/3/library/functions.html#open) 打开模式这个参数的归纳。
 ---
-
-# Python 文件打开模式
-
-<RevisionInfo />
 
 ## 打开模式
 
