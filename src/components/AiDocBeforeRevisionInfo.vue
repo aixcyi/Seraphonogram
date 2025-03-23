@@ -16,14 +16,16 @@ const { page, frontmatter: $frontmatter } = useData()
             </el-space>
         </div>
         <h1>{{ $frontmatter.title }}</h1>
-        <div v-if="$frontmatter.excerpt" class="status-bar">
-            <el-text type="info" v-html="$frontmatter.excerpt"/>
-        </div>
+        <div v-if="$frontmatter.excerpt" class="ai-excerpt" v-html="$frontmatter.excerpt"/>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
+.ai-excerpt {
+    color: var(--el-color-info);
+}
+
 .ai-tags {
     margin-bottom: .75rem;
 

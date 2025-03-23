@@ -75,7 +75,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         },
     },
     transformPageData(pageData) {
-        pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.renderInline(pageData.frontmatter.excerpt) : ''
+        pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.render(pageData.frontmatter.excerpt) : ''
     },
 }
 
