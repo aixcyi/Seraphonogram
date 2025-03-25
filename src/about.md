@@ -12,45 +12,13 @@ hideRevisionInfo: true
 
 𝑺𝒆𝒆𝒅𝒔 𝒐𝒇 𝒔𝒕𝒐𝒓𝒊𝒆𝒔, 𝒃𝒓𝒐𝒖𝒈𝒉𝒕 𝒃𝒚 𝒕𝒉𝒆 𝒘𝒊𝒏𝒅 𝒂𝒏𝒅 𝒄𝒖𝒍𝒕𝒊𝒗𝒂𝒕𝒆𝒅 𝒃𝒚 𝒕𝒊𝒎𝒆.
 
-## 现状
-
-### 生活与工作
-
-毛茸茸爱好者／Furry／全职后端开发／在职
-
-### 开发技术栈
-
-![Python 3](https://img.shields.io/badge/Python%203-3776AB?style=flat&logo=python&logoColor=yellow)
-![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-snow?style=flat&logo=kotlin&logoColor=7F52FF)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-FF4438?style=flat&logo=redis&logoColor=white)
-![Vue 3](https://img.shields.io/badge/Vue%203-1A1A1A?style=flat&logo=vuedotjs&logoColor=4FC08D)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![VitePress](https://img.shields.io/badge/VitePress-snow?style=flat&logo=vitepress&logoColor=5C73E7)
-![PyCharm](https://img.shields.io/badge/PyCharm-black?style=flat&logo=pycharm&logoColor=green)
-![VSCode](https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC)
-
-### 测试技术栈
-
-![apifox](https://img.shields.io/badge/apifox-F44A53?style=flat&logo=apifox&logoColor=white)
-
-### 运维技术栈
-
-![Grafana](https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800)
-![Ubuntu](https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF)
-![CentOS](https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF)
-
-### DevOps 技术栈
-
-![Git](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF)
-![Gitee](https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF)
-![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF)
-
 ## 狐言
+
+### 站点简述
+
+<p class="paragraph">
+    站点名为「羽音」，对应 <i>Seraphonogram</i>，目前分为几个板块：“博客”用来存放图文类的博文，“快速参考”用于存放平时总结的工具、经验的摘要等，“草稿箱”仅在本地显示、用于存放草稿和废稿；板块之间（的侧边栏）相互独立。
+</p>
 
 ### 昵称与 ID
 
@@ -61,12 +29,6 @@ hideRevisionInfo: true
     <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
     ，于是改用 <code>ayuu</code> 作为新的 ID。不过
     <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
-</p>
-
-### 站点简述
-
-<p class="paragraph">
-    站点名为「羽音」，对应 <i>Seraphonogram</i>，目前分“博客”和“快速参考”两个板块，板块之间的侧边栏是独立的，前者用来存放图文类的博文，后者用于存放平时总结的工具、经验的摘要等。
 </p>
 
 ### 捕蛇者说
@@ -177,12 +139,6 @@ import { Icon } from "@iconify/vue";
 
 
 <style scoped>
-/* 解决徽章不能在同一行的问题 */
-img {
-    display: inline-flex;
-    margin-right: 6px;
-}
-
 ul {
     list-style: none !important;
 }
