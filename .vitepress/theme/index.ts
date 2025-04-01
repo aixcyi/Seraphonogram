@@ -13,7 +13,6 @@ import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
 import AiDocBeforeRevisionInfo from "../../src/components/AiDocBeforeRevisionInfo.vue";
 import LinkCard from "../../src/components/LinkCard.vue";
 import NotFound from "../../src/components/NotFound.vue";
-import Paragraph from "../../src/components/Paragraph.vue";
 
 export default {
     extends: DefaultTheme,
@@ -32,6 +31,5 @@ export default {
         }
         app.use(ElementPlus)
         app.component('LinkCard', LinkCard)
-        app.component('Paragraph', Paragraph)
     }
 } satisfies Theme

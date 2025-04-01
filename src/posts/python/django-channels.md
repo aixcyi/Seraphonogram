@@ -14,15 +14,15 @@ excerpt:
 
 ## 背景
 
-<Paragraph>
+<p class="paragraph">
 公司的支付系统提供了「同步支付」和「回调支付」两种模式。原来使用的是「同步支付」
 ，在前端调起支付后，后端调用支付接口并阻塞，直到拿到支付系统的响应；如果超时或失败，则调起 celery 定时器对订单状态进行重试轮询。
-</Paragraph>
+</p>
 
-<Paragraph>
+<p class="paragraph">
 现在用户量激增，为了避免阻塞后端，需要改为「回调支付」，也就是前端调起支付后，后端调用支付接口并立即返回，之后在回调中改写订单状态并通过
 WebSocket 通知前端成功与否。在老大的介绍下，我选择了 Django Channels。
-</Paragraph>
+</p>
 
 > [!CAUTION] 当心
 > 这里指的是 [`channels`](https://pypi.org/project/channels/) 而非 [`django-channels`](https://pypi.org/project/django-channels/)，后者早在十年前就已经停更了。

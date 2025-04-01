@@ -191,7 +191,7 @@ a:hover {
     filter: blur(0);
 }
 
-.paragraph {
+p[class="paragraph"] {
     text-indent: 2em;
 }
 
