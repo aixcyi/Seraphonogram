@@ -43,6 +43,7 @@ onMounted(() => {
                 <b class="title">{{ text }}</b>
                 <br>
                 <span v-if="note" class="note">{{ note }}</span>
+                <span v-else-if="$slots.default" class="note"><slot/></span>
                 <span v-else class="link">{{ href }}</span>
             </p>
             <div class="logo">
@@ -91,6 +92,7 @@ onMounted(() => {
 
     .title {
         color: var(--vp-c-text-1);
+        font-size: 16px;
     }
 
     .note {

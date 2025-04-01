@@ -53,48 +53,75 @@ import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
 
 ### 运算符优先级 {#operator-precedence}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/reference/expressions.html#operator-precedence" text="6.17. 运算符优先级" />
+<LinkCard href="https://docs.python.org/zh-cn/3/reference/expressions.html#operator-precedence" text="运算符优先级">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 语言参考手册</span>
+        <span>6. 表达式</span>
+        <span>17. 运算符优先级</span>
+    </el-space>
+</LinkCard>
 
 > 老司机必备备查表格。
 
 ### 特殊方法（魔术方法） {#special-methods}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/reference/datamodel.html#special-method-names" text="3.3. 特殊方法名称" />
+<LinkCard href="https://docs.python.org/zh-cn/3/reference/datamodel.html#special-method-names" text="特殊方法名称">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 语言参考手册</span>
+        <span>3. 数据模型</span>
+        <span>3. 特殊方法名称</span>
+    </el-space>
+</LinkCard>
 
 > 在这里，你可以找到绝大部分以 **双下划线** 开头结尾的 `__init__` 风格命名的 **方法** 和 **属性** 的解释。
 
 ### 异常层次结构 {#exception-hierarchy}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="异常层次结构" />
+<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="异常层次结构">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 标准库</span>
+        <span>内置异常</span>
+    </el-space>
+</LinkCard>
 
 > 内置的异常的层次结构，用于快速确定异常们的 **包含** 与 **被包含** 关系。
 
 ### 源文件编码 {#environment}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/tutorial/interpreter.html#the-interpreter-and-its-environment"
-          text="2.2.1. 源文件的字符编码" />
+<LinkCard href="https://docs.python.org/zh-cn/3/tutorial/interpreter.html#the-interpreter-and-its-environment" text="源文件的字符编码">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 教程</span>
+        <span>2. 使用 Python 的解释器</span>
+        <span>2. 解释器的运行环境</span>
+    </el-space>
+</LinkCard>
 
 > 源代码文件默认使用 UTF-8 编码，使用其它编码时参考这里进行声明。另外，shebang 也可以参考此处进行设置。
 
 ### reStructuredText
 
 <LinkCard href="https://devguide.python.org/documentation/markup/"
-          text="reStructuredText markup - Python Developer's Guide" />
+          text="reStructuredText markup"
+          note="Python Developer's Guide" />
 
 > reStructuredText 是一种文本格式标记语言（类比于 Markdown，但二者语法不相似），常用于编写 Python 内（函数／方法／类）的文档。
 
 ### 版本及现状 {#version}
 
-<LinkCard href="https://devguide.python.org/versions/" text="Python 教程" />
+<LinkCard href="https://devguide.python.org/versions/"
+          text="Status of Python versions"
+          note="Python Developer's Guide" />
 <LinkCard href="https://devguide.python.org/developer-workflow/development-cycle/index.html"
-          text="Status of Python versions - Python Developer's Guide" />
+          text="Development cycle"
+          note="Python Developer's Guide" />
 
 > 可以看到各个版本的支持情况（是开发中？还是已结束支持？）以及开发周期，用于读懂版本号、以及技术选型时敲定开发版本。
 
 ### 打包指南 {#packaging}
 
 <LinkCard href="https://packaging.python.org/en/latest/overview/"
-          text="Overview of Python Packaging - Python Packaging User Guide" />
+          text="Overview of Python Packaging"
+          note="Python Packaging User Guide" />
 
 > - `.py`、sdist、wheel 三者有什么关系？
 > - 如何打包成 Python 库以供他人复用？
