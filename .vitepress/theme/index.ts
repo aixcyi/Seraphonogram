@@ -13,6 +13,7 @@ import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
 import AiDocBeforeRevisionInfo from "../../src/components/AiDocBeforeRevisionInfo.vue";
 import LinkCard from "../../src/components/LinkCard.vue";
 import NotFound from "../../src/components/NotFound.vue";
+import SeeAlsoBar from "../../src/components/SeeAlsoBar.vue";
 
 export default {
     extends: DefaultTheme,
@@ -31,5 +32,6 @@ export default {
         }
         app.use(ElementPlus)
         app.component('LinkCard', LinkCard)
+        app.component('SeeAlsoBar', SeeAlsoBar)
     }
 } satisfies Theme

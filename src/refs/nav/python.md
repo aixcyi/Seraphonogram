@@ -7,21 +7,15 @@ expires: 365
 order: 5
 ---
 
-<script setup lang="ts">
-import { spacer } from "@/commons.ts";
-import SeeAlso from "@/components/SeeAlso.vue";
-import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
-</script>
-
 <hr style="margin-top: 48px; margin-bottom: 16px"/>
 
-<SeeAlso align="center" :sep="spacer">
-    <SeeAlsoLink no-arrow href="https://docs.python.org/zh-cn/3/index.html">官方文档</SeeAlsoLink>
-    <SeeAlsoLink no-arrow href="https://www.python.org/">官方网站</SeeAlsoLink>
-    <SeeAlsoLink no-arrow href="https://peps.python.org/">PEP 索引</SeeAlsoLink>
-    <SeeAlsoLink no-arrow href="https://cheatsheets.zip/python">Python Cheatsheet</SeeAlsoLink>
-    <SeeAlsoLink no-arrow href="https://quickref.cn/docs/python.html">Python 备忘清单</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="neck" :refs="[
+    { text: '官方文档', link: 'https://docs.python.org/zh-cn/3/index.html' },
+    { text: '官方网站', link: 'https://www.python.org/' },
+    { text: 'PEP 索引', link: 'https://peps.python.org/' },
+    { text: 'Python Cheatsheet', link: 'https://cheatsheets.zip/python' },
+    { text: 'Python 备忘清单', link: 'https://quickref.cn/docs/python.html' },
+]"/>
 
 <hr style="margin-top: 16px"/>
 

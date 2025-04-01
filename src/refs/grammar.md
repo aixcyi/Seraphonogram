@@ -10,17 +10,12 @@ excerpt:
     本文包含 Python 3.0 以来语法上的更新，主要包括类型标注系统以及一些语句语法的变动。
 ---
 
-<script setup lang="ts">
-import SeeAlso from "@/components/SeeAlso.vue";
-import SeeAlsoLink from "@/components/SeeAlsoLink.vue";
-</script>
-
 > [!WARNING] 仅供粗略参考
 > 本文仅仅只是粗略摘要，具体请参阅[自 2.0 以来的全部新变化](https://docs.python.org/zh-cn/3/whatsnew/index.html)或下文附上的每个版本的所有变化。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://devguide.python.org/versions/">Status of Python Versions</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: 'Status of Python Versions', link: 'https://devguide.python.org/versions/' },
+]"/>
 
 ## 3.13 版本 {#313}
 
@@ -49,10 +44,10 @@ class CustomList[T]:
         ...
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://typing.python.org/en/latest/spec/generics.html">Python 类型系统规范</SeeAlsoLink>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: 'Python 类型系统规范', link: 'https://typing.python.org/en/latest/spec/generics.html' },
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax' },
+]"/>
 
 ### type 语句
 
@@ -88,9 +83,9 @@ type HashableSequence[T: Hashable] = Sequence[T]  # 带边界的 TypeVar
 type IntOrStrSequence[T: (int, str)] = Sequence[T]  # 带约束的 TypeVar
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax' },
+]"/>
 
 ### f-字符串嵌套
 
@@ -127,9 +122,9 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 # This is the playlist: Take me back to Eden♥Alkaline♥Ascensionism
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-701-syntactic-formalization-of-f-strings">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-701-syntactic-formalization-of-f-strings' },
+]"/>
 
 ## 3.11 版本 {#311}
 
@@ -145,9 +140,9 @@ print(f"This is the playlist: {"\N{BLACK HEART SUIT}".join(songs)}")
 > 是对 [`except`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#except)
 > 的泛化语法，这一语法能够匹配异常组的子组。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-654-exception-groups-and-except' },
+]"/>
 
 ## 3.10 版本 {#310}
 
@@ -173,9 +168,9 @@ def square(number: int | float) -> int | float:
     return number ** 2
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-604-new-type-union-operator">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-604-new-type-union-operator' },
+]"/>
 
 ### match-case 语句
 
@@ -245,9 +240,9 @@ def show(point: Tuple[float, float]):
             raise ValueError("参数不是一个点")
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-634-structural-pattern-matching">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.10.html#pep-634-structural-pattern-matching' },
+]"/>
 
 ### 带圆括号的上下文管理器
 
@@ -285,9 +280,9 @@ with (
     ...
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.10.html#parenthesized-context-managers">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.10.html#parenthesized-context-managers' },
+]"/>
 
 ## 3.9 版本 {#39}
 
@@ -311,9 +306,9 @@ def choice(numbers: list[int]) -> int:
     ...
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.9.html#type-hinting-generics-in-standard-collections' },
+]"/>
 
 ## 3.8 版本 {#38}
 
@@ -363,9 +358,9 @@ if (user := check(username, password)) is None or user.delete_at is not None:
     raise ValueError('用户不存在或密码错误')
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html#assignment-expressions">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#assignment-expressions' },
+]"/>
 
 ### 仅限位置形参
 
@@ -401,9 +396,9 @@ def serialize(data, /, many=False, *, raise_exception=False, **others):
 > # 额外的数据 {'author': 'ayuu'}
 > ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html#positional-only-parameters">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#positional-only-parameters' },
+]"/>
 
 ### f-字符串因变量
 
@@ -443,17 +438,17 @@ print(f'{tomorrow=:%Y-%m-%d}')
 > # "<Order(1) self.tracking_no='1703292327000'>"
 > ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging' },
+]"/>
 
 ### finally 中使用 continue
 
 > 在之前版本中[`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue)语句不允许在[`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally)子句中使用，这是因为具体实现存在一个问题。在 Python 3.8 中此限制已被取消。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes' },
+]"/>
 
 ## 3.7 版本 {#37}
 
@@ -488,18 +483,18 @@ class Book:
 
 换句话说就是现在可以放心地解包一个超长列表 `foo(*big_list)` 。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html#other-language-changes">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.7.html#other-language-changes' },
+]"/>
 
 ### async 与 await
 
 > [!CAUTION] 不向后兼容的语法更改
 > [`async`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async)和[`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)现在是保留的[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights' },
+]"/>
 
 ## 3.6 版本 {#36}
 
@@ -528,10 +523,10 @@ print(f'[{level}] [{today:%Y-%m-%d}]: {message}')
 # [DEBUG] [2023-12-24]: 喵喵喵喵喵喵喵喵喵
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language">格式规格迷你语言</SeeAlsoLink>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-498-formatted-string-literals">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '格式规格迷你语言', link: 'https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language' },
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-498-formatted-string-literals' },
+]"/>
 
 ### 变量标注
 
@@ -585,10 +580,10 @@ meow(1, 2)
 # UnboundLocalError: cannot access local variable 'summary' where it is not associated with a value
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3.6/library/typing.html">typing 模块 (Python 3.6)</SeeAlsoLink>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-526-syntax-for-variable-annotations">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: 'typing 模块 (Python 3.6)', link: 'https://docs.python.org/zh-cn/3.6/library/typing.html' },
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-526-syntax-for-variable-annotations' },
+]"/>
 
 ### 数字下划线
 
@@ -602,9 +597,9 @@ assert 21_0000_0000 == 2100000000
 assert 0x_0314_1592 == 0x03141592
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-515-underscores-in-numeric-literals">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-515-underscores-in-numeric-literals' },
+]"/>
 
 ## 3.5 版本 {#35}
 
@@ -626,9 +621,9 @@ async def coro():
 > [!IMPORTANT] 注意
 > `async` 和 `await` 到 3.7 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-492-coroutines-with-async-and-await-syntax">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-492-coroutines-with-async-and-await-syntax' },
+]"/>
 
 ### 更多解包
 
@@ -656,18 +651,18 @@ print(*[1], *[2], 3, *[4, 5])
 # 打印 {'x': 1, 'y': 2}
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-448-additional-unpacking-generalizations">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-448-additional-unpacking-generalizations' },
+]"/>
 
 ### 矩阵运算符
 
 二元运算符 `@` 目前（截至 2024 年底）只为第三方库**矩阵乘法**的计算而设计，Python 内置的类型并不支持该运算，开发者可以定义对应的魔术方法 `__matmul__()` 、`__rmatmul__()` 、`__imatmul__()` 来为自定义对象模拟该运算。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-numeric-types">魔术方法</SeeAlsoLink>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-465-a-dedicated-infix-operator-for-matrix-multiplication">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '魔术方法', link: 'https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-numeric-types' },
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-465-a-dedicated-infix-operator-for-matrix-multiplication' },
+]"/>
 
 ### 类型标注 标准化
 
@@ -708,9 +703,9 @@ login('1a4384bbdb91756e66f8abdfde8a0075')
 login((1, 'admin'))
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-484-type-hints">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-484-type-hints' },
+]"/>
 
 ## 3.4 版本 {#34}
 
@@ -742,9 +737,9 @@ list(generate(5))
 # [5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5]
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.3.html#pep-380-syntax-for-delegating-to-a-subgenerator">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.3.html#pep-380-syntax-for-delegating-to-a-subgenerator' },
+]"/>
 
 ## 3.2 版本 {#32}
 
@@ -784,9 +779,9 @@ print((1970, 1))
 print("断言：API接口缺少参数", file=sys.stderr)
 ```
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.0.html#print-is-a-function">更新详情</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.0.html#print-is-a-function' },
+]"/>
 
 ### 简化比较、改用新不等号
 
@@ -796,10 +791,10 @@ print("断言：API接口缺少参数", file=sys.stderr)
 
 定制对象时，可以通过 `__lt__()` 实现 `<`，通过 `__eq__()` 实现 `==` 和 `!=`，两者配合可以实现 `<` `<=` `!=` `==` `>=` `>`；另外，通过 `__hash__()` 可以判断两个对象是否为同一个。
 
-<SeeAlso>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__lt__">魔术方法</SeeAlsoLink>
-    <SeeAlsoLink href="https://docs.python.org/zh-cn/3/whatsnew/3.0.html#ordering-comparisons">排序比较</SeeAlsoLink>
-</SeeAlso>
+<SeeAlsoBar flavor="foot" :refs="[
+    { text: '魔术方法', link: 'https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__lt__' },
+    { text: '排序比较', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.0.html#ordering-comparisons' },
+]"/>
 
 ### 类型标注
 
