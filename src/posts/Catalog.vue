@@ -171,7 +171,7 @@ onMounted(() => {
         padding: 0;
         border-top: 0;
         mask: linear-gradient(#fff 50%, transparent);
-        font: 800 3em/1 "Inter", "Helvetica", "Arial", system-ui, sans-serif;
+        font: 800 3em/1 var(--vp-font-family-mono);
         z-index: -1;
         -webkit-text-stroke: 1px var(--el-color-info);
     }

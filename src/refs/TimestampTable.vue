@@ -65,7 +65,4 @@ const data = [ ...table.values() ].sort(
 </template>
 
 <style scoped>
-table {
-    font-family: "HarmonyOS Sans SC", "JetBrains Mono", var(--vp-font-family-mono), monospace;
-}
 </style>

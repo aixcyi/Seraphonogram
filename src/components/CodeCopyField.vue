@@ -37,11 +37,11 @@ const handleFocus = (event: FocusEvent) => {
 </template>
 
 <style scoped>
-:deep(.el-input__inner) {
-    font-family: "JetBrains Mono", "Lucida Console", "Consolas", "Courier New", Inter, system-ui, Avenir, Helvetica, Arial, serif;
+.el-input :deep(.el-input__inner) {
+    font-family: var(--vp-font-family-mono);
 }
 
-:deep(.el-textarea__inner) {
-    font-family: "JetBrains Mono", "Lucida Console", "Consolas", "Courier New", Inter, system-ui, Avenir, Helvetica, Arial, serif;
+.el-textarea :deep(.el-textarea__inner) {
+    font-family: var(--vp-font-family-mono);
 }
 </style>
