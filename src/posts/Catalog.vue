@@ -40,11 +40,11 @@ onMounted(() => {
 
 <template>
     <div class="ai-head">
-        <h1>羽音 • <i>Seraphonogram</i></h1>
+        <h1>羽音 · <i>Seraphonogram</i></h1>
     </div>
 
     <div v-if="landscape" class="ai-tags">
-        <el-space style="gap: .5rem" wrap>
+        <el-space style="gap: .5rem; justify-content: center" wrap>
             <button v-for="(qty, tag) in data.tags"
                     :key="tag"
                     :class="['tag-btn', switches[tag] ? 'selected' : '']"
@@ -82,7 +82,8 @@ onMounted(() => {
                 <li v-for="post in posts" class="article-item">
                     <pre class="time">{{ post.date }}</pre>
                     <a :href="post.url" class="article-link gradient-card">
-                        <p class="excerpt-paragraph">{{ post.title }}</p>
+                        <p v-if="landscape" class="excerpt-paragraph">{{ post.title }}</p>
+                        <p v-else class="excerpt-paragraph"><b>{{ post.title }}</b></p>
                         <p class="excerpt-paragraph">
                             <el-text type="info" v-html="post.excerpt"></el-text>
                         </p>
@@ -138,6 +139,10 @@ onMounted(() => {
 .ai-catalog {
     margin: 3rem 1rem;
     mask: linear-gradient(#fff 50%, #fff5);
+
+    @media (max-width: 768px) {
+        margin: 3rem 0;
+    }
 }
 
 .catalog-group {
@@ -194,6 +199,18 @@ onMounted(() => {
 
     @media (max-width: 768px) {
         font-size: 0.9em;
+    }
+
+    @media (max-width: 500px) {
+        border-bottom: 1px dashed var(--vp-c-default-1);
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    @media (min-width: 500px) {
+        border-bottom: none;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .column {
