@@ -208,7 +208,7 @@ def callback(request, biz: str):
     )
 ```
 
-## 参考链接
+## 参考
 
 1. StackOverflow：[Send message using Django Channels from outside Consumer class](https://stackoverflow.com/a/58372995)
 2. Channels：[Channel Layers](https://channels.readthedocs.io/en/latest/topics/channel_layers.html)
