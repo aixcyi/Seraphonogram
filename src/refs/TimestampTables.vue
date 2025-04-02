@@ -69,11 +69,7 @@ const configs = {
 </template>
 
 <style lang="scss" scoped>
-ul {
-    margin-top: 0;
-}
-
-.el-tabs__card {
+.el-tabs--card {
     :deep() {
         .el-tabs__nav {
             margin: 0 16px;
@@ -83,9 +79,12 @@ ul {
             margin: 0 16px;
         }
 
-        .el-tabs__item.is-active,
-        .el-tabs__item:hover {
+        .el-tabs__item.is-active {
             color: var(--vp-c-brand-1);
+        }
+
+        .el-tabs__item:hover {
+            color: var(--vp-c-brand-2);
         }
     }
 }

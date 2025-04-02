@@ -68,6 +68,8 @@
     --vp-c-danger-2: var(--vp-c-red-2);
     --vp-c-danger-3: var(--vp-c-red-3);
     --vp-c-danger-soft: var(--vp-c-red-soft);
+
+    --el-text-color-primary: var(--vp-c-text-1) !important;
 }
 
 /**
@@ -197,4 +199,16 @@ p[class="paragraph"] {
 
 .status-bar {
     padding-top: 0.75rem;
+}
+
+/**
+ * Element Plus
+ * -------------------------------------------------------------------------- */
+
+ul[class="el-timeline"] {
+    list-style: none !important;
+}
+
+ul[class="el-timeline"] > li {
+    margin-top: 0 !important;
 }

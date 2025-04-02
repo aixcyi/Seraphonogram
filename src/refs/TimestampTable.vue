@@ -45,20 +45,20 @@ const data = [ ...table.values() ].sort(
     <table>
         <thead>
         <tr>
-            <th v-for="() in bases" style="text-align:center;"></th>
-            <th style="text-align:right;">存储上限</th>
-            <th style="text-align:right;">时间上限</th>
+            <th v-for="() in bases" style="text-align: center"></th>
+            <th style="text-align: right">存储上限</th>
+            <th style="text-align: right">时间上限</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="row in data">
-            <td v-for="base in bases" style="text-align:center;">
-                <span v-if="row.powers.get(base) != undefined">
+            <td v-for="base in bases" style="text-align: center">
+                <span v-if="row.powers.get(base) !== undefined">
                     {{ base }}<sup>{{ row.powers.get(base) }}</sup>
                 </span>
             </td>
-            <td style="text-align:right;">{{ row.delta }}</td>
-            <td style="text-align:right;">{{ row.datetime }}</td>
+            <td nowrap="nowrap" style="text-align: right">{{ row.delta }}</td>
+            <td nowrap="nowrap" style="text-align: right">{{ row.datetime }}</td>
         </tr>
         </tbody>
     </table>

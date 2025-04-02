@@ -139,20 +139,8 @@ import { Icon } from "@iconify/vue";
 
 
 <style scoped>
-ul {
-    list-style: none !important;
-}
-
-li {
-    margin-top: 0 !important;
-}
-
 .logo {
     display: inline;
     vertical-align: middle;
-}
-
-.el-timeline :deep(.el-timeline-item__content) {
-    color: var(--vp-c-text-1);
 }
 </style>
