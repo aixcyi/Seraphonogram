@@ -4,10 +4,12 @@ import { onMounted, ref } from "vue";
 import { data } from "../../.vitepress/theme/pages.data.ts";
 
 
-const widescreen = ref(window.innerWidth > 768)
+const widescreen = ref(window.innerWidth > 1024)
+const landscape = ref(window.innerWidth > 768)
 
 window.addEventListener('resize', () => {
-    widescreen.value = window.innerWidth > 768
+    widescreen.value = window.innerWidth > 1024
+    landscape.value = window.innerWidth > 768
 })
 
 function toggle(tag: string) {
@@ -41,7 +43,7 @@ onMounted(() => {
         <h1>羽音 • <i>Seraphonogram</i></h1>
     </div>
 
-    <div v-if="widescreen" class="ai-tags">
+    <div v-if="landscape" class="ai-tags">
         <el-space style="gap: .5rem" wrap>
             <button v-for="(qty, tag) in data.tags"
                     :key="tag"
