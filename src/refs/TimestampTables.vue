@@ -81,6 +81,7 @@ const configs = {
 
         .el-tabs__item.is-active {
             color: var(--vp-c-brand-1);
+            border-bottom: 2px solid var(--vp-c-bg);
         }
 
         .el-tabs__item:hover {
