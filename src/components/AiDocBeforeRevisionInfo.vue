@@ -7,7 +7,7 @@ const { page, frontmatter: $frontmatter } = useData()
 
 <template>
     <div v-if="!page.relativePath.endsWith('index.md') && !$frontmatter.hideRevisionInfo" class="vp-doc">
-        <div v-if="$frontmatter.tags" class="ai-tags">
+        <div v-if="$frontmatter.tags" class="tags">
             <el-space style="gap: .5rem" wrap>
                 <a v-for="tag in $frontmatter.tags" :href="`/posts/?tag=${tag}`" class="tag">
                     <span>#</span>
@@ -15,18 +15,14 @@ const { page, frontmatter: $frontmatter } = useData()
                 </a>
             </el-space>
         </div>
-        <h1>{{ $frontmatter.title }}</h1>
-        <div v-if="$frontmatter.excerpt" class="ai-excerpt" v-html="$frontmatter.excerpt"/>
+        <h1 class="title">{{ $frontmatter.title }}</h1>
+        <div v-if="$frontmatter.excerpt" class="excerpt" v-html="$frontmatter.excerpt"/>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.ai-excerpt {
-    color: var(--el-color-info);
-}
-
-.ai-tags {
+.tags {
     margin-bottom: .75rem;
 
     .tag {
@@ -55,5 +51,16 @@ const { page, frontmatter: $frontmatter } = useData()
     .tag-name {
         color: var(--vp-c-text-1);
     }
+}
+
+.title {
+    background: var(--vp-home-hero-name-background);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.excerpt {
+    color: var(--el-color-info);
 }
 </style>
