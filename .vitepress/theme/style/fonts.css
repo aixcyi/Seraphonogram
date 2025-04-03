@@ -13,13 +13,13 @@ i, em {
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji';
 }
 
-.VPNavBar .title {
+.VPNavBar .VPNavBarTitle > .title {
     font-style: italic;
     font-family: 'Segoe UI', 'HarmonyOS Sans SC', 'Inter', ui-sans-serif, system-ui, sans-serif,
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji';
 }
 
-.VPHome .name {
+.VPHomeHero .name {
     line-height: 1.5em;
     font-style: italic;
     font-family: 'Segoe UI', 'HarmonyOS Sans SC', 'Inter', ui-sans-serif, system-ui, sans-serif,
