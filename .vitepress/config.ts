@@ -31,10 +31,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
         nav: [],
         sidebar: [],
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/aixcyi', ariaLabel: 'GitHub 主页' },
-            { icon: 'gitee', link: 'https://gitee.com/aixcyi', ariaLabel: '码云主页' },
             { icon: 'qq', link: 'https://qm.qq.com/q/ZqCGqpMXy8', ariaLabel: 'QQ 群' },
             { icon: 'telegram', link: 'https://t.me/ayuucc', ariaLabel: 'Telegram 群组' },
+            { icon: 'github', link: 'https://github.com/aixcyi/Seraphonogram', ariaLabel: 'GitHub 仓库' },
         ],
         langMenuLabel: '切换语言',
         sidebarMenuLabel: '目录',
