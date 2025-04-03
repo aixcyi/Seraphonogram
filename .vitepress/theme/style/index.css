@@ -185,6 +185,21 @@ a:hover {
     filter: blur(0);
 }
 
+.VPDoc strong {
+    color: var(--vp-c-brand-1);
+
+    /*方案二*/
+    /*background: conic-gradient(at 4px 4px, transparent 75%, #bd34fe 75%) 0 0 / calc(100% - 4px) calc(100% - 4px);*/
+
+    /*方案三*/
+    /*padding: 0 4px;*/
+    /*border: 2px dashed transparent;*/
+    /*border-radius: 8px;*/
+    /*background-clip: padding-box, border-box;*/
+    /*background-origin: padding-box, border-box;*/
+    /*background-image: linear-gradient(to right, var(--vp-c-bg), var(--vp-c-bg)), linear-gradient(45deg, #bd34fe, #41d1ff);*/
+}
+
 p[class="paragraph"] {
     text-indent: 2em;
 }

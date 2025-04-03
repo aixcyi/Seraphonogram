@@ -40,7 +40,7 @@ onMounted(() => {
 
 <template>
     <div class="ai-head">
-        <h1>羽音 · <i>Seraphonogram</i></h1>
+        <h1>羽音 · 目录</h1>
     </div>
 
     <div v-if="landscape" class="ai-tags">
