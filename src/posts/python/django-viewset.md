@@ -10,7 +10,7 @@ tags:
     - Django
     - 视图
 excerpt:
-    浅析 [Django](https://docs.djangoproject.com/zh-hans/4.2/topics/class-based-views/)
+    浅析 [Django](https://docs.djangoproject.com/zh-hans/5.2/topics/class-based-views/)
     与 [Django REST Framework](https://www.django-rest-framework.org/api-guide/views/) 两个框架视图类的脉络。
 ---
 
@@ -51,7 +51,7 @@ excerpt:
 
 ## `dispatch()` 线 {#dispatch}
 
-Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
+Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/5.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
 
 ```python
 from django.views.generic.base import View

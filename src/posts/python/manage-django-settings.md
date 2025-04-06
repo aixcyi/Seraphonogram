@@ -35,8 +35,8 @@ Django 就是在启动时通过这个包路径导入对应的配置代码，构�
 当需要配置不同环境的 settings 时，一般建立多个不受版本控制的 `./your_project/settings_*.py` 文件，并在不同的环境下将环境变量 `DJANGO_SETTINGS_MODULE` 指向所需的文件。
 
 - 开发环境：./manage.py
-- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/wsgi/)：./your_project/wsgi.py
-- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.0/howto/deployment/asgi/)：./your_project/asgi.py
+- [WSGI环境](https://docs.djangoproject.com/zh-hans/5.2/howto/deployment/wsgi/)：./your_project/wsgi.py
+- [ASGI环境](https://docs.djangoproject.com/zh-hans/5.2/howto/deployment/asgi/)：./your_project/asgi.py
 
 这个文件可以配置如下：
 

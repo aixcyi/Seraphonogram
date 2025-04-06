@@ -102,4 +102,4 @@ refresh = access.refresh_token if hasattr(access, 'refresh_token') else None
 ```
 
 > [!NOTE] 关于“反射”
-> 见 ForeignKey 的 [related_name](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#django.db.models.ForeignKey.related_name)，在 [OneToOneField](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#onetoonefield) 中将反射为单个对象，而非一个查询集。
+> 见 ForeignKey 的 [related_name](https://docs.djangoproject.com/zh-hans/5.2/ref/models/fields/#django.db.models.ForeignKey.related_name)，在 [OneToOneField](https://docs.djangoproject.com/zh-hans/5.0/ref/models/fields/#onetoonefield) 中将反射为单个对象，而非一个查询集。
