@@ -71,14 +71,6 @@ const configs = {
 <style lang="scss" scoped>
 .el-tabs--card {
     :deep() {
-        .el-tabs__nav {
-            margin: 0 16px;
-        }
-
-        .el-tabs__content {
-            margin: 0 16px;
-        }
-
         .el-tabs__item.is-active {
             color: var(--vp-c-brand-1);
             border-bottom: 2px solid var(--vp-c-bg);

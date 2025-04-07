@@ -8,8 +8,8 @@ expires: 3650
 order: 2
 ---
 
+<Mirrors />
+
 <script setup lang="ts">
 import Mirrors from "./Mirrors.vue";
 </script>
-
-<Mirrors />

@@ -10,10 +10,6 @@ excerpt:
     工具表格，用来查不同进位制（不同字符集）下的计数空间，以及不同单位的时间存储上限。
 ---
 
-<script setup lang="ts">
-import TimestampTables from "./TimestampTables.vue";
-</script>
-
 > [!NOTE] 食用指南
 > - 用 **字符串** 存储时长：下表的 **指数** 表示所需 **字符个数**（BaseN），而 **底数** 表示整数的 **进位制**。
 > - 用 **整数** 存储时长：以 `2` 为底的数的指数表示所需的 **比特数**。
@@ -23,4 +19,18 @@ import TimestampTables from "./TimestampTables.vue";
 > [!WARNING] 注意
 > 测算超远日期时，务必提前了解所用语言／框架是否支持。
 
+::: details 备注
+- $2^n$、$8^n$、$10^n$、$16^n$ 常见于二进制、八进制、十进制、十六进制整数。
+- $32^n$、$85^n$ 见于 Base 32、Base 85 编码字符串。
+- $24^n$ 见于去除 `I` `O` 之后的英文字母序列，比如国内蓝牌车牌号的第三到第七位。
+- $26^n$ 见于纯大写／小写英文字母序列。
+- $36^n$ 一般见于由阿拉伯数字和英文大写／小写字母组成的字符串。
+- $62^n$ 一般见于由阿拉伯数字和英文大小写字母（除去 `I` `O`）组成的字符串。
+- $64^n$ 一般见于由阿拉伯数字和英文大小写字母组成的字符串，比如 Base 64 编码字符串。
+:::
+
 <TimestampTables />
+
+<script setup lang="ts">
+import TimestampTables from "./TimestampTables.vue";
+</script>
