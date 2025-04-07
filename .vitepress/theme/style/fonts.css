@@ -1,16 +1,18 @@
-:root {
-    --vp-font-family-base: 'HarmonyOS Sans SC', 'Segoe UI', 'Inter', ui-sans-serif, system-ui, sans-serif,
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji';
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url(JetBrainsMono-Regular.woff2) format('woff2');
+}
 
-    --vp-font-family-mono: 'JetBrains Mono', ui-monospace, 'Menlo', 'Monaco', 'Consolas',
-    'Liberation Mono', 'Courier New', monospace;
+:root {
+    --vp-font-family-base: 'HarmonyOS Sans SC', 'MiSans VF', 'Segoe UI', sans-serif;
+
+    --vp-font-family-mono: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
 
     --el-font-family: var(--vp-font-family-base);
 }
 
 i, em {
-    font-family: 'Segoe UI', 'HarmonyOS Sans SC', 'Inter', ui-sans-serif, system-ui, sans-serif,
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji', 'Noto Color Emoji';
+    font-family: 'Segoe UI', 'HarmonyOS Sans SC', 'MiSans VF', sans-serif;
 }
 
 .VPHomeHero .name {

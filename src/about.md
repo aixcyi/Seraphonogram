@@ -8,30 +8,37 @@ outline: false
 hideRevisionInfo: true
 ---
 
-# 阿羽
+# 狐说 <Icon class="logo" height="40" icon="fluent-emoji:fox" />
 
-𝑺𝒆𝒆𝒅𝒔 𝒐𝒇 𝒔𝒕𝒐𝒓𝒊𝒆𝒔, 𝒃𝒓𝒐𝒖𝒈𝒉𝒕 𝒃𝒚 𝒕𝒉𝒆 𝒘𝒊𝒏𝒅 𝒂𝒏𝒅 𝒄𝒖𝒍𝒕𝒊𝒗𝒂𝒕𝒆𝒅 𝒃𝒚 𝒕𝒊𝒎𝒆.
-
-## 狐言
-
-### 站点简述
+## 小站自述 {#description}
 
 <p class="paragraph">
-    站点名为「羽音」，对应 <i>Seraphonogram</i>，目前分为几个板块：“博客”用来存放图文类的博文，“快速参考”用于存放平时总结的工具、经验的摘要等，“草稿箱”仅在本地显示、用于存放草稿和废稿；板块之间（的侧边栏）相互独立。
+    名不见经传的个人博客，目前分了几个板块：“博客”用来存放图文类的博文，类目详见<a href="/posts">目录</a>右侧的栏目介绍；“快速参考”用于存放平时总结的工具、经验的摘要等；“草稿箱”仅在本地调试状态下显示，用于存放草稿和废稿；若是思如涌泉，未来说不定还会开辟新的板块。这里的板块指的是同一个站点下的不同空间，每个板块拥有各自独立、完全不同的（左）侧边栏，用以区隔。
+</p>
+<p class="paragraph">
+    字体方面，小站已经内嵌较小的英文字符集
+    <a href="https://www.jetbrains.com/lp/mono/" target="_blank"><code>JetBrains Mono</code></a>
+    以确保浏览代码时能获得最佳体验，而较大的中文字符集则通过 CDN 引入了
+    <a href="https://hyperos.mi.com/font/zh/" target="_blank"><code>MiSans VF</code></a>
+    ，若失败则回退到系统字体。
 </p>
 
-### 昵称与 ID
+## 命名简史 {#namespace}
 
 <p class="paragraph">
-    “砹小翼”是最初的昵称，取双拼拼音得到常用 ID <code>aixcyi</code> 并衍生出域名
+    最初我的昵称是“砹小翼”，常用 ID 是取双拼拼音得到的 <code>aixcyi</code>，由此衍生出最初的域名
     <a href="https://aixcyi.cn/" target="_blank"><code>aixcyi.cn</code></a>
     ，但因为昵称不好叫，工作中一般喊“阿羽”。后来发现一个更好记的域名
     <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
-    ，于是改用 <code>ayuu</code> 作为新的 ID。不过
-    <code>aixcyi</code> 已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
+    ，于是改用 <code>ayuu</code> 作为新的 ID。不过因为 <code>aixcyi</code>
+    已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
+</p>
+<p class="paragraph">
+    小站名为「羽音」，意为阿羽的声音；英文 <i>Seraphonogram</i> 由 <i>Seraph</i> 与 <i>phonogram</i>
+    合成得到，分别对应「羽音」的两个字。
 </p>
 
-### 捕蛇者说
+## 捕蛇外传 {#life}
 
 <el-timeline>
     <el-timeline-item color="#A349A4" timestamp="2012 年，暑假">
@@ -132,15 +139,35 @@ hideRevisionInfo: true
 </el-timeline>
 
 
+## 引用鸣谢 {#thanks}
+
+<ul>
+    <li v-for="ref in refs">
+        {{ ref.text }}，<a :href="ref.link" target="_blank">{{ ref.link }}</a>
+    </li>
+</ul>
+
+
 <script setup lang="ts">
 import { Bottom } from "@element-plus/icons-vue";
 import { Icon } from "@iconify/vue";
+
+const refs = [
+    { text: "錯誤", link: "https://www.pixiv.net/users/1297556" },
+    { text: "翌风", link: "https://www.pixiv.net/users/23694308" },
+    { text: "アナ", link: "https://www.pixiv.net/users/24036634" },
+    { text: "Mi Sans", link: "https://hyperos.mi.com/font/zh/" },
+    // { text: "HarmonyOS Sans", link: "https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001" },
+    { text: "JetBrains Mono", link: "https://www.jetbrains.com/lp/mono/" },
+    { text: "Iconify Design", link: "https://iconify.design/" },
+    { text: "Shields.io", link: "https://shields.io/" },
+]
 </script>
 
 
 <style scoped>
 .logo {
     display: inline;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 </style>

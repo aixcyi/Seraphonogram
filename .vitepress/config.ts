@@ -24,6 +24,10 @@ const configs: UserConfig<DefaultTheme.Config> = {
     ],
     head: [
         [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],
+        [ 'link', {
+            rel: 'stylesheet',
+            href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans_VF:VF:Chinese_Simplify,Latin&display=swap'
+        } ],
     ],
     themeConfig: {
         // https://vitepress.dev/zh/reference/default-theme-config
@@ -45,7 +49,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         docFooter: { prev: '上一篇', next: '下一篇' },
         footer: {
             message: env.VITE_FOOTER_MSG,
-            copyright: `Copyright © 2016-${now} <a href="https://ayuu.cc/">阿羽</a>`,
+            copyright: `© 2016-${now} <a href="https://ayuu.cc/" target="_blank">阿羽</a> 版权所有. All Rights Reserved.`,
         },
     },
     cleanUrls: true,
@@ -75,6 +79,13 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
     transformPageData(pageData) {
         pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.render(pageData.frontmatter.excerpt) : ''
+    },
+    transformHead({ assets }) {
+        const myFontFile = assets.find(() => /JetBrainsMono-\w+\.woff2/)
+        if (myFontFile)
+            return [
+                [ 'link', { rel: 'preload', href: myFontFile, as: 'font', type: 'font/woff2', crossorigin: '' } ],
+            ]
     },
 }
 
