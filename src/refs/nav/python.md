@@ -3,11 +3,11 @@ title: Python 导航
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48
+reviseAt: 2025-04-10 00:16
 expires: 365
 order: 5
+excerpt:
 ---
-
-<hr style="margin-top: 48px; margin-bottom: 16px"/>
 
 <SeeAlsoBar flavor="neck" :refs="[
     { text: '官方文档', link: 'https://docs.python.org/zh-cn/3/index.html' },
@@ -17,27 +17,19 @@ order: 5
     { text: 'Python 备忘清单', link: 'https://quickref.cn/docs/python.html' },
 ]"/>
 
-<hr style="margin-top: 16px"/>
-
-### 教程 {#tutorial}
+## 教程 {#tutorial}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/tutorial/index.html" text="Python 教程" />
 
 > 命令行交互 → 简单数学计算 → 控制流 → 数据结构 → 模块 → 输入输出 → 文件读写 → 错误与异常 → 类与对象。
 
-### 标准库 {#standlib}
-
-<LinkCard href="https://docs.python.org/zh-cn/3/library/index.html" text="Python 标准库" />
-
-> “标准库”指安装 Python 后即可使用的库（library），它们按照使用领域进行归类，一般在浏览器中直接 Ctrl+F 查找库名。
-> 
-> 这个页面也包含了内置的函数／异常／类型等，“内置”指无须导入即可使用的符号。
-
-### 术语对照表 {#glossary}
+## 术语对照表 {#glossary}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/glossary.html" text="术语对照表" />
 
 > 当你清楚一个英文术语，却不了解它在 Python 中对应的概念或翻译时，可以参考此表。并且，可能会出现在代码中的 `...` 在此亦有解释。
+
+## 语法 {#grammar}
 
 ### 类型与标注{typing}
 
@@ -69,17 +61,6 @@ order: 5
 
 > 在这里，你可以找到绝大部分以 **双下划线** 开头结尾的 `__init__` 风格命名的 **方法** 和 **属性** 的解释。
 
-### 异常层次结构 {#exception-hierarchy}
-
-<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="异常层次结构">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
-        <span>Python 标准库</span>
-        <span>内置异常</span>
-    </el-space>
-</LinkCard>
-
-> 内置的异常的层次结构，用于快速确定异常们的 **包含** 与 **被包含** 关系。
-
 ### 源文件编码 {#environment}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/tutorial/interpreter.html#the-interpreter-and-its-environment" text="源文件的字符编码">
@@ -99,6 +80,40 @@ order: 5
           note="Python Developer's Guide" />
 
 > reStructuredText 是一种文本格式标记语言（类比于 Markdown，但二者语法不相似），常用于编写 Python 内（函数／方法／类）的文档。
+
+## 开发 {#developing}
+
+### 标准库 {#standlib}
+
+<LinkCard href="https://docs.python.org/zh-cn/3/library/index.html" text="Python 标准库" />
+
+> “标准库”指安装 Python 后即可使用的库（library），它们按照使用领域进行归类，一般在浏览器中直接 Ctrl+F 查找库名。
+> 
+> 这个页面也包含了内置的函数／异常／类型等，“内置”指无须导入即可使用的符号。
+
+### 异常层次结构 {#exception-hierarchy}
+
+<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="异常层次结构">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 标准库</span>
+        <span>内置异常</span>
+    </el-space>
+</LinkCard>
+
+> 内置的异常的层次结构，用于快速确定异常们的 **包含** 与 **被包含** 关系。
+
+### 格式规格迷你语言 {#formatspec}
+
+<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="格式规格迷你语言">
+    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+        <span>Python 标准库</span>
+        <span><code>string</code> 常见的字符串操作</span>
+    </el-space>
+</LinkCard>
+
+> 像 `%s`、`%d`、`%.2f` 之类的格式化描述的语法参考，在 `print()` 以及 `"Hello, %s.".format("World")` 这样的格式化语句中颇为常用。
+
+## 生态 {#ecosystem}
 
 ### 版本及现状 {#version}
 
@@ -120,3 +135,21 @@ order: 5
 > - `.py`、sdist、wheel 三者有什么关系？
 > - 如何打包成 Python 库以供他人复用？
 > - 我应该使用什么语言编写 Python 库？
+
+### Awesome Python
+
+<LinkCard href="https://awesome-python.com/"
+          text="Awesome Python"
+          note="A curated list of awesome Python frameworks, libraries, software and resources." />
+<LinkCard href="https://github.com/uhub/awesome-python"
+          text="uhub／awesome-python"
+          note="A curated list of awesome Python frameworks, libraries and software." />
+
+## 深入 {#core}
+
+### Design and History FAQ
+
+<LinkCard href="https://docs.python.org/3/faq/design.html"
+          text="Design and History FAQ" />
+
+> Python 设计的历史与问答。例如“异常捕获有多快”、“为什么 lambda 不能包含语句”、“为什么 `list.sort()` 不返回列表”等等。

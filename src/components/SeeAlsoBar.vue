@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { spacer } from "@/commons.ts";
 import { Icon } from "@iconify/vue";
 
 const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: string, link: string }[] }>()
@@ -8,8 +7,8 @@ const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: st
 
 <template>
     <template v-if="flavor == 'neck'">
-        <p style="text-align: center">
-            <el-space :spacer="spacer" alignment="center" style="justify-content: center" wrap>
+        <p class="neck">
+            <el-space alignment="center" spacer="·" wrap>
                 <a v-for="ref in refs" :href="ref.link" class="link" target="_blank">
                     <span>{{ ref.text }}</span>
                 </a>
@@ -17,7 +16,7 @@ const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: st
         </p>
     </template>
     <template v-else>
-        <p style="text-align: end">
+        <p class="foot">
             <el-space spacer=" " wrap>
                 <a v-for="ref in refs" :href="ref.link" class="link" target="_blank">
                     <span>{{ ref.text }}</span>
@@ -29,7 +28,20 @@ const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: st
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
+.neck {
+    text-align: center;
+    margin: 48px auto;
+
+    & > .el-space {
+        justify-content: center;
+    }
+}
+
+.foot {
+    text-align: end;
+}
+
 .link {
     display: inline;
     text-decoration: none;
