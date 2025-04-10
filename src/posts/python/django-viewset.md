@@ -51,7 +51,7 @@ excerpt:
 
 ## `dispatch()` 线 {#dispatch}
 
-Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/5.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/4.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
+Django 的 `View` 通过 `.dispatch()` 将接收到的 [`HttpRequest`](https://docs.djangoproject.com/zh-hans/5.2/ref/request-response/#httprequest-objects) 转发到HTTP同名类方法处理并返回 [`HttpResponse`](https://docs.djangoproject.com/zh-hans/5.2/ref/request-response/#httpresponse-objects) ，流程如以下代码所示意：
 
 ```python
 from django.views.generic.base import View
