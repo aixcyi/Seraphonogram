@@ -73,7 +73,7 @@ onMounted(() => {
     <div class="ai-catalog">
         <div v-for="[year, posts] in annuals" :key="year" class="catalog-group">
             <div class="catalog-title">
-                <h2 class="catalog-year">{{ year }}</h2>
+                <h2 class="catalog-year"><b>{{ year }}</b></h2>
                 <div class="catalog-info">
                     <span>{{ posts.length }} 篇</span>
                 </div>
