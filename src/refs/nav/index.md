@@ -1,5 +1,5 @@
 ---
-title: 快速导航
+title: 导航
 aside: false
 prev: false
 next: false

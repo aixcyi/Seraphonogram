@@ -1,5 +1,5 @@
 ---
-title: Markdown 语法
+title: Markdown
 lang: zh-CN
 outline: deep
 publishAt: 2025-03-04 16:17

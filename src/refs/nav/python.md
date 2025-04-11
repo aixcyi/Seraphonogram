@@ -1,5 +1,5 @@
 ---
-title: Python 导航
+title: Python
 lang: zh-CN
 outline: deep
 publishAt: 2025-01-25 03:48

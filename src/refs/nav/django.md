@@ -1,5 +1,5 @@
 ---
-title: Django 导航
+title: Django & REST Framework
 lang: zh-CN
 outline: deep
 publishAt: 2025-04-10 00:16
