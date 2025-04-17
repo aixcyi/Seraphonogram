@@ -11,5 +11,5 @@ order: 2
 <Mirrors />
 
 <script setup lang="ts">
-import Mirrors from "./Mirrors.vue";
+import Mirrors from './Mirrors.vue'
 </script>

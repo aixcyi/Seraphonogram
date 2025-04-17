@@ -1,7 +1,7 @@
-import { pi } from "@/utils/math.ts";
-import { UTCDate } from "@date-fns/utc";
-import type { integer } from "@vue/language-server";
-import { format } from "date-fns";
+import { pi } from '@/utils/math.ts'
+import { UTCDate } from '@date-fns/utc'
+import type { integer } from '@vue/language-server'
+import { format } from 'date-fns'
 
 export enum DurationLevel {
     NANOSECOND,

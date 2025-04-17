@@ -30,7 +30,7 @@ excerpt:
 - “切换语言”在配置[国际化](https://vitepress.dev/zh/guide/i18n)后才会显示。
 
 ```typescript [.vitepress/config.ts]
-import { DefaultTheme, UserConfig } from "vitepress";
+import { DefaultTheme, UserConfig } from 'vitepress'
 
 const configs: UserConfig<DefaultTheme.Config> = {
   themeConfig: {
@@ -55,7 +55,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
 - `editLink` 是[编辑链接](https://vitepress.dev/zh/reference/default-theme-edit-link)，显示在正文的左下角，是用于指向本页在托管仓库中的位置，方便贡献者快速编辑。
 
 ```typescript [.vitepress/config.ts]
-import { DefaultTheme, UserConfig } from "vitepress";
+import { DefaultTheme, UserConfig } from 'vitepress'
 
 const configs: UserConfig<DefaultTheme.Config> = {
   themeConfig: {
@@ -83,7 +83,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
 而如果能接受自带的 404 页面样式，可以使用以下配置（对照着来）进行汉化：
 
 ```typescript [.vitepress/config.ts]
-import { DefaultTheme, UserConfig } from "vitepress";
+import { DefaultTheme, UserConfig } from 'vitepress'
 
 const configs: UserConfig<DefaultTheme.Config> = {
   themeConfig: {
@@ -105,7 +105,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
 如果要为页面 HTML 设置 `<html lang="zh-CN">` 标签，可以：
 
 ```typescript [.vitepress/config.ts]
-import { DefaultTheme, UserConfig } from "vitepress";
+import { DefaultTheme, UserConfig } from 'vitepress'
 
 const configs: UserConfig<DefaultTheme.Config> = {
   lang: 'zh-CN',
@@ -120,7 +120,7 @@ VitePress 支持的一种语法，使用一对 `:::` 定义，类似于使用一
 以下配置用于修改 VitePress 一些容器的 **默认** 标题；[GitHub 风格的警报](https://vitepress.dev/zh/guide/markdown#github-flavored-alerts)的标题不受该配置影响。
 
 ```typescript [.vitepress/config.ts]
-import { DefaultTheme, UserConfig } from "vitepress";
+import { DefaultTheme, UserConfig } from 'vitepress'
 
 const configs: UserConfig<DefaultTheme.Config> = {
   markdown: {

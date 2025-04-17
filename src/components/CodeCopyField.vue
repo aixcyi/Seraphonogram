@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ElInput } from "element-plus";
-import { ref } from "vue";
+import { ElInput } from 'element-plus'
+import { ref } from 'vue'
 
 // 参数、字段内容容器
 const props = defineProps<{ text?: string, multiple: boolean }>()

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Duration } from "@/utils/duration.ts";
+import { Duration } from '@/utils/duration.ts'
 
 const props = defineProps<{
     lowerLmt: bigint,

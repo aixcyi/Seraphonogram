@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { limit } from "@/utils/math.ts";
-import { add, differenceInDays, format, parse } from "date-fns";
-import { onContentUpdated, useData } from "vitepress";
-import { ref } from "vue";
+import { limit } from '@/utils/math.ts'
+import { add, differenceInDays, format, parse } from 'date-fns'
+import { onContentUpdated, useData } from 'vitepress'
+import { ref } from 'vue'
 
 
 const $frontmatter = useData().frontmatter

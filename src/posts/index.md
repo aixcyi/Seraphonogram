@@ -11,5 +11,5 @@ order: 1
 <Catalog />
 
 <script setup lang="ts">
-import Catalog from "./Catalog.vue";
+import Catalog from './Catalog.vue'
 </script>

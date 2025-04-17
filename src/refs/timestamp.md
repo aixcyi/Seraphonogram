@@ -32,5 +32,5 @@ excerpt:
 <TimestampTables />
 
 <script setup lang="ts">
-import TimestampTables from "./TimestampTables.vue";
+import TimestampTables from './TimestampTables.vue'
 </script>

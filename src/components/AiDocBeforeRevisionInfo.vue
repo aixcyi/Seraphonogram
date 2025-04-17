@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useData } from "vitepress";
+import { useData } from 'vitepress'
 
 const { page, frontmatter: $frontmatter } = useData()
 </script>

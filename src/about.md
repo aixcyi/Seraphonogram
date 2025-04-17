@@ -149,8 +149,8 @@ hideRevisionInfo: true
 
 
 <script setup lang="ts">
-import { Bottom } from "@element-plus/icons-vue";
-import { Icon } from "@iconify/vue";
+import { Bottom } from '@element-plus/icons-vue'
+import { Icon } from '@iconify/vue'
 
 const refs = [
     { text: "錯誤", link: "https://www.pixiv.net/users/1297556" },

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Icon } from "@iconify/vue";
+import { Icon } from '@iconify/vue'
 
 const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: string, link: string }[] }>()
 </script>

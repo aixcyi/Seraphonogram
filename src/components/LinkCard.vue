@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { getFavicon } from "@/commons.ts";
-import { onMounted, ref } from "vue";
+import { getFavicon } from '@/commons.ts'
+import { onMounted, ref } from 'vue'
 
 const { href, text, note, logo } = defineProps<{ href?: string, text?: string, note?: string, logo?: string }>()
 const logoSrc = ref('')

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Icon } from "@iconify/vue";
-import { VPButton } from "vitepress/theme";
+import { Icon } from '@iconify/vue'
+import { VPButton } from 'vitepress/theme'
 
 const messages = [
     [ '页面不小心被猫猫嗷呜一口吃掉了', '去看看其它页面吧' ],

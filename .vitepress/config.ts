@@ -1,9 +1,9 @@
-import MarkdownIt from "markdown-it";
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import { DefaultTheme, loadEnv, UserConfig } from "vitepress";
-import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
-import { PageHandler, PageHooks } from "../src/utils/vitepress";
+import MarkdownIt from 'markdown-it'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import { DefaultTheme, loadEnv, UserConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { PageHandler, PageHooks } from '../src/utils/vitepress'
 
 
 const md = MarkdownIt()

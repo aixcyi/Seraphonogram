@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Duration } from "@/utils/duration.ts";
-import type { integer } from "@vue/language-server";
-import TimestampTable from "./TimestampTable.vue";
+import { Duration } from '@/utils/duration.ts'
+import type { integer } from '@vue/language-server'
+import TimestampTable from './TimestampTable.vue'
 
 const zz = (n: integer) => n > 9 ? '' : '0'
 const zzz = (n: integer) => n > 99 ? '' : n > 9 ? '0' : '00'

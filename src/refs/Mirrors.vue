@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import CopyTextField from "@/components/CodeCopyField.vue";
-import type { integer } from "@vue/language-server";
+import CopyTextField from '@/components/CodeCopyField.vue'
+import type { integer } from '@vue/language-server'
 
 const mirrors = [
     { site: 'https://mirrors.ustc.edu.cn/', name: '中国科技大学' },

@@ -1,20 +1,20 @@
 // https://vitepress.dev/zh/guide/custom-theme
-import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-import ElementPlus from "element-plus";
-import type { Theme } from "vitepress";
-import DefaultTheme from "vitepress/theme-without-fonts";
-import { h } from "vue";
-import "./style/index.css";
-import "./style/fonts.css";
-import "virtual:group-icons.css";
-import "element-plus/dist/index.css";
-import "element-plus/theme-chalk/dark/css-vars.css";
-import AiDocAsideColumns from "../../src/components/AiDocAsideColumns.vue";
-import AiDocAsideStatus from "../../src/components/AiDocAsideStatus.vue";
-import AiDocBeforeRevisionInfo from "../../src/components/AiDocBeforeRevisionInfo.vue";
-import LinkCard from "../../src/components/LinkCard.vue";
-import NotFound from "../../src/components/NotFound.vue";
-import SeeAlsoBar from "../../src/components/SeeAlsoBar.vue";
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import ElementPlus from 'element-plus'
+import type { Theme } from 'vitepress'
+import DefaultTheme from 'vitepress/theme-without-fonts'
+import { h } from 'vue'
+import './style/index.css'
+import './style/fonts.css'
+import 'virtual:group-icons.css'
+import 'element-plus/dist/index.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import AiDocAsideColumns from '../../src/components/AiDocAsideColumns.vue'
+import AiDocAsideStatus from '../../src/components/AiDocAsideStatus.vue'
+import AiDocBeforeRevisionInfo from '../../src/components/AiDocBeforeRevisionInfo.vue'
+import LinkCard from '../../src/components/LinkCard.vue'
+import NotFound from '../../src/components/NotFound.vue'
+import SeeAlsoBar from '../../src/components/SeeAlsoBar.vue'
 
 export default {
     extends: DefaultTheme,
