@@ -31,7 +31,7 @@ excerpt:
 
 ## 语法 {#grammar}
 
-### 类型与标注{typing}
+### 类型与标注 {#typing}
 
 <LinkCard href="https://typing.python.org/en/latest/spec/" text="Python 类型系统规范（英文）" />
 
@@ -40,7 +40,7 @@ excerpt:
 ### 运算符优先级 {#operator-precedence}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/reference/expressions.html#operator-precedence" text="运算符优先级">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+    <el-space wrap style="row-gap: 0" spacer="»">
         <span>Python 语言参考手册</span>
         <span>6. 表达式</span>
         <span>17. 运算符优先级</span>
@@ -52,7 +52,7 @@ excerpt:
 ### 特殊方法（魔术方法） {#special-methods}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/reference/datamodel.html#special-method-names" text="特殊方法名称">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+    <el-space wrap style="row-gap: 0" spacer="»">
         <span>Python 语言参考手册</span>
         <span>3. 数据模型</span>
         <span>3. 特殊方法名称</span>
@@ -64,7 +64,7 @@ excerpt:
 ### 源文件编码 {#environment}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/tutorial/interpreter.html#the-interpreter-and-its-environment" text="源文件的字符编码">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+    <el-space wrap style="row-gap: 0" spacer="»">
         <span>Python 教程</span>
         <span>2. 使用 Python 的解释器</span>
         <span>2. 解释器的运行环境</span>
@@ -94,7 +94,7 @@ excerpt:
 ### 异常层次结构 {#exception-hierarchy}
 
 <LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="异常层次结构">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+    <el-space wrap style="row-gap: 0" spacer="»">
         <span>Python 标准库</span>
         <span>内置异常</span>
     </el-space>
@@ -102,18 +102,19 @@ excerpt:
 
 > 内置的异常的层次结构，用于快速确定异常们的 **包含** 与 **被包含** 关系。
 
-### 格式规格迷你语言 {#formatspec}
+### 格式化 {#formatspec}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/library/exceptions.html#exception-hierarchy" text="格式规格迷你语言">
-    <el-space wrap spacer="»" :style="{ rowGap: '0' }">
+<LinkCard href="https://docs.python.org/zh-cn/3/library/string.html#formatspec" text="格式规格迷你语言">
+    <el-space wrap style="row-gap: 0" spacer="»">
         <span>Python 标准库</span>
         <span><code>string</code> 常见的字符串操作</span>
     </el-space>
 </LinkCard>
 
-> 像 `%s`、`%d`、`%.2f` 之类的格式化描述的语法参考，在 `print()` 以及 `"Hello, %s.".format("World")` 这样的格式化语句中颇为常用。
+## 深入 {#learn-more}
 
-## 生态 {#ecosystem}
+<LinkCard href="https://docs.python.org/zh-cn/3/reference/index.html"
+          text="Python 语言参考手册" />
 
 ### 版本及现状 {#version}
 
@@ -126,6 +127,13 @@ excerpt:
 
 > 可以看到各个版本的支持情况（是开发中？还是已结束支持？）以及开发周期，用于读懂版本号、以及技术选型时敲定开发版本。
 
+### Design and History FAQ
+
+<LinkCard href="https://docs.python.org/3/faq/design.html"
+          text="Design and History FAQ" />
+
+> Python 设计的历史与问答。例如“异常捕获有多快”、“为什么 lambda 不能包含语句”、“为什么 `list.sort()` 不返回列表”等等。
+
 ### 打包指南 {#packaging}
 
 <LinkCard href="https://packaging.python.org/en/latest/overview/"
@@ -136,7 +144,7 @@ excerpt:
 > - 如何打包成 Python 库以供他人复用？
 > - 我应该使用什么语言编写 Python 库？
 
-### Awesome Python
+## 生态 {#ecosystem}
 
 <LinkCard href="https://awesome-python.com/"
           text="Awesome Python"
@@ -144,12 +152,3 @@ excerpt:
 <LinkCard href="https://github.com/uhub/awesome-python"
           text="uhub／awesome-python"
           note="A curated list of awesome Python frameworks, libraries and software." />
-
-## 深入 {#core}
-
-### Design and History FAQ
-
-<LinkCard href="https://docs.python.org/3/faq/design.html"
-          text="Design and History FAQ" />
-
-> Python 设计的历史与问答。例如“异常捕获有多快”、“为什么 lambda 不能包含语句”、“为什么 `list.sort()` 不返回列表”等等。
