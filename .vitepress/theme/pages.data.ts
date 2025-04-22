@@ -11,6 +11,33 @@ import type { SiteConfig } from 'vitepress'
 
 const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
 
+/**
+ * ```javascript
+ * console.log(
+ *     configBased('/disk/to/project/src/<zone>/<column>/page.md')
+ * )
+ * // <zone>/<column>/page.md
+ * ```
+ *
+ * ```javascript
+ * console.log(
+ *     configBased('/disk/to/project/src/<zone>/<column>/page.md', '../')
+ * )
+ * // <zone>/<column>
+ * ```
+ *
+ * @param path 基于 `SiteConfig.srcDir` 的地址。
+ * @param paths 对 `path` 的相对转换。
+ */
+function configBased(path: string, ...paths: string[]): string {
+    return pathlib.relative(config.srcDir!, pathlib.resolve(path, ...paths)).replace(/\\/g, '/')
+}
+
+enum Zone {
+    POSTS = 'posts',
+    REFS = 'refs',
+    DRAFTS = 'drafts',
+}
 
 /**
  * 博客文件路径通配符。
@@ -26,7 +53,6 @@ const patterns = [
         : p[0] + normalizePath(pathlib.join(config.srcDir!, p.substring(1)))
 )
 
-
 /**
  * 页面信息。
  */
@@ -34,7 +60,6 @@ export interface Page {
     url: string
     title: string
 }
-
 
 /**
  * 博客信息。
@@ -50,33 +75,42 @@ export interface Post {
     date: string
 }
 
+/**
+ * 栏目信息。
+ */
+export interface Column {
+    index: number
+    title: string
+    excerpt: string
+}
 
 /**
  * 导出数据。
  */
 export interface Data {
 
-    /** 所有页面 */
+    /** 所有页面。 */
     pages: Page[]
 
-    /** 所有博客 */
+    /** 所有博客。 */
     posts: Post[]
 
-    /** 标签及相应博客的数量 */
+    /** 标签及相应博客的数量。 */
     tags: Record<string, integer>
-}
 
+    /** 所有栏目。 */
+    columns: Column[]
+}
 
 declare const data: Data
 export { data }
-
 
 export default {
     watch: patterns,
     async load(files: string[]) {
         const md = MarkdownIt()
         const maps = config.rewrites['map']
-        const data: Data = { pages: [], posts: [], tags: {} }
+        const data: Data = { pages: [], posts: [], tags: {}, columns: [] }
 
         // 提取文件夹名称
         let folders = new Map<string, Record<string, any>>()
@@ -85,16 +119,21 @@ export default {
                 continue
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
-            folders.set(
-                pathlib.dirname(file).split('/').reverse()[0],
-                frontmatter
-            )
+            const srcFolder = configBased(file, '../')
+            frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
+            folders.set(srcFolder, frontmatter)
         }
-        folders = new Map(
-            Array
-                .from(folders.entries())
-                .sort(([ , af ], [ , bf ]) => af.order - bf.order)
-        )
+        data.columns = Array
+            .from(folders.entries())
+            .filter(([ key, ]) => key.startsWith(Zone.POSTS) && key.split('/').length === 2)
+            .sort(([ , af ], [ , bf ]) => af.order - bf.order)
+            .map(([ , f ]) => {
+                return {
+                    index: f.order,
+                    title: f.title,
+                    excerpt: f.excerpt,
+                }
+            })
 
         // 提取文件信息
         for (const file of files) {
@@ -107,12 +146,10 @@ export default {
                 continue
             }
 
-            // 从路径 ./src/<zone>/<column>/page.md 中提取参数
-            // <zone> 目前有 posts 和 refs
-            // <column> 是 posts 下的栏目
-            const srcPath = pathlib.relative(config.srcDir!, file).replace(/\\/g, '/')
-            let [ zone, column, ] = srcPath.split('/')
-            column = folders.get(column)?.title
+            const srcPath = configBased(file)
+            const srcFolder = configBased(file, '../')
+            const column = folders.get(srcFolder)?.title
+            const [ zone, ] = srcPath.split('/')
 
             // 计算页面 URL
             const mappedPath = srcPath in maps ? maps[srcPath] : srcPath
@@ -128,7 +165,7 @@ export default {
             })
 
             // @ts-ignore
-            if (Object.is(data[zone], data.posts)) {
+            if (zone === Zone.POSTS) {
                 // 渲染页面摘要
                 frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
                 // 获取最近修改时间
