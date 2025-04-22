@@ -14,7 +14,7 @@ hero:
       text: 博客目录
       link: /posts
     - theme: alt
-      text: 随便逛逛
+      text: 任意门
       link: /anywhere
 
 features:

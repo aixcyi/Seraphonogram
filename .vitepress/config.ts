@@ -117,11 +117,13 @@ configs.themeConfig.nav = process.env.VP_DEBUG ? [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
     sidebar.buildNav('./src/refs/', true, hookRefs),
     sidebar.buildNav('./src/drafts/', true, hookRefs),
+    { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
 ] : [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
     sidebar.buildNav('./src/refs/', true, hookRefs),
+    { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
 ]
