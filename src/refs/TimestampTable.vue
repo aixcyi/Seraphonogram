@@ -45,15 +45,15 @@ const data = [ ...table.values() ].sort(
     <table>
         <thead>
         <tr>
-            <th class="sticky-column">存储上限</th>
-            <th class="sticky-column">时间上限</th>
+            <th>存储上限</th>
+            <th>时间上限</th>
             <th v-for="() in bases" style="text-align: center"></th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="row in data">
-            <td class="sticky-column" nowrap="nowrap">{{ row.delta }}</td>
-            <td class="sticky-column" nowrap="nowrap">{{ row.datetime }}</td>
+            <td nowrap="nowrap">{{ row.delta }}</td>
+            <td nowrap="nowrap">{{ row.datetime }}</td>
             <td v-for="base in bases" style="text-align: center">
                 <span v-if="row.powers.get(base) !== undefined">
                     {{ base }}<sup>{{ row.powers.get(base) }}</sup>
