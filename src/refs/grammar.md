@@ -3,7 +3,7 @@ title: Python 语法更新摘要
 lang: zh-CN
 outline: deep
 publishAt: 2023-12-23 23:59
-reviseAt: 2024-12-27 17:54
+reviseAt: 2025-04-27 17:10
 expires: 365
 order: 3
 excerpt: 
@@ -16,6 +16,31 @@ excerpt:
 <SeeAlsoBar flavor="foot" :refs="[
     { text: 'Status of Python Versions', link: 'https://devguide.python.org/versions/' },
 ]"/>
+
+## 3.14 版本（草稿） {#314}
+
+<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.14.html" text="Python 3.14 有什么新变化（草稿）" />
+
+### `except` 与 `except*` 可不带括号
+
+```python
+import requests
+
+try:
+    resp = requests.get('https://127.0.0.1:8000/server-status/').json()
+    code = resp['code']
+    data = resp['data']['RunningTime']
+except requests.exceptions.JSONDecodeError:
+    pass
+except KeyError, TypeError:
+    pass
+```
+
+### `finally` 块中禁用 `return` `break` `continue`
+
+> The compiler emits a [SyntaxWarning](https://docs.python.org/3.14/library/exceptions.html#SyntaxWarning)
+> when a `return`, `break` or `continue` statements appears where it exits a `finally` block.
+> This change is specified in [**PEP 765**](https://peps.python.org/pep-0765/).
 
 ## 3.13 版本 {#313}
 
@@ -49,7 +74,7 @@ class CustomList[T]:
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.12.html#pep-695-type-parameter-syntax' },
 ]"/>
 
-### type 语句
+### `type` 语句
 
 现在可以这样创建类型别名：
 
@@ -174,7 +199,7 @@ def square(number: int | float) -> int | float:
 
 ### match-case 语句
 
-`match` 会命中至多一个 `case` 并且只会执行该 `case` 的内容，如果都未命中则查找 `case _` 来执行，如果其未定义则不执行任何代码。
+`match` 会命中至多一个 `case` 并且只会执行该 `case` 的内容，也就是说 **不会** 继续执行后续的 `case`；如果都未命中则查找 `case _` 来执行，如果其未定义则不执行任何代码。
 
 ```python
 from typing import Optional
@@ -192,7 +217,8 @@ class Furry:
                 return "(未知)"
 ```
 
-`case` 子句如果不存在 `.` 会被强制作为变量名解析，因此当你需要匹配内置类型时，应当使用模块 `builtins`：
+`case` 仅有变量名时，会强制解析为变量，因此若需要匹配内置类型时，应当使用标准库
+[`builtins`](https://docs.python.org/zh-cn/3/library/builtins.html)：
 
 ```python
 import builtins
@@ -442,7 +468,7 @@ print(f'{tomorrow=:%Y-%m-%d}')
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging' },
 ]"/>
 
-### finally 中使用 continue
+### `finally` 块中使用 `continue`
 
 > 在之前版本中[`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue)语句不允许在[`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally)子句中使用，这是因为具体实现存在一个问题。在 Python 3.8 中此限制已被取消。
 
@@ -487,10 +513,12 @@ class Book:
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.7.html#other-language-changes' },
 ]"/>
 
-### async 与 await
+### `async` 与 `await`
 
 > [!CAUTION] 不向后兼容的语法更改
-> [`async`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async)和[`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)现在是保留的[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
+> [`async`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async)
+> 和 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)
+> 现在是保留的[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights' },
@@ -605,18 +633,24 @@ assert 0x_0314_1592 == 0x03141592
 
 <LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.5.html" text="Python 3.5 有什么新变化" />
 
-### 协程 async 和 await 语句
+### 协程 `async` 和 `await` 语句
 
 > [**PEP 492**](https://peps.python.org/pep-0492/)通过添加[可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)、[协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function)、[异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable)和[异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager)极大地改善了 Python 对异步编程的支持。
 >
-> 协程函数是使用新的[`async def`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async-def)语法来声明的
+> 协程函数是使用新的
+> [`async def`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async-def)
+> 语法来声明的
 
 ```python
 async def coro():
     return 'spam'
 ```
 
-> 在协程函数内部，新的[`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)表达式可用于挂起协程的执行直到其结果可用。任何对象都可以被 *等待*，只要它通过定义 `__await__()` 方法实现了[awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)协议。
+> 在协程函数内部，新的
+> [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)
+> 表达式可用于挂起协程的执行直到其结果可用。任何对象都可以被 **等待**，只要它通过定义 `__await__()` 方法实现了
+> [awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)
+> 协议。
 
 > [!IMPORTANT] 注意
 > `async` 和 `await` 到 3.7 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
