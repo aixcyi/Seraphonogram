@@ -12,8 +12,8 @@ excerpt:
     Extras 或 Optional Dependencies。本文介绍了该功能的引入时间，并给出了查看具体依赖的方法。
 ---
 
-::: warning AIGC 提醒
-本文改编自人工智能生成内容 AIGC，经过博主人工审阅，但仍请注意甄别。审阅事项如下：
+::: warning AIGC 改编
+本文改编自人工智能生成内容 AIGC，经过博主人工审查，但仍请注意甄别。审查事项如下：
 1. [redis-py](https://github.com/redis/redis-py) 项目的
    [pyproject.toml](https://github.com/redis/redis-py/blob/master/pyproject.toml) 文件确实包含
    `[project.optional-dependencies]` 相关配置。

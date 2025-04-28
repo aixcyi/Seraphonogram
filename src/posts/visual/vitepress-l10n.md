@@ -71,7 +71,6 @@ const configs: UserConfig<DefaultTheme.Config> = {
       text: '前往 GitHub 编辑此页',
       pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
     },
-    langMenuLabel: '切换语言',
   },
 }
 ```

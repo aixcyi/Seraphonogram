@@ -113,6 +113,8 @@ excerpt:
 
 ## 深入 {#learn-more}
 
+### 语言参考 {#reference}
+
 <LinkCard href="https://docs.python.org/zh-cn/3/reference/index.html"
           text="Python 语言参考手册" />
 
@@ -146,6 +148,9 @@ excerpt:
 
 ## 生态 {#ecosystem}
 
+<LinkCard href="https://pypi.org/"
+          text="PyPI · Python 包索引"
+          note="Python 包索引（PyPI）是 Python 编程语言的软件存储库。" />
 <LinkCard href="https://awesome-python.com/"
           text="Awesome Python"
           note="A curated list of awesome Python frameworks, libraries, software and resources." />
