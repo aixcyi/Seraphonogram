@@ -62,7 +62,6 @@ onMounted(() => {
     border-radius: 8px;
     padding: 8px 16px 8px 8px;
     transition: color 0.5s, background-color 0.5s;
-    margin-top: 15px;
 
     @media (max-width: 500px) {
         padding: 8px;

@@ -118,3 +118,10 @@ order: 4
 
 <LinkCard href="https://github.github.com/gfm/"
           text="GitHub Flavored Markdown Spec" />
+
+
+<style scoped>
+.LinkCard {
+    margin-top: 15px;
+}
+</style>

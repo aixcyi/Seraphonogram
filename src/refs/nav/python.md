@@ -157,3 +157,10 @@ excerpt:
 <LinkCard href="https://github.com/uhub/awesome-python"
           text="uhub／awesome-python"
           note="A curated list of awesome Python frameworks, libraries and software." />
+
+
+<style scoped>
+.LinkCard {
+    margin-top: 15px;
+}
+</style>
