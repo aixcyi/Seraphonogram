@@ -68,17 +68,13 @@ const configs = {
     </el-tabs>
 </template>
 
-<style lang="scss" scoped>
-.el-tabs--card {
-    :deep() {
-        .el-tabs__item.is-active {
-            color: var(--vp-c-brand-1);
-            border-bottom: 2px solid var(--vp-c-bg);
-        }
+<style scoped>
+.el-tabs--card :deep(.el-tabs__item.is-active) {
+    color: var(--vp-c-brand-1);
+    border-bottom: 2px solid var(--vp-c-bg);
+}
 
-        .el-tabs__item:hover {
-            color: var(--vp-c-brand-2);
-        }
-    }
+.el-tabs--card :deep(.el-tabs__item:hover) {
+    color: var(--vp-c-brand-2);
 }
 </style>

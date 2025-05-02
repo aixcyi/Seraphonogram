@@ -36,7 +36,7 @@ function getMessage() {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
     height: calc(100vh - 200px);
     display: flex;

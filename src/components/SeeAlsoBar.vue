@@ -28,7 +28,7 @@ const { flavor, refs } = defineProps<{ flavor: 'foot' | 'neck', refs: { text: st
 </template>
 
 
-<style lang="scss" scoped>
+<style scoped>
 .neck {
     text-align: center;
     margin: 48px auto;

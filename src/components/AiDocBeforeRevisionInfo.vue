@@ -21,7 +21,7 @@ const { page, frontmatter: $frontmatter } = useData()
 </template>
 
 
-<style lang="scss" scoped>
+<style scoped>
 .tags {
     margin-bottom: .75rem;
 

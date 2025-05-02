@@ -95,8 +95,8 @@ onMounted(() => {
     </div>
 </template>
 
-<style lang="scss" scoped>
-// https://github.com/L33Z22L11/blog-v3/
+<style scoped>
+/* https://github.com/L33Z22L11/blog-v3/ */
 
 .ai-head {
     text-align: center;
@@ -166,7 +166,7 @@ onMounted(() => {
         color: var(--el-color-info);
     }
 
-    > .catalog-year {
+    & > .catalog-year {
         margin: 0 0 -0.5em 0;
         padding: 0;
         border-top: 0;
@@ -176,7 +176,7 @@ onMounted(() => {
         -webkit-text-stroke: 1px var(--el-color-info);
     }
 
-    > .catalog-info {
+    & > .catalog-info {
         display: flex;
         justify-content: flex-end;
         column-gap: 0.5em;
@@ -223,7 +223,7 @@ onMounted(() => {
     }
 
     .time {
-        // 缓解移动端 Edge 字体尺寸不准导致的换行溢出
+        /* 缓解移动端 Edge 字体尺寸不准导致的换行溢出 */
         white-space: nowrap;
         transition: opacity 0.2s;
 

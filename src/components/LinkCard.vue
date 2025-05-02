@@ -54,7 +54,7 @@ onMounted(() => {
 </template>
 
 
-<style lang="scss" scoped>
+<style scoped>
 /* https://vitepress.yiov.top/components.html#%E9%93%BE%E6%8E%A5%E5%8D%A1%E7%89%87 */
 
 .LinkCard {
