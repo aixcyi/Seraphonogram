@@ -202,7 +202,7 @@ onMounted(() => {
     }
 
     @media (max-width: 500px) {
-        border-bottom: 1px dashed var(--vp-c-default-1);
+        border-bottom: 1px dashed var(--vp-c-gray-1);
         padding-top: 8px;
         padding-bottom: 8px;
     }

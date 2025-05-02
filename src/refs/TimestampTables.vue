@@ -70,11 +70,11 @@ const configs = {
 
 <style scoped>
 .el-tabs--card :deep(.el-tabs__item.is-active) {
-    color: var(--vp-c-brand-1);
+    color: var(--vp-c-indigo-1);
     border-bottom: 2px solid var(--vp-c-bg);
 }
 
 .el-tabs--card :deep(.el-tabs__item:hover) {
-    color: var(--vp-c-brand-2);
+    color: var(--vp-c-indigo-2);
 }
 </style>

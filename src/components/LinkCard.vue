@@ -99,7 +99,7 @@ onMounted(() => {
     }
 
     .link {
-        color: var(--vp-c-brand-1);
+        color: var(--vp-c-indigo-1);
     }
 }
 
