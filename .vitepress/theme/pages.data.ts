@@ -112,20 +112,21 @@ export default {
         const maps = config.rewrites['map']
         const data: Data = { pages: [], posts: [], tags: {}, columns: [] }
 
-        // 提取文件夹名称
-        let folders = new Map<string, Record<string, any>>()
+        // 提取 posts 下的栏目名称
+        const columns = new Map<string, Record<string, any>>()
         for (const file of files) {
             if (!file.endsWith('/index.md')) {
                 continue
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'))
-            const srcFolder = configBased(file, '../')
-            frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
-            folders.set(srcFolder, frontmatter)
+            const [ zone, column, child, ] = configBased(file, '../').split('/')
+            if (zone === Zone.POSTS && column !== undefined && child === undefined) {
+                frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
+                columns.set(column, frontmatter)
+            }
         }
         data.columns = Array
-            .from(folders.entries())
-            .filter(([ key, ]) => key.startsWith(Zone.POSTS) && key.split('/').length === 2)
+            .from(columns.entries())
             .sort(([ , af ], [ , bf ]) => af.order - bf.order)
             .map(([ , f ]) => {
                 return {
@@ -147,9 +148,12 @@ export default {
             }
 
             const srcPath = configBased(file)
-            const srcFolder = configBased(file, '../')
-            const column = folders.get(srcFolder)?.title
-            const [ zone, ] = srcPath.split('/')
+            let [ zone, column, ] = configBased(file, '../').split('/')
+            if (zone === Zone.POSTS && column !== undefined) {
+                column = columns.has(column) ? columns.get(column)!.title : ''
+            } else {
+                column = ''  // 向前兼容，避免报错
+            }
 
             // 计算页面 URL
             const mappedPath = srcPath in maps ? maps[srcPath] : srcPath
