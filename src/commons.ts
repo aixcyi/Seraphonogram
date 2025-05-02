@@ -6,6 +6,7 @@ export const spacer = h(ElDivider, { direction: 'vertical' })
 export const favicons: Record<string, string> = {
     'cn.quickref': 'https://quickref.cn/icons/favicon.svg',
     'com.jetbrains.blog': 'https://blog.jetbrains.com/wp-content/uploads/2024/01/cropped-mstile-310x310-1-192x192.png',
+    'com.jetbrains.plugins': 'https://resources.jetbrains.com/storage/ui/favicons/favicon.ico',
     'dev.vitepress': 'https://vitepress.dev/vitepress-logo-mini.svg',
     'org.django-rest-framework.www': 'https://www.django-rest-framework.org/img/favicon.ico',
     'org.python.devguide': 'https://devguide.python.org/_static/python-logo.svg',
