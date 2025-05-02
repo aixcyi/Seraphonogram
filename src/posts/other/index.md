@@ -1,5 +1,5 @@
 ---
-title: 技术漫谈
+title: IT 杂谈
 aside: false
 prev: false
 next: false
