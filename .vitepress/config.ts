@@ -75,6 +75,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         resolve: {
             alias: {
                 '@': resolve(__dirname, '../src'),
+                '%': resolve(__dirname, './'),
             },
         },
     },
