@@ -98,6 +98,9 @@ export interface Data {
     /** 标签及相应博客的数量。 */
     tags: Record<string, integer>
 
+    /** 标签含义。 */
+    tagDesc: Record<string, string>
+
     /** 所有栏目。 */
     columns: Column[]
 }
@@ -110,7 +113,20 @@ export default {
     async load(files: string[]) {
         const md = MarkdownIt()
         const maps = config.rewrites['map']
-        const data: Data = { pages: [], posts: [], tags: {}, columns: [] }
+        const data: Data = {
+            pages: [], posts: [], tags: {}, columns: [],
+            tagDesc: {
+                'AIGC': '人工智能生成内容，AI-Generated Content<br/>其中 AI 为 Artificial intelligence',
+                'API': '应用程序编程接口<br/>Application Programming Interface',
+                'COM': '组件对象模型<br/>Component Object Model',
+                'DRF': 'Django REST Framework',
+                'i18n': '国际化<br/>internationalization',
+                'I/O': '输入/输出<br/>Input/Output',
+                'L10N': '本土化<br/>Localization',
+                'NOIP': '全国青少年信息学奥林匹克竞赛<br/>National Olympiad in Informatics in Provinces',
+                'ORM': '对象关系映射<br/>Object-Relational Mapping',
+            }
+        }
 
         // 提取 posts 下的栏目名称
         const columns = new Map<string, Record<string, any>>()

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
+import { data } from '../../.vitepress/theme/pages.data.ts'
 
 const { page, frontmatter: $frontmatter } = useData()
 </script>
@@ -9,10 +10,16 @@ const { page, frontmatter: $frontmatter } = useData()
     <div v-if="!page.relativePath.endsWith('index.md') && !$frontmatter.hideRevisionInfo" class="vp-doc">
         <div v-if="$frontmatter.tags" class="tags">
             <el-space style="gap: .5rem" wrap>
-                <a v-for="tag in $frontmatter.tags" :href="`/posts/?tag=${tag}`" class="tag">
-                    <span>#</span>
-                    <span class="tag-name">{{ tag }}</span>
-                </a>
+                <el-tooltip v-for="tag in $frontmatter.tags"
+                            :content="data.tagDesc[tag]"
+                            :disabled="!(tag in data.tagDesc)"
+                            placement="bottom"
+                            raw-content>
+                    <a :href="`/posts/?tag=${tag}`" class="tag">
+                        <span>#</span>
+                        <span class="tag-name">{{ tag }}</span>
+                    </a>
+                </el-tooltip>
             </el-space>
         </div>
         <h1 class="title">{{ $frontmatter.title }}</h1>

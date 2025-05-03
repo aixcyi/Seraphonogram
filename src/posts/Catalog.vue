@@ -45,14 +45,19 @@ onMounted(() => {
 
     <div v-if="landscape" class="ai-tags">
         <el-space style="gap: .5rem; justify-content: center" wrap>
-            <button v-for="(qty, tag) in data.tags"
-                    :key="tag"
-                    :class="['tag-btn', switches[tag] ? 'selected' : '']"
-                    @click="toggle(tag)">
-                <span>#</span>
-                <span class="tag-name">{{ tag }}</span>
-                <span v-if="qty > 1" class="tag-count">{{ data.tags[tag] }}</span>
-            </button>
+            <el-tooltip v-for="(qty, tag) in data.tags"
+                        :content="data.tagDesc[tag]"
+                        :disabled="!(tag in data.tagDesc)"
+                        placement="top"
+                        raw-content>
+                <button :key="tag"
+                        :class="['tag-btn', switches[tag] ? 'selected' : '']"
+                        @click="toggle(tag)">
+                    <span>#</span>
+                    <span class="tag-name">{{ tag }}</span>
+                    <span v-if="qty > 1" class="tag-count">{{ data.tags[tag] }}</span>
+                </button>
+            </el-tooltip>
         </el-space>
     </div>
     <el-collapse v-else class="ai-tags">
