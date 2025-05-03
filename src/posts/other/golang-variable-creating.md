@@ -6,7 +6,7 @@ expires: 1096
 tags:
     - 开发
     - Golang
-    - 语法
+    - 语法特性
 excerpt:
 ---
 

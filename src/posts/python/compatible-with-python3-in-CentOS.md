@@ -7,7 +7,6 @@ tags:
     - 运维
     - CentOS
     - Python
-    - 宝塔面板
 excerpt:
 ---
 

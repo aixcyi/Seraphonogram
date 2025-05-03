@@ -7,7 +7,7 @@ tags:
     - 开发
     - IntelliJ IDE
     - 插件
-    - 国际化 i18n
+    - i18n
 excerpt:
     Bundle 是 Java 自带的提供本地化翻译的功能，因为出现时间比 IntelliJ
     早得多得多，所以如果需要让插件语言跟随用户安装的语言包插件来切换，就要进行一定的适配。

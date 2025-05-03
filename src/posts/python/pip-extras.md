@@ -5,7 +5,7 @@ outline: deep
 publishAt: 2025-04-11 14:53
 expires: 1096
 tags:
-    - pip
+    - 包管理器
     - AIGC
 excerpt:
     pip 支持通过方括号语法（如 `redis[hiredis]`）安装带有可选依赖项的包，这一功能被称为

@@ -5,7 +5,7 @@ publishAt: 2024-12-30 00:55
 expires: 1096
 tags:
     - 开发
-    - 国际化 i18n
+    - i18n
     - IntelliJ IDE
     - 配置
 excerpt:

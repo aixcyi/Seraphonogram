@@ -5,10 +5,10 @@ publishAt: 2024-01-31 17:13
 expires: 3650
 tags:
     - 开发
-    - 语法
+    - 语法特性
     - Python
     - 类型系统
-    - 标准多项集
+    - 数组 集合 映射
 excerpt:
     列表、元组、集合、字典的正确类型标注方式，细节可参阅
     [**PEP 484**](https://peps.python.org/pep-0484/#the-typing-module)。

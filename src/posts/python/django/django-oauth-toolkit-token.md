@@ -6,8 +6,9 @@ publishAt: 2024-02-20 11:55
 expires: 1096
 tags:
     - 开发
-    - 令牌
     - Django
+    - 协议
+    - ORM
 excerpt:
     简述 [Django OAuth Toolkit](https://django-oauth-toolkit.readthedocs.io/en/latest/)
     中的令牌 `Token` 的生成、刷新、撤销、获取时，数据库层面的行为，以及 ORM 模型字段的变化。

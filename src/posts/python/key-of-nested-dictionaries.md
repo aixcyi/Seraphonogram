@@ -6,7 +6,7 @@ expires: 1096
 tags:
     - 开发
     - Python
-    - 标准多项集
+    - 数组 集合 映射
 excerpt:
 ---
 

@@ -8,7 +8,7 @@ expires: 1096
 tags:
     - 开发
     - Django
-    - 视图
+    - DRF
 excerpt:
     浅析 [Django](https://docs.djangoproject.com/zh-hans/5.2/topics/class-based-views/)
     与 [Django REST Framework](https://www.django-rest-framework.org/api-guide/views/) 两个框架视图类的脉络。

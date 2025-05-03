@@ -6,7 +6,6 @@ expires: 1096
 tags:
     - 算法
     - 易语言
-    - 矩阵
 excerpt:
 ---
 

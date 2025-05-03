@@ -6,8 +6,8 @@ expires: 1096
 tags:
     - 开发
     - 易语言
-    - 组件对象模型 COM
-    - win32api
+    - COM
+    - API
 excerpt:
 ---
 

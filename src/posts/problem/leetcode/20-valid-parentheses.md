@@ -6,7 +6,6 @@ publishAt: 2024-01-10 00:04
 tags:
     - 算法
     - LeetCode
-    - 括号匹配
 excerpt:
     判断给定字符串内的括号是否正确匹配。
 ---

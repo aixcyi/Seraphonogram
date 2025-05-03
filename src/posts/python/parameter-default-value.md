@@ -5,7 +5,6 @@ outline: false
 publishAt: 2024-01-30 23:42
 expires: 1096
 tags:
-    - 抽象泄漏
     - 设计
     - 开发
     - Python

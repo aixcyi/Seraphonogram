@@ -5,8 +5,7 @@ publishAt: 2024-02-28 16:29
 expires: 365
 tags:
     - 运维
-    - virtualenv
-    - conda
+    - 包管理器
     - 开发
     - Windows
     - Python

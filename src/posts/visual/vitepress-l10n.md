@@ -8,7 +8,7 @@ expires: 1096
 tags:
     - 开发
     - VitePress
-    - 本土化 l10n
+    - L10N
 excerpt:
     VitePress 没有自带翻译，一些不可避免展示文字的地方会使用英文，需要汉化时可以参考本文进行配置。
 ---

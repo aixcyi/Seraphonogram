@@ -7,7 +7,7 @@ tags:
     - 开发
     - IntelliJ IDE
     - Django
-    - 控制台
+    - shell
     - 配置
 excerpt:
     PyCharm 社区版并没有 Django 控制台，本文提供了将 Python 控制台配置为 Django 控制台的方法。
