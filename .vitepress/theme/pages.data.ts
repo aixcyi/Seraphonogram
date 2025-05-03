@@ -178,15 +178,8 @@ export default {
                     'yyyy-MM-dd HH:mm',
                     new Date()
                 )
-                // 提取每页的标签，并加以排序
-                const tags = [ ...new Set(frontmatter.tags as string[] ?? []) ].sort((a, b) => {
-                    // 按照字节长度从小到大排序，是因为标签们附加在标题后面，这样排比较好看
-                    const lenA = Buffer.byteLength(a, 'utf8')
-                    const lenB = Buffer.byteLength(b, 'utf8')
-                    return lenA - lenB
-                })
                 // 按标签统计博客数目
-                tags.forEach(tag => {
+                frontmatter.tags.forEach((tag: string) => {
                     if (!(tag in data.tags)) {
                         data.tags[tag] = 0
                     }
@@ -198,7 +191,7 @@ export default {
                     excerpt: frontmatter.excerpt,
                     changed: changed.getTime(),
                     column,
-                    tags,
+                    tags: frontmatter.tags,
                     year: changed.getFullYear(),
                     date: format(changed, 'MM-dd'),
                 })

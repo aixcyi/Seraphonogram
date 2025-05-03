@@ -1,3 +1,4 @@
+import { pinyin } from '@napi-rs/pinyin'
 import MarkdownIt from 'markdown-it'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
@@ -79,6 +80,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
     },
     transformPageData(pageData) {
         pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.render(pageData.frontmatter.excerpt) : ''
+        pageData.frontmatter.tags = ((pageData.frontmatter.tags ?? []) as string[]).sort((a, b) =>
+            pinyin(a).join('').localeCompare(pinyin(b).join(''))
+        )
     },
     transformHead({ assets }) {
         const myFontFile = assets.find(() => /JetBrainsMono-\w+\.woff2/)
