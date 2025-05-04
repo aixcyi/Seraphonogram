@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import CopyTextField from '@/components/CodeCopyField.vue'
+import CopyTextField from '@/theme/components/CodeCopyField.vue'
 import type { integer } from '@vue/language-server'
 
 const mirrors = [

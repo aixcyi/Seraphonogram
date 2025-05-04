@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { DefaultTheme, loadEnv, UserConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import { PageHandler, PageHooks } from '../src/utils/vitepress'
+import { PageHandler, PageHooks } from './theme/utils/vitepress'
 
 
 const md = MarkdownIt()
@@ -74,8 +74,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         ],
         resolve: {
             alias: {
-                '@': resolve(__dirname, '../src'),
-                '%': resolve(__dirname, './'),
+                '@': resolve(__dirname, './'),
             },
         },
     },

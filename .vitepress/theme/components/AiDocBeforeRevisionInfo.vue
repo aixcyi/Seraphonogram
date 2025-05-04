@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { data } from '%/theme/pages.data.ts'
 import { useData } from 'vitepress'
+import { data } from '../pages.data'
 
 const { page, frontmatter: $frontmatter } = useData()
 </script>

@@ -7,8 +7,7 @@ export default defineConfig({
     plugins: [ vue() ],
     resolve: {
         alias: {
-            '@': resolve(__dirname, './src'),
-            '%': resolve(__dirname, './.vitepress'),
+            '@': resolve(__dirname, './.vitepress'),
         },
     },
     css: {

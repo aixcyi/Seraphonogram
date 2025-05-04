@@ -10,7 +10,7 @@ hideRevisionInfo: true
 
 <script setup lang="ts">
 import { onMounted } from 'vue' 
-import { data } from '%/theme/pages.data.ts'
+import { data } from '@/theme/pages.data.ts'
 
 onMounted(() => {
     window.location.replace(data.pages[

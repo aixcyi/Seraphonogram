@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { data } from '%/theme/pages.data.ts'
 import { ElDivider } from 'element-plus'
 import { useData } from 'vitepress'
 import { h } from 'vue'
+import { data } from '../pages.data'
 
 const $frontmatter = useData().frontmatter
 const spacer = h(ElDivider, { style: 'margin: 0 32px; width: unset' })

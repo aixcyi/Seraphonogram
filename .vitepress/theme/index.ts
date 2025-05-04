@@ -9,12 +9,12 @@ import './style/fonts.css'
 import 'virtual:group-icons.css'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
-import AiDocAsideColumns from '../../src/components/AiDocAsideColumns.vue'
-import AiDocAsideStatus from '../../src/components/AiDocAsideStatus.vue'
-import AiDocBeforeRevisionInfo from '../../src/components/AiDocBeforeRevisionInfo.vue'
-import LinkCard from '../../src/components/LinkCard.vue'
-import NotFound from '../../src/components/NotFound.vue'
-import SeeAlsoBar from '../../src/components/SeeAlsoBar.vue'
+import AiDocAsideColumns from './components/AiDocAsideColumns.vue'
+import AiDocAsideStatus from './components/AiDocAsideStatus.vue'
+import AiDocBeforeRevisionInfo from './components/AiDocBeforeRevisionInfo.vue'
+import LinkCard from './components/LinkCard.vue'
+import NotFound from './components/NotFound.vue'
+import SeeAlsoBar from './components/SeeAlsoBar.vue'
 
 export default {
     extends: DefaultTheme,

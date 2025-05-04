@@ -1,6 +1,6 @@
-import { data, type Post } from '%/theme/pages.data.ts'
 import type { integer } from '@vue/language-server'
 import { reactive } from 'vue'
+import { data, type Post } from './pages.data'
 
 
 /**
