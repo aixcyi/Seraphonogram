@@ -25,7 +25,7 @@ VITE_FOOTER_MSG = '圣光耀耀 | 圣火昭昭 | 凡此教众 | 喵喵喵喵'
 ### 运行开发环境
 
 ```shell
-npm run docs:dev
+npm run dev
 ```
 
 默认向所有访问开放浏览，即 `--host 0.0.0.0`，这是为了方便通过内网穿透服务向其它设备提供开发期间的浏览，以兼容多设备。
@@ -33,8 +33,8 @@ npm run docs:dev
 ### 构建生产环境
 
 ```shell
-npm run docs:build
-npm run docs:preview
+npm run build
+npm run preview
 ```
 
 默认向所有访问开放浏览，即 `--host 0.0.0.0`，这是为了方便通过内网穿透服务向其它设备提供基于本地的生产环境预览，以便及时发现多设备兼容性问题。
@@ -54,21 +54,18 @@ vitepress build
 
 ```text
 .
-├─.vitepress  # VitePress 配置
-│  └─theme    # VitePress 主题扩展
-├─cache       # VitePress 缓存
-├─dist        # VitePress 打包目录
-└─src
-    ├─components    # 组件代码
-    ├─drafts        # 草稿文章（仅出现在本地开发环境中）
-    │ └─wastepaper  # 废纸篓
-    ├─image         # 图片，对应URL中的 /image/*.*
-    ├─posts         # 博客文章
-    ├─public        # 静态资源
-    ├─refs          # 快速参考
-    ├─utils         # 工具代码
-    ├─about.md      # 关于
-    └─index.md      # 首页
+├─.vitepress    # VitePress 配置
+│ └─theme       # VitePress 主题 & 组件
+├─cache         # VitePress 缓存
+├─dist          # VitePress 打包目录
+├─drafts        # 草稿文章（仅出现在本地开发环境中）
+│ └─wastepaper  # 废纸篓
+├─image         # 图片，对应URL中的 /image/*.*
+├─posts         # 博客文章
+├─public        # 静态资源
+├─refs          # 快速参考
+├─about.md      # 关于
+└─index.md      # 首页
 ```
 
 ### 草稿箱功能
@@ -82,7 +79,7 @@ Windows 下可以指定
 ```json
 {
     "scripts": {
-        "docs:dev": "set VP_DEBUG=1 && vitepress dev"
+        "dev": "set VP_DEBUG=1 && vitepress dev"
     }
 }
 ```
@@ -92,7 +89,7 @@ Linux/Mac 下可以指定
 ```json
 {
     "scripts": {
-        "docs:dev": "VP_DEBUG=1 vitepress dev"
+        "dev": "VP_DEBUG=1 vitepress dev"
     }
 }
 ```

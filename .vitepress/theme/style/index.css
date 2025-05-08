@@ -163,7 +163,7 @@ a:hover {
 html:not(.dark) .VPDoc strong {
     color: deeppink;
 
-    /* docs:build */
+    /* npm run build */
     /* TODO: The nesting transform for this case must generate an ":is(...)" but the configured target environment does not support the ":is" pseudo-class. */
     /* TODO: [WARNING] Transforming this CSS nesting syntax is not supported in the configured target environment ("chrome87", "edge88", "es2020", "firefox78", "safari14") [unsupported-css-nesting] */
     a > & {
