@@ -60,13 +60,16 @@ vitepress build
 ├─dist          # VitePress 打包目录
 ├─drafts        # 草稿文章（仅出现在本地开发环境中）
 │ └─wastepaper  # 废纸篓
-├─image         # 图片，对应URL中的 /image/*.*
+├─media         # 媒体文件
 ├─posts         # 博客文章
 ├─public        # 静态资源
 ├─refs          # 快速参考
 ├─about.md      # 关于
 └─index.md      # 首页
 ```
+
+> - `./media` 中的文件会映射到 URL 中的 `/media/`
+> - `./public` 中的文件会映射到 URL 中的 `/`
 
 ### 草稿箱功能
 

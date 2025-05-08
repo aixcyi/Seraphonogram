@@ -163,8 +163,8 @@ hideRevisionInfo: true
 <script setup lang="ts">
 import { Bottom } from '@element-plus/icons-vue'
 import { Icon } from '@iconify/vue'
-import BgGI from './image/genshin.jpg'
-import BgZZZ from './image/zzz.jpg'
+import BgGI from './media/genshin.jpg'
+import BgZZZ from './media/zzz.jpg'
 
 const refs = [
     { text: "錯誤", link: "https://www.pixiv.net/users/1297556" },

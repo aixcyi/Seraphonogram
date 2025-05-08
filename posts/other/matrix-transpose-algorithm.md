@@ -19,7 +19,7 @@ excerpt:
 
 矩阵转置前后示意图：
 
-![](/image/matrix-in-code.png) ![](/image/matrix-on-code-2.png)
+![](/media/matrix-in-code.png) ![](/media/matrix-on-code-2.png)
 
 ## 矩阵转置算法
 

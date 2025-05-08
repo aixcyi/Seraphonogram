@@ -29,7 +29,7 @@ $$
 
 使用易语言演示的两种字节序的比较：
 
-![](/image/bytes-order.gif)
+![](/media/bytes-order.gif)
 
 ## 位运算
 
