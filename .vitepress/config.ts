@@ -17,7 +17,6 @@ const configs: UserConfig<DefaultTheme.Config> = {
     title: 'Seraphonogram',
     description: '羽音博客',
     titleTemplate: ':title • 羽音',
-    srcDir: './src',
     outDir: './dist',
     cacheDir: './cache',
     srcExclude: [
@@ -77,6 +76,11 @@ const configs: UserConfig<DefaultTheme.Config> = {
                 '@': resolve(__dirname, './'),
             },
         },
+        css: {
+            preprocessorOptions: {
+                scss: { api: 'modern-compiler' },
+            },
+        },
     },
     transformPageData(pageData) {
         pageData.frontmatter.excerpt = pageData.frontmatter.excerpt ? md.render(pageData.frontmatter.excerpt) : ''
@@ -110,23 +114,23 @@ const hookRefs: PageHooks = {
     compareItem: () => -1,
 }
 configs.themeConfig.sidebar = process.env.VP_DEBUG ? {
-    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
-    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
-    '/drafts/': sidebar.buildSidebar('./src/drafts/', false, true, hookRefs),
+    '/posts/': sidebar.buildSidebar('./posts/', true, true, hookPosts),
+    '/refs/': sidebar.buildSidebar('./refs/', false, true, hookRefs),
+    '/drafts/': sidebar.buildSidebar('./drafts/', false, true, hookRefs),
 } : {
-    '/posts/': sidebar.buildSidebar('./src/posts/', true, true, hookPosts),
-    '/refs/': sidebar.buildSidebar('./src/refs/', false, true, hookRefs),
+    '/posts/': sidebar.buildSidebar('./posts/', true, true, hookPosts),
+    '/refs/': sidebar.buildSidebar('./refs/', false, true, hookRefs),
 }
 configs.themeConfig.nav = process.env.VP_DEBUG ? [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
-    sidebar.buildNav('./src/refs/', true, hookRefs),
-    sidebar.buildNav('./src/drafts/', true, hookRefs),
+    sidebar.buildNav('./refs/', true, hookRefs),
+    sidebar.buildNav('./drafts/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
 ] : [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
-    sidebar.buildNav('./src/refs/', true, hookRefs),
+    sidebar.buildNav('./refs/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
     { text: '主站', link: 'https://ayuu.cc/' },
