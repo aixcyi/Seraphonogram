@@ -5,7 +5,7 @@ aside: false
 outline: false
 publishAt: 2023-12-21 10:02
 reviseAt: 2025-01-02 10:24
-order: 1
+order: 3
 excerpt: 
     工具表格，用来查不同进位制（不同字符集）下的计数空间，以及不同单位的时间存储上限。
 ---
