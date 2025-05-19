@@ -4,7 +4,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { DefaultTheme, loadEnv, UserConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import { PageHandler, PageHooks } from './theme/utils/vitepress'
+import { PageHandler, PageHooks } from './utils/vitepress'
 
 
 const md = MarkdownIt()

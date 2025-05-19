@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Duration } from '@/theme/utils/duration'
+import { Duration } from '@/utils/duration'
 import type { integer } from '@vue/language-server'
 import TimestampTable from './TimestampTable.vue'
 
