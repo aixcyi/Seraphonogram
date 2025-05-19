@@ -21,6 +21,9 @@ const configs: UserConfig<DefaultTheme.Config> = {
     cacheDir: './cache',
     srcExclude: [
         './drafts/**/*.md',
+        './**/*.draft.md',
+        './**/*.temp.md',
+        './**/*.tmp.md',
     ],
     head: [
         [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],

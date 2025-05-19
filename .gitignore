@@ -1,19 +1,18 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
+# 依赖包，缓存文件，构建产物
+# Packages, cache and builds
+/node_modules
+/dist
+/cache
 dist.*
-cache
-*.local
 
+# 环境控制文件
+# Environment managements
+/package-lock.json
+*.local
+.env
+.env.*
+
+# 编辑器目录与文件
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,6 +24,14 @@ cache
 *.sln
 *.sw?
 
-.env
-.env.*
+# 运维脚本
+# Operation scripts
+/*.sh
 /*.bat
+/*.cmd
+
+# 草稿
+# Drafts
+*.draft.md
+*.temp.md
+*.tmp.md
