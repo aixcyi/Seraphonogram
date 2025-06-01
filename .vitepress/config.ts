@@ -107,8 +107,8 @@ const sidebar = new PageHandler(configs).scan()
 const hookPosts: PageHooks = {
     compareFolder: (a, b) => a.frontmatter.order - b.frontmatter.order,
     compareFile: (a, b) => (
-        +(b.frontmatter.reviseAt ?? b.frontmatter.publishAt ?? 0)
-        - +(a.frontmatter.reviseAt ?? a.frontmatter.publishAt ?? 0)
+        +(b.frontmatter.updateAt ?? b.frontmatter.createAt ?? 0)
+        - +(a.frontmatter.updateAt ?? a.frontmatter.createAt ?? 0)
     ),
 }
 const hookRefs: PageHooks = {

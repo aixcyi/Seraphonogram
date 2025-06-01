@@ -1,8 +1,7 @@
 ---
 title: 微信扫码支付的响应
-lang: zh-CN
 outline: deep
-publishAt: 2024-01-24 15:41
+createAt: 2024-01-24 15:41
 expires: 365
 tags:
     - 开发

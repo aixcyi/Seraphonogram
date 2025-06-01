@@ -1,8 +1,7 @@
 ---
 title: 实现任意进制转十进制
-lang: zh-CN
 outline: deep
-publishAt: 2022-08-17 16:39
+createAt: 2022-08-17 16:39
 expires: 1096
 tags:
     - 算法

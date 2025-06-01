@@ -1,9 +1,8 @@
 ---
 title: 文本标记语言 Text Markup Language
 navTitle: 文本标记语言
-lang: zh-CN
 outline: deep
-publishAt: 2025-03-04 16:17
+createAt: 2025-03-04 16:17
 expires: 365
 order: 1
 ---

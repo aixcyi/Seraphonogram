@@ -1,8 +1,7 @@
 ---
 title: UUID 结构
-lang: zh-CN
 outline: deep
-publishAt: 2025-04-24 17:26
+createAt: 2025-04-24 17:26
 expires: 3650
 order: 4
 excerpt:

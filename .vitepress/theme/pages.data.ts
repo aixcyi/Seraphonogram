@@ -158,8 +158,8 @@ export default {
                 continue
             }
             const { data: frontmatter } = matter(fs.readFileSync(file, 'utf-8'), { excerpt: true })
-            if (!('publishAt' in frontmatter)) {
-                // 过滤掉文件夹（因为不会为 ./<folder>/index.md 配置 frontmatter.publishAt 属性）
+            if (!('createAt' in frontmatter)) {
+                // 过滤掉文件夹（因为不会为 ./<folder>/index.md 配置 frontmatter.createAt 属性）
                 continue
             }
 
@@ -190,7 +190,7 @@ export default {
                 frontmatter.excerpt = frontmatter.excerpt ? md.renderInline(frontmatter.excerpt) : ''
                 // 获取最近修改时间
                 const changed = parse(
-                    frontmatter.reviseAt ?? frontmatter.publishAt,
+                    frontmatter.updateAt ?? frontmatter.createAt,
                     'yyyy-MM-dd HH:mm',
                     new Date()
                 )

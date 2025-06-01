@@ -1,9 +1,8 @@
 ---
 navTitle: 推导式
 title: Python 推导式
-lang: zh-CN
 outline: deep
-publishAt: 2021-11-05 00:00
+createAt: 2021-11-05 00:00
 expires: 3650
 tags:
     - 开发

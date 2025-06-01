@@ -1,7 +1,6 @@
 ---
 title: 标准多项集的标注方式
-lang: zh-CN
-publishAt: 2024-01-31 17:13
+createAt: 2024-01-31 17:13
 expires: 3650
 tags:
     - 开发

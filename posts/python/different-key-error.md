@@ -1,8 +1,7 @@
 ---
 title: 针对不同对象抛出不同 KeyError
-lang: zh-CN
 outline: deep
-publishAt: 2025-05-31 22:26
+createAt: 2025-05-31 22:26
 expires: 1096
 tags:
     - 开发

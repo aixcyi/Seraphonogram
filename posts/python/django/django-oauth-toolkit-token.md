@@ -1,8 +1,7 @@
 ---
 title: Django OAuth Toolkit 令牌机制
-lang: zh-CN
 outline: deep
-publishAt: 2024-02-20 11:55
+createAt: 2024-02-20 11:55
 expires: 1096
 tags:
     - 开发

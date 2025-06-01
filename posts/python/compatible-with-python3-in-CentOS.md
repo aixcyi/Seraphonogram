@@ -1,7 +1,6 @@
 ---
 title: 宝塔面板与 Python 3 的恩怨情仇
-lang: zh-CN
-publishAt: 2020-03-02 22:06
+createAt: 2020-03-02 22:06
 expires: 1096
 tags:
     - 运维

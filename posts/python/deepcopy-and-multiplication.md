@@ -1,8 +1,7 @@
 ---
 title: 使用乘号复制变量引起的问题
-lang: zh-CN
 outline: deep
-publishAt: 2020-12-20 23:29
+createAt: 2020-12-20 23:29
 expired: 1000
 tags:
     - 开发

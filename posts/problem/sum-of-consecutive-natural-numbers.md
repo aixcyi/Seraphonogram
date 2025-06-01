@@ -1,7 +1,6 @@
 ---
 title: 连续自然数之和
-lang: zh-CN
-publishAt: 2020-04-06 12:53
+createAt: 2020-04-06 12:53
 tags:
     - 算法
 excerpt:

@@ -1,9 +1,8 @@
 ---
 title: Python 语法更新摘要
-lang: zh-CN
 outline: deep
-publishAt: 2023-12-23 23:59
-reviseAt: 2025-04-27 17:10
+createAt: 2023-12-23 23:59
+updateAt: 2025-04-27 17:10
 expires: 365
 order: 1
 excerpt: 

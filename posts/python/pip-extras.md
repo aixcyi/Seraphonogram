@@ -1,8 +1,7 @@
 ---
 title: pip 额外依赖
-lang: zh-CN
 outline: deep
-publishAt: 2025-04-11 14:53
+createAt: 2025-04-11 14:53
 expires: 1096
 tags:
     - 包管理器

@@ -1,7 +1,6 @@
 ---
 title: IntelliJ 插件中使用 Bundle
-lang: zh-CN
-publishAt: 2023-09-06 23:32
+createAt: 2023-09-06 23:32
 expires: 365
 tags:
     - 开发

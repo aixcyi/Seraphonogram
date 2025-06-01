@@ -1,9 +1,8 @@
 ---
 navTitle: Django 及衍生的类视图
 title: 浅析 Django 及衍生的类视图
-lang: zh-CN
 outline: deep
-publishAt: 2022-10-11 11:52
+createAt: 2022-10-11 11:52
 expires: 1096
 tags:
     - 开发

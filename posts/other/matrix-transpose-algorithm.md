@@ -1,7 +1,6 @@
 ---
 title: 理解矩阵转置及矩阵转置算法
-lang: zh-CN
-publishAt: 2016-08-24 22:31
+createAt: 2016-08-24 22:31
 expires: 1096
 tags:
     - 算法

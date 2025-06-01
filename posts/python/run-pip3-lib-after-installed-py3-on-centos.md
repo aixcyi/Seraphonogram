@@ -1,7 +1,6 @@
 ---
 title: 编译安装 Python3 后 pip3 安装的库如何在命令行调用
-lang: zh-CN
-publishAt: 2020-03-04 11:13
+createAt: 2020-03-04 11:13
 expires: 1096
 tags:
     - 运维

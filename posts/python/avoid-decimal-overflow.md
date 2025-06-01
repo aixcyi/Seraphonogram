@@ -1,7 +1,6 @@
 ---
 title: 避免 Decimal 溢出
-lang: zh-CN
-publishAt: 2025-01-14 14:49
+createAt: 2025-01-14 14:49
 expires: 1096
 tags:
     - DRF

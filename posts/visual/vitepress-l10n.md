@@ -1,9 +1,8 @@
 ---
 title: VitePress 汉化摘要
-lang: zh-CN
 outline: deep
-publishAt: 2025-03-12 15:20
-reviseAt: 2025-03-21 15:41
+createAt: 2025-03-12 15:20
+updateAt: 2025-03-21 15:41
 expires: 1096
 tags:
     - 开发

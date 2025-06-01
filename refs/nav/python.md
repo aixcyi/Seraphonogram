@@ -1,9 +1,8 @@
 ---
 title: Python
-lang: zh-CN
 outline: deep
-publishAt: 2025-01-25 03:48
-reviseAt: 2025-04-10 00:16
+createAt: 2025-01-25 03:48
+updateAt: 2025-04-10 00:16
 expires: 365
 order: 2
 excerpt:

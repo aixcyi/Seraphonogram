@@ -1,8 +1,7 @@
 ---
 title: 默认值导致抽象泄漏
-lang: zh-CN
 outline: false
-publishAt: 2024-01-30 23:42
+createAt: 2024-01-30 23:42
 expires: 1096
 tags:
     - 设计

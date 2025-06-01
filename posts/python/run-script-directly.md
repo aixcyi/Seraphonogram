@@ -1,9 +1,8 @@
 ---
 title: 直接运行 Python 脚本
-lang: zh-CN
 outline: deep
-publishAt: 2023-09-05 23:32
-reviseAt: 2024-01-03 09:44
+createAt: 2023-09-05 23:32
+updateAt: 2024-01-03 09:44
 expires: 365
 tags:
     - 运维

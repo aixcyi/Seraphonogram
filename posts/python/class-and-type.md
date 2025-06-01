@@ -1,9 +1,8 @@
 ---
 title: 类与类型
-lang: zh-CN
 outline: false
-publishAt: 2023-12-22 11:03
-reviseAt: 2024-12-27 17:54
+createAt: 2023-12-22 11:03
+updateAt: 2024-12-27 17:54
 expires: 1096
 tags:
     - 类型系统

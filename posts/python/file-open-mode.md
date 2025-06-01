@@ -1,8 +1,7 @@
 ---
 navTitle: 文件打开模式
 title: Python 文件打开模式
-lang: zh-CN
-publishAt: 2021-10-21 00:00
+createAt: 2021-10-21 00:00
 expires: 3650
 tags:
     - 开发

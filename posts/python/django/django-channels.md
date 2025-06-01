@@ -1,8 +1,7 @@
 ---
 title: Django Channels 主动模式
-lang: zh-CN
 outline: deep
-publishAt: 2025-02-21 20:55
+createAt: 2025-02-21 20:55
 expires: 1096
 tags:
     - 开发

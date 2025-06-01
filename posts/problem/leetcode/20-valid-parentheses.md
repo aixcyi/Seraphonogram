@@ -1,8 +1,7 @@
 ---
 navTitle: 20. 有效的括号
 title: LeetCode 20. 有效的括号
-lang: zh-CN
-publishAt: 2024-01-10 00:04
+createAt: 2024-01-10 00:04
 tags:
     - 算法
     - LeetCode

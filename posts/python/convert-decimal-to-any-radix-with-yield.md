@@ -1,8 +1,7 @@
 ---
 title: 十进制转任意进制与 yield
-lang: zh-CN
 outline: deep
-publishAt: 2022-08-18 00:10
+createAt: 2022-08-18 00:10
 expires: 1096
 tags:
     - 算法

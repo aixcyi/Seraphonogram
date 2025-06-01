@@ -1,7 +1,6 @@
 ---
 title: 通过命令行打开文件夹
-lang: zh-CN
-publishAt: 2016-09-23 17:57
+createAt: 2016-09-23 17:57
 expires: 1096
 tags:
     - 开发

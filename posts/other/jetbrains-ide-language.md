@@ -1,7 +1,6 @@
 ---
 title: 设置 JetBrains IDE 的语言
-lang: zh-CN
-publishAt: 2024-12-30 00:55
+createAt: 2024-12-30 00:55
 expires: 1096
 tags:
     - 开发

@@ -1,7 +1,6 @@
 ---
 title: 为自身定义 copy 方法
-lang: zh-CN
-publishAt: 2022-08-17 00:04
+createAt: 2022-08-17 00:04
 expires: 1096
 tags:
     - 开发

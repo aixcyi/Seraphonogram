@@ -1,7 +1,6 @@
 ---
 title: 注册表：文件关联与关联文件
-lang: zh-CN
-publishAt: 2019-01-28 12:06
+createAt: 2019-01-28 12:06
 expires: 1096
 tags:
     - 开发

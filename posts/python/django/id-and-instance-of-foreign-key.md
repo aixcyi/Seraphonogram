@@ -1,7 +1,6 @@
 ---
 title: 外键的 id 与实例
-lang: zh-CN
-publishAt: 2025-06-01 01:15
+createAt: 2025-06-01 01:15
 expires: 1096
 tags:
     - 开发

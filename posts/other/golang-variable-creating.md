@@ -1,7 +1,6 @@
 ---
 title: Golang 创建同一个变量
-lang: zh-CN
-publishAt: 2019-11-04 10:32
+createAt: 2019-11-04 10:32
 expires: 1096
 tags:
     - 开发

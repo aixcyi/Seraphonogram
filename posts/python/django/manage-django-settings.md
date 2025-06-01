@@ -1,7 +1,6 @@
 ---
 title: 管理 Django Settings
-lang: zh-CN
-publishAt: 2023-12-21 11:48
+createAt: 2023-12-21 11:48
 expires: 1096
 tags:
     - 开发

@@ -1,6 +1,5 @@
 ---
 title: 随便逛逛
-lang: zh-CN
 prev: false
 next: false
 aside: false

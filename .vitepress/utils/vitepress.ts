@@ -51,8 +51,8 @@ export class Page {
                 public depth: integer = 0,
                 public isIndex: boolean = false) {
         this.frontmatter = { ...frontmatter }
-        this.frontmatter.publishAt = Page.parseTime(this.frontmatter.publishAt)
-        this.frontmatter.reviseAt = Page.parseTime(this.frontmatter.reviseAt)
+        this.frontmatter.createAt = Page.parseTime(this.frontmatter.createAt)
+        this.frontmatter.updateAt = Page.parseTime(this.frontmatter.updateAt)
     }
 
     public static parseTime(t?: string): Date | undefined {

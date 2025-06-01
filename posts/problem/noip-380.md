@@ -1,7 +1,6 @@
 ---
 title: NOIP 380. 校门外的树
-lang: zh-CN
-publishAt: 2020-03-12 17:24
+createAt: 2020-03-12 17:24
 tags:
     - 算法
     - NOIP

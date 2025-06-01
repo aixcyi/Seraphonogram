@@ -1,7 +1,6 @@
 ---
 title: virtualenv 在 Windows 中无法激活
-lang: zh-CN
-publishAt: 2024-02-28 16:29
+createAt: 2024-02-28 16:29
 expires: 365
 tags:
     - 运维

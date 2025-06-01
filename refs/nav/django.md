@@ -1,9 +1,8 @@
 ---
 title: Django & REST Framework
-lang: zh-CN
 outline: deep
-publishAt: 2025-04-10 00:16
-reviseAt: 2025-05-21 17:11
+createAt: 2025-04-10 00:16
+updateAt: 2025-05-21 17:11
 expires: 365
 order: 3
 excerpt:
