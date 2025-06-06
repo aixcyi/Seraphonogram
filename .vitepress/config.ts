@@ -27,10 +27,6 @@ const configs: UserConfig<DefaultTheme.Config> = {
     ],
     head: [
         [ 'link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' } ],
-        [ 'link', {
-            rel: 'stylesheet',
-            href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans_VF:VF:Chinese_Simplify,Latin&display=swap'
-        } ],
     ],
     themeConfig: {
         // https://vitepress.dev/zh/reference/default-theme-config

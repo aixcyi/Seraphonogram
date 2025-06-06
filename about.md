@@ -20,10 +20,8 @@ hideRevisionInfo: true
 
 这里的板块指的是同一个站点下的不同空间，每个板块拥有各自独立、完全不同的（左）侧边栏，用以区隔。
 
-字体方面，小站已经内嵌较小的英文字符集
-[`JetBrains Mono`](https://www.jetbrains.com/lp/mono/)
-以确保浏览代码时能获得最佳体验，而较大的中文字符集则通过 CDN 引入了
-[`MiSans VF`](https://hyperos.mi.com/font/zh/)，若失败则回退到系统字体。
+字体方面，小站内嵌较小的英文字符集 [`JetBrains Mono`](https://www.jetbrains.com/lp/mono/) 以确保浏览代码时能获得更好的体验。
+而对于较大的中文字符集，起初是通过 CDN 引入 [`MiSans VF`](https://hyperos.mi.com/font/zh/)，但众口难调，因此改回仅在样式中优先使用特定字体。
 
 ## 起名简史 {#namespace}
 
