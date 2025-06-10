@@ -7,22 +7,46 @@
     --vp-custom-block-tip-code-bg: rgb(27 178 229 / 20%);
 }
 
-.custom-block.tip code {
-    color: rgb(27 178 229);
+html.dark {
+    .custom-block.tip code {
+        color: rgb(27 178 229);
+    }
+
+    .custom-block.tip .custom-block-title {
+        color: #c9e8f2;
+    }
+
+    .custom-block.important .custom-block-title {
+        color: #c8abfa;
+    }
+
+    .custom-block.warning .custom-block-title {
+        color: #f9b44e;
+    }
+
+    .custom-block.caution .custom-block-title {
+        color: #f66f81;
+    }
 }
 
-.custom-block.tip .custom-block-title {
-    color: #c9e8f2;
-}
+html:not(.dark) {
+    .custom-block.tip code {
+        color: darkcyan;
+    }
 
-.custom-block.important .custom-block-title {
-    color: #c8abfa;
-}
+    .custom-block.tip .custom-block-title {
+        color: darkcyan;
+    }
 
-.custom-block.warning .custom-block-title {
-    color: #f9b44e;
-}
+    .custom-block.important .custom-block-title {
+        color: purple;
+    }
 
-.custom-block.caution .custom-block-title {
-    color: #f66f81;
+    .custom-block.warning .custom-block-title {
+        color: orange;
+    }
+
+    .custom-block.caution .custom-block-title {
+        color: orangered;
+    }
 }
