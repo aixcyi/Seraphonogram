@@ -11,20 +11,17 @@ excerpt:
     Extras 或 Optional Dependencies。本文介绍了该功能的引入时间，并给出了查看具体依赖的方法。
 ---
 
-::: warning AIGC 改编
-本文改编自人工智能生成内容 AIGC，经过博主人工审查，但仍请注意甄别。审查事项如下：
-1. [redis-py](https://github.com/redis/redis-py) 项目的
-   [pyproject.toml](https://github.com/redis/redis-py/blob/master/pyproject.toml) 文件确实包含
-   `[project.optional-dependencies]` 相关配置。
-2. [PEP 508](https://peps.python.org/pep-0508/) 确实为包依赖关系的提案，并找到
-   [extras](https://peps.python.org/pep-0508/#extras) 部分的描述。
-:::
+> [!WARNING] AIGC 手工审查事项
+> 1. [redis-py](https://github.com/redis/redis-py) 项目的
+>    [pyproject.toml](https://github.com/redis/redis-py/blob/master/pyproject.toml)
+>    文件确实包含 `[project.optional-dependencies]` 相关配置。
+> 2. [PEP 508](https://peps.python.org/pep-0508/) 确实为包依赖关系的提案，并找到
+>    [extras](https://peps.python.org/pep-0508/#extras) 部分的描述。
 
-::: info 提示词
-曾经 pip 只能安装单个库，就像 `pip install redis` 这样，但后来它可以像 `pip install "redis[hiredis]"`
-这样一次性安装多个库，我想知道这是从哪个 Python 版本或者具体什么时候开始的？是否有文档可供参考？从哪里可以知道
-`"redis[hiredis]"` 对应了哪些具体的包以及它们的依赖关系、依赖版本号？
-:::
+> [!INFO] 提示词
+> 曾经 pip 只能安装单个库，就像 `pip install redis` 这样，但后来它可以像 `pip install "redis[hiredis]"`
+> 这样一次性安装多个库，我想知道这是从哪个 Python 版本或者具体什么时候开始的？是否有文档可供参考？从哪里可以知道
+> `"redis[hiredis]"` 对应了哪些具体的包以及它们的依赖关系、依赖版本号？
 
 ## 功能引入时间
 

@@ -19,7 +19,7 @@ excerpt:
 4. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\
 5. HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\
 
-:::details 说明
+::: details 说明
 【前三项】(1)处存放的是本机文件关联的备份，会自动同步后面两处的信息。但实际操作时有些信息只有(1)处有，所以建议在枚举本机文件关联时以此处为准，以其它两处作补充。以下所说的“Classes目录”指代(1)(2)(3)中的任意一个，(2)是现行用户的，(3)是本地机器的，不建议选(1)。
 
 【后两项】在尝试打开文件时或选择打开方式后会自动生成。以下所说的“FileExts目录”指代(4)(5)中的一个，按需选择。
@@ -51,7 +51,7 @@ excerpt:
 
 ### Classes目录\程序标识符\shell\菜单项
 
-:::details 备注
+::: details 备注
 “菜单项”指的是右键菜单项，一般为“open”，也可以自定义字符（中文也行）。它在MUIVerb不存在或值为空时作为右键菜单的标题。这些右键菜单先显示“菜单项”为open的项，然后显示为英文的项，最后显示为中文的项。
 :::
 

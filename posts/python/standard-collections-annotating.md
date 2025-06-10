@@ -91,8 +91,8 @@ tuple05: tuple[int, int, str, int] = (0, 1, "meow", 2)
 
 对于任意长度的值，需要按照 `tuple[TYPE, ...]` 的形式进行标注：
 
-> [!NOTE] 注意
-> 这里不是表示 `tuple[TYPE, TYPE, TYPE, ……]`，`...` 本身就是一个字面值。
+> [!IMPORTANT] 重要
+> 类型标注中的 `...` 表示重复前一个类型零次、一次或多次。
 
 ```python
 tuple06: tuple[int, ...] = ()
