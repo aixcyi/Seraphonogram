@@ -1,0 +1,56 @@
+/**
+ * Component: Document
+ * -------------------------------------------------------------------------- */
+
+.VPDoc.has-aside .content-container {
+    max-width: unset !important;
+}
+
+.VPDoc s {
+    filter: blur(4px);
+    transition: filter .2s;
+    text-decoration: none;
+}
+
+.VPDoc s:hover {
+    filter: blur(0);
+}
+
+html:not(.dark) .VPDoc strong {
+    color: deeppink;
+
+    /* npm run build */
+    /* TODO: The nesting transform for this case must generate an ":is(...)" but the configured target environment does not support the ":is" pseudo-class. */
+    /* TODO: [WARNING] Transforming this CSS nesting syntax is not supported in the configured target environment ("chrome87", "edge88", "es2020", "firefox78", "safari14") [unsupported-css-nesting] */
+
+    a > & {
+        color: inherit;
+    }
+}
+
+html.dark .VPDoc strong {
+    color: lightpink;
+
+    a > & {
+        color: inherit;
+    }
+
+    /*方案二*/
+    /*background: conic-gradient(at 4px 4px, transparent 75%, #bd34fe 75%) 0 0 / calc(100% - 4px) calc(100% - 4px);*/
+
+    /*方案三*/
+    /*padding: 0 4px;*/
+    /*border: 2px dashed transparent;*/
+    /*border-radius: 8px;*/
+    /*background-clip: padding-box, border-box;*/
+    /*background-origin: padding-box, border-box;*/
+    /*background-image: linear-gradient(to right, var(--vp-c-bg), var(--vp-c-bg)), linear-gradient(45deg, #bd34fe, #41d1ff);*/
+}
+
+p[class="paragraph"] {
+    text-indent: 2em;
+}
+
+.status-bar {
+    padding-top: 0.75rem;
+}

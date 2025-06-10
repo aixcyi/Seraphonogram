@@ -1,25 +1,25 @@
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url(JetBrainsMono-Regular.woff2) format('woff2');
+    src: url(../fonts/JetBrainsMono-Regular.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'JetBrains Mono';
     font-weight: bold;
-    src: url(JetBrainsMono-Bold.woff2) format('woff2');
+    src: url(../fonts/JetBrainsMono-Bold.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'JetBrains Mono';
     font-style: italic;
-    src: url(JetBrainsMono-Italic.woff2) format('woff2');
+    src: url(../fonts/JetBrainsMono-Italic.woff2) format('woff2');
 }
 
 @font-face {
     font-family: 'JetBrains Mono';
     font-weight: bold;
     font-style: italic;
-    src: url(JetBrainsMono-BoldItalic.woff2) format('woff2');
+    src: url(../fonts/JetBrainsMono-BoldItalic.woff2) format('woff2');
 }
 
 :root {

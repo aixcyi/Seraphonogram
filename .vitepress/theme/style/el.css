@@ -1,0 +1,11 @@
+/**
+ * Element Plus
+ * -------------------------------------------------------------------------- */
+
+ul[class="el-timeline"] {
+    list-style: none !important;
+}
+
+ul[class="el-timeline"] > li {
+    margin-top: 0 !important;
+}
