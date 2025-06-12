@@ -10,7 +10,8 @@
 html.dark {
     .custom-block.tip {
         strong,
-        code {
+        code,
+        a {
             color: rgb(27 178 229);
         }
 
@@ -43,6 +44,7 @@ html.dark {
 
 html:not(.dark) {
     .custom-block.tip {
+        a,
         code,
         strong,
         .custom-block-title {
