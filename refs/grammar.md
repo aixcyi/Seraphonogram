@@ -18,11 +18,20 @@ excerpt:
 
 ## 3.14 版本（草稿） {#314}
 
-<LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.14.html" text="Python 3.14 有什么新变化（草稿）" />
+<LinkCard href="https://docs.python.org/zh-cn/3.14/whatsnew/3.14.html" text="Python 3.14 有什么新变化（草稿）" />
+
+### t-字符串
+
+t-字符串是 [f-字符串](#f-字符串) 的泛化（generalization），基于后者的语法和规则构建，产生
+[`string.templatelib.Template`](https://docs.python.org/zh-cn/3/library/string.html#string.Template)
+类型的对象（而非 `str`）；通过这种类型，可以访问包含原始信息的模板属性：静态字符串、插值表达式，以及来自原始作用域的值。
+
+> [!TIP] 提醒
+> `Template` 类型早在 Python 3.0 就已经存在了，不必担心其向下兼容的能力。
 
 ### `except` 与 `except*` 可不带括号
 
-```python
+```python:line-numbers {9}
 import requests
 
 try:
@@ -37,9 +46,12 @@ except KeyError, TypeError:
 
 ### `finally` 块中禁用 `return` `break` `continue`
 
-> The compiler emits a [SyntaxWarning](https://docs.python.org/3.14/library/exceptions.html#SyntaxWarning)
-> when a `return`, `break` or `continue` statements appears where it exits a `finally` block.
-> This change is specified in [**PEP 765**](https://peps.python.org/pep-0765/).
+从这个版本开始，再在 `finally` 块中使用 `return`、`break` 或 `continue` 会抛出
+[SyntaxWarning](https://docs.python.org/zh-cn/3/library/exceptions.html#SyntaxWarning)
+异常。详见 [**PEP 765**](https://peps.python.org/pep-0765/)。
+
+> [!NOTE] 相关信息
+> [Python 3.8](#finally-块中使用-continue) 开始允许在 `finally` 块中使用 `continue`。
 
 ## 3.13 版本 {#313}
 
@@ -98,7 +110,10 @@ type Point[T] = tuple[T, T]
 > Vector: TypeAlias = list[float]
 > ```
 
-而 `type` 语句可以创建更为复杂的类型别名，比如声明 [`TypeVarTuple`](https://docs.python.org/zh-cn/3/library/typing.html#typing.TypeVarTuple) 和 [`ParamSpec`](https://docs.python.org/zh-cn/3/library/typing.html#typing.ParamSpec) 形参，以及带边界或约束的 [`TypeVar`](https://docs.python.org/zh-cn/3/library/typing.html#typing.TypeVar) 形参：
+而 `type` 语句可以创建更为复杂的类型别名，比如声明
+[`TypeVarTuple`](https://docs.python.org/zh-cn/3/library/typing.html#typing.TypeVarTuple)
+和 [`ParamSpec`](https://docs.python.org/zh-cn/3/library/typing.html#typing.ParamSpec)
+形参，以及带边界或约束的 [`TypeVar`](https://docs.python.org/zh-cn/3/library/typing.html#typing.TypeVar) 形参：
 
 ```python
 type IntFunc[**P] = Callable[P, int]  # ParamSpec
@@ -198,7 +213,8 @@ def square(number: int | float) -> int | float:
 
 ### match-case 语句
 
-`match` 会命中至多一个 `case` 并且只会执行该 `case` 的内容，也就是说 **不会** 继续执行后续的 `case`；如果都未命中则查找 `case _` 来执行，如果其未定义则不执行任何代码。
+`match` 会命中至多一个 `case` 并且只会执行该 `case` 的内容，也就是说 **不会** 继续执行后续的
+`case`；如果都未命中则查找 `case _` 来执行，如果其未定义则不执行任何代码。
 
 ```python
 from typing import Optional
@@ -271,7 +287,8 @@ def show(point: Tuple[float, float]):
 
 ### 带圆括号的上下文管理器
 
-> 支持使用外层圆括号来使多个上下文管理器可以连续多行地书写。这允许将过长的上下文管理器集能够以与之前 import 语句类似的方式格式化为多行的形式。
+> 支持使用外层圆括号来使多个上下文管理器可以连续多行地书写。这允许将过长的上下文管理器集能够以与之前
+> import 语句类似的方式格式化为多行的形式。
 
 ```python
 with (
@@ -315,7 +332,8 @@ with (
 
 ### 多项集泛型
 
-标注 `list`、`dict`、`set`、`queue.Queue` 等标准库的多项集类型时不再需要从 `typing` 导入对应的大写形式类型名如 `List`、`Dict`、`Set`。
+标注 `list`、`dict`、`set`、`queue.Queue` 等标准库的多项集类型时不再需要从
+`typing` 导入对应的大写形式类型名如 `List`、`Dict`、`Set`。
 
 ```python
 def choice(numbers: list[int]) -> int:
@@ -399,8 +417,8 @@ if (user := check(username, password)) is None or user.delete_at is not None:
 | `def func(/, *, arg, **):`  | 实参类型 |  允许   |  不允许  |   允许   |
 | `def func(/, *, **kwargs):` |  字典  |  不允许  |  不允许  |   允许   |
 
-> [!TIP] 提示
-> `*args` 和 `**kwargs` 是约定俗成的形参命名。
+> [!TIP] 约定俗成
+> `args` 和 `kwargs` 是约定俗成的形参命名。
 
 ```python
 def serialize(data, /, many=False, *, raise_exception=False, **others):
@@ -469,7 +487,12 @@ print(f'{tomorrow=:%Y-%m-%d}')
 
 ### `finally` 块中使用 `continue`
 
-> 在之前版本中[`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue)语句不允许在[`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally)子句中使用，这是因为具体实现存在一个问题。在 Python 3.8 中此限制已被取消。
+> 在之前版本中 [`continue`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#continue)
+> 语句不允许在 [`finally`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#finally)
+> 子句中使用，这是因为具体实现存在一个问题。在 Python 3.8 中此限制已被取消。
+
+> [!NOTE] 相关信息
+> [Python 3.14](#finally-块中禁用-return-break-continue) 开始禁止在 `finally` 块中使用 `continue`。
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.8.html#other-language-changes' },
@@ -484,7 +507,9 @@ print(f'{tomorrow=:%Y-%m-%d}')
 意思是可以将未定义的符号作为标注。
 
 > [!CAUTION] 特性从未被实现
-> 该特性 [3.7](https://docs.python.org/zh-cn/3/whatsnew/3.7.html#pep-563-postponed-evaluation-of-annotations) 提出支持，[3.11](https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-563-may-not-be-the-future) 表示无限期搁置，因此从始至终都需要 `from __future__ import annotations`（截至 2024 年底）。
+> 该特性于 [Python 3.7](https://docs.python.org/zh-cn/3/whatsnew/3.7.html#pep-563-postponed-evaluation-of-annotations)
+> 提出支持，[Python 3.11](https://docs.python.org/zh-cn/3/whatsnew/3.11.html#pep-563-may-not-be-the-future)
+> 表示无限期搁置，因此从始至终都需要 `from __future__ import annotations`（截至 2024 年底）。
 
 ```python
 from __future__ import annotations
@@ -514,10 +539,11 @@ class Book:
 
 ### `async` 与 `await`
 
-> [!CAUTION] 不向后兼容的语法更改
+> [!WARNING] 不能向后兼容
 > [`async`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async)
 > 和 [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)
-> 现在是保留的[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
+> 现在是保留的[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)，这意味着这两个单词
+> **无法** 作为一个单独的变量名、函数名、类名、包名。
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.7.html#summary-release-highlights' },
@@ -531,8 +557,8 @@ class Book:
 
 又称[格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)。添加前缀 `f` 的字符串字面值可以内嵌表达式，来对值进行格式化和无感拼接。
 
-> [!WARNING] 警告
-> 嵌套的表达式内，字符串使用的引号不能与表达式外面的字符串相同。3.12 开始没有这个限制。
+> [!TIP] 提示
+> 嵌套的表达式内，字符串使用的引号不能与表达式外面的字符串相同。[Python 3.12](#f-字符串嵌套) 开始没有这个限制。
 
 - `f"{obj!s}"` 相当于 `str(obj)`；
 - `f"{obj!r}"` 相当于 `repr(obj)`；
@@ -557,10 +583,10 @@ print(f'[{level}] [{today:%Y-%m-%d}]: {message}')
 
 ### 变量标注
 
-现在可以对**当前**作用域的变量进行类型标注。
+现在可以对 **当前** 作用域的变量进行类型标注。
 
 > [!NOTE] 备注
-> 标注后，只要还没有赋值，都无法使用这个变量，不过可以被检测到。
+> 对变量进行标注后，只要还没有赋值，都无法使用这个变量，不过可以被检测到。
 
 全局作用域示例：
 
@@ -616,13 +642,26 @@ meow(1, 2)
 
 可以在数字字面值中使用下划线，以改善阅读体验。
 
-> [!IMPORTANT] 注意
-> 下划线不能连续使用、不能在小数点两侧、不能在字面值开头。
-
 ```python
 assert 21_0000_0000 == 2100000000
 assert 0x_0314_1592 == 0x03141592
 ```
+
+> [!TIP] 下划线不能
+> 连续使用
+> ```python
+> print(210000___0000)
+> ```
+> 在小数点两侧
+> ```python
+> print(3_.14)
+> print(3._14)
+> ```
+> 在字面值开头、结尾。
+> ```python
+> print(_2100000000)
+> print(2100000000_)
+> ```
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.6.html#pep-515-underscores-in-numeric-literals' },
@@ -634,25 +673,31 @@ assert 0x_0314_1592 == 0x03141592
 
 ### 协程 `async` 和 `await` 语句
 
-> [**PEP 492**](https://peps.python.org/pep-0492/)通过添加[可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)、[协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function)、[异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable)和[异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager)极大地改善了 Python 对异步编程的支持。
+> [**PEP 492**](https://peps.python.org/pep-0492/) 通过添加
+> [可等待对象](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)
+> 、[协程函数](https://docs.python.org/zh-cn/3/glossary.html#term-coroutine-function)
+> 、[异步迭代](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-iterable)
+> 和 [异步上下文管理器](https://docs.python.org/zh-cn/3/glossary.html#term-asynchronous-context-manager)
+> 极大地改善了 Python 对异步编程的支持。
 >
 > 协程函数是使用新的
 > [`async def`](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#async-def)
-> 语法来声明的
-
-```python
-async def coro():
-    return 'spam'
-```
-
+> 语法来声明的：
+> 
+> ```python
+> async def coro():
+>     return 'spam'
+> ```
+> 
 > 在协程函数内部，新的
 > [`await`](https://docs.python.org/zh-cn/3/reference/expressions.html#await)
 > 表达式可用于挂起协程的执行直到其结果可用。任何对象都可以被 **等待**，只要它通过定义 `__await__()` 方法实现了
 > [awaitable](https://docs.python.org/zh-cn/3/glossary.html#term-awaitable)
 > 协议。
 
-> [!IMPORTANT] 注意
-> `async` 和 `await` 到 3.7 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
+> [!TIP] 提醒
+> `async` 和 `await` 到 [Python 3.7](#async-与-await)
+> 才成为[关键字](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#identifiers)。
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '更新详情', link: 'https://docs.python.org/zh-cn/3/whatsnew/3.5.html#pep-492-coroutines-with-async-and-await-syntax' },
@@ -690,7 +735,9 @@ print(*[1], *[2], 3, *[4, 5])
 
 ### 矩阵运算符
 
-二元运算符 `@` 目前（截至 2024 年底）只为第三方库**矩阵乘法**的计算而设计，Python 内置的类型并不支持该运算，开发者可以定义对应的魔术方法 `__matmul__()` 、`__rmatmul__()` 、`__imatmul__()` 来为自定义对象模拟该运算。
+二元运算符 `@` 目前（截至 2024 年底）只为第三方库 **矩阵乘法** 的计算而设计，Python
+内置的类型并不支持该运算，开发者可以定义对应的魔术方法 `__matmul__()` 、`__rmatmul__()` 、`__imatmul__()`
+来为自定义对象模拟该运算。
 
 <SeeAlsoBar flavor="foot" :refs="[
     { text: '魔术方法', link: 'https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-numeric-types' },
@@ -701,12 +748,12 @@ print(*[1], *[2], 3, *[4, 5])
 
 引入了 [typing](https://docs.python.org/zh-cn/3.5/library/typing.html) 模块提供类型标注的 **标准定义** 和工具，以及一些对于注释不可用的情况的约定。
 
-> [!TIP] 提示
+> [!NOTE] 备注
 > 标注存储在
 > [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)
 > 属性中。
 
-> [!NOTE] 备注
+> [!TIP] 提示
 > `List[str]` 指列表中的元素都是 `str` 类型；  
 > `Tuple[int, str]` 指元组中第一个元素是 `int` 类型，第二个元素是 `str` 类型；  
 > `Tuple[str, ...]` 指元组中所有元素都是 `str` 类型。
@@ -790,7 +837,9 @@ list(generate(5))
 
 <LinkCard href="https://docs.python.org/zh-cn/3/whatsnew/3.0.html" text="Python 3.0 有什么新变化" />
 
-Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python 2.x，所以这一段概括得并不准确甚至很多缺漏，也欢迎提 issue 告知，或者提 pull-request 协助增补。
+> [!NOTE] 备注
+> Python 3.0 是第一个故意不向后兼容的版本，更新太多，由于我没有玩过 Python
+> 2.x，所以这一段概括得并不准确甚至很多缺漏，也欢迎提 issue 告知，或者提 pull-request 协助增补。
 
 ### 移除打印语句
 
@@ -831,9 +880,10 @@ print("断言：API接口缺少参数", file=sys.stderr)
 
 ### 类型标注
 
-[**PEP 3107**](https://peps.python.org/pep-3107/)提议对参数和返回值进行标注，不过该提案（截止 3.4）还没有标准语义。
+[**PEP 3107**](https://peps.python.org/pep-3107/)
+提议对参数和返回值进行标注，不过该提案直到 [Python 3.5](#类型标注-标准化) 才有标准语义。
 
-> [!TIP] 提示
+> [!NOTE] 备注
 > 标注存储在
 > [`__annotations__`](https://docs.python.org/zh-cn/3/reference/datamodel.html#function.__annotations__)
 > 属性中。
