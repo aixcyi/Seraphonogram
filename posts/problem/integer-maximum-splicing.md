@@ -52,7 +52,7 @@ n个数，0<每个数<2000000000
 不过，Java里，小于号和大于号不能用在字符串的比较上，要用 `"str".compareTo("other-str")` 来比较。
 
 ```java :line-numbers
-package cc.ayuu.test;
+package net.navifox.test;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;

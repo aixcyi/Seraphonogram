@@ -10,7 +10,7 @@ hero:
   tagline: "一只毛茸茸的博客，干净、整洁、纯粹、温暖"
   image:
     src: /mualani.gif
-    alt: 阿羽的树洞
+    alt: "羽音 × Seraphonogram"
   actions:
     - theme: brand
       text: 博客目录

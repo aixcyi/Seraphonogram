@@ -25,15 +25,17 @@ hideRevisionInfo: true
 
 ## 起名简史 {#namespace}
 
-最初的昵称是“砹小翼”，取双拼得到 ID `aixcyi`，并由此衍生出最初的域名
-[`aixcyi.cn`](https://aixcyi.cn)，但日常工作中，因为昵称不好叫，于是改为“阿羽”。
+最初的昵称是用了十数年的“砹小翼”，取双拼得到 ID `aixcyi` 用于博客园、GitHub 等网站，由此衍生出最初的域名
+`aixcyi.cn`，不过进入职场后，常被诟病昵称不易识读，于是改叫“阿羽”。
 
-后来发现了一个从“阿羽”全拼衍生的、更好记的域名
-[`ayuu.cc`](https://ayuu.cc/)，于是改用
-`ayuu` 作为新的 ID。不过因为 `aixcyi`
-已经用了很多年，历史负债多得很，加上新 ID 太短很容易重名，所以会并行使用旧 ID。
+但双拼毕竟不是英文单词，也因双拼的受众面导致不容易传播。后来发现了一个从“阿羽”全拼衍生的，更短、更好记的域名 `ayuu.cc`，于是改用 `ayuu` 作为新的 ID。
 
-小站名为「羽音」，意为阿羽的声音；英文名 _Seraphonogram_ 由 _Seraph_ 与 _phonogram_
+可新 ID 终究还是因为太短而导致容易重名。苦寻许久，终于在一次灵光乍现下觅得一个源自“提纳里”的
+[`navifox.net`](https://navifox.net/)，并为主站起名“路狐领航”；ID 方面也不再纠结，继续沿用
+`aixcyi` 来避免重名和迁移；而我也顺势组合工作上的称呼，将昵称定为“路狐羽”，致曾爱的雷泽和最爱的提纳里。（不过事后再查发现似乎灵感是来自数据库管理工具
+Navicat）
+
+博客名为「羽音」，意为阿羽的声音；英文名 _Seraphonogram_ 由 _Seraph_ 与 _phonogram_
 两个单词合成得到，分别指代「羽」「音」两个字。
 
 ## 捕蛇外传 {#life}
@@ -134,14 +136,12 @@ hideRevisionInfo: true
         按图索骥从 Vue 生态了解到 Vitepress，于是有了这个博客。
     </el-timeline-item>
     <el-timeline-item color="#FF7F27" timestamp="2025 年 2 月">
-        主站从
-        <a href="https://aixcyi.cn/" target="_blank"><code>aixcyi.cn</code></a>
-        迁移到更好记的
-        <a href="https://ayuu.cc/" target="_blank"><code>ayuu.cc</code></a>
-        。
+        主站从 <code>aixcyi.cn</code>
+        迁移到更好记的 <code>ayuu.cc</code>。
     </el-timeline-item>
-    <el-timeline-item timestamp="现在">
-        编码已融入生活，而生活仍在继续。有一分热，发一分光。
+    <el-timeline-item color="#FF7F27" timestamp="2025 年 6 月">
+        正式定居 <a href="https://navifox.net/" target="_blank"><code>navifox.net</code></a><br />
+        愿在生活的密林里都能遇见一只毛茸茸的郭狐，与你相伴，为你领航。
     </el-timeline-item>
     <el-timeline-item :icon="Bottom" size="large">
         <i>有时明月无人夜，独向昭潭制恶龙</i>

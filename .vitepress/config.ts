@@ -48,7 +48,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
         docFooter: { prev: '上一篇', next: '下一篇' },
         footer: {
             message: env.VITE_FOOTER_MSG,
-            copyright: `© 2016-${now} <a href="https://ayuu.cc/" target="_blank">阿羽</a> 版权所有. All Rights Reserved.`,
+            copyright: `© 2016-${now} <a href="https://navifox.net/" target="_blank">路狐羽</a> 版权所有. All Rights Reserved.`,
         },
     },
     cleanUrls: true,
@@ -126,13 +126,13 @@ configs.themeConfig.nav = process.env.VP_DEBUG ? [
     sidebar.buildNav('./drafts/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
-    { text: '主站', link: 'https://ayuu.cc/' },
+    { text: '主站', link: 'https://navifox.net/' },
 ] : [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
     sidebar.buildNav('./refs/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
     { text: '关于', link: '/about' },
-    { text: '主站', link: 'https://ayuu.cc/' },
+    { text: '主站', link: 'https://navifox.net/' },
 ]
 
 export default defineConfig(configs)

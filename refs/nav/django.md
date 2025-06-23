@@ -118,9 +118,9 @@ class Book(models.Model):
     objects = models.Manager()  # 默认管理器，在此处声明是为了确保默认情况下可以拿到表中所有数据。
     existences = ExistenceManager()  # 过滤掉已删除的数据。
 
-Book.existences.filter(title__contains='ayuu')
+Book.existences.filter(title__contains='aixcyi')
 # 等价于
-Book.objects.filter(deleted=False, title__contains='ayuu')
+Book.objects.filter(deleted=False, title__contains='aixcyi')
 ```
 
 ### 查询 {#query}
@@ -154,16 +154,16 @@ Book.objects.filter(deleted=False, title__contains='ayuu')
           note="注：有许多并非特有的查找，比如 ArrayField 重写了的 contains 查询，需要结合具体 PostgreSQL 字段类型浏览。" />
 
 > 一种方便的字段查询方式，格式如 `__contains`。  
-> 比如查询 User 表 username 字段是否包含 ayuu 这段字符串，ORM 方法是
+> 比如查询 User 表 username 字段是否包含 aixcyi 这段字符串，ORM 方法是
 > 
 > ```python
-> User.objects.filter(username__contains='ayuu')
+> User.objects.filter(username__contains='aixcyi')
 > ```
 > 
 > 对应 SQL 是
 > 
 > ```sql
-> SELECT * FROM user WHERE username LIKE '%ayuu%';
+> SELECT * FROM user WHERE username LIKE '%aixcyi%';
 > ```
 
 <LinkCard href="https://docs.djangoproject.com/zh-hans/5.2/howto/custom-lookups/"

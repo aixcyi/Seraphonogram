@@ -34,7 +34,7 @@ excerpt:
 以下是截取自笔者部分开源代码的完整示例：
 
 ```java :line-numbers
-package cc.ayuu.plugin.tinysnake;
+package net.navifox.plugin.tinysnake;
 
 import com.intellij.DynamicBundle;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +45,7 @@ import java.util.ResourceBundle;
 /**
  * 提供本地化能力的工具类。
  *
- * @author <a href="https://github.com/aixcyi">阿羽</a>
+ * @author <a href="https://github.com/aixcyi">路狐羽</a>
  */
 public class Translation {
 
@@ -74,9 +74,9 @@ public class Translation {
 其中 `messages.TinySnakeBundle` 指向文件 `src/main/resources/messages/TinySnakeBundle.properties`，假设其中存在键值对 `action.OptimizeDunderAllAction.text=优化 __all__ (&O)`，则用法如下：
 
 ```java :line-numbers
-package cc.ayuu.plugin.tinysnake.testing;
+package net.navifox.plugin.tinysnake.testing;
 
-import static cc.ayuu.plugin.tinysnake.Translation.$message;
+import static net.navifox.plugin.tinysnake.Translation.$message;
 
 public class MainTest {
     public static void main(String[] args) {

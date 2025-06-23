@@ -51,7 +51,7 @@ excerpt:
 于是再向前借一，得到 `2054 == 676*2 + 26*26 + 1*26`，对照ASCII表得到`BZZ`，正确！
 
 ```java :line-numbers
-package cc.ayuu.test;
+package net.navifox.test;
 import java.util.Scanner;
 
 public class Main {

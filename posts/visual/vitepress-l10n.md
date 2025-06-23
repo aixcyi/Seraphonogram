@@ -60,7 +60,7 @@ const configs: UserConfig<DefaultTheme.Config> = {
   themeConfig: {
     footer: {
       message: '<a href="https://beian.miit.gov.cn/" target="_blank">粤 ICP 备 ********** 号</a>',
-      copyright: `Copyright © 2025 <a href="https://ayuu.cc/">阿羽</a>`,
+      copyright: `Copyright © 2025 <a href="https://navifox.net/">路狐羽</a>`,
     },
     lastUpdated: {
       text: '最后更新于：',
