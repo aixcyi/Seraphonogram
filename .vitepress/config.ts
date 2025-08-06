@@ -125,14 +125,12 @@ configs.themeConfig.nav = process.env.VP_DEBUG ? [
     sidebar.buildNav('./refs/', true, hookRefs),
     sidebar.buildNav('./drafts/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
-    { text: '关于', link: '/about' },
-    { text: '主站', link: 'https://navifox.net/' },
+    { text: '主页', link: 'https://navifox.net/' },
 ] : [
     { text: '博客', link: '/posts', activeMatch: '/posts/' },
     sidebar.buildNav('./refs/', true, hookRefs),
     { text: '任意门', link: '/anywhere' },
-    { text: '关于', link: '/about' },
-    { text: '主站', link: 'https://navifox.net/' },
+    { text: '主页', link: 'https://navifox.net/' },
 ]
 
 export default defineConfig(configs)
